@@ -12,6 +12,10 @@
 		01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01304E151FEAD70E000F24E9 /* Main.storyboard */; };
 		01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01304E181FEAD70E000F24E9 /* Assets.xcassets */; };
 		01304E1C1FEAD70E000F24E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01304E1A1FEAD70E000F24E9 /* LaunchScreen.storyboard */; };
+		01304E241FEAD76B000F24E9 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 01304E231FEAD76B000F24E9 /* Untitled.png */; };
+		01304E261FEAEC9D000F24E9 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E251FEAEC9D000F24E9 /* DataModel.swift */; };
+		01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */; };
+		01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */ = {isa = PBXBuildFile; fileRef = 01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		01304E181FEAD70E000F24E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01304E1B1FEAD70E000F24E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01304E1D1FEAD70E000F24E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01304E231FEAD76B000F24E9 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Untitled.png; path = ../../../Downloads/Untitled.png; sourceTree = "<group>"; };
+		01304E251FEAEC9D000F24E9 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7916342_orig.jpg; path = ../../../Documents/7916342_orig.jpg; sourceTree = "<group>"; };
+		01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZodiacMandala.png; path = ../../../Documents/ZodiacMandala.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +62,13 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */,
+				01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */,
+				01304E231FEAD76B000F24E9 /* Untitled.png */,
 				01304E111FEAD70E000F24E9 /* AppDelegate.swift */,
 				01304E131FEAD70E000F24E9 /* ViewController.swift */,
 				01304E151FEAD70E000F24E9 /* Main.storyboard */,
+				01304E251FEAEC9D000F24E9 /* DataModel.swift */,
 				01304E181FEAD70E000F24E9 /* Assets.xcassets */,
 				01304E1A1FEAD70E000F24E9 /* LaunchScreen.storyboard */,
 				01304E1D1FEAD70E000F24E9 /* Info.plist */,
@@ -123,6 +135,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
+				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
+				01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */,
 				01304E1C1FEAD70E000F24E9 /* LaunchScreen.storyboard in Resources */,
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
@@ -138,6 +153,7 @@
 			files = (
 				01304E141FEAD70E000F24E9 /* ViewController.swift in Sources */,
 				01304E121FEAD70E000F24E9 /* AppDelegate.swift in Sources */,
+				01304E261FEAEC9D000F24E9 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2F9Y4G5D76;
 				INFOPLIST_FILE = ImageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
@@ -289,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2F9Y4G5D76;
 				INFOPLIST_FILE = ImageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
