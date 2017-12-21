@@ -333,6 +333,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYe-xj-e4d">
+                                <rect key="frame" x="-4" y="93" width="327" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26A-CF-8dc">
                                 <rect key="frame" x="0.0" y="526" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -411,6 +416,9 @@
                                 <rect key="frame" x="254" y="64" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select"/>
+                                <connections>
+                                    <action selector="SelectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rp6-EZ-7HI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -418,6 +426,7 @@
                     </view>
                     <connections>
                         <outlet property="IndividualTitle" destination="Zfl-8k-YzD" id="pOQ-0s-xDu"/>
+                        <outlet property="PickerView" destination="rYe-xj-e4d" id="4hz-7x-Czp"/>
                         <outlet property="aUiView" destination="cEE-iC-Ss2" id="AeS-m9-czk"/>
                         <outlet property="imgPhoto" destination="1Ko-cJ-GRC" id="Kn1-qj-7O1"/>
                         <outlet property="scrollView" destination="CxE-TL-RAS" id="FgR-jR-n8W"/>

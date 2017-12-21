@@ -266,12 +266,13 @@ public class AstrologicalProfile{
 }
 
 public class AstrologicalCategory{
+    public var CategoryName = ""
     public var Contents = Array<AstrologicalProfile>()
 }
 
 // Dictionary containing arrays of AP divided by Category
 public class AstrologicalDatabase{
-    public var Database = [String: AstrologicalCategory]()
+    public var Database = Array<AstrologicalCategory>()
 }
 
 
