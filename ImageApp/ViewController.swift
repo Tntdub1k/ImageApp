@@ -44,18 +44,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         else {
             m_CurrentIndividual = row
             IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
-            PickerView.isHidden = true
+            mainView.sendSubview(toBack: PickerView)
+            
         }
     }
   
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var aUiView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var IndividualTitle: UINavigationBar!
     @IBOutlet weak var PickerView: UIPickerView!
     @IBAction func SelectPressed(_ sender: Any) {
-        PickerView.isHidden = false
+        mainView.bringSubview(toFront: PickerView)
     }
     let m_ADB = AstrologicalDatabase()
     var m_CurrentCategory = 0
