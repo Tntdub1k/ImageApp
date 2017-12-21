@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var aUiView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgPhoto: UIImageView!
+    @IBOutlet weak var IndividualTitle: UINavigationBar!
     let m_ADB = AstrologicalDatabase()
     
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class ViewController: UIViewController, UIScrollViewDelegate{
         AC.Contents.append(AP)
         
         m_ADB.Database["Individuals"] = AC
-        
+        IndividualTitle.topItem?.title = m_ADB.Database["Individuals"]?.Contents[0].IndividualName
         }
 
     override func didReceiveMemoryWarning() {
