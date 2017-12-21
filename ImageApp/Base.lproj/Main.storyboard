@@ -30,12 +30,274 @@
                                                 <rect key="frame" x="8" y="0.0" width="320" height="461"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ko-cJ-GRC">
-                                                <rect key="frame" x="8" y="70" width="320" height="323"/>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hA-qj-tt5">
+                                                <rect key="frame" x="-12" y="50" width="360" height="363"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="toF-O3-0JG">
-                                                <rect key="frame" x="259" y="202" width="57" height="57"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="OGd-P2-xBf">
+                                                        <rect key="frame" x="20" y="20" width="320" height="323"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsHead.png" translatesAutoresizingMaskIntoConstraints="NO" id="fWw-Qh-BTa">
+                                                        <rect key="frame" x="-25" y="11" width="298" height="157"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cys-II-Zjl">
+                                                        <rect key="frame" x="72" y="32" width="97" height="94"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="5AK-5v-ENL">
+                                                                <rect key="frame" x="25" y="26" width="45" height="45"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="5G6-h3-kdw">
+                                                                <rect key="frame" x="20" y="20" width="54" height="54"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9P-R0-qom">
+                                                                <rect key="frame" x="19" y="5" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="YJY-4Y-V1q">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="b64-Kr-C2Y">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-CX-3B3">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4x-Ye-vfS">
+                                                                <rect key="frame" x="24" y="-8" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-wg-Ao4">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="dEx-LI-P7g">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6t-fC-kT4">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0U-fU-bBo">
+                                                                <rect key="frame" x="21" y="-21" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-eY-Frp">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-NS-lkg">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4l-Tk-B5q">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFy-zS-Tiq">
+                                                                <rect key="frame" x="11" y="-33" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ka-fp-wQc">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Id-Mg-QC8">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62U-Ej-8xy">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF1-tY-d2z">
+                                                                <rect key="frame" x="20" y="38" width="57" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <color key="textColor" red="0.5" green="0.11018343514841877" blue="0.026657213913716282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMr-6X-xUL">
+                                                                <rect key="frame" x="-3" y="-38" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="jI0-XK-kgz">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-l2-8iM">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35u-Tp-YaX">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                        </subviews>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Gr-ax-VgF">
+                                                        <rect key="frame" x="29" y="78" width="97" height="94"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HVz-c4-Akm">
+                                                                <rect key="frame" x="25" y="26" width="45" height="45"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rzb-rp-PkX">
+                                                                <rect key="frame" x="20" y="20" width="54" height="54"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzk-9K-cBw">
+                                                                <rect key="frame" x="19" y="5" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-Th-LAu">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-Il-WG8">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mas-cX-XJY">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6A5-jg-6Sw">
+                                                                <rect key="frame" x="24" y="-8" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="w6b-4h-gEN">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="bMs-Wq-sjX">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qok-SY-pY8">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YzY-D0-vCY">
+                                                                <rect key="frame" x="21" y="-21" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="FZb-Cb-bVF">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="gmf-XP-ZcY">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTF-Xc-RGs">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flq-FI-cIF">
+                                                                <rect key="frame" x="11" y="-33" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="EdC-vO-9e2">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="97V-OC-nqn">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-3v-hKz">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIg-jx-0tp">
+                                                                <rect key="frame" x="20" y="38" width="57" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-F0-xIE">
+                                                                <rect key="frame" x="-3" y="-38" width="87" height="84"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Ko-jP-al9">
+                                                                        <rect key="frame" x="43" y="52" width="17" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="hHP-PC-Le4">
+                                                                        <rect key="frame" x="40" y="49" width="22" height="22"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hu-S4-3ve">
+                                                                        <rect key="frame" x="34" y="54" width="37" height="13"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                                        <color key="textColor" red="0.5" green="0.1101834351" blue="0.026657213910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                        </subviews>
+                                                    </view>
+                                                </subviews>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZMNumbers.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ko-cJ-GRC">
+                                                <rect key="frame" x="9" y="70" width="320" height="323"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advancement:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvk-cL-8FK">
@@ -135,6 +397,10 @@
     </scenes>
     <resources>
         <image name="7916342_orig.jpg" width="1100" height="687"/>
+        <image name="DignifiedGreen.png" width="194" height="202"/>
+        <image name="Moon.png" width="194" height="202"/>
+        <image name="ZMNumbers.png" width="763" height="764"/>
         <image name="ZodiacMandala.png" width="763" height="764"/>
+        <image name="dragonsHead.png" width="308" height="406"/>
     </resources>
 </document>
