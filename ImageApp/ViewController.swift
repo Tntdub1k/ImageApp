@@ -11,42 +11,75 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        if (pickerView == selectPicker){
+            return 2
+        }
+        else if (pickerView == addPicker){
+            return 1
+        }
+        else {
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (component == 0){
+        if (pickerView == selectPicker){
+            if (component == 0){
+                return m_ADB.Database.count
+            }
+            else {
+                return m_ADB.Database[m_CurrentCategory].Contents.count
+            }
+        }
+        else if (pickerView == addPicker){
             return m_ADB.Database.count
         }
         else {
-            return m_ADB.Database[m_CurrentCategory].Contents.count
+            return 1
         }
+       
         
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if (component == 0){
+        if (pickerView == selectPicker){
+            if (component == 0){
+                return m_ADB.Database[row].CategoryName
+            }
+            else {
+                return m_ADB.Database[m_CurrentCategory].Contents[row].IndividualName
+            }
+        }
+        else if (pickerView == addPicker){
             return m_ADB.Database[row].CategoryName
         }
         else {
-            return m_ADB.Database[m_CurrentCategory].Contents[row].IndividualName
+            return ""
         }
         
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        if (component == 0){
-            m_CurrentCategory = row
-            m_CurrentIndividual = 0
-            PickerView.reloadComponent(1)
+        
+        if (pickerView == selectPicker){
+            if (component == 0){
+                m_CurrentCategory = row
+                m_CurrentIndividual = 0
+                selectPicker.reloadComponent(1)
+            }
+            else {
+                m_CurrentIndividual = row
+                IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+                mainView.sendSubview(toBack: selectPicker)
+                
+            }
         }
-        else {
-            m_CurrentIndividual = row
-            IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
-            mainView.sendSubview(toBack: PickerView)
+        else if (pickerView == addPicker){
             
         }
+        
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        
     }
   
     
@@ -59,9 +92,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var IndividualTitle: UINavigationBar!
-    @IBOutlet weak var PickerView: UIPickerView!
+    
+    @IBOutlet weak var addPicker: UIPickerView!
+    @IBOutlet weak var selectPicker: UIPickerView!
     @IBAction func SelectPressed(_ sender: Any) {
-        mainView.bringSubview(toFront: PickerView)
+        mainView.bringSubview(toFront: selectPicker)
     }
     let m_ADB = AstrologicalDatabase()
     var m_CurrentCategory = 0
@@ -96,8 +131,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
      
        
         IndividualTitle.topItem?.title = m_ADB.Database[0].Contents[0].IndividualName
-        PickerView.dataSource = self
-        PickerView.delegate = self
+        selectPicker.dataSource = self
+        selectPicker.delegate = self
+        addPicker.dataSource = self
+        addPicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
