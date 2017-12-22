@@ -74,8 +74,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             }
         }
         else if (pickerView == addPicker){
-            addNewCategoryButton.isHidden = true
-            addNewMemberView.isHidden = false
+          
+            m_AddToCategory = row
         }
         
         // This method is triggered whenever the user makes a change to the picker selection.
@@ -83,17 +83,33 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
     }
   
-    
+    func clearAllViewsFromScreen(){
+        mainView.sendSubview(toBack:selectPicker)
+        mainView.sendSubview(toBack:addView)
+        mainView.endEditing(true)
+        mainView.sendSubview(toBack: fullAddView)
+    }
     
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
-        addNewCategoryButton.isHidden = false
-        addNewMemberView.isHidden = true
+        let AP = AstrologicalProfile()
+        AP.IndividualName = enterNewMemberTextB.text!
+        m_ADB.Database[m_AddToCategory].Contents.append(AP)
+        
+        clearAllViewsFromScreen()
     }
     @IBAction func addPressed(_ sender: Any) {
+        clearAllViewsFromScreen()
         mainView.bringSubview(toFront: addView)
     }
-    @IBOutlet weak var addNewMemberView: UIView!
-    @IBOutlet weak var addNewCategoryButton: UIButton!
+    @IBAction func addNewMemberPushed(_ sender: Any) {
+        mainView.bringSubview(toFront: fullAddView)
+        enterNewMemberTextB.text = ""
+    }
+  
+    @IBAction func addNewCategoryPushed(_ sender: Any) {
+    }
+    @IBOutlet weak var enterNewMemberTextB: UITextField!
+    @IBOutlet weak var fullAddView: UIView!
     @IBOutlet weak var addView: UIView!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var aUiView: UIView!
@@ -101,19 +117,30 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var IndividualTitle: UINavigationBar!
     
+    @IBAction func clickCancelFromAdd(_ sender: Any) {
+        clearAllViewsFromScreen()
+    }
+    @IBOutlet weak var clickCancelAddScreen: UIButton!
+    @IBAction func clickCancel(_ sender: Any) {
+        clearAllViewsFromScreen()
+    }
     @IBOutlet weak var addPicker: UIPickerView!
     @IBOutlet weak var selectPicker: UIPickerView!
     @IBAction func SelectPressed(_ sender: Any) {
+        selectPicker.reloadAllComponents()
+        clearAllViewsFromScreen()
         mainView.bringSubview(toFront: selectPicker)
     }
     let m_ADB = AstrologicalDatabase()
     var m_CurrentCategory = 0
     var m_CurrentIndividual = 0
+    var m_AddToCategory = 0
     
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
-        
+        clearAllViewsFromScreen()
         
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
