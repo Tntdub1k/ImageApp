@@ -74,7 +74,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             }
         }
         else if (pickerView == addPicker){
-            
+            addNewCategoryButton.isHidden = true
+            addNewMemberView.isHidden = false
         }
         
         // This method is triggered whenever the user makes a change to the picker selection.
@@ -83,9 +84,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
   
     
+    
+    @IBAction func addNewMemberPressedOK(_ sender: Any) {
+        addNewCategoryButton.isHidden = false
+        addNewMemberView.isHidden = true
+    }
     @IBAction func addPressed(_ sender: Any) {
         mainView.bringSubview(toFront: addView)
     }
+    @IBOutlet weak var addNewMemberView: UIView!
+    @IBOutlet weak var addNewCategoryButton: UIButton!
     @IBOutlet weak var addView: UIView!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var aUiView: UIView!
