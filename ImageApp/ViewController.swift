@@ -50,6 +50,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
   
     
+    @IBAction func addPressed(_ sender: Any) {
+        mainView.bringSubview(toFront: addView)
+    }
+    @IBOutlet weak var addView: UIView!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var aUiView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
