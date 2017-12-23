@@ -16,7 +16,7 @@ public class DataModel{
     
 }
 
-public class RingEntry{
+public class RingEntry: Codable {
     
     public var CurrentCelestialBody = ""
     public var originalIndicator = ""
@@ -25,7 +25,7 @@ public class RingEntry{
     
 }
 
-public class RotateableRing{
+public class RotateableRing: Codable{
     
     public var HouseName = ""
     public var Ring = Array(repeating:RingEntry(), count:6)
@@ -124,7 +124,7 @@ public class RotateableRing{
 }
 
 
-public class RotateableHouse{
+public class RotateableHouse: Codable{
     public var Houses = Array(repeating:RotateableRing(), count:12)
     public var HousesTransPersp = Array(repeating:RotateableRing(), count:12)
     
@@ -234,7 +234,7 @@ public class RotateableHouse{
     }
 }
 
-public class AstrologicalProfile{
+public class AstrologicalProfile: Codable{
     public var HouseInfo = RotateableHouse()
     public var advancement = 1
     public var cycle  = 1
@@ -265,13 +265,13 @@ public class AstrologicalProfile{
 
 }
 
-public class AstrologicalCategory{
-    public var CategoryName = ""
+public class AstrologicalCategory: Codable{
+    public var CategoryName =  ""
     public var Contents = Array<AstrologicalProfile>()
 }
 
 // Dictionary containing arrays of AP divided by Category
-public class AstrologicalDatabase{
+public class AstrologicalDatabase: Codable{
     public var Database = Array<AstrologicalCategory>()
 }
 

@@ -43,14 +43,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView == selectPicker){
             if (component == 0){
-                return m_ADB.Database[row].CategoryName
+                return m_ADB.Database[row].CategoryName as String
             }
             else {
                 return m_ADB.Database[m_CurrentCategory].Contents[row].IndividualName
             }
         }
         else if (pickerView == addPicker){
-            return m_ADB.Database[row].CategoryName
+            return m_ADB.Database[row].CategoryName as String
         }
         else {
             return ""
@@ -58,6 +58,25 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
     }
     
+    @IBAction func pressedSave(_ sender: Any) {
+        let jsonEncoder = JSONEncoder()
+        
+        do {
+            let jsonData = try jsonEncoder.encode(m_ADB)
+            let jsonString = jsonData.base64EncodedString()
+            
+            
+            UserDefaults.standard.set(jsonString, forKey: "MindmapDataBase")
+            UserDefaults.standard.synchronize()
+
+            
+        }
+        catch {
+            print(error)
+            
+        }
+
+    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if (pickerView == selectPicker){
@@ -68,8 +87,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             }
             else {
                 m_CurrentIndividual = row
-                IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
-                mainView.sendSubview(toBack: selectPicker)
+
                 
             }
         }
@@ -88,8 +106,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack:addView)
         mainView.endEditing(true)
         mainView.sendSubview(toBack: fullAddView)
+        mainView.sendSubview(toBack: categoryAddView)
+        mainView.sendSubview(toBack: selectView)
+        mainView.sendSubview(toBack: renameView)
     }
     
+    @IBAction func clickCancelSelectView(_ sender: Any) {
+        clearAllViewsFromScreen()
+    }
+    @IBAction func clickOKSelectItem(_ sender: Any) {
+        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        clearAllViewsFromScreen()
+    }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
         let AP = AstrologicalProfile()
         AP.IndividualName = enterNewMemberTextB.text!
@@ -98,6 +126,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
     }
     @IBAction func addPressed(_ sender: Any) {
+        addPicker.reloadAllComponents()
         clearAllViewsFromScreen()
         mainView.bringSubview(toFront: addView)
     }
@@ -107,8 +136,34 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
   
     @IBAction func addNewCategoryPushed(_ sender: Any) {
+        mainView.bringSubview(toFront: categoryAddView)
+        enterNewCategoryTextb.text = ""
     }
+   
+    @IBAction func addNewCategoryPushedOK(_ sender: Any) {
+        let AC = AstrologicalCategory()
+        AC.CategoryName = enterNewCategoryTextb.text!
+        m_ADB.Database.append(AC)
+        clearAllViewsFromScreen()
+    }
+    @IBAction func RenamePushed(_ sender: Any) {
+        mainView.bringSubview(toFront: renameView)
+        renameTextB.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        
+    }
+    @IBAction func clickCancelRename(_ sender: Any) {
+        clearAllViewsFromScreen()
+    }
+    @IBAction func renameTitlePressed(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName = renameTextB.text!
+        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        clearAllViewsFromScreen()
+    }
+    @IBOutlet weak var deleteView: UIView!
+    @IBOutlet weak var renameTextB: UITextField!
     @IBOutlet weak var enterNewMemberTextB: UITextField!
+    @IBOutlet weak var enterNewCategoryTextb: UITextField!
+    @IBOutlet weak var categoryAddView: UIView!
     @IBOutlet weak var fullAddView: UIView!
     @IBOutlet weak var addView: UIView!
     @IBOutlet var mainView: UIView!
@@ -117,6 +172,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var IndividualTitle: UINavigationBar!
     
+    @IBOutlet weak var renameView: UIView!
+    @IBOutlet weak var selectView: UIView!
+    @IBAction func ClickCancelCategoryScreen(_ sender: Any) {
+        clearAllViewsFromScreen()
+    }
+    @IBOutlet weak var clickCancelCategoryScreen: UIButton!
     @IBAction func clickCancelFromAdd(_ sender: Any) {
         clearAllViewsFromScreen()
     }
@@ -129,13 +190,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func SelectPressed(_ sender: Any) {
         selectPicker.reloadAllComponents()
         clearAllViewsFromScreen()
-        mainView.bringSubview(toFront: selectPicker)
+        mainView.bringSubview(toFront: selectView)
     }
-    let m_ADB = AstrologicalDatabase()
+    var m_ADB = AstrologicalDatabase()
     var m_CurrentCategory = 0
     var m_CurrentIndividual = 0
     var m_AddToCategory = 0
     
+    func showMessage(message:String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
+    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,7 +211,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
-        
+        /*
         let AP = AstrologicalProfile()
         AP.IndividualName = "Watashi"
         
@@ -162,6 +229,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         AC2.Contents.append(AP2)
         AC2.Contents.append(AP3)
         m_ADB.Database.append(AC2)
+        */
+        var Json = ""
+   
+        var jsonString2 = UserDefaults.standard.string(forKey: "MindmapDataBase")
+        let jsonData2 = Data(base64Encoded: jsonString2!)
+        var ADB:AstrologicalDatabase
+        ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
+        m_ADB = ADB
+        //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
+        showMessage(message:jsonString2!)
+        // let jsonData2 = try? JSONSerialization.data(withJSONObject: Json)
+       // var ADB: AstrologicalDatabase
+        //ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
         
      
        
