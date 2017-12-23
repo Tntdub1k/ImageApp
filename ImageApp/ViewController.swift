@@ -182,11 +182,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
     }
 
-    @IBAction func LongPressButon(_ sender: Any) {
-        mainView.bringSubview(toFront: CBview)
-        
+  
+    @IBAction func CBHouseClick(_ sender: UIButton) {
+        m_LastHouseClicked = Int(sender.accessibilityHint!)!
+        if (sender.accessibilityIdentifier == "Empty"){
+            mainView.bringSubview(toFront: CBview)
+        }
+    }
+
+    @IBAction func clickCancelAddCB(_ sender: Any) {
+        clearAllViewsFromScreen()
     }
     @IBOutlet weak var addCBPicker: UIPickerView!
+    @IBOutlet weak var Button10: UIButton!
     @IBOutlet weak var CBview: UIView!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var renameTextB: UITextField!
@@ -226,6 +234,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     var m_CurrentIndividual = 0
     var m_AddToCategory = 0
     var m_CBL = CelestialBodyListing()
+    var m_LastHouseClicked = 0
+    
+    
     func showMessage(message:String){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
