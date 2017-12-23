@@ -121,14 +121,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack: deleteView)
         mainView.sendSubview(toBack: CBview)
     }
+    func loadAP(){
+        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        cycleCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle)
+        advancementCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement)
+        clearAllViewsFromScreen()
+        fillWithData()
+    }
     
     @IBAction func clickCancelSelectView(_ sender: Any) {
         clearAllViewsFromScreen()
     }
     @IBAction func clickOKSelectItem(_ sender: Any) {
-        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
-        clearAllViewsFromScreen()
-        fillWithData()
+        loadAP()
     }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
         let AP = AstrologicalProfile()
@@ -227,6 +232,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func clickCancel(_ sender: Any) {
         clearAllViewsFromScreen()
     }
+
+    @IBOutlet weak var cycleCounter: UITextField!
+    
+    @IBOutlet weak var advancementCounter: UITextField!
     @IBOutlet weak var addPicker: UIPickerView!
     @IBOutlet weak var selectPicker: UIPickerView!
     @IBAction func SelectPressed(_ sender: Any) {
@@ -418,6 +427,87 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         fillImage(imageView: houseViews.mainImagView, dignified: houseViews.mainDignified, label:houseViews.mainLabel, celestialBody:m_Ring.RingTransPersp[0].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
         
         //Sat 1
+    }
+    @IBAction func AdvancePlus(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement + 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement > 12){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle + 1
+            var countNN = 0
+            for i in (0...11).reversed(){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                for j in (0...5){
+                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                        countNN = countNN + 1
+                    }
+                }
+            }
+            
+            
+            
+            var newCountNN = 0
+            for i in (0...11).reversed(){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                var containsNN = false
+                var positionInRing = 0
+                for j in (0...5){
+                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                        containsNN = true
+                        positionInRing = j
+                        newCountNN = newCountNN + 1
+                    }
+                }
+                
+                if (containsNN == true){
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    if (newCountNN == countNN){
+                        break;
+                    }
+                }
+            }
+            
+            var countSN = 0
+            for i in (0...11).reversed(){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                for j in (0...5){
+                    if(R.Ring[j].CurrentCelestialBody == "SN"){
+                        countSN = countSN + 1
+                    }
+                }
+            }
+            
+            var newCountSN = 0
+            for i in (0...11).reversed(){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                var containsSN = false
+                var positionInRing = 0
+                for j in (0...5){
+                    if (R.Ring[j].CurrentCelestialBody == "SN"){
+                        containsSN = true
+                        positionInRing = j
+                        newCountSN = newCountSN + 1
+                    }
+                }
+                if (containsSN == true){
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    if (newCountSN == countSN){
+                        break;
+                    }
+                }
+                
+            }
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement = 1
+        }
+        
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle > 12){
+           m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle = 1
+        }
+        loadAP()
+        
+        
     }
     func fillImage(imageView: UIImageView, dignified: UIImageView, label:UILabel, celestialBody:String, houseNumber:String, buttonView:UIButton){
         

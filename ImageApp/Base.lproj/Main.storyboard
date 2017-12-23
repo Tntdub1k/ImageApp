@@ -270,7 +270,11 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </barButtonItem>
-                                    <barButtonItem title="⤽" id="9F9-aT-9L2"/>
+                                    <barButtonItem title="⤽" id="9F9-aT-9L2">
+                                        <connections>
+                                            <action selector="AdvancePlus:" destination="BYZ-38-t0r" id="OiW-Xd-wB5"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <nil key="barTintColor"/>
@@ -2168,7 +2172,9 @@
                         <outlet property="addCBPicker" destination="5eW-Tz-Kzy" id="ES1-xe-kdg"/>
                         <outlet property="addPicker" destination="GbH-ID-FSl" id="ED5-hS-TXg"/>
                         <outlet property="addView" destination="25e-pa-2WQ" id="j0a-ez-Quo"/>
+                        <outlet property="advancementCounter" destination="RBK-hb-Bf9" id="oLq-ps-OsF"/>
                         <outlet property="categoryAddView" destination="3o9-2j-MlY" id="zZk-8d-Hhb"/>
+                        <outlet property="cycleCounter" destination="0L9-dO-2Fs" id="N6p-JL-e60"/>
                         <outlet property="deleteView" destination="2r6-c2-XBy" id="xSo-G1-Egs"/>
                         <outlet property="enterNewCategoryTextb" destination="DCS-ov-wIP" id="po6-QY-5TO"/>
                         <outlet property="enterNewMemberTextB" destination="z5G-9B-LQ9" id="52K-CA-bv4"/>
