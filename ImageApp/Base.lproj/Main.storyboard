@@ -489,37 +489,23 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2r6-c2-XBy">
-                                <rect key="frame" x="-13" y="226" width="345" height="116"/>
+                                <rect key="frame" x="-13" y="93" width="345" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zz-TD-R4A">
-                                        <rect key="frame" x="262" y="30" width="63" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="OK"/>
-                                        <connections>
-                                            <action selector="renameTitlePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A0J-or-I0i"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rename title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIh-Hf-NOm">
-                                        <rect key="frame" x="20" y="0.0" width="241" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YXg-CL-nez">
-                                        <rect key="frame" x="20" y="30" width="241" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-zf-bYD">
-                                        <rect key="frame" x="254" y="70" width="63" height="30"/>
+                                        <rect key="frame" x="44" y="8" width="63" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="clickCancelRename:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IpW-Hl-mCe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zz-TD-R4A">
+                                        <rect key="frame" x="232" y="8" width="87" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Yes, Delete"/>
+                                        <connections>
+                                            <action selector="pressedYesDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q2B-mv-oq7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -553,6 +539,9 @@
                                 <rect key="frame" x="191" y="64" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="PressedDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Al-iP-XeS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-1V-mY9">
                                 <rect key="frame" x="254" y="64" width="66" height="30"/>
@@ -572,7 +561,7 @@
                         <outlet property="addPicker" destination="GbH-ID-FSl" id="ED5-hS-TXg"/>
                         <outlet property="addView" destination="25e-pa-2WQ" id="j0a-ez-Quo"/>
                         <outlet property="categoryAddView" destination="3o9-2j-MlY" id="zZk-8d-Hhb"/>
-                        <outlet property="deleteView" destination="2r6-c2-XBy" id="mOC-Zm-uhl"/>
+                        <outlet property="deleteView" destination="2r6-c2-XBy" id="xSo-G1-Egs"/>
                         <outlet property="enterNewCategoryTextb" destination="DCS-ov-wIP" id="po6-QY-5TO"/>
                         <outlet property="enterNewMemberTextB" destination="z5G-9B-LQ9" id="52K-CA-bv4"/>
                         <outlet property="fullAddView" destination="gI4-9r-Uuk" id="9tE-Tv-IwT"/>

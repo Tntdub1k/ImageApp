@@ -109,6 +109,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack: categoryAddView)
         mainView.sendSubview(toBack: selectView)
         mainView.sendSubview(toBack: renameView)
+        mainView.sendSubview(toBack: deleteView)
     }
     
     @IBAction func clickCancelSelectView(_ sender: Any) {
@@ -159,6 +160,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         clearAllViewsFromScreen()
     }
+    
+    @IBAction func PressedDelete(_ sender: Any) {
+        mainView.bringSubview(toFront: deleteView)
+    }
+    @IBAction func pressedYesDelete(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents.remove(at: m_CurrentIndividual)
+        clearAllViewsFromScreen()
+        m_CurrentIndividual = 0
+        m_CurrentCategory = 0
+        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+    }
+
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var renameTextB: UITextField!
     @IBOutlet weak var enterNewMemberTextB: UITextField!
