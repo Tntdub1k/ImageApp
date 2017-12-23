@@ -17,6 +17,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         else if (pickerView == addPicker){
             return 1
         }
+        else if (pickerView == addCBPicker){
+            return 1
+        }
         else {
             return 1
         }
@@ -33,6 +36,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         }
         else if (pickerView == addPicker){
             return m_ADB.Database.count
+        }
+        else if (pickerView == addCBPicker){
+            return m_CBL.AllCelestialBodies.count
         }
         else {
             return 1
@@ -51,6 +57,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         }
         else if (pickerView == addPicker){
             return m_ADB.Database[row].CategoryName as String
+        }
+        else if (pickerView == addCBPicker){
+            return Array(m_CBL.AllCelestialBodies)[row].key
         }
         else {
             return ""
@@ -110,6 +119,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack: selectView)
         mainView.sendSubview(toBack: renameView)
         mainView.sendSubview(toBack: deleteView)
+        mainView.sendSubview(toBack: CBview)
     }
     
     @IBAction func clickCancelSelectView(_ sender: Any) {
@@ -172,6 +182,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
     }
 
+    @IBAction func LongPressButon(_ sender: Any) {
+        mainView.bringSubview(toFront: CBview)
+        
+    }
+    @IBOutlet weak var addCBPicker: UIPickerView!
+    @IBOutlet weak var CBview: UIView!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var renameTextB: UITextField!
     @IBOutlet weak var enterNewMemberTextB: UITextField!
@@ -209,7 +225,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     var m_CurrentCategory = 0
     var m_CurrentIndividual = 0
     var m_AddToCategory = 0
-    
+    var m_CBL = CelestialBodyListing()
     func showMessage(message:String){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
@@ -263,6 +279,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         selectPicker.delegate = self
         addPicker.dataSource = self
         addPicker.delegate = self
+        addCBPicker.dataSource = self
+        addCBPicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
