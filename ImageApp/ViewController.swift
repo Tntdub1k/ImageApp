@@ -428,6 +428,89 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         //Sat 1
     }
+    
+    
+    @IBAction func AdvanceMinus(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement < 1){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1
+            var countNN = 0
+            for i in (0...11){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                for j in (0...5){
+                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                        countNN = countNN + 1
+                    }
+                }
+            }
+            
+            
+            
+            var newCountNN = 0
+            for i in (0...11){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                var containsNN = false
+                var positionInRing = 0
+                for j in (0...5){
+                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                        containsNN = true
+                        positionInRing = j
+                        newCountNN = newCountNN + 1
+                    }
+                }
+                
+                if (containsNN == true){
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    if (newCountNN == countNN){
+                        break;
+                    }
+                }
+            }
+            
+            var countSN = 0
+            for i in (0...11){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                for j in (0...5){
+                    if(R.Ring[j].CurrentCelestialBody == "SN"){
+                        countSN = countSN + 1
+                    }
+                }
+            }
+            
+            var newCountSN = 0
+            for i in (0...11){
+                var R = RotateableRing()
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
+                var containsSN = false
+                var positionInRing = 0
+                for j in (0...5){
+                    if (R.Ring[j].CurrentCelestialBody == "SN"){
+                        containsSN = true
+                        positionInRing = j
+                        newCountSN = newCountSN + 1
+                    }
+                }
+                if (containsSN == true){
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    if (newCountSN == countSN){
+                        break;
+                    }
+                }
+                
+            }
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement = 12
+        }
+        
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle < 1){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle = 12
+        }
+        loadAP()
+        
+        
+    }
     @IBAction func AdvancePlus(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement + 1
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement > 12){
