@@ -14,6 +14,12 @@
 		011D7BF91FEC644A001E3417 /* dragonHead10.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BF71FEC6444001E3417 /* dragonHead10.png */; };
 		011D7BFA1FEC644A001E3417 /* dragonUpperBody10.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BF81FEC6447001E3417 /* dragonUpperBody10.png */; };
 		011D7BFC1FEEA101001E3417 /* CelestialBodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D7BFB1FEEA0FF001E3417 /* CelestialBodyData.swift */; };
+		011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BFD1FEEFF95001E3417 /* DignifiedDomicile.png */; };
+		011D7C031FEEFFA0001E3417 /* DignifiedEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BFE1FEEFF97001E3417 /* DignifiedEmpty.png */; };
+		011D7C041FEEFFA0001E3417 /* DignifiedExalted.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BFF1FEEFF99001E3417 /* DignifiedExalted.png */; };
+		011D7C051FEEFFA0001E3417 /* DignifiedDetriment.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7C001FEEFF9C001E3417 /* DignifiedDetriment.png */; };
+		011D7C061FEEFFA0001E3417 /* DignifiedFall.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7C011FEEFF9E001E3417 /* DignifiedFall.png */; };
+		011D7C081FEF058A001E3417 /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7C071FEF0588001E3417 /* Empty.png */; };
 		01304E121FEAD70E000F24E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E111FEAD70E000F24E9 /* AppDelegate.swift */; };
 		01304E141FEAD70E000F24E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E131FEAD70E000F24E9 /* ViewController.swift */; };
 		01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01304E151FEAD70E000F24E9 /* Main.storyboard */; };
@@ -33,6 +39,12 @@
 		011D7BF71FEC6444001E3417 /* dragonHead10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonHead10.png; path = ../../../Documents/dragonHead10.png; sourceTree = "<group>"; };
 		011D7BF81FEC6447001E3417 /* dragonUpperBody10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonUpperBody10.png; path = ../../../Documents/dragonUpperBody10.png; sourceTree = "<group>"; };
 		011D7BFB1FEEA0FF001E3417 /* CelestialBodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialBodyData.swift; sourceTree = "<group>"; };
+		011D7BFD1FEEFF95001E3417 /* DignifiedDomicile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedDomicile.png; path = ../../../Documents/DignifiedDomicile.png; sourceTree = "<group>"; };
+		011D7BFE1FEEFF97001E3417 /* DignifiedEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedEmpty.png; path = ../../../Documents/DignifiedEmpty.png; sourceTree = "<group>"; };
+		011D7BFF1FEEFF99001E3417 /* DignifiedExalted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedExalted.png; path = ../../../Documents/DignifiedExalted.png; sourceTree = "<group>"; };
+		011D7C001FEEFF9C001E3417 /* DignifiedDetriment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedDetriment.png; path = ../../../Documents/DignifiedDetriment.png; sourceTree = "<group>"; };
+		011D7C011FEEFF9E001E3417 /* DignifiedFall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedFall.png; path = ../../../Documents/DignifiedFall.png; sourceTree = "<group>"; };
+		011D7C071FEF0588001E3417 /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = ../../../Documents/Empty.png; sourceTree = "<group>"; };
 		01304E0E1FEAD70E000F24E9 /* ImageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01304E111FEAD70E000F24E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01304E131FEAD70E000F24E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +88,12 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				011D7C071FEF0588001E3417 /* Empty.png */,
+				011D7C001FEEFF9C001E3417 /* DignifiedDetriment.png */,
+				011D7BFD1FEEFF95001E3417 /* DignifiedDomicile.png */,
+				011D7BFE1FEEFF97001E3417 /* DignifiedEmpty.png */,
+				011D7BFF1FEEFF99001E3417 /* DignifiedExalted.png */,
+				011D7C011FEEFF9E001E3417 /* DignifiedFall.png */,
 				011D7BF71FEC6444001E3417 /* dragonHead10.png */,
 				011D7BF81FEC6447001E3417 /* dragonUpperBody10.png */,
 				011D7BF41FEB59C9001E3417 /* cp1.png */,
@@ -159,15 +177,21 @@
 				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
 				011D7BF91FEC644A001E3417 /* dragonHead10.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
+				011D7C081FEF058A001E3417 /* Empty.png in Resources */,
 				01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */,
 				011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */,
 				01304E1C1FEAD70E000F24E9 /* LaunchScreen.storyboard in Resources */,
+				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
 				011D7BEE1FEB494C001E3417 /* Moon.png in Resources */,
+				011D7C051FEEFFA0001E3417 /* DignifiedDetriment.png in Resources */,
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,
+				011D7C031FEEFFA0001E3417 /* DignifiedEmpty.png in Resources */,
+				011D7C061FEEFFA0001E3417 /* DignifiedFall.png in Resources */,
 				011D7BFA1FEC644A001E3417 /* dragonUpperBody10.png in Resources */,
 				011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */,
+				011D7C041FEEFFA0001E3417 /* DignifiedExalted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

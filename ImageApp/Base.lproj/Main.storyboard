@@ -1526,10 +1526,12 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HVz-c4-Akm">
                                                                 <rect key="frame" x="25" y="26" width="45" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <accessibility key="accessibilityConfiguration" label="mainImage"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rzb-rp-PkX">
                                                                 <rect key="frame" x="20" y="20" width="54" height="54"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <accessibility key="accessibilityConfiguration" label="mainDignified"/>
                                                             </imageView>
                                                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzk-9K-cBw">
                                                                 <rect key="frame" x="21" y="5" width="87" height="84"/>
@@ -1648,6 +1650,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="North Node" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="NIg-jx-0tp">
                                                                 <rect key="frame" x="11" y="26" width="72" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <accessibility key="accessibilityConfiguration" label="mainLabel"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="13"/>
                                                                 <color key="textColor" red="0.4747184327411168" green="0.10747108964895098" blue="0.1448325162994111" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2159,6 +2162,7 @@
                     <connections>
                         <outlet property="Button10" destination="iVP-GP-xkA" id="hJZ-FZ-B24"/>
                         <outlet property="CBview" destination="VNY-JN-x6m" id="GJt-QC-JAr"/>
+                        <outlet property="House10" destination="7Gr-ax-VgF" id="CCx-GS-ntf"/>
                         <outlet property="IndividualTitle" destination="Zfl-8k-YzD" id="pOQ-0s-xDu"/>
                         <outlet property="aUiView" destination="cEE-iC-Ss2" id="AeS-m9-czk"/>
                         <outlet property="addCBPicker" destination="5eW-Tz-Kzy" id="ES1-xe-kdg"/>

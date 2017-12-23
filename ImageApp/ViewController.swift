@@ -128,6 +128,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func clickOKSelectItem(_ sender: Any) {
         IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         clearAllViewsFromScreen()
+        fillWithData()
     }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
         let AP = AstrologicalProfile()
@@ -196,6 +197,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
     }
+    @IBOutlet weak var House10: UIView!
     @IBOutlet weak var addCBPicker: UIPickerView!
     @IBOutlet weak var Button10: UIButton!
     @IBOutlet weak var CBview: UIView!
@@ -302,12 +304,163 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-   
-
+    public class HouseViews{
+        var mainImagView = UIImageView()
+        var mainDignified = UIImageView()
+        var mainLabel = UILabel()
+        var mainButton = UIButton()
+        var sat1Imag = UIImageView()
+        var sat1Dignified = UIImageView()
+        var sat1Label = UILabel()
+        var sat2Imag = UIImageView()
+        var sat2Dignified = UIImageView()
+        var sat2Label = UILabel()
+        var sat3Imag = UIImageView()
+        var sat3Dignified = UIImageView()
+        var sat3Label = UILabel()
+        var sat4Imag = UIImageView()
+        var sat4Dignified = UIImageView()
+        var sat4Label = UILabel()
+        var sat5Imag = UIImageView()
+        var sat5Dignified = UIImageView()
+        var sat5Label = UILabel()
+        
+    }
+    
+    func getHouseViews(aHouseView:UIView)-> HouseViews{
+        var aHV = HouseViews()
+        
+        for subview in House10.subviews{
+            if (subview.accessibilityLabel == "mainImage"){
+                aHV.mainImagView = subview as! UIImageView
+            }
+            else if (subview.accessibilityLabel == "mainDignified"){
+                aHV.mainDignified = subview as! UIImageView
+            }
+            else if (subview.accessibilityLabel == "mainLabel"){
+                aHV.mainLabel = subview as! UILabel
+            }
+            else if (subview.accessibilityLabel == "mainButton"){
+                aHV.mainButton = subview as! UIButton
+            }
+        }
+        
+        return aHV
+    }
+    
+    func fillWithData(){
+       
+       //10
+       var aHouseView = HouseViews()
+        aHouseView = getHouseViews(aHouseView:House10)
+   fillRingViewWithData(aRing:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[9], houseViews:aHouseView)
+    }
+    
+    func fillRingViewWithData(aRing:RotateableRing, houseViews: HouseViews){
+        var ra1 = 1
+        var ra2 = 2
+        var ra3 = 3
+        var ra4 = 4
+        var ra5 = 5
+        var m_Ring = aRing
+        
+        switch m_Ring.RingAdvancement {
+        case 1:
+            ra1 = 2
+            ra2 = 3
+            ra3 = 4
+            ra4 = 5
+            ra5 = 6
+            
+        case 2:
+            ra1 = 3
+            ra2 = 4
+            ra3 = 5
+            ra4 = 6
+            ra5 = 1
+            
+        case 3:
+            ra1 = 4
+            ra2 = 5
+            ra3 = 6
+            ra4 = 1
+            ra5 = 2
+            
+        case 4:
+            ra1 = 5
+            ra2 = 6
+            ra3 = 1
+            ra4 = 2
+            ra5 = 3
+            
+        case 5:
+            ra1 = 6
+            ra2 = 1
+            ra3 = 2
+            ra4 = 3
+            ra5 = 4
+            
+        case 6:
+            ra1 = 1
+            ra2 = 2
+            ra3 = 3
+            ra4 = 4
+            ra5 = 5
+        default:
+            ra1 = 2
+            ra2 = 3
+            ra3 = 4
+            ra4 = 5
+            ra5 = 6
+        }
+        
+        //main Image
+        fillImage(imageView: houseViews.mainImagView, dignified: houseViews.mainDignified, label:houseViews.mainLabel, celestialBody:m_Ring.RingTransPersp[0].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        
+        //Sat 1
+    }
+    func fillImage(imageView: UIImageView, dignified: UIImageView, label:UILabel, celestialBody:String, houseNumber:String, buttonView:UIButton){
+        
+        //Display CB
+        
+        //If CB is empty
+        if ((celestialBody == "Empty") || (celestialBody == "")){
+            label.text = ""
+            dignified.image = UIImage(named: "DignifiedEmpty")
+            imageView.image = UIImage(named: "Empty")
+            buttonView.accessibilityIdentifier = "Empty"
+            
+        } else{ //If CB is full/with content
+            label.text = celestialBody
+            imageView.image = UIImage(named: celestialBody)
+            buttonView.accessibilityIdentifier = celestialBody
+            var CBL = CelestialBodyListing()
+            if (CBL.AllCelestialBodies[celestialBody]?.Dignities.Domicile.HousesIncluded.contains(houseNumber))!{
+                dignified.image = UIImage(named: "DignifiedDomicile")
+            }
+            else if (CBL.AllCelestialBodies[celestialBody]?.Dignities.Exalted.HousesIncluded.contains(houseNumber))!{
+                dignified.image = UIImage(named: "DignifiedExalted")
+            } else if (CBL.AllCelestialBodies[celestialBody]?.Dignities.Detriment.HousesIncluded.contains(houseNumber))!{
+                dignified.image = UIImage(named: "DignifiedDetriment")
+            } else if (CBL.AllCelestialBodies[celestialBody]?.Dignities.Fall.HousesIncluded.contains(houseNumber))!{
+                dignified.image = UIImage(named: "DignifiedFall")
+            }
+        }
+        
+        
+       
+        
+        
+        
+    }
+  
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
         return aUiView
     }
+    
+    
+    
 
 }
 
