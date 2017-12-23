@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             return m_ADB.Database[row].CategoryName as String
         }
         else if (pickerView == addCBPicker){
-            return Array(m_CBL.AllCelestialBodies)[row].key
+            return Array(m_CBL.AllCelestialBodies)[row].value.DisplayName
         }
         else {
             return ""
@@ -190,6 +190,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         }
     }
 
+    @IBAction func clickOKAddCB(_ sender: Any) {
+        
+    }
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
     }
