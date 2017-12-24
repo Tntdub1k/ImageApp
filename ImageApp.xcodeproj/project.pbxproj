@@ -30,6 +30,25 @@
 		01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */; };
 		01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */ = {isa = PBXBuildFile; fileRef = 01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */; };
 		018112551FEF76300071111D /* cosmos.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 018112541FEF76300071111D /* cosmos.jpeg */; };
+		018112571FF010A40071111D /* Chiron.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112561FF010A40071111D /* Chiron.png */; };
+		0181125D1FF0186F0071111D /* Mars.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112581FF0186D0071111D /* Mars.png */; };
+		0181125E1FF0186F0071111D /* Dejanira.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112591FF0186E0071111D /* Dejanira.png */; };
+		0181125F1FF0186F0071111D /* Neptune.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181125A1FF0186E0071111D /* Neptune.png */; };
+		018112601FF0186F0071111D /* Jupiter.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181125B1FF0186E0071111D /* Jupiter.png */; };
+		018112611FF0186F0071111D /* Lilith.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181125C1FF0186F0071111D /* Lilith.png */; };
+		0181126F1FF01F980071111D /* NN.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112621FF01F940071111D /* NN.png */; };
+		018112701FF01F980071111D /* Venus.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112631FF01F940071111D /* Venus.png */; };
+		018112721FF01F980071111D /* Saturn.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112651FF01F950071111D /* Saturn.png */; };
+		018112731FF01F980071111D /* Pluto.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112661FF01F950071111D /* Pluto.png */; };
+		018112741FF01F980071111D /* Psyche.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112671FF01F950071111D /* Psyche.png */; };
+		018112751FF01F980071111D /* Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112681FF01F960071111D /* Sun.png */; };
+		018112761FF01F980071111D /* Nibiru.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112691FF01F960071111D /* Nibiru.png */; };
+		018112781FF01F980071111D /* SN.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181126B1FF01F970071111D /* SN.png */; };
+		018112791FF01F980071111D /* Nessus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181126C1FF01F970071111D /* Nessus.png */; };
+		0181127A1FF01F980071111D /* Sedna.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181126D1FF01F970071111D /* Sedna.png */; };
+		0181127B1FF01F980071111D /* Uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181126E1FF01F980071111D /* Uranus.png */; };
+		0181127E1FF033D00071111D /* Mercury.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181127C1FF033D00071111D /* Mercury.png */; };
+		0181127F1FF033D00071111D /* Eros.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181127D1FF033D00071111D /* Eros.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +77,25 @@
 		01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7916342_orig.jpg; path = ../../../Documents/7916342_orig.jpg; sourceTree = "<group>"; };
 		01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZodiacMandala.png; path = ../../../Documents/ZodiacMandala.png; sourceTree = "<group>"; };
 		018112541FEF76300071111D /* cosmos.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cosmos.jpeg; path = ../../../Documents/cosmos.jpeg; sourceTree = "<group>"; };
+		018112561FF010A40071111D /* Chiron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Chiron.png; path = ../../../Documents/Chiron.png; sourceTree = "<group>"; };
+		018112581FF0186D0071111D /* Mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mars.png; path = ../../../Documents/Mars.png; sourceTree = "<group>"; };
+		018112591FF0186E0071111D /* Dejanira.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dejanira.png; path = ../../../Documents/Dejanira.png; sourceTree = "<group>"; };
+		0181125A1FF0186E0071111D /* Neptune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Neptune.png; path = ../../../Documents/Neptune.png; sourceTree = "<group>"; };
+		0181125B1FF0186E0071111D /* Jupiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Jupiter.png; path = ../../../Documents/Jupiter.png; sourceTree = "<group>"; };
+		0181125C1FF0186F0071111D /* Lilith.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Lilith.png; path = ../../../Documents/Lilith.png; sourceTree = "<group>"; };
+		018112621FF01F940071111D /* NN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NN.png; path = ../../../Documents/NN.png; sourceTree = "<group>"; };
+		018112631FF01F940071111D /* Venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Venus.png; path = ../../../Documents/Venus.png; sourceTree = "<group>"; };
+		018112651FF01F950071111D /* Saturn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Saturn.png; path = ../../../Documents/Saturn.png; sourceTree = "<group>"; };
+		018112661FF01F950071111D /* Pluto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pluto.png; path = ../../../Documents/Pluto.png; sourceTree = "<group>"; };
+		018112671FF01F950071111D /* Psyche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Psyche.png; path = ../../../Documents/Psyche.png; sourceTree = "<group>"; };
+		018112681FF01F960071111D /* Sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sun.png; path = ../../../Documents/Sun.png; sourceTree = "<group>"; };
+		018112691FF01F960071111D /* Nibiru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nibiru.png; path = ../../../Documents/Nibiru.png; sourceTree = "<group>"; };
+		0181126B1FF01F970071111D /* SN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SN.png; path = ../../../Documents/SN.png; sourceTree = "<group>"; };
+		0181126C1FF01F970071111D /* Nessus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nessus.png; path = ../../../Documents/Nessus.png; sourceTree = "<group>"; };
+		0181126D1FF01F970071111D /* Sedna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sedna.png; path = ../../../Documents/Sedna.png; sourceTree = "<group>"; };
+		0181126E1FF01F980071111D /* Uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Uranus.png; path = ../../../Documents/Uranus.png; sourceTree = "<group>"; };
+		0181127C1FF033D00071111D /* Mercury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mercury.png; path = ../../../Documents/Mercury.png; sourceTree = "<group>"; };
+		0181127D1FF033D00071111D /* Eros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Eros.png; path = ../../../Documents/Eros.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +128,25 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				0181127D1FF033D00071111D /* Eros.png */,
+				0181127C1FF033D00071111D /* Mercury.png */,
+				0181126C1FF01F970071111D /* Nessus.png */,
+				018112691FF01F960071111D /* Nibiru.png */,
+				018112621FF01F940071111D /* NN.png */,
+				018112661FF01F950071111D /* Pluto.png */,
+				018112671FF01F950071111D /* Psyche.png */,
+				018112651FF01F950071111D /* Saturn.png */,
+				0181126D1FF01F970071111D /* Sedna.png */,
+				0181126B1FF01F970071111D /* SN.png */,
+				018112681FF01F960071111D /* Sun.png */,
+				0181126E1FF01F980071111D /* Uranus.png */,
+				018112631FF01F940071111D /* Venus.png */,
+				018112591FF0186E0071111D /* Dejanira.png */,
+				0181125B1FF0186E0071111D /* Jupiter.png */,
+				0181125C1FF0186F0071111D /* Lilith.png */,
+				018112581FF0186D0071111D /* Mars.png */,
+				0181125A1FF0186E0071111D /* Neptune.png */,
+				018112561FF010A40071111D /* Chiron.png */,
 				018112541FEF76300071111D /* cosmos.jpeg */,
 				011D7C071FEF0588001E3417 /* Empty.png */,
 				011D7C001FEEFF9C001E3417 /* DignifiedDetriment.png */,
@@ -179,20 +236,39 @@
 			files = (
 				018112551FEF76300071111D /* cosmos.jpeg in Resources */,
 				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
+				018112701FF01F980071111D /* Venus.png in Resources */,
 				011D7BF91FEC644A001E3417 /* dragonHead10.png in Resources */,
+				0181125E1FF0186F0071111D /* Dejanira.png in Resources */,
+				018112611FF0186F0071111D /* Lilith.png in Resources */,
+				018112761FF01F980071111D /* Nibiru.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
 				011D7C081FEF058A001E3417 /* Empty.png in Resources */,
+				018112781FF01F980071111D /* SN.png in Resources */,
+				0181127F1FF033D00071111D /* Eros.png in Resources */,
 				01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */,
 				011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */,
+				0181127B1FF01F980071111D /* Uranus.png in Resources */,
 				01304E1C1FEAD70E000F24E9 /* LaunchScreen.storyboard in Resources */,
+				018112741FF01F980071111D /* Psyche.png in Resources */,
+				0181127A1FF01F980071111D /* Sedna.png in Resources */,
+				018112721FF01F980071111D /* Saturn.png in Resources */,
+				018112571FF010A40071111D /* Chiron.png in Resources */,
+				0181125D1FF0186F0071111D /* Mars.png in Resources */,
+				018112791FF01F980071111D /* Nessus.png in Resources */,
 				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
+				018112751FF01F980071111D /* Sun.png in Resources */,
+				0181126F1FF01F980071111D /* NN.png in Resources */,
+				0181127E1FF033D00071111D /* Mercury.png in Resources */,
 				011D7BEE1FEB494C001E3417 /* Moon.png in Resources */,
 				011D7C051FEEFFA0001E3417 /* DignifiedDetriment.png in Resources */,
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,
+				018112601FF0186F0071111D /* Jupiter.png in Resources */,
 				011D7C031FEEFFA0001E3417 /* DignifiedEmpty.png in Resources */,
 				011D7C061FEEFFA0001E3417 /* DignifiedFall.png in Resources */,
+				018112731FF01F980071111D /* Pluto.png in Resources */,
+				0181125F1FF0186F0071111D /* Neptune.png in Resources */,
 				011D7BFA1FEC644A001E3417 /* dragonUpperBody10.png in Resources */,
 				011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */,
 				011D7C041FEEFFA0001E3417 /* DignifiedExalted.png in Resources */,

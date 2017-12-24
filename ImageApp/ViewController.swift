@@ -127,7 +127,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         advancementCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement)
         ringCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement)
         clearAllViewsFromScreen()
-
+        
         m_remainingCBs = Array(repeating:"", count:0)
         var allCBs = Array(repeating:"", count:0)
         var usedCBs = Array(repeating:"", count:0)
@@ -155,6 +155,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 m_remainingCBs.append(i)
             }
         }
+        addCBPicker.reloadComponent(0)
         
             
         
@@ -169,7 +170,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         loadAP()
     }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
-        let AP = AstrologicalProfile()
+        var AP = AstrologicalProfile()
         AP.IndividualName = enterNewMemberTextB.text!
         m_ADB.Database[m_AddToCategory].Contents.append(AP)
         
@@ -573,7 +574,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         
         //End
-      // m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual] = AP
+       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual] = AP
     }
     
     func fillRingViewWithData(aRing:RotateableRing, houseViews: HouseViews){

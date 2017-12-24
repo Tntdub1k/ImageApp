@@ -729,8 +729,8 @@
                                                         </subviews>
                                                     </view>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QrS-fA-dMc">
-                                                        <rect key="frame" x="77" y="239" width="97" height="94"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <rect key="frame" x="77" y="239" width="80" height="94"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oay-M3-Wl8">
                                                                 <rect key="frame" x="25" y="26" width="45" height="45"/>

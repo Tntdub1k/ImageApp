@@ -32,6 +32,22 @@ public class RotateableRing: Codable{
     public var RingTransPersp = Array(repeating:RingEntry(), count:6)
     public var RingAdvancement = 1
     
+    init(){
+        Ring[0] = RingEntry()
+        Ring[1] = RingEntry()
+        Ring[2] = RingEntry()
+        Ring[3] = RingEntry()
+        Ring[4] = RingEntry()
+        Ring[5] = RingEntry()
+        RingTransPersp[0] = RingEntry()
+        RingTransPersp[1] = RingEntry()
+        RingTransPersp[2] = RingEntry()
+        RingTransPersp[3] = RingEntry()
+        RingTransPersp[4] = RingEntry()
+        RingTransPersp[5] = RingEntry()
+        
+        
+     }
    func CopyRing(inputRing:Array<RingEntry>) -> Array<RingEntry> {
     var newR = Array(repeating:RingEntry(), count:6)
     newR[0] = inputRing[0]
@@ -128,6 +144,13 @@ public class RotateableHouse: Codable{
     public var Houses = Array(repeating:RotateableRing(), count:12)
     public var HousesTransPersp = Array(repeating:RotateableRing(), count:12)
     
+    init(){
+        for i in (0...11){
+            Houses[i] = RotateableRing()
+            HousesTransPersp[i] = RotateableRing()
+        }
+        
+    }
     func CopyHouses(inputHouses:Array<RotateableRing>) -> Array<RotateableRing>{
         var newH = Array(repeating:RotateableRing(), count:12)
         newH[0] = inputHouses[0]
