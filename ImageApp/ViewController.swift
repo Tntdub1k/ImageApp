@@ -224,19 +224,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
     }
-    @IBOutlet weak var House1: UIView!
-    @IBOutlet weak var House2: UIView!
-    @IBOutlet weak var House3: UIView!
-    @IBOutlet weak var House4: UIView!
-    @IBOutlet weak var House5: UIView!
-    @IBOutlet weak var House6: UIView!
-    @IBOutlet weak var House7: UIView!
-    @IBOutlet weak var House8: UIView!
-    @IBOutlet weak var House9: UIView!
-    @IBOutlet weak var ringCounter: UITextField!
-    @IBOutlet weak var House10: UIView!
-    @IBOutlet weak var House11: UIView!
     @IBOutlet weak var House12: UIView!
+    @IBOutlet weak var House1: UIView!
+    @IBOutlet weak var ringCounter: UITextField!
+    @IBOutlet weak var House11: UIView!
+    
+    @IBOutlet weak var House10: UIView!
+    @IBOutlet weak var House9: UIView!
+    @IBOutlet weak var House8: UIView!
+    @IBOutlet weak var House7: UIView!
+    @IBOutlet weak var House6: UIView!
+    @IBOutlet weak var House5: UIView!
+    @IBOutlet weak var House4: UIView!
+    @IBOutlet weak var House3: UIView!
+    @IBOutlet weak var House2: UIView!
     @IBOutlet weak var addCBPicker: UIPickerView!
     @IBOutlet weak var Button10: UIButton!
     @IBOutlet weak var CBview: UIView!
