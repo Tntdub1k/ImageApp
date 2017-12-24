@@ -366,7 +366,7 @@
                                         <rect key="frame" x="-7" y="0.0" width="327" height="462"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7916342_orig.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-d2-bx4">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cosmos.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-d2-bx4">
                                                 <rect key="frame" x="8" y="0.0" width="320" height="461"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -720,7 +720,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Va-SA-KrR">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="2" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Sp-iU-hwY"/>
@@ -885,7 +885,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKE-EE-Vzv">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="3" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D9F-Jz-Ylp"/>
@@ -1050,7 +1050,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eh-IY-qew">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="4" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KNl-7k-qoX"/>
@@ -1215,7 +1215,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RO0-xK-g63">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="5" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdm-dm-K9M"/>
@@ -1380,7 +1380,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-OH-rnM">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="6" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="csB-Pc-3fn"/>
@@ -1545,7 +1545,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDB-LI-ums">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="7" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mW4-cm-Vkr"/>
@@ -1710,7 +1710,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3U-nr-Bqh">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="8" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ad-s3-HlE"/>
@@ -1875,7 +1875,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qut-OC-RIj">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="9" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yV4-rU-3xk"/>
@@ -2040,7 +2040,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-Gh-HH6">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="10" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDa-jD-mrv"/>
@@ -2209,7 +2209,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqH-VV-hKA">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="11" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NmC-Xv-UYR"/>
@@ -2374,7 +2374,7 @@
                                                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xx8-1p-74T">
                                                                 <rect key="frame" x="25" y="26" width="46" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="1" identifier="Empty"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="12" identifier="Empty"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcc-JQ-OGt"/>
@@ -2489,11 +2489,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7916342_orig.jpg" width="1100" height="687"/>
         <image name="DignifiedGreen.png" width="194" height="200"/>
         <image name="Moon.png" width="194" height="202"/>
         <image name="ZMNumbers.png" width="763" height="764"/>
         <image name="ZodiacMandala.png" width="763" height="764"/>
+        <image name="cosmos.jpeg" width="1920" height="1080"/>
         <image name="cp1.png" width="900" height="950"/>
         <image name="dragonHead10.png" width="304" height="366"/>
         <image name="dragonUpperBody10.png" width="304" height="366"/>

@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             return m_ADB.Database.count
         }
         else if (pickerView == addCBPicker){
-            return m_CBL.AllCelestialBodies.count
+            return m_remainingCBs.count
         }
         else {
             return 1
@@ -129,22 +129,36 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
 
         m_remainingCBs = Array(repeating:"", count:0)
+        var allCBs = Array(repeating:"", count:0)
+        var usedCBs = Array(repeating:"", count:0)
         
         for CB in m_CBL.AllCelestialBodies{
-            var CBused = false
-            for i in (0...11){
-                for j in (0...5){
-                    if( CB.value.DisplayName ==  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody){
-                        CBused = true
-                        
-                    }
+            allCBs.append(CB.value.DisplayName)
+                }
+        for i in (0...11){
+            for j in (0...5){
+                if ((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody != "Empty") && (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody != "")) {
+                    usedCBs.append(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody)
                     
                 }
             }
-            if (CBused == false){
-                m_remainingCBs.append(CB.value.DisplayName)
+        }
+        
+        for i in allCBs{
+            var isUsed = false
+            for usedCB in usedCBs{
+                if (i == usedCB){
+                    isUsed = true
+                }
+            }
+            if (isUsed == false){
+                m_remainingCBs.append(i)
             }
         }
+        
+            
+        
+        
         fillWithData()
     }
     
@@ -559,7 +573,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         
         //End
-       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual] = AP
+      // m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual] = AP
     }
     
     func fillRingViewWithData(aRing:RotateableRing, houseViews: HouseViews){

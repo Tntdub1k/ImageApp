@@ -29,6 +29,7 @@
 		01304E261FEAEC9D000F24E9 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E251FEAEC9D000F24E9 /* DataModel.swift */; };
 		01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */; };
 		01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */ = {isa = PBXBuildFile; fileRef = 01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */; };
+		018112551FEF76300071111D /* cosmos.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 018112541FEF76300071111D /* cosmos.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		01304E251FEAEC9D000F24E9 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7916342_orig.jpg; path = ../../../Documents/7916342_orig.jpg; sourceTree = "<group>"; };
 		01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZodiacMandala.png; path = ../../../Documents/ZodiacMandala.png; sourceTree = "<group>"; };
+		018112541FEF76300071111D /* cosmos.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cosmos.jpeg; path = ../../../Documents/cosmos.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				018112541FEF76300071111D /* cosmos.jpeg */,
 				011D7C071FEF0588001E3417 /* Empty.png */,
 				011D7C001FEEFF9C001E3417 /* DignifiedDetriment.png */,
 				011D7BFD1FEEFF95001E3417 /* DignifiedDomicile.png */,
@@ -174,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018112551FEF76300071111D /* cosmos.jpeg in Resources */,
 				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
 				011D7BF91FEC644A001E3417 /* dragonHead10.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
