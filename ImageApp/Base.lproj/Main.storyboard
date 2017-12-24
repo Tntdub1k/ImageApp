@@ -406,10 +406,12 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="mHQ-vb-M4V">
                                                                 <rect key="frame" x="25" y="26" width="45" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <accessibility key="accessibilityConfiguration" label="mainImage"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-t4-dQk">
                                                                 <rect key="frame" x="20" y="20" width="54" height="54"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <accessibility key="accessibilityConfiguration" label="mainDignified"/>
                                                             </imageView>
                                                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="unR-UQ-ugn">
                                                                 <rect key="frame" x="21" y="5" width="87" height="84"/>
@@ -524,6 +526,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="North Node" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="UEl-Uw-dHW">
                                                                 <rect key="frame" x="11" y="26" width="72" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <accessibility key="accessibilityConfiguration" label="mainLabel"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="13"/>
                                                                 <color key="textColor" red="0.47471843270000003" green="0.1074710896" blue="0.14483251629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2178,7 +2181,18 @@
                     <connections>
                         <outlet property="Button10" destination="iVP-GP-xkA" id="hJZ-FZ-B24"/>
                         <outlet property="CBview" destination="VNY-JN-x6m" id="GJt-QC-JAr"/>
+                        <outlet property="House1" destination="TKs-qG-ZoU" id="Z1R-ih-bz8"/>
                         <outlet property="House10" destination="7Gr-ax-VgF" id="CCx-GS-ntf"/>
+                        <outlet property="House11" destination="whW-33-cKZ" id="aLC-9E-h0u"/>
+                        <outlet property="House12" destination="lzq-BY-NLy" id="5zx-Wf-TpK"/>
+                        <outlet property="House2" destination="eZL-MJ-ael" id="HWr-Km-Zkx"/>
+                        <outlet property="House3" destination="cCu-wL-s7j" id="Y1v-EO-Sze"/>
+                        <outlet property="House4" destination="RU8-I8-0vr" id="log-Oq-D7T"/>
+                        <outlet property="House5" destination="vdb-uP-yN4" id="VKk-to-nHy"/>
+                        <outlet property="House6" destination="mmj-0Q-ZCx" id="3lc-Ec-iY3"/>
+                        <outlet property="House7" destination="ft8-6x-z2e" id="uf5-xN-XHC"/>
+                        <outlet property="House8" destination="tNW-ij-4f1" id="qI4-Aa-6aP"/>
+                        <outlet property="House9" destination="P1j-i0-aCN" id="2LN-jD-PdB"/>
                         <outlet property="IndividualTitle" destination="Zfl-8k-YzD" id="pOQ-0s-xDu"/>
                         <outlet property="aUiView" destination="cEE-iC-Ss2" id="AeS-m9-czk"/>
                         <outlet property="addCBPicker" destination="5eW-Tz-Kzy" id="ES1-xe-kdg"/>

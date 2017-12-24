@@ -219,12 +219,24 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func clickOKAddCB(_ sender: Any) {
          m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1].CurrentCelestialBody = m_remainingCBs[addCBPicker.selectedRow(inComponent: 0)]
         loadAP()
+        addCBPicker.reloadAllComponents()
     }
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
     }
+    @IBOutlet weak var House1: UIView!
+    @IBOutlet weak var House2: UIView!
+    @IBOutlet weak var House3: UIView!
+    @IBOutlet weak var House4: UIView!
+    @IBOutlet weak var House5: UIView!
+    @IBOutlet weak var House6: UIView!
+    @IBOutlet weak var House7: UIView!
+    @IBOutlet weak var House8: UIView!
+    @IBOutlet weak var House9: UIView!
     @IBOutlet weak var ringCounter: UITextField!
     @IBOutlet weak var House10: UIView!
+    @IBOutlet weak var House11: UIView!
+    @IBOutlet weak var House12: UIView!
     @IBOutlet weak var addCBPicker: UIPickerView!
     @IBOutlet weak var Button10: UIButton!
     @IBOutlet weak var CBview: UIView!
@@ -365,7 +377,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     func getHouseViews(aHouseView:UIView)-> HouseViews{
         var aHV = HouseViews()
         
-        for subview in House10.subviews{
+        for subview in aHouseView.subviews{
             if (subview.accessibilityLabel == "mainImage"){
                 aHV.mainImagView = subview as! UIImageView
             }
@@ -401,18 +413,81 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
        
         var AP = AstrologicalProfile()
         AP = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual]
-        
         AP.HouseInfo.HousesTransPersp = AP.HouseInfo.CopyHouses(inputHouses: AP.HouseInfo.Houses)
-        
         AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: AP.advancement, inputHouses: AP.HouseInfo.HousesTransPersp)
         
-        
-       //10
+        //1
        var aHouseView = HouseViews()
+        aHouseView = getHouseViews(aHouseView:House1)
+        AP.HouseInfo.HousesTransPersp[0].RingTransPersp = AP.HouseInfo.Houses[0].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[0].Ring)
+        AP.HouseInfo.HousesTransPersp[0].HouseName = "1stHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[0], houseViews:aHouseView)
+        
+        //2
+        aHouseView = getHouseViews(aHouseView:House2)
+        AP.HouseInfo.HousesTransPersp[1].RingTransPersp = AP.HouseInfo.Houses[1].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[1].Ring)
+        AP.HouseInfo.HousesTransPersp[1].HouseName = "2ndHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[1], houseViews:aHouseView)
+        
+        //3
+        aHouseView = getHouseViews(aHouseView:House3)
+        AP.HouseInfo.HousesTransPersp[2].RingTransPersp = AP.HouseInfo.Houses[2].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[2].Ring)
+        AP.HouseInfo.HousesTransPersp[2].HouseName = "3rdHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[2], houseViews:aHouseView)
+        
+        //4
+        aHouseView = getHouseViews(aHouseView:House4)
+        AP.HouseInfo.HousesTransPersp[3].RingTransPersp = AP.HouseInfo.Houses[3].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[3].Ring)
+        AP.HouseInfo.HousesTransPersp[3].HouseName = "4thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[3], houseViews:aHouseView)
+        
+        //5
+        aHouseView = getHouseViews(aHouseView:House5)
+        AP.HouseInfo.HousesTransPersp[4].RingTransPersp = AP.HouseInfo.Houses[4].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[4].Ring)
+        AP.HouseInfo.HousesTransPersp[4].HouseName = "5thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[4], houseViews:aHouseView)
+        
+        //6
+        aHouseView = getHouseViews(aHouseView:House6)
+        AP.HouseInfo.HousesTransPersp[5].RingTransPersp = AP.HouseInfo.Houses[5].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[5].Ring)
+        AP.HouseInfo.HousesTransPersp[5].HouseName = "6thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[5], houseViews:aHouseView)
+        
+        //7
+        aHouseView = getHouseViews(aHouseView:House7)
+        AP.HouseInfo.HousesTransPersp[6].RingTransPersp = AP.HouseInfo.Houses[6].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[6].Ring)
+        AP.HouseInfo.HousesTransPersp[6].HouseName = "7thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[6], houseViews:aHouseView)
+        
+        //8
+        aHouseView = getHouseViews(aHouseView:House8)
+        AP.HouseInfo.HousesTransPersp[7].RingTransPersp = AP.HouseInfo.Houses[7].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[7].Ring)
+        AP.HouseInfo.HousesTransPersp[7].HouseName = "8thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[7], houseViews:aHouseView)
+        
+        //9
+        aHouseView = getHouseViews(aHouseView:House9)
+        AP.HouseInfo.HousesTransPersp[8].RingTransPersp = AP.HouseInfo.Houses[8].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[8].Ring)
+        AP.HouseInfo.HousesTransPersp[8].HouseName = "9thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[8], houseViews:aHouseView)
+    
+       //10
         aHouseView = getHouseViews(aHouseView:House10)
         AP.HouseInfo.HousesTransPersp[9].RingTransPersp = AP.HouseInfo.Houses[9].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[9].Ring)
         AP.HouseInfo.HousesTransPersp[9].HouseName = "10thHouse"
     fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[9], houseViews:aHouseView)
+        
+        //11
+        aHouseView = getHouseViews(aHouseView:House11)
+        AP.HouseInfo.HousesTransPersp[10].RingTransPersp = AP.HouseInfo.Houses[10].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[10].Ring)
+        AP.HouseInfo.HousesTransPersp[10].HouseName = "11thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[10], houseViews:aHouseView)
+        
+        //12
+        aHouseView = getHouseViews(aHouseView:House12)
+        AP.HouseInfo.HousesTransPersp[11].RingTransPersp = AP.HouseInfo.Houses[11].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[11].Ring)
+        AP.HouseInfo.HousesTransPersp[11].HouseName = "12thHouse"
+        fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[11], houseViews:aHouseView)
         
         
         
