@@ -231,7 +231,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
 
     @IBAction func clickOKAddCB(_ sender: Any) {
-         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1].CurrentCelestialBody = m_remainingCBs[addCBPicker.selectedRow(inComponent: 0)]
+         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1].CurrentCelestialBody = m_remainingCBs[addCBPicker.selectedRow(inComponent: 0)]
         loadAP()
         addCBPicker.reloadAllComponents()
     }
