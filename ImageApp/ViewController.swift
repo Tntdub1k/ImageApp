@@ -390,6 +390,71 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             else if (subview.accessibilityLabel == "mainButton"){
                 aHV.mainButton = subview as! UIButton
             }
+            else if (subview.accessibilityLabel == "Sa1"){
+                for subview2 in subview.subviews{
+                    if (subview2.accessibilityLabel == "Sa1Image"){
+                        aHV.sat1Imag = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa1Dignified"){
+                        aHV.sat1Dignified = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa1Label"){
+                        aHV.sat1Label = subview2 as! UILabel
+                    }
+                }
+            }
+            else if (subview.accessibilityLabel == "Sa2"){
+                for subview2 in subview.subviews{
+                    if (subview2.accessibilityLabel == "Sa2Image"){
+                        aHV.sat2Imag = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa2Dignified"){
+                        aHV.sat2Dignified = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa2Label"){
+                        aHV.sat2Label = subview2 as! UILabel
+                    }
+                }
+            }
+            else if (subview.accessibilityLabel == "Sa3"){
+                for subview2 in subview.subviews{
+                    if (subview2.accessibilityLabel == "Sa3Image"){
+                        aHV.sat3Imag = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa3Dignified"){
+                        aHV.sat3Dignified = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa3Label"){
+                        aHV.sat3Label = subview2 as! UILabel
+                    }
+                }
+            }
+            else if (subview.accessibilityLabel == "Sa4"){
+                for subview2 in subview.subviews{
+                    if (subview2.accessibilityLabel == "Sa4Image"){
+                        aHV.sat4Imag = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa4Dignified"){
+                        aHV.sat4Dignified = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa4Label"){
+                        aHV.sat4Label = subview2 as! UILabel
+                    }
+                }
+            }
+            else if (subview.accessibilityLabel == "Sa5"){
+                for subview2 in subview.subviews{
+                    if (subview2.accessibilityLabel == "Sa5Image"){
+                        aHV.sat5Imag = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa5Dignified"){
+                        aHV.sat5Dignified = subview2 as! UIImageView
+                    }
+                    else if (subview2.accessibilityLabel == "Sa5Label"){
+                        aHV.sat5Label = subview2 as! UILabel
+                    }
+                }
+            }
         }
         
         return aHV
@@ -558,6 +623,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         fillImage(imageView: houseViews.mainImagView, dignified: houseViews.mainDignified, label:houseViews.mainLabel, celestialBody:m_Ring.RingTransPersp[0].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
         
         //Sat 1
+             fillImage(imageView: houseViews.sat1Imag, dignified: houseViews.sat1Dignified, label:houseViews.sat1Label, celestialBody:m_Ring.RingTransPersp[1].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        
+        //Sat 2
+        fillImage(imageView: houseViews.sat2Imag, dignified: houseViews.sat2Dignified, label:houseViews.sat2Label, celestialBody:m_Ring.RingTransPersp[2].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        
+        //Sat 3
+        fillImage(imageView: houseViews.sat3Imag, dignified: houseViews.sat3Dignified, label:houseViews.sat3Label, celestialBody:m_Ring.RingTransPersp[3].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        
+        //Sat 4
+        fillImage(imageView: houseViews.sat4Imag, dignified: houseViews.sat4Dignified, label:houseViews.sat4Label, celestialBody:m_Ring.RingTransPersp[4].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        
+        //Sat 5
+        fillImage(imageView: houseViews.sat5Imag, dignified: houseViews.sat5Dignified, label:houseViews.sat5Label, celestialBody:m_Ring.RingTransPersp[5].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
     }
     
     
