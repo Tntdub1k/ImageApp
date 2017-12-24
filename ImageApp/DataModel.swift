@@ -100,7 +100,7 @@ public class RotateableRing: Codable{
         
         var newR = Array(repeating:RingEntry(), count:6)
         newR = CopyRing(inputRing:inputRing)
-        for _ in (1...advancement){
+        for _ in (1..<advancement){
             newR = AdvanceRing(inputRing:newR)
         }
         return newR
@@ -200,7 +200,7 @@ public class RotateableHouse: Codable{
     func AdvanceNodeForCycle(CelestialBody:String, House:Int, Ring:Int, Cycle:Int, inputHouses:Array<RotateableRing>) -> Array<RotateableRing>{
         var newH = Array(repeating:RotateableRing(), count:12)
         newH = CopyHouses(inputHouses:inputHouses)
-        for _ in (1...Cycle){
+        for _ in (1..<Cycle){
             newH = AdvanceNode(CelestialBody:CelestialBody, House: House, Ring:Ring, inputHouses:newH)
         }
         return newH
@@ -227,7 +227,7 @@ public class RotateableHouse: Codable{
     func AdvanceTo(aHouseAdvancement:Int, inputHouses:Array<RotateableRing>) -> Array<RotateableRing>{
         var newH = Array(repeating:RotateableRing(), count:12)
         newH = CopyHouses(inputHouses:inputHouses)
-        for _ in (1...aHouseAdvancement){
+        for _ in (1..<aHouseAdvancement){
             newH = AdvanceHouse(inputHouses:newH)
         }
         return newH

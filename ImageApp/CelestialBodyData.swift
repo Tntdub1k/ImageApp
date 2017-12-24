@@ -144,11 +144,11 @@ public class CelestialBodyListing:Codable{
         
         let NorthNode = CelestialBody()
         NorthNode.DisplayName = "North Node"
-        AllCelestialBodies["NN"] = NorthNode
+        AllCelestialBodies["North Node"] = NorthNode
         
         let SouthNode = CelestialBody()
         SouthNode.DisplayName = "South Node"
-        AllCelestialBodies["SN"] = SouthNode
+        AllCelestialBodies["South Node"] = SouthNode
         
         let Nessus = CelestialBody()
         Nessus.DisplayName = "Nessus"
@@ -162,6 +162,7 @@ public class CelestialBodyListing:Codable{
         Lilith.DisplayName = "Lilith"
         Lilith.Dignities.Domicile.HousesIncluded.append("3rdHouse");
         Lilith.Dignities.Detriment.HousesIncluded.append("4thHouse");
+        AllCelestialBodies["Lilith"] = Lilith
         
         let Kaali = CelestialBody()
         Kaali.DisplayName = "Kaali"

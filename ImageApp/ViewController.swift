@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             return m_ADB.Database[row].CategoryName as String
         }
         else if (pickerView == addCBPicker){
-            return Array(m_CBL.AllCelestialBodies)[row].value.DisplayName
+            return m_remainingCBs[row]
         }
         else {
             return ""
@@ -125,7 +125,26 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         cycleCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle)
         advancementCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement)
+        ringCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement)
         clearAllViewsFromScreen()
+
+        m_remainingCBs = Array(repeating:"", count:0)
+        
+        for CB in m_CBL.AllCelestialBodies{
+            var CBused = false
+            for i in (0...11){
+                for j in (0...5){
+                    if( CB.value.DisplayName ==  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody){
+                        CBused = true
+                        
+                    }
+                    
+                }
+            }
+            if (CBused == false){
+                m_remainingCBs.append(CB.value.DisplayName)
+            }
+        }
         fillWithData()
     }
     
@@ -190,6 +209,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
 
   
     @IBAction func CBHouseClick(_ sender: UIButton) {
+      
         m_LastHouseClicked = Int(sender.accessibilityHint!)!
         if (sender.accessibilityIdentifier == "Empty"){
             mainView.bringSubview(toFront: CBview)
@@ -197,11 +217,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
 
     @IBAction func clickOKAddCB(_ sender: Any) {
-        
+         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1].CurrentCelestialBody = m_remainingCBs[addCBPicker.selectedRow(inComponent: 0)]
+        loadAP()
     }
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
     }
+    @IBOutlet weak var ringCounter: UITextField!
     @IBOutlet weak var House10: UIView!
     @IBOutlet weak var addCBPicker: UIPickerView!
     @IBOutlet weak var Button10: UIButton!
@@ -249,6 +271,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     var m_AddToCategory = 0
     var m_CBL = CelestialBodyListing()
     var m_LastHouseClicked = 0
+    var m_remainingCBs = Array(repeating:"", count:0)
     
     
     func showMessage(message:String){
@@ -284,6 +307,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         AC2.Contents.append(AP3)
         m_ADB.Database.append(AC2)
         */
+        
         var Json = ""
    
         var jsonString2 = UserDefaults.standard.string(forKey: "MindmapDataBase")
@@ -291,6 +315,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         var ADB:AstrologicalDatabase
         ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
         m_ADB = ADB
+    
+        loadAP()
         //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         showMessage(message:jsonString2!)
         // let jsonData2 = try? JSONSerialization.data(withJSONObject: Json)
@@ -299,7 +325,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
      
        
-        IndividualTitle.topItem?.title = m_ADB.Database[0].Contents[0].IndividualName
+        //IndividualTitle.topItem?.title = m_ADB.Database[0].Contents[0].IndividualName
         selectPicker.dataSource = self
         selectPicker.delegate = self
         addPicker.dataSource = self
@@ -357,12 +383,42 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         return aHV
     }
     
+    @IBAction func ringMinus(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement < 1){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement = 6
+        }
+        loadAP()
+    }
+    @IBAction func ringPlus(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement + 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement > 6){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement = 1
+        }
+        loadAP()
+    }
     func fillWithData(){
        
+        var AP = AstrologicalProfile()
+        AP = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual]
+        
+        AP.HouseInfo.HousesTransPersp = AP.HouseInfo.CopyHouses(inputHouses: AP.HouseInfo.Houses)
+        
+        AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: AP.advancement, inputHouses: AP.HouseInfo.HousesTransPersp)
+        
+        
        //10
        var aHouseView = HouseViews()
         aHouseView = getHouseViews(aHouseView:House10)
-   fillRingViewWithData(aRing:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[9], houseViews:aHouseView)
+        AP.HouseInfo.HousesTransPersp[9].RingTransPersp = AP.HouseInfo.Houses[9].AdvanceTo(advancement: AP.RingAdvancement, inputRing: AP.HouseInfo.HousesTransPersp[9].Ring)
+        AP.HouseInfo.HousesTransPersp[9].HouseName = "10thHouse"
+    fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[9], houseViews:aHouseView)
+        
+        
+        
+        
+        //End
+       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual] = AP
     }
     
     func fillRingViewWithData(aRing:RotateableRing, houseViews: HouseViews){
@@ -617,6 +673,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 dignified.image = UIImage(named: "DignifiedDetriment")
             } else if (CBL.AllCelestialBodies[celestialBody]?.Dignities.Fall.HousesIncluded.contains(houseNumber))!{
                 dignified.image = UIImage(named: "DignifiedFall")
+            } else {
+                dignified.image = UIImage(named: "DignifiedEmpty")
             }
         }
         
