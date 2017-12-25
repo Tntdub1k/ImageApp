@@ -122,7 +122,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack: CBview)
     }
     func loadAP(){
-        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         cycleCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle)
         advancementCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement)
         ringCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement)
@@ -207,7 +207,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
     @IBAction func renameTitlePressed(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName = renameTextB.text!
-        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         clearAllViewsFromScreen()
     }
     
@@ -219,7 +219,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
         m_CurrentIndividual = 0
         m_CurrentCategory = 0
-        IndividualTitle.topItem?.title = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
     }
 
   
@@ -241,7 +241,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
     @IBOutlet weak var House12: UIView!
     @IBOutlet weak var House1: UIView!
-    @IBOutlet weak var ringCounter: UITextField!
+ 
     @IBOutlet weak var House11: UIView!
     
     @IBOutlet weak var House10: UIView!
@@ -267,8 +267,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBOutlet weak var aUiView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgPhoto: UIImageView!
-    @IBOutlet weak var IndividualTitle: UINavigationBar!
+
     
+    @IBOutlet weak var IndividualTitle: UILabel!
     @IBOutlet weak var renameView: UIView!
     @IBOutlet weak var selectView: UIView!
     @IBAction func ClickCancelCategoryScreen(_ sender: Any) {
@@ -283,9 +284,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
     }
 
-    @IBOutlet weak var cycleCounter: UITextField!
-    
-    @IBOutlet weak var advancementCounter: UITextField!
+
+    @IBOutlet weak var ringCounter: UILabel!
+    @IBOutlet weak var advancementCounter: UILabel!
+    @IBOutlet weak var cycleCounter: UILabel!
     @IBOutlet weak var addPicker: UIPickerView!
     @IBOutlet weak var selectPicker: UIPickerView!
     @IBAction func SelectPressed(_ sender: Any) {
@@ -343,10 +345,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         var ADB:AstrologicalDatabase
         ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
         m_ADB = ADB
-    
+        setFontColor()
         loadAP()
         //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
-        showMessage(message:jsonString2!)
+        
         // let jsonData2 = try? JSONSerialization.data(withJSONObject: Json)
        // var ADB: AstrologicalDatabase
         //ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
@@ -476,6 +478,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         return aHV
     }
     
+
+
+
     @IBAction func ringMinus(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement < 1){
@@ -489,6 +494,36 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement = 1
         }
         loadAP()
+    }
+    
+    func setFontColor(){
+        var labelColor = UIColor()
+        labelColor = UIColor.init(red: 255.0/255.0, green: 142.0/255.0, blue: 165.0/255.0, alpha: 1)
+        
+        var views = Array<UIView>()
+        views.append(House1)
+        views.append(House2)
+        views.append(House3)
+        views.append(House4)
+        views.append(House5)
+        views.append(House6)
+        views.append(House7)
+        views.append(House8)
+        views.append(House9)
+        views.append(House10)
+        views.append(House11)
+        views.append(House12)
+        
+        var aHouseView = HouseViews()
+        for view in views{
+            aHouseView = getHouseViews(aHouseView:view)
+            aHouseView.mainLabel.textColor = labelColor
+            aHouseView.sat1Label.textColor = labelColor
+            aHouseView.sat2Label.textColor = labelColor
+            aHouseView.sat3Label.textColor = labelColor
+            aHouseView.sat4Label.textColor = labelColor
+            aHouseView.sat5Label.textColor = labelColor
+        }
     }
     func fillWithData(){
        
@@ -655,6 +690,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
     
     
+ 
     @IBAction func AdvanceMinus(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement < 1){
@@ -736,6 +772,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         
     }
+   
     @IBAction func AdvancePlus(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement + 1
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement > 12){
