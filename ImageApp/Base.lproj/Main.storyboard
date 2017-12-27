@@ -2620,6 +2620,7 @@
                         <outlet property="addView" destination="25e-pa-2WQ" id="j0a-ez-Quo"/>
                         <outlet property="advancementCounter" destination="WRw-Od-CMe" id="fhf-1i-gKN"/>
                         <outlet property="categoryAddView" destination="3o9-2j-MlY" id="zZk-8d-Hhb"/>
+                        <outlet property="chooseReadingLabel" destination="3yf-ST-Rkt" id="yCN-1Q-vnc"/>
                         <outlet property="chooseReadingView" destination="Imf-tT-Vra" id="egc-i2-R70"/>
                         <outlet property="cycleCounter" destination="1Qq-45-ehR" id="TtH-SQ-Obn"/>
                         <outlet property="deleteView" destination="2r6-c2-XBy" id="xSo-G1-Egs"/>

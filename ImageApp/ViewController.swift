@@ -225,10 +225,43 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
 
   
     @IBAction func CBHouseClick(_ sender: UIButton) {
-      
+      clearAllViewsFromScreen()
         m_LastHouseClicked = Int(sender.accessibilityHint!)!
         if (sender.accessibilityIdentifier == "Empty"){
             mainView.bringSubview(toFront: CBview)
+        }
+        else {
+            var ordinalNum = ""
+            switch(m_LastHouseClicked){
+                case 1:
+                ordinalNum = "1st"
+                case 2:
+                ordinalNum = "2nd"
+                case 3:
+                ordinalNum = "3rd"
+                case 4:
+                ordinalNum = "4th"
+                case 5:
+                ordinalNum = "5th"
+                case 6:
+                ordinalNum = "6th"
+                case 7:
+                ordinalNum = "7th"
+                case 8:
+                ordinalNum = "8th"
+                case 9:
+                ordinalNum = "9th"
+                case 10:
+                ordinalNum = "10th"
+                case 11:
+                ordinalNum = "11th"
+                case 12:
+                ordinalNum = "12th"
+            default:
+                ordinalNum = ""
+            }
+            chooseReadingLabel.text = sender.accessibilityIdentifier! + " in the " + ordinalNum + " House"
+            mainView.bringSubview(toFront: chooseReadingView)
         }
     }
 
@@ -240,6 +273,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
     }
+    @IBOutlet weak var chooseReadingLabel: UILabel!
     @IBOutlet weak var House12: UIView!
     @IBOutlet weak var House1: UIView!
  
