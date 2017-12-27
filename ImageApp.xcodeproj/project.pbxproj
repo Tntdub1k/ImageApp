@@ -51,8 +51,8 @@
 		0181127F1FF033D00071111D /* Eros.png in Resources */ = {isa = PBXBuildFile; fileRef = 0181127D1FF033D00071111D /* Eros.png */; };
 		018112811FF035C00071111D /* NCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018112801FF035C00071111D /* NCustomLabel.swift */; };
 		018112831FF17A830071111D /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112821FF17A820071111D /* gradient.png */; };
-		018112861FF186A20071111D /* plusRotate.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112841FF186770071111D /* plusRotate.png */; };
-		018112871FF186A20071111D /* minusRotate.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112851FF1869F0071111D /* minusRotate.png */; };
+		0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112881FF3F8BA0071111D /* plusRotate2.png */; };
+		0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112891FF3F8BB0071111D /* minusRotate2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,8 +102,8 @@
 		0181127D1FF033D00071111D /* Eros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Eros.png; path = ../../../Documents/Eros.png; sourceTree = "<group>"; };
 		018112801FF035C00071111D /* NCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCustomLabel.swift; sourceTree = "<group>"; };
 		018112821FF17A820071111D /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../../Documents/gradient.png; sourceTree = "<group>"; };
-		018112841FF186770071111D /* plusRotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plusRotate.png; path = ../../../Documents/plusRotate.png; sourceTree = "<group>"; };
-		018112851FF1869F0071111D /* minusRotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minusRotate.png; path = ../../../Documents/minusRotate.png; sourceTree = "<group>"; };
+		018112881FF3F8BA0071111D /* plusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plusRotate2.png; path = ../../../Documents/plusRotate2.png; sourceTree = "<group>"; };
+		018112891FF3F8BB0071111D /* minusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minusRotate2.png; path = ../../../Documents/minusRotate2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
-				018112851FF1869F0071111D /* minusRotate.png */,
-				018112841FF186770071111D /* plusRotate.png */,
+				018112891FF3F8BB0071111D /* minusRotate2.png */,
+				018112881FF3F8BA0071111D /* plusRotate2.png */,
 				018112821FF17A820071111D /* gradient.png */,
 				0181127D1FF033D00071111D /* Eros.png */,
 				0181127C1FF033D00071111D /* Mercury.png */,
@@ -248,6 +248,7 @@
 			files = (
 				018112551FEF76300071111D /* cosmos.jpeg in Resources */,
 				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
+				0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */,
 				018112701FF01F980071111D /* Venus.png in Resources */,
 				011D7BF91FEC644A001E3417 /* dragonHead10.png in Resources */,
 				0181125E1FF0186F0071111D /* Dejanira.png in Resources */,
@@ -269,13 +270,12 @@
 				0181125D1FF0186F0071111D /* Mars.png in Resources */,
 				018112791FF01F980071111D /* Nessus.png in Resources */,
 				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
+				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				0181126F1FF01F980071111D /* NN.png in Resources */,
 				0181127E1FF033D00071111D /* Mercury.png in Resources */,
 				011D7BEE1FEB494C001E3417 /* Moon.png in Resources */,
 				011D7C051FEEFFA0001E3417 /* DignifiedDetriment.png in Resources */,
-				018112871FF186A20071111D /* minusRotate.png in Resources */,
-				018112861FF186A20071111D /* plusRotate.png in Resources */,
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,

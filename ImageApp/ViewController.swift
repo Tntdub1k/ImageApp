@@ -120,6 +120,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack: renameView)
         mainView.sendSubview(toBack: deleteView)
         mainView.sendSubview(toBack: CBview)
+        mainView.sendSubview(toBack: chooseReadingView)
     }
     func loadAP(){
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
@@ -244,6 +245,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
  
     @IBOutlet weak var House11: UIView!
     
+    @IBOutlet weak var chooseReadingView: UIView!
     @IBOutlet weak var House10: UIView!
     @IBOutlet weak var House9: UIView!
     @IBOutlet weak var House8: UIView!
@@ -498,7 +500,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     
     func setFontColor(){
         var labelColor = UIColor()
-        labelColor = UIColor.init(red: 255.0/255.0, green: 142.0/255.0, blue: 165.0/255.0, alpha: 1)
+        labelColor = UIColor.init(red: 255.0/255.0, green: 132.0/255.0, blue: 187.0/255.0, alpha: 1)
         
         var views = Array<UIView>()
         views.append(House1)
@@ -619,7 +621,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         var ra4 = 4
         var ra5 = 5
         var m_Ring = aRing
-        
+       /*
         switch m_Ring.RingAdvancement {
         case 1:
             ra1 = 2
@@ -669,24 +671,33 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             ra4 = 5
             ra5 = 6
         }
+        */
+        
         
         //main Image
-        fillImage(imageView: houseViews.mainImagView, dignified: houseViews.mainDignified, label:houseViews.mainLabel, celestialBody:m_Ring.RingTransPersp[0].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        fillImage(imageView: houseViews.mainImagView, dignified: houseViews.mainDignified, label:houseViews.mainLabel, celestialBody:m_Ring.RingTransPersp[0].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
+        if ((m_Ring.RingTransPersp[0].CurrentCelestialBody == "Empty") || (m_Ring.RingTransPersp[0].CurrentCelestialBody == "")){
+            
+            houseViews.mainButton.accessibilityIdentifier = "Empty"
+        }else {
+            
+            houseViews.mainButton.accessibilityIdentifier = m_Ring.RingTransPersp[0].CurrentCelestialBody
+        }
         
         //Sat 1
-             fillImage(imageView: houseViews.sat1Imag, dignified: houseViews.sat1Dignified, label:houseViews.sat1Label, celestialBody:m_Ring.RingTransPersp[1].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+             fillImage(imageView: houseViews.sat1Imag, dignified: houseViews.sat1Dignified, label:houseViews.sat1Label, celestialBody:m_Ring.RingTransPersp[1].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
         
         //Sat 2
-        fillImage(imageView: houseViews.sat2Imag, dignified: houseViews.sat2Dignified, label:houseViews.sat2Label, celestialBody:m_Ring.RingTransPersp[2].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        fillImage(imageView: houseViews.sat2Imag, dignified: houseViews.sat2Dignified, label:houseViews.sat2Label, celestialBody:m_Ring.RingTransPersp[2].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
         
         //Sat 3
-        fillImage(imageView: houseViews.sat3Imag, dignified: houseViews.sat3Dignified, label:houseViews.sat3Label, celestialBody:m_Ring.RingTransPersp[3].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        fillImage(imageView: houseViews.sat3Imag, dignified: houseViews.sat3Dignified, label:houseViews.sat3Label, celestialBody:m_Ring.RingTransPersp[3].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
         
         //Sat 4
-        fillImage(imageView: houseViews.sat4Imag, dignified: houseViews.sat4Dignified, label:houseViews.sat4Label, celestialBody:m_Ring.RingTransPersp[4].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        fillImage(imageView: houseViews.sat4Imag, dignified: houseViews.sat4Dignified, label:houseViews.sat4Label, celestialBody:m_Ring.RingTransPersp[4].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
         
         //Sat 5
-        fillImage(imageView: houseViews.sat5Imag, dignified: houseViews.sat5Dignified, label:houseViews.sat5Label, celestialBody:m_Ring.RingTransPersp[5].CurrentCelestialBody, houseNumber:m_Ring.HouseName, buttonView: houseViews.mainButton)
+        fillImage(imageView: houseViews.sat5Imag, dignified: houseViews.sat5Dignified, label:houseViews.sat5Label, celestialBody:m_Ring.RingTransPersp[5].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
     }
     
     
@@ -854,7 +865,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         
     }
-    func fillImage(imageView: UIImageView, dignified: UIImageView, label:UILabel, celestialBody:String, houseNumber:String, buttonView:UIButton){
+    func fillImage(imageView: UIImageView, dignified: UIImageView, label:UILabel, celestialBody:String, houseNumber:String){
         
         //Display CB
         
@@ -863,12 +874,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             label.text = ""
             dignified.image = UIImage(named: "DignifiedEmpty")
             imageView.image = UIImage(named: "Empty")
-            buttonView.accessibilityIdentifier = "Empty"
             
         } else{ //If CB is full/with content
             label.text = celestialBody
             imageView.image = UIImage(named: celestialBody)
-            buttonView.accessibilityIdentifier = celestialBody
             var CBL = CelestialBodyListing()
             if (CBL.AllCelestialBodies[celestialBody]?.Dignities.Domicile.HousesIncluded.contains(houseNumber))!{
                 dignified.image = UIImage(named: "DignifiedDomicile")
