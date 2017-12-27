@@ -53,6 +53,7 @@
 		018112831FF17A830071111D /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112821FF17A820071111D /* gradient.png */; };
 		0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112881FF3F8BA0071111D /* plusRotate2.png */; };
 		0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112891FF3F8BB0071111D /* minusRotate2.png */; };
+		01F222151FF442B5006016ED /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F222141FF442B5006016ED /* webViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		018112821FF17A820071111D /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../../Documents/gradient.png; sourceTree = "<group>"; };
 		018112881FF3F8BA0071111D /* plusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plusRotate2.png; path = ../../../Documents/plusRotate2.png; sourceTree = "<group>"; };
 		018112891FF3F8BB0071111D /* minusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minusRotate2.png; path = ../../../Documents/minusRotate2.png; sourceTree = "<group>"; };
+		01F222141FF442B5006016ED /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				01304E231FEAD76B000F24E9 /* Untitled.png */,
 				01304E111FEAD70E000F24E9 /* AppDelegate.swift */,
 				01304E131FEAD70E000F24E9 /* ViewController.swift */,
+				01F222141FF442B5006016ED /* webViewController.swift */,
 				01304E151FEAD70E000F24E9 /* Main.storyboard */,
 				01304E251FEAEC9D000F24E9 /* DataModel.swift */,
 				011D7BFB1FEEA0FF001E3417 /* CelestialBodyData.swift */,
@@ -302,6 +305,7 @@
 				018112811FF035C00071111D /* NCustomLabel.swift in Sources */,
 				01304E121FEAD70E000F24E9 /* AppDelegate.swift in Sources */,
 				01304E261FEAEC9D000F24E9 /* DataModel.swift in Sources */,
+				01F222151FF442B5006016ED /* webViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

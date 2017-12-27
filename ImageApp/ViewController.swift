@@ -9,7 +9,27 @@
 import UIKit
 
 
-class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var TVC = UITableViewCell()
+        var label = UILabel(frame: CGRect(x:10, y:0, width:25, height:44))
+        label.textAlignment = NSTextAlignment.center
+        label.text = "FM"
+        TVC.contentView.addSubview(label)
+        var label2 = UILabel(frame: CGRect(x:45, y:0, width:240, height:44))
+        label2.textAlignment = NSTextAlignment.right
+        label2.text = "freespirited-mind.com"
+        TVC.contentView.addSubview(label2)
+        
+        return TVC
+        
+        
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if (pickerView == selectPicker){
             return 2
@@ -261,10 +281,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 ordinalNum = ""
             }
             chooseReadingLabel.text = sender.accessibilityIdentifier! + " in the " + ordinalNum + " House"
+
             mainView.bringSubview(toFront: chooseReadingView)
+            
         }
     }
 
+
+    @IBOutlet weak var chooseReadingsTableV: UITableView!
+    @IBAction func clickRemoveCB(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1].CurrentCelestialBody = "Empty"
+        loadAP()
+    }
     @IBAction func clickOKAddCB(_ sender: Any) {
          m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].RingAdvancement - 1].CurrentCelestialBody = m_remainingCBs[addCBPicker.selectedRow(inComponent: 0)]
         loadAP()
@@ -383,6 +411,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         m_ADB = ADB
         setFontColor()
         loadAP()
+        
         //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         
         // let jsonData2 = try? JSONSerialization.data(withJSONObject: Json)
@@ -392,6 +421,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
      
        
         //IndividualTitle.topItem?.title = m_ADB.Database[0].Contents[0].IndividualName
+        chooseReadingsTableV.delegate = self
+        chooseReadingsTableV.dataSource = self
         selectPicker.dataSource = self
         selectPicker.delegate = self
         addPicker.dataSource = self
