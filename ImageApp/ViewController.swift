@@ -409,7 +409,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         var ADB:AstrologicalDatabase
         ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
         m_ADB = ADB
-        setFontColor()
+    
         loadAP()
         
         //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
@@ -581,10 +581,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         views.append(House11)
         views.append(House12)
         
+        let strokeText: [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey.strokeColor : UIColor.white,
+            NSAttributedStringKey.foregroundColor: labelColor,
+            NSAttributedStringKey.strokeWidth : -2.0]
+        
+        
         var aHouseView = HouseViews()
         for view in views{
             aHouseView = getHouseViews(aHouseView:view)
             aHouseView.mainLabel.textColor = labelColor
+            aHouseView.mainLabel.attributedText = NSAttributedString(string: "hello", attributes: strokeText)
+            
             aHouseView.sat1Label.textColor = labelColor
             aHouseView.sat2Label.textColor = labelColor
             aHouseView.sat3Label.textColor = labelColor
@@ -680,67 +688,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
     
     func fillRingViewWithData(aRing:RotateableRing, houseViews: HouseViews){
-        var ra1 = 1
-        var ra2 = 2
-        var ra3 = 3
-        var ra4 = 4
-        var ra5 = 5
+     
         var m_Ring = aRing
-       /*
-        switch m_Ring.RingAdvancement {
-        case 1:
-            ra1 = 2
-            ra2 = 3
-            ra3 = 4
-            ra4 = 5
-            ra5 = 6
-            
-        case 2:
-            ra1 = 3
-            ra2 = 4
-            ra3 = 5
-            ra4 = 6
-            ra5 = 1
-            
-        case 3:
-            ra1 = 4
-            ra2 = 5
-            ra3 = 6
-            ra4 = 1
-            ra5 = 2
-            
-        case 4:
-            ra1 = 5
-            ra2 = 6
-            ra3 = 1
-            ra4 = 2
-            ra5 = 3
-            
-        case 5:
-            ra1 = 6
-            ra2 = 1
-            ra3 = 2
-            ra4 = 3
-            ra5 = 4
-            
-        case 6:
-            ra1 = 1
-            ra2 = 2
-            ra3 = 3
-            ra4 = 4
-            ra5 = 5
-        default:
-            ra1 = 2
-            ra2 = 3
-            ra3 = 4
-            ra4 = 5
-            ra5 = 6
-        }
-        */
+ 
+        let labelColor = UIColor.init(red: 250.0/255.0, green: 67.0/255.0, blue: 118.0/255.0, alpha: 1)
         
+        var strokeText: [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey.strokeColor : UIColor.white,
+            NSAttributedStringKey.foregroundColor: labelColor,
+            NSAttributedStringKey.font : UIFont(name:"Seravek-Bold", size:11.37),
+            NSAttributedStringKey.strokeWidth : -1.6]
         
         //main Image
-        fillImage(imageView: houseViews.mainImagView, dignified: houseViews.mainDignified, label:houseViews.mainLabel, celestialBody:m_Ring.RingTransPersp[0].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
+        fillImage(imageView: houseViews.mainImagView, dignified: houseViews.mainDignified, label:houseViews.mainLabel, celestialBody:m_Ring.RingTransPersp[0].CurrentCelestialBody, houseNumber:m_Ring.HouseName, attributedText: strokeText)
         if ((m_Ring.RingTransPersp[0].CurrentCelestialBody == "Empty") || (m_Ring.RingTransPersp[0].CurrentCelestialBody == "")){
             
             houseViews.mainButton.accessibilityIdentifier = "Empty"
@@ -749,20 +709,26 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             houseViews.mainButton.accessibilityIdentifier = m_Ring.RingTransPersp[0].CurrentCelestialBody
         }
         
+         strokeText = [
+            NSAttributedStringKey.strokeColor : labelColor,
+            NSAttributedStringKey.foregroundColor: labelColor,
+            NSAttributedStringKey.font : UIFont(name:"Seravek-Bold", size:7),
+            NSAttributedStringKey.strokeWidth : -0.0]
+        
         //Sat 1
-             fillImage(imageView: houseViews.sat1Imag, dignified: houseViews.sat1Dignified, label:houseViews.sat1Label, celestialBody:m_Ring.RingTransPersp[1].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
+        fillImage(imageView: houseViews.sat1Imag, dignified: houseViews.sat1Dignified, label:houseViews.sat1Label, celestialBody:m_Ring.RingTransPersp[1].CurrentCelestialBody, houseNumber:m_Ring.HouseName, attributedText: strokeText)
         
         //Sat 2
-        fillImage(imageView: houseViews.sat2Imag, dignified: houseViews.sat2Dignified, label:houseViews.sat2Label, celestialBody:m_Ring.RingTransPersp[2].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
+        fillImage(imageView: houseViews.sat2Imag, dignified: houseViews.sat2Dignified, label:houseViews.sat2Label, celestialBody:m_Ring.RingTransPersp[2].CurrentCelestialBody, houseNumber:m_Ring.HouseName, attributedText: strokeText)
         
         //Sat 3
-        fillImage(imageView: houseViews.sat3Imag, dignified: houseViews.sat3Dignified, label:houseViews.sat3Label, celestialBody:m_Ring.RingTransPersp[3].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
+        fillImage(imageView: houseViews.sat3Imag, dignified: houseViews.sat3Dignified, label:houseViews.sat3Label, celestialBody:m_Ring.RingTransPersp[3].CurrentCelestialBody, houseNumber:m_Ring.HouseName, attributedText: strokeText)
         
         //Sat 4
-        fillImage(imageView: houseViews.sat4Imag, dignified: houseViews.sat4Dignified, label:houseViews.sat4Label, celestialBody:m_Ring.RingTransPersp[4].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
+        fillImage(imageView: houseViews.sat4Imag, dignified: houseViews.sat4Dignified, label:houseViews.sat4Label, celestialBody:m_Ring.RingTransPersp[4].CurrentCelestialBody, houseNumber:m_Ring.HouseName, attributedText: strokeText)
         
         //Sat 5
-        fillImage(imageView: houseViews.sat5Imag, dignified: houseViews.sat5Dignified, label:houseViews.sat5Label, celestialBody:m_Ring.RingTransPersp[5].CurrentCelestialBody, houseNumber:m_Ring.HouseName)
+        fillImage(imageView: houseViews.sat5Imag, dignified: houseViews.sat5Dignified, label:houseViews.sat5Label, celestialBody:m_Ring.RingTransPersp[5].CurrentCelestialBody, houseNumber:m_Ring.HouseName, attributedText: strokeText)
     }
     
     
@@ -930,10 +896,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         
     }
-    func fillImage(imageView: UIImageView, dignified: UIImageView, label:UILabel, celestialBody:String, houseNumber:String){
+    func fillImage(imageView: UIImageView, dignified: UIImageView, label:UILabel, celestialBody:String, houseNumber:String, attributedText:[NSAttributedStringKey: Any]?){
         
         //Display CB
-        
+     
         //If CB is empty
         if ((celestialBody == "Empty") || (celestialBody == "")){
             label.text = ""
@@ -941,7 +907,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             imageView.image = UIImage(named: "Empty")
             
         } else{ //If CB is full/with content
-            label.text = celestialBody
+            label.attributedText = NSAttributedString(string: celestialBody, attributes: attributedText)
+            
             imageView.image = UIImage(named: celestialBody)
             var CBL = CelestialBodyListing()
             if (CBL.AllCelestialBodies[celestialBody]?.Dignities.Domicile.HousesIncluded.contains(houseNumber))!{

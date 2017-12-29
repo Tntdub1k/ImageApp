@@ -2564,7 +2564,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Go"/>
                                         <connections>
-                                            <segue destination="61v-Jc-cqi" kind="presentation" modalTransitionStyle="crossDissolve" id="AZJ-cc-XWh"/>
+                                            <segue destination="61v-Jc-cqi" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="AZJ-cc-XWh"/>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-dp-Q80">
