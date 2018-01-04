@@ -142,6 +142,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack: CBview)
         mainView.sendSubview(toBack: chooseReadingView)
     }
+    @IBAction func clearKeyboard(_ sender: Any) {
+        mainView.endEditing(true)
+    }
+    @IBOutlet weak var clearKeyboard: UIButton!
     func loadAP(){
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         cycleCounter.text = String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle)
@@ -307,6 +311,41 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
  
     @IBOutlet weak var House11: UIView!
     
+    @IBAction func ClickNotesButton(_ sender: Any) {
+        if (m_notesAreOpen == false){
+                OpenNotes()
+        }
+        else{
+            CloseNotes()
+        }
+    }
+    
+    func OpenNotes(){
+        m_notesAreOpen = true
+        mainView.endEditing(true)
+        NotesButton.setImage(UIImage(named: "exitIcon"), for:UIControlState.normal)
+        AstroView.isHidden = true
+        NotesView.isHidden = false
+        NotesCycleLabel.text = "Cycle "+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle) + ":"
+        NotesStepLabel.text = "Step "+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement) + ":"
+        
+        //Load notes
+        
+    }
+    func CloseNotes(){
+        m_notesAreOpen = false
+        mainView.endEditing(true)
+        NotesButton.setImage(UIImage(named: "keyboard"), for:UIControlState.normal)
+        AstroView.isHidden = false
+        NotesView.isHidden = true
+        
+        //Save notes
+    }
+    @IBOutlet weak var NotesCycleLabel: UILabel!
+    @IBOutlet weak var NotesStepLabel: UILabel!
+    @IBOutlet weak var AstroView: UIView!
+    @IBOutlet weak var NotesView: UIView!
+    @IBOutlet weak var NotesButton: UIButton!
     @IBOutlet weak var chooseReadingView: UIView!
     @IBOutlet weak var House10: UIView!
     @IBOutlet weak var House9: UIView!
@@ -366,6 +405,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     var m_CBL = CelestialBodyListing()
     var m_LastHouseClicked = 0
     var m_remainingCBs = Array(repeating:"", count:0)
+    var m_notesAreOpen = false
     
     
     func showMessage(message:String){

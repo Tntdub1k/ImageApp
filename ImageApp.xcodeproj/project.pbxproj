@@ -11,6 +11,8 @@
 		010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22481FF6C3F500BA86BF /* draconic1.png */; };
 		010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22491FF6C3F800BA86BF /* draconic2.png */; };
 		010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D224A1FF6C3FB00BA86BF /* draconic3.png */; };
+		011669341FFE930900AD8E42 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 011669331FFE930700AD8E42 /* keyboard.png */; };
+		011669361FFE9D4700AD8E42 /* exitIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 011669351FFE9D4600AD8E42 /* exitIcon.png */; };
 		011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */; };
 		011D7BEE1FEB494C001E3417 /* Moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEC1FEB494B001E3417 /* Moon.png */; };
 		011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BF11FEB56BC001E3417 /* ZMNumbers.png */; };
@@ -65,6 +67,8 @@
 		010D22481FF6C3F500BA86BF /* draconic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic1.png; path = ../../../Documents/draconic1.png; sourceTree = "<group>"; };
 		010D22491FF6C3F800BA86BF /* draconic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic2.png; path = ../../../Documents/draconic2.png; sourceTree = "<group>"; };
 		010D224A1FF6C3FB00BA86BF /* draconic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic3.png; path = ../../../Documents/draconic3.png; sourceTree = "<group>"; };
+		011669331FFE930700AD8E42 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard.png; path = ../../../Documents/keyboard.png; sourceTree = "<group>"; };
+		011669351FFE9D4600AD8E42 /* exitIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exitIcon.png; path = ../../../Documents/exitIcon.png; sourceTree = "<group>"; };
 		011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedGreen.png; path = ../../../Documents/DignifiedGreen.png; sourceTree = "<group>"; };
 		011D7BEC1FEB494B001E3417 /* Moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Moon.png; path = ../../../Documents/Moon.png; sourceTree = "<group>"; };
 		011D7BF11FEB56BC001E3417 /* ZMNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZMNumbers.png; path = ../../../Documents/ZMNumbers.png; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				011669351FFE9D4600AD8E42 /* exitIcon.png */,
+				011669331FFE930700AD8E42 /* keyboard.png */,
 				010D22471FF6C3F400BA86BF /* draconic0.png */,
 				010D22481FF6C3F500BA86BF /* draconic1.png */,
 				010D22491FF6C3F800BA86BF /* draconic2.png */,
@@ -271,6 +277,7 @@
 				018112761FF01F980071111D /* Nibiru.png in Resources */,
 				010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
+				011669341FFE930900AD8E42 /* keyboard.png in Resources */,
 				011D7C081FEF058A001E3417 /* Empty.png in Resources */,
 				018112781FF01F980071111D /* SN.png in Resources */,
 				018112831FF17A830071111D /* gradient.png in Resources */,
@@ -289,6 +296,7 @@
 				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,
+				011669361FFE9D4700AD8E42 /* exitIcon.png in Resources */,
 				0181126F1FF01F980071111D /* NN.png in Resources */,
 				0181127E1FF033D00071111D /* Mercury.png in Resources */,
 				011D7BEE1FEB494C001E3417 /* Moon.png in Resources */,
