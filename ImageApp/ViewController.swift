@@ -387,7 +387,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
     }
 
-
+    @IBOutlet weak var NotesStepText: UITextView!
+    @IBOutlet weak var NotesCycleText: UITextView!
+    
     @IBOutlet weak var ringCounter: UILabel!
     @IBOutlet weak var advancementCounter: UILabel!
     @IBOutlet weak var cycleCounter: UILabel!
@@ -423,34 +425,40 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
         /*
-        let AP = AstrologicalProfile()
-        AP.IndividualName = "Watashi"
-        
-        let AC = AstrologicalCategory()
-        AC.CategoryName = "Individuals"
-        AC.Contents.append(AP)
-        m_ADB.Database.append(AC)
-        
-        let AP2 = AstrologicalProfile()
-        AP2.IndividualName = "Louisville"
-        let AP3 = AstrologicalProfile()
-        AP3.IndividualName = "Addison"
-        let AC2 = AstrologicalCategory()
-        AC2.CategoryName = "Locations"
-        AC2.Contents.append(AP2)
-        AC2.Contents.append(AP3)
-        m_ADB.Database.append(AC2)
+       
         */
         
-        var Json = ""
-   
-        var jsonString2 = UserDefaults.standard.string(forKey: "MindmapDataBase")
-        let jsonData2 = Data(base64Encoded: jsonString2!)
-        var ADB:AstrologicalDatabase
-        ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
-        m_ADB = ADB
+        
+       
+            var Json = ""
+       
+        if ((try? UserDefaults.standard.string(forKey: "MindmapDataBase")) == nil){
+            loadSampleAP()
+        }else{
+            var jsonString2 = UserDefaults.standard.string(forKey: "MindmapDataBase")
+            if ((try? Data(base64Encoded: jsonString2!)) == nil){
+                loadSampleAP()
+            } else {
+                let jsonData2 = Data(base64Encoded: jsonString2!)
+                
+                if ((try? JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)) == nil){
+                    loadSampleAP()
+                }else {
+                    var ADB:AstrologicalDatabase
+                    ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
+                    m_ADB =  ADB
+                    loadAP()
+                }
+            }
+        }
+        
+        
+        
+        
+        
     
-        loadAP()
+    
+        
         
         //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         
@@ -497,6 +505,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         var sat5Dignified = UIImageView()
         var sat5Label = UILabel()
         
+    }
+    func loadSampleAP(){
+        let AP = AstrologicalProfile()
+        AP.IndividualName = "Sample Individual"
+        
+        let AC = AstrologicalCategory()
+        AC.CategoryName = "Individuals"
+        AC.Contents.append(AP)
+        m_ADB.Database.append(AC)
+        loadAP()
     }
     
     func getHouseViews(aHouseView:UIView)-> HouseViews{

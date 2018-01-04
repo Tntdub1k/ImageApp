@@ -2726,7 +2726,9 @@
                         <outlet property="IndividualTitle" destination="69O-rS-syx" id="ZAH-2h-5vj"/>
                         <outlet property="NotesButton" destination="Ycz-q0-v1y" id="mIl-wp-jGj"/>
                         <outlet property="NotesCycleLabel" destination="fFN-bE-cdt" id="AIb-wf-wnj"/>
+                        <outlet property="NotesCycleText" destination="5D8-Sn-yxB" id="DqA-1g-X42"/>
                         <outlet property="NotesStepLabel" destination="rZc-9P-s6r" id="ifB-82-e1C"/>
+                        <outlet property="NotesStepText" destination="Cmi-Xk-zZP" id="sc1-9c-7VL"/>
                         <outlet property="NotesView" destination="MBJ-0K-atd" id="6uT-IP-QMP"/>
                         <outlet property="aUiView" destination="cEE-iC-Ss2" id="AeS-m9-czk"/>
                         <outlet property="addCBPicker" destination="5eW-Tz-Kzy" id="ES1-xe-kdg"/>
