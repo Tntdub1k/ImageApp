@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010D224B1FF6C3FC00BA86BF /* draconic0.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22471FF6C3F400BA86BF /* draconic0.png */; };
+		010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22481FF6C3F500BA86BF /* draconic1.png */; };
+		010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22491FF6C3F800BA86BF /* draconic2.png */; };
+		010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D224A1FF6C3FB00BA86BF /* draconic3.png */; };
 		011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */; };
 		011D7BEE1FEB494C001E3417 /* Moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEC1FEB494B001E3417 /* Moon.png */; };
 		011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BF11FEB56BC001E3417 /* ZMNumbers.png */; };
@@ -57,6 +61,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010D22471FF6C3F400BA86BF /* draconic0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic0.png; path = ../../../Documents/draconic0.png; sourceTree = "<group>"; };
+		010D22481FF6C3F500BA86BF /* draconic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic1.png; path = ../../../Documents/draconic1.png; sourceTree = "<group>"; };
+		010D22491FF6C3F800BA86BF /* draconic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic2.png; path = ../../../Documents/draconic2.png; sourceTree = "<group>"; };
+		010D224A1FF6C3FB00BA86BF /* draconic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic3.png; path = ../../../Documents/draconic3.png; sourceTree = "<group>"; };
 		011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedGreen.png; path = ../../../Documents/DignifiedGreen.png; sourceTree = "<group>"; };
 		011D7BEC1FEB494B001E3417 /* Moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Moon.png; path = ../../../Documents/Moon.png; sourceTree = "<group>"; };
 		011D7BF11FEB56BC001E3417 /* ZMNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZMNumbers.png; path = ../../../Documents/ZMNumbers.png; sourceTree = "<group>"; };
@@ -139,6 +147,10 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				010D22471FF6C3F400BA86BF /* draconic0.png */,
+				010D22481FF6C3F500BA86BF /* draconic1.png */,
+				010D22491FF6C3F800BA86BF /* draconic2.png */,
+				010D224A1FF6C3FB00BA86BF /* draconic3.png */,
 				018112891FF3F8BB0071111D /* minusRotate2.png */,
 				018112881FF3F8BA0071111D /* plusRotate2.png */,
 				018112821FF17A820071111D /* gradient.png */,
@@ -257,6 +269,7 @@
 				0181125E1FF0186F0071111D /* Dejanira.png in Resources */,
 				018112611FF0186F0071111D /* Lilith.png in Resources */,
 				018112761FF01F980071111D /* Nibiru.png in Resources */,
+				010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
 				011D7C081FEF058A001E3417 /* Empty.png in Resources */,
 				018112781FF01F980071111D /* SN.png in Resources */,
@@ -275,6 +288,7 @@
 				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
 				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
+				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,
 				0181126F1FF01F980071111D /* NN.png in Resources */,
 				0181127E1FF033D00071111D /* Mercury.png in Resources */,
 				011D7BEE1FEB494C001E3417 /* Moon.png in Resources */,
@@ -282,12 +296,14 @@
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,
+				010D224B1FF6C3FC00BA86BF /* draconic0.png in Resources */,
 				018112601FF0186F0071111D /* Jupiter.png in Resources */,
 				011D7C031FEEFFA0001E3417 /* DignifiedEmpty.png in Resources */,
 				011D7C061FEEFFA0001E3417 /* DignifiedFall.png in Resources */,
 				018112731FF01F980071111D /* Pluto.png in Resources */,
 				0181125F1FF0186F0071111D /* Neptune.png in Resources */,
 				011D7BFA1FEC644A001E3417 /* dragonUpperBody10.png in Resources */,
+				010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */,
 				011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */,
 				011D7C041FEEFFA0001E3417 /* DignifiedExalted.png in Resources */,
 			);
