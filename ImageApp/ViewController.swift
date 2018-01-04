@@ -88,6 +88,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
     
     @IBAction func pressedSave(_ sender: Any) {
+        
+        
+        
+        if (m_notesAreOpen == true){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1] = NotesCycleText.text
+            
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1] = NotesStepText.text
+        }
+        
         let jsonEncoder = JSONEncoder()
         
         do {
@@ -180,6 +189,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 m_remainingCBs.append(i)
             }
         }
+        
+        m_remainingCBs.sort(by:<)
         addCBPicker.reloadComponent(0)
         
             
@@ -329,7 +340,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesCycleLabel.text = "Cycle "+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle) + ":"
         NotesStepLabel.text = "Step "+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement) + ":"
         
-        //Load notes
+ 
         
     }
     func CloseNotes(){
@@ -338,6 +349,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesButton.setImage(UIImage(named: "keyboard"), for:UIControlState.normal)
         AstroView.isHidden = false
         NotesView.isHidden = true
+        
         
         //Save notes
     }
@@ -743,6 +755,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         //End
        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual] = AP
+        
+        //Notes
+        
+        NotesCycleText.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1]
+        
+        NotesStepText.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1]
     }
     
     func fillRingViewWithData(aRing:RotateableRing, houseViews: HouseViews){
@@ -868,6 +886,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle < 1){
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle = 12
         }
+        
         loadAP()
         
         
