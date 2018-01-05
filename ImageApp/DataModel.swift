@@ -265,6 +265,8 @@ public class AstrologicalProfile: Codable{
     public var totalAdvancementIndicator = 1
     public var StepNotes = Array(repeating:"", count:12)
     public var CycleNotes = Array(repeating:"", count:12)
+    public var GeneralNotes = ""
+    public var StepAndCycleNotes = Array(repeating:"", count:144)
     public var IndividualName = ""
     public var Category = ""
     

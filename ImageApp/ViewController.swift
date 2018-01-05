@@ -90,13 +90,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func pressedSave(_ sender: Any) {
         
         
-        
-        if (m_notesAreOpen == true){
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1] = NotesCycleText.text
-            
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1] = NotesStepText.text
-        }
-        
         let jsonEncoder = JSONEncoder()
         
         do {
@@ -198,6 +191,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         fillWithData()
     }
+    
     
     @IBAction func clickCancelSelectView(_ sender: Any) {
         clearAllViewsFromScreen()
@@ -337,9 +331,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesButton.setImage(UIImage(named: "exitIcon"), for:UIControlState.normal)
         AstroView.isHidden = true
         NotesView.isHidden = false
-        NotesCycleLabel.text = "Cycle "+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle) + ":"
-        NotesStepLabel.text = "Step "+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement) + ":"
-        
+        NotesLabel.isHidden = true
+        NotesTextBox.isHidden = true
+        NotesSaveButton.isHidden = true
  
         
     }
@@ -353,8 +347,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         //Save notes
     }
-    @IBOutlet weak var NotesCycleLabel: UILabel!
-    @IBOutlet weak var NotesStepLabel: UILabel!
+
     @IBOutlet weak var AstroView: UIView!
     @IBOutlet weak var NotesView: UIView!
     @IBOutlet weak var NotesButton: UIButton!
@@ -399,9 +392,57 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
     }
 
-    @IBOutlet weak var NotesStepText: UITextView!
-    @IBOutlet weak var NotesCycleText: UITextView!
-    
+    @IBAction func CurStepNotesClick(_ sender: Any) {
+        m_currentNote = "CurStep"
+        NotesLabel.isHidden = false
+        NotesTextBox.isHidden = false
+        NotesSaveButton.isHidden = false
+        NotesLabel.text = "Step ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement)+")"
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1]
+    }
+    @IBAction func GenNotesClick(_ sender: Any) {
+        m_currentNote = "General"
+        NotesLabel.isHidden = false
+        NotesTextBox.isHidden = false
+        NotesSaveButton.isHidden = false
+        NotesLabel.text = "General"
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].GeneralNotes
+    }
+    @IBAction func StepAndCycleNotesClick(_ sender: Any) {
+        m_currentNote = "StepAndCycle"
+        NotesLabel.isHidden = false
+        NotesTextBox.isHidden = false
+        NotesSaveButton.isHidden = false
+        NotesLabel.text = "Step  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle)+")"
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1]
+    }
+    @IBAction func CurCycleNotesClick(_ sender: Any) {
+        m_currentNote = "CurCycle"
+        NotesLabel.isHidden = false
+        NotesTextBox.isHidden = false
+        NotesSaveButton.isHidden = false
+        NotesLabel.text = "Cycle  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle)+")"
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1]
+    }
+    @IBAction func ClickSaveNotes(_ sender: Any) {
+        switch (m_currentNote){
+        case "General":
+                m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].GeneralNotes = NotesTextBox.text
+        case "CurStep":
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1] = NotesTextBox.text
+        case "CurCycle":
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1] = NotesTextBox.text
+        case "StepAndCycle":
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1] = NotesTextBox.text
+        default:
+            break
+        }
+        pressedSave(self)
+        
+    }
+    @IBOutlet weak var NotesSaveButton: UIButton!
+    @IBOutlet weak var NotesTextBox: UITextView!
+    @IBOutlet weak var NotesLabel: UILabel!
     @IBOutlet weak var ringCounter: UILabel!
     @IBOutlet weak var advancementCounter: UILabel!
     @IBOutlet weak var cycleCounter: UILabel!
@@ -420,6 +461,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     var m_LastHouseClicked = 0
     var m_remainingCBs = Array(repeating:"", count:0)
     var m_notesAreOpen = false
+    var m_currentNote = ""
     
     
     func showMessage(message:String){
@@ -758,9 +800,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
         //Notes
         
-        NotesCycleText.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1]
-        
-        NotesStepText.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1]
     }
     
     func fillRingViewWithData(aRing:RotateableRing, houseViews: HouseViews){
