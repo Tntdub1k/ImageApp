@@ -334,6 +334,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesLabel.isHidden = true
         NotesTextBox.isHidden = true
         NotesSaveButton.isHidden = true
+        m_currentNote = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote
+        switch (m_currentNote){
+        case "General":
+            GenNotesClick(self)
+        case "CurStep":
+            CurStepNotesClick(self)
+        case "CurCycle":
+            CurCycleNotesClick(self)
+        case "StepAndCycle":
+            StepAndCycleNotesClick(self)
+        default:
+            GenNotesClick(self)
+        }
  
         
     }
@@ -343,6 +356,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesButton.setImage(UIImage(named: "keyboard"), for:UIControlState.normal)
         AstroView.isHidden = false
         NotesView.isHidden = true
+       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
         
         
         //Save notes
@@ -414,7 +428,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
         NotesLabel.text = "Step  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle)+")"
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1]
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepAndCycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1]
     }
     @IBAction func CurCycleNotesClick(_ sender: Any) {
         m_currentNote = "CurCycle"
@@ -433,10 +447,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         case "CurCycle":
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1] = NotesTextBox.text
         case "StepAndCycle":
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].CycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1] = NotesTextBox.text
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].StepAndCycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].cycle - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancement - 1] = NotesTextBox.text
         default:
             break
         }
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
         pressedSave(self)
         
     }
