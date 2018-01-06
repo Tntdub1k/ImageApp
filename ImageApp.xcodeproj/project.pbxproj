@@ -59,6 +59,7 @@
 		018112831FF17A830071111D /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112821FF17A820071111D /* gradient.png */; };
 		0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112881FF3F8BA0071111D /* plusRotate2.png */; };
 		0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112891FF3F8BB0071111D /* minusRotate2.png */; };
+		019E7E1E2001347F00ED3F77 /* icon (1) in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E1D2001347D00ED3F77 /* icon (1) */; };
 		01F222151FF442B5006016ED /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F222141FF442B5006016ED /* webViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +118,7 @@
 		018112821FF17A820071111D /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../../Documents/gradient.png; sourceTree = "<group>"; };
 		018112881FF3F8BA0071111D /* plusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plusRotate2.png; path = ../../../Documents/plusRotate2.png; sourceTree = "<group>"; };
 		018112891FF3F8BB0071111D /* minusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minusRotate2.png; path = ../../../Documents/minusRotate2.png; sourceTree = "<group>"; };
+		019E7E1D2001347D00ED3F77 /* icon (1) */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icon (1)"; path = "../../../Downloads/icon (1)"; sourceTree = "<group>"; };
 		01F222141FF442B5006016ED /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				019E7E1D2001347D00ED3F77 /* icon (1) */,
 				011669351FFE9D4600AD8E42 /* exitIcon.png */,
 				011669331FFE930700AD8E42 /* keyboard.png */,
 				010D22471FF6C3F400BA86BF /* draconic0.png */,
@@ -286,6 +289,7 @@
 				011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */,
 				0181127B1FF01F980071111D /* Uranus.png in Resources */,
 				01304E1C1FEAD70E000F24E9 /* LaunchScreen.storyboard in Resources */,
+				019E7E1E2001347F00ED3F77 /* icon (1) in Resources */,
 				018112741FF01F980071111D /* Psyche.png in Resources */,
 				0181127A1FF01F980071111D /* Sedna.png in Resources */,
 				018112721FF01F980071111D /* Saturn.png in Resources */,

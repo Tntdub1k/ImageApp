@@ -485,12 +485,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         self.present(alert, animated: true, completion: nil)
 
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
         clearAllViewsFromScreen()
-        
+//        self.setNeedsStatusBarStyleUpate()
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
         /*

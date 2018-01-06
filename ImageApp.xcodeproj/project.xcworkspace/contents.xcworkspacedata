@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../Downloads/icon">
+   </FileRef>
+   <FileRef
       location = "self:ImageApp.xcodeproj">
    </FileRef>
 </Workspace>
