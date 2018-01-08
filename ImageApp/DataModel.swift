@@ -267,7 +267,6 @@ public class AstrologicalProfile: Codable{
     public var CycleNotes = Array(repeating:"", count:12)
     public var GeneralNotes = ""
     public var StepAndCycleNotes = Array(repeating:"", count:144)
-    public var IndividualName = ""
     public var Category = ""
     public var currentNote = ""
     
@@ -291,10 +290,20 @@ public class AstrologicalProfile: Codable{
     }
 
 }
+public class AstrologicalSet: Codable{
+    public var Profiles = Array(repeating:AstrologicalProfile(), count:4)
+    public var IndividualName = ""
+    init(){
+        Profiles[0] = AstrologicalProfile()
+        Profiles[1] = AstrologicalProfile()
+        Profiles[2] = AstrologicalProfile()
+        Profiles[3] = AstrologicalProfile()
+    }
+}
 
 public class AstrologicalCategory: Codable{
     public var CategoryName =  ""
-    public var Contents = Array<AstrologicalProfile>()
+    public var Contents = Array<AstrologicalSet>()
 }
 
 // Dictionary containing arrays of AP divided by Category
