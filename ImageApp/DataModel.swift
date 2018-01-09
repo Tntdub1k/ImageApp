@@ -260,14 +260,15 @@ public class RotateableHouse: Codable{
 public class AstrologicalProfile: Codable{
     public var HouseInfo = RotateableHouse()
     public var advancementInfo = [String: Int]()
+    public var notes = [String: String]()
     //public var advancement = 1
     //public var cycle  = 1
     //public var RingAdvancement = 1
     //public var totalAdvancementIndicator = 1
-    public var StepNotes = Array(repeating:"", count:12)
-    public var CycleNotes = Array(repeating:"", count:12)
-    public var GeneralNotes = ""
-    public var StepAndCycleNotes = Array(repeating:"", count:144)
+    //public var StepNotes = Array(repeating:"", count:12)
+    //public var CycleNotes = Array(repeating:"", count:12)
+    //public var GeneralNotes = ""
+    //public var StepAndCycleNotes = Array(repeating:"", count:144)
     public var Category = ""
     public var currentNote = ""
     
@@ -291,6 +292,14 @@ public class AstrologicalProfile: Codable{
         advancementInfo["SBody3Cycle"] = 1
         advancementInfo["SBody3RingAdvancement"] = 1
         advancementInfo["SBody3TotalAdvancementIndicator"] = 1
+        
+        notes["SBody0General"] = ""
+        
+        notes["SBody1General"] = ""
+        
+        notes["SBody2General"] = ""
+        
+        notes["SBody3General"] = ""
         
     }
     

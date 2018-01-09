@@ -462,7 +462,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
         NotesLabel.text = "Step ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+")"
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1]
+        let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
     }
     @IBAction func GenNotesClick(_ sender: Any) {
         m_currentNote = "General"
@@ -470,7 +471,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
         NotesLabel.text = "General"
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].GeneralNotes
+        let Key = "SBody"+String(m_CurrentSBody)+"General"
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
     }
     @IBAction func StepAndCycleNotesClick(_ sender: Any) {
         m_currentNote = "StepAndCycle"
@@ -478,7 +480,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
         NotesLabel.text = "Step  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].StepAndCycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1]
+        let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
     }
     @IBAction func CurCycleNotesClick(_ sender: Any) {
         m_currentNote = "CurCycle"
@@ -486,18 +489,23 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
         NotesLabel.text = "Cycle  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1]
+        let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
     }
     @IBAction func ClickSaveNotes(_ sender: Any) {
         switch (m_currentNote){
         case "General":
-                m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].GeneralNotes = NotesTextBox.text
+                let Key = "SBody"+String(m_CurrentSBody)+"General"
+                m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
         case "CurStep":
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].StepNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1] = NotesTextBox.text
+            let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
         case "CurCycle":
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].CycleNotes[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1] = NotesTextBox.text
+            let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
         case "StepAndCycle":
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].StepAndCycleNotes[(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1] = NotesTextBox.text
+            let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
         default:
             break
         }
