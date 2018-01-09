@@ -259,10 +259,11 @@ public class RotateableHouse: Codable{
 
 public class AstrologicalProfile: Codable{
     public var HouseInfo = RotateableHouse()
-    public var advancement = 1
-    public var cycle  = 1
-    public var RingAdvancement = 1
-    public var totalAdvancementIndicator = 1
+    public var advancementInfo = [String: Int]()
+    //public var advancement = 1
+    //public var cycle  = 1
+    //public var RingAdvancement = 1
+    //public var totalAdvancementIndicator = 1
     public var StepNotes = Array(repeating:"", count:12)
     public var CycleNotes = Array(repeating:"", count:12)
     public var GeneralNotes = ""
@@ -270,7 +271,28 @@ public class AstrologicalProfile: Codable{
     public var Category = ""
     public var currentNote = ""
     
-    
+    init(){
+        advancementInfo["SBody0Advancement"] = 1
+        advancementInfo["SBody0Cycle"] = 1
+        advancementInfo["SBody0RingAdvancement"] = 1
+        advancementInfo["SBody0TotalAdvancementIndicator"] = 1
+       
+        advancementInfo["SBody1Advancement"] = 1
+        advancementInfo["SBody1Cycle"] = 1
+        advancementInfo["SBody1RingAdvancement"] = 1
+        advancementInfo["SBody1TotalAdvancementIndicator"] = 1
+       
+        advancementInfo["SBody2Advancement"] = 1
+        advancementInfo["SBody2Cycle"] = 1
+        advancementInfo["SBody2RingAdvancement"] = 1
+        advancementInfo["SBody2TotalAdvancementIndicator"] = 1
+       
+        advancementInfo["SBody3Advancement"] = 1
+        advancementInfo["SBody3Cycle"] = 1
+        advancementInfo["SBody3RingAdvancement"] = 1
+        advancementInfo["SBody3TotalAdvancementIndicator"] = 1
+        
+    }
     
     func createUnfilledBlank() -> AstrologicalProfile{
         var AP = AstrologicalProfile()
