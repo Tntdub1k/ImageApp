@@ -223,6 +223,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
     }
     @IBAction func clickOKSelectItem(_ sender: Any) {
+        m_CurrentSpiritBand = 0
         loadAP()
     }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
