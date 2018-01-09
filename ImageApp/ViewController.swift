@@ -175,11 +175,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBOutlet weak var clearKeyboard: UIButton!
     func loadAP(){
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
-        var cycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+        var cycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
         cycleCounter.text = String(cycle)
-        var advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"] as! Int
+        var advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"] as! Int
         advancementCounter.text = String(advancement)
-        var ring = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"] as! Int
+        var ring = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"] as! Int
         ringCounter.text = String(ring)
         bandCounter.text = String(m_CurrentSBody + 1)
         clearAllViewsFromScreen()
@@ -193,8 +193,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 }
         for i in (0...11){
             for j in (0...5){
-                if ((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody != "Empty") && (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody != "")) {
-                    usedCBs.append(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody)
+                if ((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody != "Empty") && (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody != "")) {
+                    usedCBs.append(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i].Ring[j].CurrentCelestialBody)
                     
                 }
             }
@@ -230,9 +230,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         loadAP()
     }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
-        var AS = AstrologicalSet()
-        AS.IndividualName = enterNewMemberTextB.text!
-        m_ADB.Database[m_AddToCategory].Contents.append(AS)
+        var AP = AstrologicalProfile()
+        AP.IndividualName = enterNewMemberTextB.text!
+        m_ADB.Database[m_AddToCategory].Contents.append(AP)
         
         clearAllViewsFromScreen()
     }
@@ -329,7 +329,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
 
     @IBOutlet weak var chooseReadingsTableV: UITableView!
     @IBAction func clickRemoveCB(_ sender: Any) {
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1].CurrentCelestialBody = "Empty"
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1].CurrentCelestialBody = "Empty"
         loadAP()
     }
     
@@ -346,7 +346,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         if (m_CurrentSBody == 0){
            
             var currentHouse = Twelverotation(a:m_LastHouseClicked, b:0)
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0].HouseInfo.HousesTransPersp[currentHouse - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1].CurrentCelestialBody = m_remainingCBs[addCBPicker.selectedRow(inComponent: 0)]
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[currentHouse - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1].CurrentCelestialBody = m_remainingCBs[addCBPicker.selectedRow(inComponent: 0)]
             
         }
         
@@ -383,7 +383,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesLabel.isHidden = true
         NotesTextBox.isHidden = true
         NotesSaveButton.isHidden = true
-        m_currentNote = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].currentNote
+        m_currentNote = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote
         switch (m_currentNote){
         case "General":
             GenNotesClick(self)
@@ -406,7 +406,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         AstroView.isHidden = false
         ButtonView.isHidden = false
         NotesView.isHidden = true
-       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].currentNote = m_currentNote
+       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
         
         
         //Save notes
@@ -461,9 +461,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
-        NotesLabel.text = "Step ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+")"
-        let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
+        NotesLabel.text = "Step ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+")"
+        let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
     }
     @IBAction func GenNotesClick(_ sender: Any) {
         m_currentNote = "General"
@@ -472,44 +472,44 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesSaveButton.isHidden = false
         NotesLabel.text = "General"
         let Key = "SBody"+String(m_CurrentSBody)+"General"
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
     }
     @IBAction func StepAndCycleNotesClick(_ sender: Any) {
         m_currentNote = "StepAndCycle"
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
-        NotesLabel.text = "Step  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
-        let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
+        NotesLabel.text = "Step  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
+        let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
     }
     @IBAction func CurCycleNotesClick(_ sender: Any) {
         m_currentNote = "CurCycle"
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
-        NotesLabel.text = "Cycle  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
-        let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key]
+        NotesLabel.text = "Cycle  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
+        let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
+        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
     }
     @IBAction func ClickSaveNotes(_ sender: Any) {
         switch (m_currentNote){
         case "General":
                 let Key = "SBody"+String(m_CurrentSBody)+"General"
-                m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
+                m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
         case "CurStep":
-            let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
+            let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
         case "CurCycle":
-            let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
+            let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
         case "StepAndCycle":
-            let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].notes[Key] = NotesTextBox.text
+            let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
         default:
             break
         }
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].currentNote = m_currentNote
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
         pressedSave(self)
         
     }
@@ -645,7 +645,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
     }
     func loadSampleAP(){
-        let AS = AstrologicalSet()
+        let AS = AstrologicalProfile()
         AS.IndividualName = "Sample Individual"
         
         let AC = AstrologicalCategory()
@@ -745,16 +745,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
 
 
     @IBAction func ringMinus(_ sender: Any) {
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1
-        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! < 1){
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 6
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! < 1){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 6
         }
         loadAP()
     }
     @IBAction func ringPlus(_ sender: Any) {
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! + 1
-        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! > 6){
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 1
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! + 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! > 6){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 1
         }
         loadAP()
     }
@@ -800,28 +800,28 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
 
         var AP = AstrologicalProfile()
         var RA = 0
-        AP = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0]
+        AP = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual]
 
         
         
         switch(m_CurrentSBody){
         case 0:
             AP.HouseInfo.HousesTransPersp = AP.HouseInfo.CopyHouses(inputHouses: AP.HouseInfo.Houses)
-            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:0) , inputHouses: AP.HouseInfo.HousesTransPersp)
-            RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[0].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
+            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:0) , inputHouses: AP.HouseInfo.HousesTransPersp)
+            RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
             
         case 1:
             AP.HouseInfo.HousesTransPersp = AP.HouseInfo.CopyHouses(inputHouses: AP.HouseInfo.Houses)
-            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[1].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:3) , inputHouses: AP.HouseInfo.HousesTransPersp)
-          RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[1].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
+            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:3) , inputHouses: AP.HouseInfo.HousesTransPersp)
+          RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
         case 2:
             AP.HouseInfo.HousesTransPersp = AP.HouseInfo.CopyHouses(inputHouses: AP.HouseInfo.Houses)
-            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[2].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:6) , inputHouses: AP.HouseInfo.HousesTransPersp)
-           RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[2].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
+            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:6) , inputHouses: AP.HouseInfo.HousesTransPersp)
+           RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
         case 3:
             AP.HouseInfo.HousesTransPersp = AP.HouseInfo.CopyHouses(inputHouses: AP.HouseInfo.Houses)
-            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[3].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:9) , inputHouses: AP.HouseInfo.HousesTransPersp)
-           RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[3].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
+            AP.HouseInfo.HousesTransPersp = AP.HouseInfo.AdvanceTo(aHouseAdvancement: Twelverotation(a:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!, b:9) , inputHouses: AP.HouseInfo.HousesTransPersp)
+           RA = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]!
         default:
             break
         }
@@ -904,7 +904,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         
   
      
-  //       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody] = AP.cre
+  //       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual] = AP.cre
         //Notes
         
     }
@@ -956,13 +956,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     
  
     @IBAction func AdvanceMinus(_ sender: Any) {
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1
-        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! < 1){
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! < 1){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1
             var countNN = 0
             for i in (0...11){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
                     if (R.Ring[j].CurrentCelestialBody == "NN"){
                         countNN = countNN + 1
@@ -975,7 +975,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             var newCountNN = 0
             for i in (0...11){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 var containsNN = false
                 var positionInRing = 0
                 for j in (0...5){
@@ -987,7 +987,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 }
                 
                 if (containsNN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.RetractNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountNN == countNN){
                         break;
                     }
@@ -997,7 +997,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             var countSN = 0
             for i in (0...11){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
                     if(R.Ring[j].CurrentCelestialBody == "SN"){
                         countSN = countSN + 1
@@ -1008,7 +1008,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             var newCountSN = 0
             for i in (0...11){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 var containsSN = false
                 var positionInRing = 0
                 for j in (0...5){
@@ -1019,18 +1019,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                     }
                 }
                 if (containsSN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.RetractNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountSN == countSN){
                         break;
                     }
                 }
                 
             }
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = 12
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = 12
         }
         
-        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! < 1){
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = 12
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! < 1){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = 12
         }
         
         loadAP()
@@ -1039,13 +1039,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
    
     @IBAction func AdvancePlus(_ sender: Any) {
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! + 1
-        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! > 12){
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! + 1
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! + 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! > 12){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! + 1
             var countNN = 0
             for i in (0...11).reversed(){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
                     if (R.Ring[j].CurrentCelestialBody == "NN"){
                         countNN = countNN + 1
@@ -1058,7 +1058,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             var newCountNN = 0
             for i in (0...11).reversed(){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 var containsNN = false
                 var positionInRing = 0
                 for j in (0...5){
@@ -1070,7 +1070,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 }
                 
                 if (containsNN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.AdvanceNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountNN == countNN){
                         break;
                     }
@@ -1080,7 +1080,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             var countSN = 0
             for i in (0...11).reversed(){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
                     if(R.Ring[j].CurrentCelestialBody == "SN"){
                         countSN = countSN + 1
@@ -1091,7 +1091,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
             var newCountSN = 0
             for i in (0...11).reversed(){
                 var R = RotateableRing()
-                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses[i]
+                R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 var containsSN = false
                 var positionInRing = 0
                 for j in (0...5){
@@ -1102,18 +1102,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                     }
                 }
                 if (containsSN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.AdvanceNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountSN == countSN){
                         break;
                     }
                 }
                 
             }
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = 1
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = 1
         }
         
-        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! > 12){
-           m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].Profiles[m_CurrentSBody].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = 1
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! > 12){
+           m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = 1
         }
         loadAP()
         
