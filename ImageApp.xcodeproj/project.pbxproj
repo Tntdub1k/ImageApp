@@ -65,6 +65,7 @@
 		019E7E252003E25300ED3F77 /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E232003E24E00ED3F77 /* arrowUp.png */; };
 		019E7E262003E25300ED3F77 /* arrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E242003E25000ED3F77 /* arrowDown.png */; };
 		019E7E282003EBD700ED3F77 /* words.png in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E272003EBD300ED3F77 /* words.png */; };
+		01B26F58200536A90076683F /* gearIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B26F57200536A80076683F /* gearIcon.png */; };
 		01F222151FF442B5006016ED /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F222141FF442B5006016ED /* webViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		019E7E232003E24E00ED3F77 /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowUp.png; path = ../../../Documents/arrowUp.png; sourceTree = "<group>"; };
 		019E7E242003E25000ED3F77 /* arrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowDown.png; path = ../../../Documents/arrowDown.png; sourceTree = "<group>"; };
 		019E7E272003EBD300ED3F77 /* words.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = words.png; path = ../../../Documents/words.png; sourceTree = "<group>"; };
+		01B26F57200536A80076683F /* gearIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gearIcon.png; path = ../../../Documents/gearIcon.png; sourceTree = "<group>"; };
 		01F222141FF442B5006016ED /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				01B26F57200536A80076683F /* gearIcon.png */,
 				019E7E272003EBD300ED3F77 /* words.png */,
 				019E7E242003E25000ED3F77 /* arrowDown.png */,
 				019E7E232003E24E00ED3F77 /* arrowUp.png */,
@@ -316,6 +319,7 @@
 				018112791FF01F980071111D /* Nessus.png in Resources */,
 				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
 				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
+				01B26F58200536A90076683F /* gearIcon.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,
 				011669361FFE9D4700AD8E42 /* exitIcon.png in Resources */,
@@ -497,7 +501,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -512,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

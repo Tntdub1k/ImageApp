@@ -43,6 +43,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         else if (pickerView == bandPicker){
             return 1
         }
+     
         else {
             return 1
         }
@@ -163,7 +164,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         mainView.sendSubview(toBack: CBview)
         mainView.sendSubview(toBack: chooseReadingView)
         mainView.sendSubview(toBack: bandView)
-        
+        mainView.sendSubview(toBack: NotesView)
+        mainView.sendSubview(toBack: settingsView)
     }
     @IBAction func pressBand(_ sender: Any) {
         mainView.bringSubview(toFront: bandView)
@@ -171,10 +173,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func clearKeyboard(_ sender: Any) {
         mainView.endEditing(true)
     }
+    @IBAction func pressLoadSettings(_ sender: Any) {
+        mainView.bringSubview(toFront: settingsView)
+        m_DetailLevelBeforeChange = m_CurrentDetailLevel
+        updateDetailLevelDisplay()
+    }
+    @IBOutlet weak var pressSettings: UIButton!
     @IBOutlet weak var ButtonView: UIView!
     @IBOutlet weak var clearKeyboard: UIButton!
     func loadAP(){
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        NotesTitle.text = IndividualTitle.text
+        
         var cycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
         cycleCounter.text = String(cycle)
         var advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"] as! Int
@@ -268,6 +278,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBAction func renameTitlePressed(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName = renameTextB.text!
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+       NotesTitle.text = IndividualTitle.text
         clearAllViewsFromScreen()
     }
     
@@ -280,13 +291,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         m_CurrentIndividual = 0
         m_CurrentCategory = 0
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
+        NotesTitle.text = IndividualTitle.text
     }
 
   
     @IBAction func CBHouseClick(_ sender: UIButton) {
       clearAllViewsFromScreen()
         m_LastHouseClicked = Int(sender.accessibilityHint!)!
-        if (sender.accessibilityIdentifier == "Empty"){
+        var aCB = sender.accessibilityIdentifier as! String
+        if ((aCB == "Empty") || ((m_CurrentDetailLevel == m_BeginnerDetail) && (beginnerCBsList.contains(aCB) == false)) ||
+            ((m_CurrentDetailLevel == m_IntermediateDetail) && (intermediateCBsList.contains(aCB) == false))){
             mainView.bringSubview(toFront: CBview)
         }
         else {
@@ -376,13 +390,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     func OpenNotes(){
         m_notesAreOpen = true
         mainView.endEditing(true)
-        NotesButton.setImage(UIImage(named: "exitIcon"), for:UIControlState.normal)
-        AstroView.isHidden = true
-        ButtonView.isHidden = true
-        NotesView.isHidden = false
-        NotesLabel.isHidden = true
-        NotesTextBox.isHidden = true
-        NotesSaveButton.isHidden = true
+        //NotesButton.setImage(UIImage(named: "exitIcon"), for:UIControlState.normal)
+        //AstroView.isHidden = true
+        //ButtonView.isHidden = true
+        //NotesView.isHidden = false
+        //NotesLabel.isHidden = true
+        //NotesTextBox.isHidden = true
+        //NotesSaveButton.isHidden = true
+        mainView.bringSubview(toFront: NotesView)
         m_currentNote = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote
         switch (m_currentNote){
         case "General":
@@ -402,11 +417,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     func CloseNotes(){
         m_notesAreOpen = false
         mainView.endEditing(true)
-        NotesButton.setImage(UIImage(named: "keyboard"), for:UIControlState.normal)
-        AstroView.isHidden = false
-        ButtonView.isHidden = false
-        NotesView.isHidden = true
-       m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
+        //NotesButton.setImage(UIImage(named: "keyboard"), for:UIControlState.normal)
+        //AstroView.isHidden = false
+        //ButtonView.isHidden = false
+        //NotesView.isHidden = true
+       mainView.sendSubview(toBack: NotesView)
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
         
         
         //Save notes
@@ -441,6 +457,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     @IBOutlet weak var imgPhoto: UIImageView!
 
     
+    @IBOutlet weak var NotesTitle: UILabel!
     @IBOutlet weak var IndividualTitle: UILabel!
     @IBOutlet weak var renameView: UIView!
     @IBOutlet weak var selectView: UIView!
@@ -461,8 +478,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
-        NotesLabel.text = "Step ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+")"
-        let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
+        NotesLabel.text = "Advancement ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+")"
+        let Key = "SBody"+String(m_CurrentSBody)+"Advancement"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
         NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
     }
     @IBAction func GenNotesClick(_ sender: Any) {
@@ -479,7 +496,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
         NotesSaveButton.isHidden = false
-        NotesLabel.text = "Step  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
+        NotesLabel.text = "Advancement ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
         let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
         NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
     }
@@ -498,7 +515,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 let Key = "SBody"+String(m_CurrentSBody)+"General"
                 m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
         case "CurStep":
-            let Key = "SBody"+String(m_CurrentSBody)+"Step"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
+            let Key = "SBody"+String(m_CurrentSBody)+"Advancement"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
         case "CurCycle":
             let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
@@ -537,8 +554,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     var m_currentNote = ""
     var m_SpiritBands = ["1 - Physical Body","2 - Emotional Body", "3 - Intellectual Body", "4 - Spiritual Body"]
     var m_CurrentSBody = 0
-    
-    
+    let m_BeginnerDetail = 0
+    let m_IntermediateDetail = 1
+    let  m_AdvancedDetail = 2
+    let  m_MasterDetail = 3
+    var m_CurrentDetailLevel = 0
+    var m_DetailLevelBeforeChange = -1
+    let beginnerCBsList = ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto","Nibiru","Sedna"]
+    let intermediateCBsList =
+        ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto","Nibiru","Sedna", "North Node","South Node"]
     func showMessage(message:String){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
@@ -550,46 +574,57 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         return .lightContent
     }
  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        scrollView.delegate = self
+    @IBOutlet weak var settingsView: UIView!
+    @IBAction func clickSettingsFinished(_ sender: Any) {
+        
         clearAllViewsFromScreen()
-//        self.setNeedsStatusBarStyleUpate()
+    }
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        
+        scrollView.delegate = self
+        
+        clearAllViewsFromScreen()
+
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
         scrollView.bounces = false
-        scrollView.bouncesZoom = false
-        /*
-       
-        */
-        
-        
+
        
             var Json = ""
        
         if ((try? UserDefaults.standard.string(forKey: "MindmapDataBase")) == nil){
-            loadSampleAP()
+            loadSampleDB()
         }else{
             var jsonString2 = UserDefaults.standard.string(forKey: "MindmapDataBase")
             if ((try? Data(base64Encoded: jsonString2!)) == nil){
-                loadSampleAP()
+                loadSampleDB()
             } else {
                 let jsonData2 = Data(base64Encoded: jsonString2!)
                 
                 if ((try? JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)) == nil){
-                    loadSampleAP()
+                    loadSampleDB()
                 }else {
                     var ADB:AstrologicalDatabase
                     ADB = try! JSONDecoder().decode(AstrologicalDatabase.self, from: jsonData2!)
                     m_ADB =  ADB
-                    loadAP()
+                    
+                    if (UserDefaults.standard.string(forKey: "MindmapDetailLevel") == nil){
+                        m_CurrentDetailLevel = m_BeginnerDetail
+                    } else{
+                        m_CurrentDetailLevel = Int(UserDefaults.standard.string(forKey: "MindmapDetailLevel")!)!
+                    }
+                    
                 }
             }
         }
         
         
         
-        
+        displayCurrentDetailLevel()
+        loadAP()
         
     
     
@@ -614,12 +649,160 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         addPicker.delegate = self
         addCBPicker.dataSource = self
         addCBPicker.delegate = self
+    
+       
     }
+    func updateDetailLevelDisplay(){
+        switch(m_CurrentDetailLevel){
+        case m_BeginnerDetail:
+            settingsDetailTextBox.text = "Beginner Level \n ----------------\nShows MindMap interface and 12 planets to place within the 12 Houses"
+        case m_IntermediateDetail:
+            settingsDetailTextBox.text = "Intermediate Level \n ----------------\nIncludes Depth and Cycle gauges and adds North Node and South Node entities"
+        case m_AdvancedDetail:
+            settingsDetailTextBox.text = "Advanced Level \n ----------------\nIntroduces additional entries to supplement the Map including asteroids"
+        case m_MasterDetail:
+            settingsDetailTextBox.text = "Master Level \n ----------------\nFeatures all possible entries along with a selector to move between different Spiritual Bodies"
+        default:
+            break
+        }
+    }
+    
+    @IBOutlet weak var depthImage: UIImageView!
+    func displayCurrentDetailLevel(){
+        
+    switch(m_CurrentDetailLevel){
+    case m_BeginnerDetail:
+        bandCounter.isHidden = true
+        bodyLabel.isHidden = true
+        bodyImage.isHidden = true
+        bodyButton.isHidden = true
+        m_CurrentSBody = 0
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0RingAdvancement"] = 1
+        //m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"] = 0
+        
+        m_CBL = CelestialBodyListing()
+        for CB in m_CBL.AllCelestialBodies{
+            if (beginnerCBsList.contains(CB.value.DisplayName) == false){
+                m_CBL.AllCelestialBodies.removeValue(forKey: CB.key)
+            }
+        }
+        
+        settingDetailSlider.setValue(0.0, animated: false)
+        cycleLabel.isHidden = true
+        cycleCounter.isHidden = true
+        cycleImage.isHidden = true
+        
+        depthLabel.isHidden = true
+        ringCounter.isHidden = true
+        depthPlusB.isHidden = true
+        depthMinusB.isHidden = true
+        depthImage.isHidden = true
+        
+    case m_IntermediateDetail:
+        bandCounter.isHidden = true
+        bodyLabel.isHidden = true
+        bodyImage.isHidden = true
+        bodyButton.isHidden = true
+        m_CurrentSBody = 0
+        
+        
+        m_CBL = CelestialBodyListing()
+        for CB in m_CBL.AllCelestialBodies{
+            if (intermediateCBsList.contains(CB.value.DisplayName) == false){
+                m_CBL.AllCelestialBodies.removeValue(forKey: CB.key)
+            }
+        }
+        settingDetailSlider.setValue(0.33, animated: false)
+        cycleLabel.isHidden = false
+        cycleCounter.isHidden = false
+        cycleImage.isHidden = false
+        
+        depthLabel.isHidden = false
+        ringCounter.isHidden = false
+        depthPlusB.isHidden = false
+        depthMinusB.isHidden = false
+        depthImage.isHidden = false
+    case m_AdvancedDetail:
+        bandCounter.isHidden = true
+        bodyLabel.isHidden = true
+        bodyImage.isHidden = true
+        bodyButton.isHidden = true
+        m_CurrentSBody = 0
+        
+        
+        m_CBL = CelestialBodyListing()
+        settingDetailSlider.setValue(0.66, animated: false)
+        cycleLabel.isHidden = false
+        cycleCounter.isHidden = false
+        cycleImage.isHidden = false
+        
+        depthLabel.isHidden = false
+        ringCounter.isHidden = false
+        depthPlusB.isHidden = false
+        depthMinusB.isHidden = false
+        depthImage.isHidden = false
+    case m_MasterDetail:
+        bandCounter.isHidden = false
+        bodyLabel.isHidden = false
+        bodyImage.isHidden = false
+        bodyButton.isHidden = false
+        
+        settingDetailSlider.setValue(1.0, animated: false)
+        m_CBL = CelestialBodyListing()
+        cycleLabel.isHidden = false
+        cycleCounter.isHidden = false
+        cycleImage.isHidden = false
+        
+        depthLabel.isHidden = false
+        ringCounter.isHidden = false
+        depthPlusB.isHidden = false
+        depthMinusB.isHidden = false
+        depthImage.isHidden = false
+    default:
+        break
+        }
+    }
+    @IBAction func settingsFinished(_ sender: Any){
+    
 
+        displayCurrentDetailLevel()
+        
+        loadAP()
+        
+        UserDefaults.standard.set(String(m_CurrentDetailLevel), forKey: "MindmapDetailLevel")
+        UserDefaults.standard.synchronize()
+    }
+    @IBOutlet weak var cycleLabel: UILabel!
+    @IBOutlet weak var depthMinusB: UIButton!
+    @IBOutlet weak var depthPlusB: UIButton!
+    @IBOutlet weak var depthLabel: UILabel!
+    @IBOutlet weak var cycleImage: UIImageView!
+    @IBOutlet weak var settingsDetailTextBox: UITextView!
+    @IBOutlet weak var bodyButton: UIButton!
+    @IBOutlet weak var bodyImage: UIImageView!
+    @IBOutlet weak var bodyLabel: UILabel!
+    @IBAction func settingSliderValueChanged(_ sender: Any) {
+        if (settingDetailSlider.value <= 0.165){
+            settingDetailSlider.setValue(0.0, animated: false)
+            m_CurrentDetailLevel = m_BeginnerDetail
+        } else if ((settingDetailSlider.value > 0.165) && (settingDetailSlider.value <= 0.495)){
+            settingDetailSlider.setValue(0.33, animated: false)
+            m_CurrentDetailLevel = m_IntermediateDetail
+        } else if((settingDetailSlider.value > 0.495) && (settingDetailSlider.value <= 0.825)){
+            settingDetailSlider.setValue(0.66, animated: false)
+            m_CurrentDetailLevel = m_AdvancedDetail
+        } else if(settingDetailSlider.value > 0.825){
+            settingDetailSlider.setValue(1.0, animated:false)
+            m_CurrentDetailLevel = m_MasterDetail
+        }
+        updateDetailLevelDisplay()
+    }
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBOutlet weak var settingDetailSlider: UISlider!
     
     @IBOutlet weak var bandPicker: UIPickerView!
     public class HouseViews{
@@ -644,7 +827,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         var sat5Label = UILabel()
         
     }
-    func loadSampleAP(){
+    func loadSampleDB(){
         let AS = AstrologicalProfile()
         AS.IndividualName = "Sample Individual"
         
@@ -652,7 +835,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         AC.CategoryName = "Individuals"
         AC.Contents.append(AS)
         m_ADB.Database.append(AC)
-        loadAP()
+        m_CurrentDetailLevel = m_BeginnerDetail
     }
     
     func getHouseViews(aHouseView:UIView)-> HouseViews{
@@ -1124,7 +1307,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         //Display CB
      
         //If CB is empty
-        if ((celestialBody == "Empty") || (celestialBody == "")){
+        if ((celestialBody == "Empty") || (celestialBody == "") || ((m_CurrentDetailLevel == m_BeginnerDetail) && (beginnerCBsList.contains(celestialBody) == false) ) ||
+            ((m_CurrentDetailLevel == m_IntermediateDetail) && (intermediateCBsList.contains(celestialBody) == false) ) ){
             label.text = ""
             dignified.image = UIImage(named: "DignifiedEmpty")
             imageView.image = UIImage(named: "Empty")
