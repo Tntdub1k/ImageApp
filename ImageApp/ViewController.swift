@@ -9,7 +9,18 @@
 import UIKit
 
 
-class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource{
+class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate,
+    UIPageViewControllerDelegate,
+    UIPageViewControllerDataSource,
+UITableViewDataSource{
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return self
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return self
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -217,7 +228,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                     isUsed = true
                 }
             }
-            if (isUsed == false){
+            if ((isUsed == false) || (i == "North Node") || ( i == "South Node")){
                 m_remainingCBs.append(i)
             }
         }
@@ -473,6 +484,23 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         clearAllViewsFromScreen()
     }
 
+    @IBOutlet weak var dropboxSwitch: UISwitch!
+    @IBAction func settingsSwitchDropbox(_ sender: Any) {
+        if (dropboxSwitch.isOn){
+            do {
+                let jsonEncoder = JSONEncoder()
+                let jsonData = try jsonEncoder.encode(m_ADB)
+                let jsonString = jsonData.base64EncodedString()
+                UIPasteboard.general.string = jsonString
+                
+            }
+            catch {
+             //
+            }
+           
+            
+        }
+    }
     @IBAction func CurStepNotesClick(_ sender: Any) {
         m_currentNote = "CurStep"
         NotesLabel.isHidden = false
@@ -655,23 +683,29 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     func updateDetailLevelDisplay(){
         switch(m_CurrentDetailLevel){
         case m_BeginnerDetail:
-            settingsDetailTextBox.text = "Beginner Level \n ----------------\nShows MindMap interface and 12 planets to place within the 12 Houses"
+            settingsDetailTextBox.text = "Beginner Level \n ----------------\nShows MindMap interface and 12 planets to place within the 12 Houses\n\nAllows saving notes for the profile in general and for each individual advancement"
         case m_IntermediateDetail:
-            settingsDetailTextBox.text = "Intermediate Level \n ----------------\nIncludes Depth and Cycle gauges and adds North Node and South Node entities"
+            settingsDetailTextBox.text = "Intermediate Level \n ----------------\nIncludes Depth and Cycle gauges and adds North Node and South Node entities\n\nAllows saving notes for each individual cycle"
         case m_AdvancedDetail:
-            settingsDetailTextBox.text = "Advanced Level \n ----------------\nIntroduces additional entries to supplement the Map including asteroids"
+            settingsDetailTextBox.text = "Advanced Level \n ----------------\nIntroduces additional entries to supplement the Map including asteroids\n\nAllows saving notes for each combination of advancement and cycle"
         case m_MasterDetail:
-            settingsDetailTextBox.text = "Master Level \n ----------------\nFeatures all possible entries along with a selector to move between different Spiritual Bodies"
+            settingsDetailTextBox.text = "Master Level \n ----------------\nFeatures all possible entries along with a selector to move between different Spiritual Bodies\n\nNotes are saved for each spiritual body seperately"
         default:
             break
         }
     }
     
+    @IBOutlet weak var notesButtonCycle: UIButton!
+    @IBOutlet weak var notesButtonAdvancementAndCycle: UIButton!
     @IBOutlet weak var depthImage: UIImageView!
     func displayCurrentDetailLevel(){
         
     switch(m_CurrentDetailLevel){
     case m_BeginnerDetail:
+        
+        notesButtonCycle.isHidden = true
+        notesButtonAdvancementAndCycle.isHidden = true
+        
         bandCounter.isHidden = true
         bodyLabel.isHidden = true
         bodyImage.isHidden = true
@@ -699,6 +733,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         depthImage.isHidden = true
         
     case m_IntermediateDetail:
+        notesButtonCycle.isHidden = false
+        notesButtonAdvancementAndCycle.isHidden = true
+        
         bandCounter.isHidden = true
         bodyLabel.isHidden = true
         bodyImage.isHidden = true
@@ -723,6 +760,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         depthMinusB.isHidden = false
         depthImage.isHidden = false
     case m_AdvancedDetail:
+        notesButtonCycle.isHidden = false
+        notesButtonAdvancementAndCycle.isHidden = false
+        
         bandCounter.isHidden = true
         bodyLabel.isHidden = true
         bodyImage.isHidden = true
@@ -742,6 +782,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         depthMinusB.isHidden = false
         depthImage.isHidden = false
     case m_MasterDetail:
+        notesButtonCycle.isHidden = false
+        notesButtonAdvancementAndCycle.isHidden = false
+        
         bandCounter.isHidden = false
         bodyLabel.isHidden = false
         bodyImage.isHidden = false
@@ -764,6 +807,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     }
     @IBAction func settingsFinished(_ sender: Any){
     
+        if (m_DetailLevelBeforeChange > m_CurrentDetailLevel){
+            if (m_CurrentDetailLevel == m_BeginnerDetail){
+                if ((m_currentNote != "CurStep") && (m_currentNote != "General")){
+                    m_currentNote = "General"
+                }
+                else if(m_CurrentDetailLevel == m_IntermediateDetail){
+                    if ((m_currentNote != "CurStep") && (m_currentNote != "General") && (m_currentNote != "CurCycle")){
+                        m_currentNote = "General"
+                    }
+                }
+            }
+        }
 
         displayCurrentDetailLevel()
         
@@ -1096,6 +1151,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
      
         var m_Ring = aRing
  
+        
+        var hasNN = false
+        for ringTP in m_Ring.RingTransPersp{
+            if (ringTP.CurrentCelestialBody == "North Node"){
+                hasNN = true
+            }
+        }
+        if (hasNN == true){
+            revealOrHideDragonHead(houseNumber:m_Ring.HouseName, hideOrReveal:"reveal")
+        }else{
+               revealOrHideDragonHead(houseNumber:m_Ring.HouseName, hideOrReveal:"hide")
+        }
+        
         let labelColor = UIColor.init(red: 0.0/255.0, green: 157.0/255.0, blue: 209.0/255.0, alpha: 1)
         
         var strokeText: [NSAttributedStringKey: Any] = [
@@ -1147,7 +1215,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var R = RotateableRing()
                 R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
-                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                    if (R.Ring[j].CurrentCelestialBody == "North Node"){
                         countNN = countNN + 1
                     }
                 }
@@ -1162,7 +1230,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var containsNN = false
                 var positionInRing = 0
                 for j in (0...5){
-                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                    if (R.Ring[j].CurrentCelestialBody == "North Node"){
                         containsNN = true
                         positionInRing = j
                         newCountNN = newCountNN + 1
@@ -1170,7 +1238,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 }
                 
                 if (containsNN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "North Node", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountNN == countNN){
                         break;
                     }
@@ -1182,7 +1250,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var R = RotateableRing()
                 R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
-                    if(R.Ring[j].CurrentCelestialBody == "SN"){
+                    if(R.Ring[j].CurrentCelestialBody == "South Node"){
                         countSN = countSN + 1
                     }
                 }
@@ -1195,14 +1263,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var containsSN = false
                 var positionInRing = 0
                 for j in (0...5){
-                    if (R.Ring[j].CurrentCelestialBody == "SN"){
+                    if (R.Ring[j].CurrentCelestialBody == "South Node"){
                         containsSN = true
                         positionInRing = j
                         newCountSN = newCountSN + 1
                     }
                 }
                 if (containsSN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.RetractNode(CelestialBody: "South Node", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountSN == countSN){
                         break;
                     }
@@ -1230,7 +1298,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var R = RotateableRing()
                 R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
-                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                    if (R.Ring[j].CurrentCelestialBody == "North Node"){
                         countNN = countNN + 1
                     }
                 }
@@ -1245,7 +1313,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var containsNN = false
                 var positionInRing = 0
                 for j in (0...5){
-                    if (R.Ring[j].CurrentCelestialBody == "NN"){
+                    if (R.Ring[j].CurrentCelestialBody == "North Node"){
                         containsNN = true
                         positionInRing = j
                         newCountNN = newCountNN + 1
@@ -1253,7 +1321,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 }
                 
                 if (containsNN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "NN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "North Node", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountNN == countNN){
                         break;
                     }
@@ -1265,7 +1333,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var R = RotateableRing()
                 R = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses[i]
                 for j in (0...5){
-                    if(R.Ring[j].CurrentCelestialBody == "SN"){
+                    if(R.Ring[j].CurrentCelestialBody == "South Node"){
                         countSN = countSN + 1
                     }
                 }
@@ -1278,14 +1346,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
                 var containsSN = false
                 var positionInRing = 0
                 for j in (0...5){
-                    if (R.Ring[j].CurrentCelestialBody == "SN"){
+                    if (R.Ring[j].CurrentCelestialBody == "South Node"){
                         containsSN = true
                         positionInRing = j
                         newCountSN = newCountSN + 1
                     }
                 }
                 if (containsSN == true){
-                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "SN", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
+                    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.AdvanceNode(CelestialBody: "South Node", House: i, Ring: positionInRing, inputHouses: m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.Houses)
                     if (newCountSN == countSN){
                         break;
                     }
@@ -1305,7 +1373,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     func fillImage(imageView: UIImageView, dignified: UIImageView, label:UILabel, celestialBody:String, houseNumber:String, attributedText:[NSAttributedStringKey: Any]?){
         
         //Display CB
-     
+  
         //If CB is empty
         if ((celestialBody == "Empty") || (celestialBody == "") || ((m_CurrentDetailLevel == m_BeginnerDetail) && (beginnerCBsList.contains(celestialBody) == false) ) ||
             ((m_CurrentDetailLevel == m_IntermediateDetail) && (intermediateCBsList.contains(celestialBody) == false) ) ){
@@ -1333,12 +1401,103 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
         }
         
         
-       
+    
         
         
         
     }
+    
+    func revealOrHideDragonHead(houseNumber:String, hideOrReveal:String){
+        switch(houseNumber){
+        case "1stHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead1.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                 dragonHead1.isHidden = true
+            }
+        case "2ndHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead2.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead2.isHidden = true
+            }
+        case "3rdHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead3.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead3.isHidden = true
+            }
+        case "4thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead4.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead4.isHidden = true
+            }
+        case "5thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead5.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead5.isHidden = true
+            }
+        case "6thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead6.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead6.isHidden = true
+            }
+        case "7thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead7.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead7.isHidden = true
+            }
+        case "8thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead8.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead8.isHidden = true
+            }
+        case "9thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead9.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead9.isHidden = true
+            }
+        case "10thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead10.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead10.isHidden = true
+            }
+        case "11thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead11.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead11.isHidden = true
+            }
+        case "12thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonHead12.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonHead12.isHidden = true
+            }
+        default:
+            break
+        }
+    }
   
+    @IBOutlet weak var dragonHead12: UIImageView!
+    @IBOutlet weak var dragonHead11: UIImageView!
+    @IBOutlet weak var dragonHead10: UIImageView!
+    @IBOutlet weak var dragonHead9: UIImageView!
+    @IBOutlet weak var dragonHead8: UIImageView!
+    @IBOutlet weak var dragonHead6: UIImageView!
+    @IBOutlet weak var dragonHead7: UIImageView!
+    @IBOutlet weak var dragonHead5: UIImageView!
+    @IBOutlet weak var dragonHead4: UIImageView!
+    @IBOutlet weak var dragonHead2: UIImageView!
+    @IBOutlet weak var dragonHead3: UIImageView!
+    @IBOutlet weak var dragonHead1: UIImageView!
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
         return aUiView

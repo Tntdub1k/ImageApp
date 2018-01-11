@@ -1,0 +1,9 @@
+platform :ios, '11.2'
+use_frameworks!
+   
+Source 'git@github.com:dropbox/SwiftyDropbox.git'
+
+Target "ImageApp" do
+
+	pod "SwiftyDropbox"
+end

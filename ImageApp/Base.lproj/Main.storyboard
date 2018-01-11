@@ -21,6 +21,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="VUm-gW-izU">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="mQR-sg-QuI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vj-Ya-v0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="851"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -517,48 +525,41 @@
                                                     <rect key="frame" x="0.0" y="37" width="320" height="463"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dropbox Storage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mP-Sr-agK">
+                                                            <rect key="frame" x="8" y="252" width="141" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXN-q3-vga">
-                                                            <rect key="frame" x="-4" y="102" width="324" height="275"/>
+                                                            <rect key="frame" x="0.0" y="36" width="324" height="208"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-jG-SqW">
-                                                                    <rect key="frame" x="4" y="149" width="320" height="122"/>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-jG-SqW">
+                                                                    <rect key="frame" x="4" y="66" width="312" height="122"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beginner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlO-rq-PiT">
-                                                                    <rect key="frame" x="20" y="114" width="68" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlO-rq-PiT">
+                                                                    <rect key="frame" x="4" y="30" width="51" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intermediate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="761-eP-u7t">
-                                                                    <rect key="frame" x="94" y="114" width="68" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advanced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq6-dL-8m3">
-                                                                    <rect key="frame" x="187" y="114" width="68" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Master" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwQ-Z0-fEe">
-                                                                    <rect key="frame" x="246" y="114" width="68" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="761-eP-u7t">
+                                                                    <rect key="frame" x="82" y="30" width="68" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fq2-cf-Q7s">
-                                                                    <rect key="frame" x="30" y="87" width="2" height="10"/>
+                                                                    <rect key="frame" x="17" y="10" width="2" height="10"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -566,7 +567,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTe-dQ-JwX">
-                                                                    <rect key="frame" x="125" y="87" width="2" height="10"/>
+                                                                    <rect key="frame" x="115" y="10" width="2" height="10"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -574,7 +575,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltf-6B-6iX">
-                                                                    <rect key="frame" x="212" y="87" width="2" height="10"/>
+                                                                    <rect key="frame" x="203" y="10" width="2" height="10"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -582,7 +583,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRJ-eZ-Ji2">
-                                                                    <rect key="frame" x="312" y="87" width="2" height="10"/>
+                                                                    <rect key="frame" x="299" y="10" width="2" height="10"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -590,35 +591,49 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYw-hq-Htx">
-                                                                    <rect key="frame" x="28" y="77" width="288" height="30"/>
+                                                                    <rect key="frame" x="15" y="0.0" width="288" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <connections>
                                                                         <action selector="settingSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PQi-Sb-MYv"/>
                                                                     </connections>
                                                                 </slider>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yW-uL-TzD">
-                                                                    <rect key="frame" x="12" y="44" width="141" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq6-dL-8m3">
+                                                                    <rect key="frame" x="177" y="30" width="54" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Very High" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwQ-Z0-fEe">
+                                                                    <rect key="frame" x="252" y="30" width="61" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iCloud Storage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mP-Sr-agK">
-                                                            <rect key="frame" x="8" y="395" width="141" height="21"/>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cWp-iq-OvO">
+                                                            <rect key="frame" x="257" y="247" width="49" height="31"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <connections>
+                                                                <action selector="settingsSwitchDropbox:" destination="BYZ-38-t0r" eventType="valueChanged" id="5Sa-pA-FUJ"/>
+                                                            </connections>
+                                                        </switch>
                                                     </subviews>
                                                 </scrollView>
                                             </subviews>
                                         </view>
-                                        <blurEffect style="light"/>
+                                        <blurEffect style="extraLight"/>
                                     </visualEffectView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yW-uL-TzD">
+                                        <rect key="frame" x="7" y="40" width="141" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBJ-0K-atd">
@@ -875,13 +890,53 @@
                                                                 <rect key="frame" x="8" y="8" width="345" height="345"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonUpperBody10.png" translatesAutoresizingMaskIntoConstraints="NO" id="fWw-Qh-BTa">
-                                                                <rect key="frame" x="28" y="-18" width="298" height="157"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead10.png" translatesAutoresizingMaskIntoConstraints="NO" id="mmG-Ji-RSh">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cp1.png" translatesAutoresizingMaskIntoConstraints="NO" id="szi-wc-b4G">
-                                                                <rect key="frame" x="109" y="109" width="144" height="147"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead9.png" translatesAutoresizingMaskIntoConstraints="NO" id="D52-qB-OfY">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead8.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ld-qv-ro5">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead7.png" translatesAutoresizingMaskIntoConstraints="NO" id="5jb-oW-YSG">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead6.png" translatesAutoresizingMaskIntoConstraints="NO" id="oFY-Rd-UkE">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead5.png" translatesAutoresizingMaskIntoConstraints="NO" id="ltA-67-aFi">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead4.png" translatesAutoresizingMaskIntoConstraints="NO" id="b0L-3V-ht2">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead3.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZD0-Re-M4m">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead2.png" translatesAutoresizingMaskIntoConstraints="NO" id="1wu-zz-ygw">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead1.png" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-ft-iiD">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead11.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Rk-GJ-XH3">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead12.png" translatesAutoresizingMaskIntoConstraints="NO" id="z6Q-25-u1F">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKs-qG-ZoU">
                                                                 <rect key="frame" x="15" y="134" width="97" height="94"/>
@@ -2531,10 +2586,6 @@
                                                                             <action selector="CBHouseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDa-jD-mrv"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead10.png" translatesAutoresizingMaskIntoConstraints="NO" id="HCS-XP-YAa">
-                                                                        <rect key="frame" x="-101" y="-32" width="298" height="157"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    </imageView>
                                                                 </subviews>
                                                             </view>
                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yuv-kv-eJw">
@@ -3054,11 +3105,26 @@
                         <outlet property="depthLabel" destination="0w6-2M-Ohu" id="LXA-NE-bWK"/>
                         <outlet property="depthMinusB" destination="Zhr-PV-VfP" id="0Rs-Os-DYd"/>
                         <outlet property="depthPlusB" destination="E0o-Y6-3IG" id="ix7-a1-QXg"/>
+                        <outlet property="dragonHead1" destination="0VD-ft-iiD" id="OuB-h9-9Fi"/>
+                        <outlet property="dragonHead10" destination="mmG-Ji-RSh" id="OE9-Ht-nqs"/>
+                        <outlet property="dragonHead11" destination="7Rk-GJ-XH3" id="iTq-4P-orc"/>
+                        <outlet property="dragonHead12" destination="z6Q-25-u1F" id="9p3-zZ-yGM"/>
+                        <outlet property="dragonHead2" destination="1wu-zz-ygw" id="Z4j-cb-Dxu"/>
+                        <outlet property="dragonHead3" destination="ZD0-Re-M4m" id="KcU-iI-dop"/>
+                        <outlet property="dragonHead4" destination="b0L-3V-ht2" id="2q5-mA-kmQ"/>
+                        <outlet property="dragonHead5" destination="ltA-67-aFi" id="swK-IR-DJx"/>
+                        <outlet property="dragonHead6" destination="oFY-Rd-UkE" id="qx9-Nk-CqA"/>
+                        <outlet property="dragonHead7" destination="5jb-oW-YSG" id="5LB-Nc-DMT"/>
+                        <outlet property="dragonHead8" destination="0ld-qv-ro5" id="mFr-Tj-lR6"/>
+                        <outlet property="dragonHead9" destination="D52-qB-OfY" id="e0z-yt-7Lf"/>
+                        <outlet property="dropboxSwitch" destination="cWp-iq-OvO" id="StG-rS-upo"/>
                         <outlet property="enterNewCategoryTextb" destination="DCS-ov-wIP" id="po6-QY-5TO"/>
                         <outlet property="enterNewMemberTextB" destination="z5G-9B-LQ9" id="52K-CA-bv4"/>
                         <outlet property="fullAddView" destination="gI4-9r-Uuk" id="9tE-Tv-IwT"/>
                         <outlet property="imgPhoto" destination="1Ko-cJ-GRC" id="Kn1-qj-7O1"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="DE2-XP-YLX"/>
+                        <outlet property="notesButtonAdvancementAndCycle" destination="FWl-XM-ntl" id="AS7-ak-AnN"/>
+                        <outlet property="notesButtonCycle" destination="kHg-bC-sLP" id="Tso-zu-dGM"/>
                         <outlet property="renameTextB" destination="3YX-fb-Txf" id="FTw-ex-zeB"/>
                         <outlet property="renameView" destination="hi7-sf-890" id="mtG-ef-ULv"/>
                         <outlet property="ringCounter" destination="g0A-xz-tAO" id="CKn-X6-HBO"/>
@@ -3122,9 +3188,18 @@
         <image name="circleBig.png" width="300" height="278"/>
         <image name="circleSmall1.png" width="300" height="278"/>
         <image name="cosmos.jpeg" width="1920" height="1080"/>
-        <image name="cp1.png" width="900" height="950"/>
-        <image name="dragonHead10.png" width="304" height="366"/>
-        <image name="dragonUpperBody10.png" width="304" height="366"/>
+        <image name="dragonHead1.png" width="1075" height="1075"/>
+        <image name="dragonHead10.png" width="1075" height="1075"/>
+        <image name="dragonHead11.png" width="1075" height="1075"/>
+        <image name="dragonHead12.png" width="1075" height="1075"/>
+        <image name="dragonHead2.png" width="1075" height="1075"/>
+        <image name="dragonHead3.png" width="1075" height="1075"/>
+        <image name="dragonHead4.png" width="1075" height="1075"/>
+        <image name="dragonHead5.png" width="1075" height="1075"/>
+        <image name="dragonHead6.png" width="1075" height="1075"/>
+        <image name="dragonHead7.png" width="1075" height="1075"/>
+        <image name="dragonHead8.png" width="1075" height="1075"/>
+        <image name="dragonHead9.png" width="1075" height="1075"/>
         <image name="exitIcon.png" width="512" height="512"/>
         <image name="gearIcon.png" width="128" height="128"/>
         <image name="gradient.png" width="800" height="800"/>
