@@ -816,7 +816,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qq-45-ehR">
-                                                                <rect key="frame" x="54" y="62" width="37" height="41"/>
+                                                                <rect key="frame" x="45" y="57" width="37" height="41"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -829,15 +829,15 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circleBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Kw-8l-Kgj">
-                                                                <rect key="frame" x="49" y="54" width="44" height="58"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ring12gauge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Kw-8l-Kgj">
+                                                                <rect key="frame" x="40" y="48" width="44" height="58"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circleSmall1.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Jh-hF-Nzz">
-                                                                <rect key="frame" x="228" y="77" width="65" height="85"/>
+                                                                <rect key="frame" x="229" y="77" width="65" height="85"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circleSmall1.png" translatesAutoresizingMaskIntoConstraints="NO" id="diP-L6-dbI">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ring12gauge2.png" translatesAutoresizingMaskIntoConstraints="NO" id="diP-L6-dbI">
                                                                 <rect key="frame" x="87" y="77" width="65" height="85"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
@@ -862,6 +862,13 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-rE-PnF">
+                                                                <rect key="frame" x="186" y="123" width="88" height="67"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <connections>
+                                                                    <action selector="ringMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNT-uB-1y7"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-Fq-qOY">
@@ -2932,7 +2939,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8Z-Q4-yLM">
-                                                        <rect key="frame" x="20" y="65" width="31" height="38"/>
+                                                        <rect key="frame" x="12" y="59" width="49" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                                         <state key="normal" title="⊕" image="arrowDown.png">
@@ -2943,7 +2950,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woL-E9-gx5">
-                                                        <rect key="frame" x="81" y="20" width="31" height="38"/>
+                                                        <rect key="frame" x="73" y="8" width="49" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                                         <state key="normal" title="⊕" image="arrowUp.png">
@@ -2954,7 +2961,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0o-Y6-3IG">
-                                                        <rect key="frame" x="223" y="20" width="31" height="38"/>
+                                                        <rect key="frame" x="215" y="8" width="49" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                                         <state key="normal" title="⊕" image="arrowUp.png">
@@ -2965,14 +2972,35 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhr-PV-VfP">
-                                                        <rect key="frame" x="161" y="65" width="31" height="38"/>
+                                                        <rect key="frame" x="155" y="59" width="49" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                                         <state key="normal" title="⊕" image="arrowDown.png">
                                                             <color key="titleColor" red="0.79963118649999998" green="0.79963118649999998" blue="0.79963118649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="ringMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91O-r5-0F7"/>
+                                                            <action selector="ringMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3e7-xd-6V7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v3-nK-cDt">
+                                                        <rect key="frame" x="59" y="7" width="80" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="AdvancePlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bm6-NG-wlX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9k-CK-xjJ">
+                                                        <rect key="frame" x="-23" y="63" width="88" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="AdvanceMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7b1-Zs-GET"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEC-bu-q7p">
+                                                        <rect key="frame" x="202" y="0.0" width="88" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="ringPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeD-vO-CCK"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -3087,6 +3115,7 @@
                         <outlet property="addPicker" destination="GbH-ID-FSl" id="ED5-hS-TXg"/>
                         <outlet property="addView" destination="25e-pa-2WQ" id="j0a-ez-Quo"/>
                         <outlet property="advancementCounter" destination="WRw-Od-CMe" id="fhf-1i-gKN"/>
+                        <outlet property="advancementImage" destination="diP-L6-dbI" id="Hdg-7M-dw0"/>
                         <outlet property="bandCounter" destination="DpP-p7-MiS" id="UvJ-p3-ctE"/>
                         <outlet property="bandPicker" destination="dF7-rL-TFQ" id="PzG-F0-YPh"/>
                         <outlet property="bandView" destination="fIF-Uw-PaD" id="MtT-9T-Ix4"/>
@@ -3098,7 +3127,7 @@
                         <outlet property="chooseReadingView" destination="Imf-tT-Vra" id="egc-i2-R70"/>
                         <outlet property="chooseReadingsTableV" destination="zd8-dp-Q80" id="UYh-7w-3FL"/>
                         <outlet property="cycleCounter" destination="1Qq-45-ehR" id="TtH-SQ-Obn"/>
-                        <outlet property="cycleImage" destination="6Kw-8l-Kgj" id="fa4-wR-gST"/>
+                        <outlet property="cycleImage" destination="6Kw-8l-Kgj" id="50d-hx-Ptv"/>
                         <outlet property="cycleLabel" destination="05g-Sk-b0b" id="kbn-yf-ESP"/>
                         <outlet property="deleteView" destination="2r6-c2-XBy" id="xSo-G1-Egs"/>
                         <outlet property="depthImage" destination="0Jh-hF-Nzz" id="rKV-lS-lRD"/>
@@ -3183,10 +3212,10 @@
         <image name="Moon.png" width="194" height="202"/>
         <image name="ZMNumbers.png" width="763" height="764"/>
         <image name="ZodiacMandala.png" width="2150" height="2150"/>
-        <image name="arrowDown.png" width="226" height="300"/>
-        <image name="arrowUp.png" width="226" height="300"/>
+        <image name="arrowDown.png" width="576" height="650"/>
+        <image name="arrowUp.png" width="576" height="650"/>
         <image name="circleBig.png" width="300" height="278"/>
-        <image name="circleSmall1.png" width="300" height="278"/>
+        <image name="circleSmall1.png" width="1002" height="1034"/>
         <image name="cosmos.jpeg" width="1920" height="1080"/>
         <image name="dragonHead1.png" width="1075" height="1075"/>
         <image name="dragonHead10.png" width="1075" height="1075"/>
@@ -3198,12 +3227,14 @@
         <image name="dragonHead5.png" width="1075" height="1075"/>
         <image name="dragonHead6.png" width="1075" height="1075"/>
         <image name="dragonHead7.png" width="1075" height="1075"/>
-        <image name="dragonHead8.png" width="1075" height="1075"/>
+        <image name="dragonHead8.png" width="1002" height="1034"/>
         <image name="dragonHead9.png" width="1075" height="1075"/>
         <image name="exitIcon.png" width="512" height="512"/>
         <image name="gearIcon.png" width="128" height="128"/>
         <image name="gradient.png" width="800" height="800"/>
         <image name="keyboard.png" width="512" height="512"/>
+        <image name="ring12gauge1.png" width="1002" height="1034"/>
+        <image name="ring12gauge2.png" width="1002" height="1034"/>
         <image name="words.png" width="489" height="361"/>
     </resources>
 </document>

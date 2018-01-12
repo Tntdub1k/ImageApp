@@ -24,6 +24,24 @@
 		0116F6D12008146700F76E0F /* dragonHead11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6C62008145F00F76E0F /* dragonHead11.png */; };
 		0116F6D22008146700F76E0F /* dragonHead7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6C72008146200F76E0F /* dragonHead7.png */; };
 		0116F6D32008146700F76E0F /* dragonHead1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6C82008146400F76E0F /* dragonHead1.png */; };
+		0116F6D620092E2A00F76E0F /* ring12gauge2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6D420092E2500F76E0F /* ring12gauge2.png */; };
+		0116F6D720092E2A00F76E0F /* ring12gauge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6D520092E2600F76E0F /* ring12gauge1.png */; };
+		0116F6E220093A8F00F76E0F /* ring12gauge7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6D820093A7600F76E0F /* ring12gauge7.png */; };
+		0116F6E320093A8F00F76E0F /* ring12gauge12.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6D920093A7700F76E0F /* ring12gauge12.png */; };
+		0116F6E420093A8F00F76E0F /* ring12gauge3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6DA20093A7900F76E0F /* ring12gauge3.png */; };
+		0116F6E520093A8F00F76E0F /* ring12gauge6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6DB20093A7D00F76E0F /* ring12gauge6.png */; };
+		0116F6E620093A8F00F76E0F /* ring12gauge10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6DC20093A8100F76E0F /* ring12gauge10.png */; };
+		0116F6E720093A8F00F76E0F /* ring12gauge5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6DD20093A8500F76E0F /* ring12gauge5.png */; };
+		0116F6E820093A8F00F76E0F /* ring12gauge11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6DE20093A8500F76E0F /* ring12gauge11.png */; };
+		0116F6E920093A8F00F76E0F /* ring12gauge9.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6DF20093A8800F76E0F /* ring12gauge9.png */; };
+		0116F6EA20093A8F00F76E0F /* ring12gauge8.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6E020093A8800F76E0F /* ring12gauge8.png */; };
+		0116F6EB20093A8F00F76E0F /* ring12gauge4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6E120093A8B00F76E0F /* ring12gauge4.png */; };
+		0116F6F22009440A00F76E0F /* ring6gauge4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6EC200943FE00F76E0F /* ring6gauge4.png */; };
+		0116F6F32009440A00F76E0F /* ring6gauge2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6ED200943FE00F76E0F /* ring6gauge2.png */; };
+		0116F6F42009440A00F76E0F /* ring6gauge3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6EE2009440200F76E0F /* ring6gauge3.png */; };
+		0116F6F52009440A00F76E0F /* ring6gauge5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6EF2009440300F76E0F /* ring6gauge5.png */; };
+		0116F6F62009440A00F76E0F /* ring6gauge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6F02009440600F76E0F /* ring6gauge1.png */; };
+		0116F6F72009440A00F76E0F /* ring6gauge6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6F12009440700F76E0F /* ring6gauge6.png */; };
 		011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */; };
 		011D7BEE1FEB494C001E3417 /* Moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEC1FEB494B001E3417 /* Moon.png */; };
 		011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BF11FEB56BC001E3417 /* ZMNumbers.png */; };
@@ -98,6 +116,24 @@
 		0116F6C62008145F00F76E0F /* dragonHead11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonHead11.png; path = ../../../Documents/dragonHead11.png; sourceTree = "<group>"; };
 		0116F6C72008146200F76E0F /* dragonHead7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonHead7.png; path = ../../../Documents/dragonHead7.png; sourceTree = "<group>"; };
 		0116F6C82008146400F76E0F /* dragonHead1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonHead1.png; path = ../../../Documents/dragonHead1.png; sourceTree = "<group>"; };
+		0116F6D420092E2500F76E0F /* ring12gauge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge2.png; path = ../../../Documents/ring12gauge2.png; sourceTree = "<group>"; };
+		0116F6D520092E2600F76E0F /* ring12gauge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge1.png; path = ../../../Documents/ring12gauge1.png; sourceTree = "<group>"; };
+		0116F6D820093A7600F76E0F /* ring12gauge7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge7.png; path = ../../../Documents/ring12gauge7.png; sourceTree = "<group>"; };
+		0116F6D920093A7700F76E0F /* ring12gauge12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge12.png; path = ../../../Documents/ring12gauge12.png; sourceTree = "<group>"; };
+		0116F6DA20093A7900F76E0F /* ring12gauge3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge3.png; path = ../../../Documents/ring12gauge3.png; sourceTree = "<group>"; };
+		0116F6DB20093A7D00F76E0F /* ring12gauge6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge6.png; path = ../../../Documents/ring12gauge6.png; sourceTree = "<group>"; };
+		0116F6DC20093A8100F76E0F /* ring12gauge10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge10.png; path = ../../../Documents/ring12gauge10.png; sourceTree = "<group>"; };
+		0116F6DD20093A8500F76E0F /* ring12gauge5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge5.png; path = ../../../Documents/ring12gauge5.png; sourceTree = "<group>"; };
+		0116F6DE20093A8500F76E0F /* ring12gauge11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge11.png; path = ../../../Documents/ring12gauge11.png; sourceTree = "<group>"; };
+		0116F6DF20093A8800F76E0F /* ring12gauge9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge9.png; path = ../../../Documents/ring12gauge9.png; sourceTree = "<group>"; };
+		0116F6E020093A8800F76E0F /* ring12gauge8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge8.png; path = ../../../Documents/ring12gauge8.png; sourceTree = "<group>"; };
+		0116F6E120093A8B00F76E0F /* ring12gauge4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring12gauge4.png; path = ../../../Documents/ring12gauge4.png; sourceTree = "<group>"; };
+		0116F6EC200943FE00F76E0F /* ring6gauge4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge4.png; path = ../../../Documents/ring6gauge4.png; sourceTree = "<group>"; };
+		0116F6ED200943FE00F76E0F /* ring6gauge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge2.png; path = ../../../Documents/ring6gauge2.png; sourceTree = "<group>"; };
+		0116F6EE2009440200F76E0F /* ring6gauge3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge3.png; path = ../../../Documents/ring6gauge3.png; sourceTree = "<group>"; };
+		0116F6EF2009440300F76E0F /* ring6gauge5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge5.png; path = ../../../Documents/ring6gauge5.png; sourceTree = "<group>"; };
+		0116F6F02009440600F76E0F /* ring6gauge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge1.png; path = ../../../Documents/ring6gauge1.png; sourceTree = "<group>"; };
+		0116F6F12009440700F76E0F /* ring6gauge6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge6.png; path = ../../../Documents/ring6gauge6.png; sourceTree = "<group>"; };
 		011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedGreen.png; path = ../../../Documents/DignifiedGreen.png; sourceTree = "<group>"; };
 		011D7BEC1FEB494B001E3417 /* Moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Moon.png; path = ../../../Documents/Moon.png; sourceTree = "<group>"; };
 		011D7BF11FEB56BC001E3417 /* ZMNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZMNumbers.png; path = ../../../Documents/ZMNumbers.png; sourceTree = "<group>"; };
@@ -188,6 +224,24 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				0116F6F02009440600F76E0F /* ring6gauge1.png */,
+				0116F6ED200943FE00F76E0F /* ring6gauge2.png */,
+				0116F6EE2009440200F76E0F /* ring6gauge3.png */,
+				0116F6EC200943FE00F76E0F /* ring6gauge4.png */,
+				0116F6EF2009440300F76E0F /* ring6gauge5.png */,
+				0116F6F12009440700F76E0F /* ring6gauge6.png */,
+				0116F6DA20093A7900F76E0F /* ring12gauge3.png */,
+				0116F6E120093A8B00F76E0F /* ring12gauge4.png */,
+				0116F6DD20093A8500F76E0F /* ring12gauge5.png */,
+				0116F6DB20093A7D00F76E0F /* ring12gauge6.png */,
+				0116F6D820093A7600F76E0F /* ring12gauge7.png */,
+				0116F6E020093A8800F76E0F /* ring12gauge8.png */,
+				0116F6DF20093A8800F76E0F /* ring12gauge9.png */,
+				0116F6DC20093A8100F76E0F /* ring12gauge10.png */,
+				0116F6DE20093A8500F76E0F /* ring12gauge11.png */,
+				0116F6D920093A7700F76E0F /* ring12gauge12.png */,
+				0116F6D520092E2600F76E0F /* ring12gauge1.png */,
+				0116F6D420092E2500F76E0F /* ring12gauge2.png */,
 				0116F6C82008146400F76E0F /* dragonHead1.png */,
 				0116F6C02008143000F76E0F /* dragonHead2.png */,
 				0116F6BE2008140800F76E0F /* dragonHead3.png */,
@@ -332,40 +386,57 @@
 				018112551FEF76300071111D /* cosmos.jpeg in Resources */,
 				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
 				0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */,
+				0116F6D620092E2A00F76E0F /* ring12gauge2.png in Resources */,
 				018112701FF01F980071111D /* Venus.png in Resources */,
 				011D7BF91FEC644A001E3417 /* dragonHead10.png in Resources */,
 				0181125E1FF0186F0071111D /* Dejanira.png in Resources */,
 				018112611FF0186F0071111D /* Lilith.png in Resources */,
 				018112761FF01F980071111D /* Nibiru.png in Resources */,
 				010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */,
+				0116F6E520093A8F00F76E0F /* ring12gauge6.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
 				011669341FFE930900AD8E42 /* keyboard.png in Resources */,
+				0116F6F72009440A00F76E0F /* ring6gauge6.png in Resources */,
 				019E7E252003E25300ED3F77 /* arrowUp.png in Resources */,
+				0116F6F62009440A00F76E0F /* ring6gauge1.png in Resources */,
 				011D7C081FEF058A001E3417 /* Empty.png in Resources */,
+				0116F6F52009440A00F76E0F /* ring6gauge5.png in Resources */,
 				019E7E282003EBD700ED3F77 /* words.png in Resources */,
 				0116F6CC2008146700F76E0F /* dragonHead5.png in Resources */,
 				018112781FF01F980071111D /* SN.png in Resources */,
 				0116F6CA2008146700F76E0F /* dragonHead8.png in Resources */,
+				0116F6E220093A8F00F76E0F /* ring12gauge7.png in Resources */,
+				0116F6E720093A8F00F76E0F /* ring12gauge5.png in Resources */,
 				018112831FF17A830071111D /* gradient.png in Resources */,
 				0116F6D32008146700F76E0F /* dragonHead1.png in Resources */,
 				0181127F1FF033D00071111D /* Eros.png in Resources */,
 				01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */,
 				011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */,
+				0116F6F32009440A00F76E0F /* ring6gauge2.png in Resources */,
 				0181127B1FF01F980071111D /* Uranus.png in Resources */,
 				01304E1C1FEAD70E000F24E9 /* LaunchScreen.storyboard in Resources */,
 				0116F6D12008146700F76E0F /* dragonHead11.png in Resources */,
 				019E7E222003DCE100ED3F77 /* circleSmall1.png in Resources */,
 				019E7E1E2001347F00ED3F77 /* icon (1) in Resources */,
+				0116F6EA20093A8F00F76E0F /* ring12gauge8.png in Resources */,
 				018112741FF01F980071111D /* Psyche.png in Resources */,
+				0116F6E420093A8F00F76E0F /* ring12gauge3.png in Resources */,
 				0181127A1FF01F980071111D /* Sedna.png in Resources */,
+				0116F6F42009440A00F76E0F /* ring6gauge3.png in Resources */,
 				018112721FF01F980071111D /* Saturn.png in Resources */,
 				018112571FF010A40071111D /* Chiron.png in Resources */,
+				0116F6D720092E2A00F76E0F /* ring12gauge1.png in Resources */,
+				0116F6EB20093A8F00F76E0F /* ring12gauge4.png in Resources */,
 				0116F6CF2008146700F76E0F /* dragonHead9.png in Resources */,
 				0181125D1FF0186F0071111D /* Mars.png in Resources */,
 				018112791FF01F980071111D /* Nessus.png in Resources */,
 				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
 				0116F6CD2008146700F76E0F /* dragonHead4.png in Resources */,
+				0116F6E620093A8F00F76E0F /* ring12gauge10.png in Resources */,
+				0116F6F22009440A00F76E0F /* ring6gauge4.png in Resources */,
 				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
+				0116F6E820093A8F00F76E0F /* ring12gauge11.png in Resources */,
+				0116F6E920093A8F00F76E0F /* ring12gauge9.png in Resources */,
 				01B26F58200536A90076683F /* gearIcon.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				0116F6D22008146700F76E0F /* dragonHead7.png in Resources */,
@@ -388,6 +459,7 @@
 				0181125F1FF0186F0071111D /* Neptune.png in Resources */,
 				011D7BFA1FEC644A001E3417 /* dragonUpperBody10.png in Resources */,
 				0116F6CE2008146700F76E0F /* dragonHead6.png in Resources */,
+				0116F6E320093A8F00F76E0F /* ring12gauge12.png in Resources */,
 				010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */,
 				011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */,
 				0116F6C92008146700F76E0F /* dragonHead3.png in Resources */,

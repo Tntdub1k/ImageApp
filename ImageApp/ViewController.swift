@@ -192,17 +192,26 @@ UITableViewDataSource{
     @IBOutlet weak var pressSettings: UIButton!
     @IBOutlet weak var ButtonView: UIView!
     @IBOutlet weak var clearKeyboard: UIButton!
+    
+    @IBOutlet weak var advancementImage: UIImageView!
+
+    @IBOutlet weak var cycleImage: UIImageView!
     func loadAP(){
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         NotesTitle.text = IndividualTitle.text
         
         var cycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+        cycleImage.image = UIImage(named: "ring12gauge"+String(cycle))
         cycleCounter.text = String(cycle)
         var advancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"] as! Int
         advancementCounter.text = String(advancement)
+        advancementImage.image = UIImage(named: "ring12gauge"+String(advancement))
+        
+        
         var ring = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"] as! Int
         ringCounter.text = String(ring)
         bandCounter.text = String(m_CurrentSBody + 1)
+        depthImage.image = UIImage(named:"ring6gauge"+String(ring))
         clearAllViewsFromScreen()
         
         m_remainingCBs = Array(repeating:"", count:0)
@@ -580,7 +589,7 @@ UITableViewDataSource{
     var m_remainingCBs = Array(repeating:"", count:0)
     var m_notesAreOpen = false
     var m_currentNote = ""
-    var m_SpiritBands = ["1 - Physical Body","2 - Emotional Body", "3 - Intellectual Body", "4 - Spiritual Body"]
+    var m_SpiritBands = ["1st Body - Physical","2nd Body - Emotional", "3rd Body - Intellectual", "4th Body - Spiritual"]
     var m_CurrentSBody = 0
     let m_BeginnerDetail = 0
     let m_IntermediateDetail = 1
@@ -818,8 +827,13 @@ UITableViewDataSource{
                     }
                 }
             }
+            
+           
         }
 
+        if ((m_DetailLevelBeforeChange < m_CurrentDetailLevel) && (m_CurrentDetailLevel == m_IntermediateDetail)){
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"] = 1
+        }
         displayCurrentDetailLevel()
         
         loadAP()
@@ -831,7 +845,6 @@ UITableViewDataSource{
     @IBOutlet weak var depthMinusB: UIButton!
     @IBOutlet weak var depthPlusB: UIButton!
     @IBOutlet weak var depthLabel: UILabel!
-    @IBOutlet weak var cycleImage: UIImageView!
     @IBOutlet weak var settingsDetailTextBox: UITextView!
     @IBOutlet weak var bodyButton: UIButton!
     @IBOutlet weak var bodyImage: UIImageView!
@@ -1158,7 +1171,7 @@ UITableViewDataSource{
                 hasNN = true
             }
         }
-        if (hasNN == true){
+        if ((hasNN == true) && (m_CurrentDetailLevel >= m_IntermediateDetail)){
             revealOrHideDragonHead(houseNumber:m_Ring.HouseName, hideOrReveal:"reveal")
         }else{
                revealOrHideDragonHead(houseNumber:m_Ring.HouseName, hideOrReveal:"hide")
