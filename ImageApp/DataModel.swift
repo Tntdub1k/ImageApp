@@ -294,6 +294,9 @@ public class AstrologicalProfile: Codable{
         advancementInfo["SBody3RingAdvancement"] = 1
         advancementInfo["SBody3TotalAdvancementIndicator"] = 1
         
+        advancementInfo["currentSBody"] = 0
+        
+        
         notes["SBody0General"] = ""
         
         notes["SBody1General"] = ""

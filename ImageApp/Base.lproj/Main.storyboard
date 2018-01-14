@@ -788,7 +788,7 @@
                                         <rect key="frame" x="-8" y="48" width="328" height="500"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cosmos.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-d2-bx4">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="187609.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-d2-bx4">
                                                 <rect key="frame" x="8" y="-48" width="320" height="565"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -942,6 +942,54 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead12.png" translatesAutoresizingMaskIntoConstraints="NO" id="z6Q-25-u1F">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail1.png" translatesAutoresizingMaskIntoConstraints="NO" id="7tb-pA-aDT">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail2.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Pq-gY-n6g">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z9a-tH-pPo">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail4.png" translatesAutoresizingMaskIntoConstraints="NO" id="hWv-tW-NRO">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail5.png" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-Fl-aAC">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail6.png" translatesAutoresizingMaskIntoConstraints="NO" id="y2n-9S-Cea">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail7.png" translatesAutoresizingMaskIntoConstraints="NO" id="oFt-Mn-akD">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail8.png" translatesAutoresizingMaskIntoConstraints="NO" id="tPM-tL-SYc">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail9.png" translatesAutoresizingMaskIntoConstraints="NO" id="dcu-hA-HWd">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail10.png" translatesAutoresizingMaskIntoConstraints="NO" id="nCb-EI-ghw">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail11.png" translatesAutoresizingMaskIntoConstraints="NO" id="e9y-jv-gcN">
+                                                                <rect key="frame" x="8" y="8" width="345" height="345"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonsTail12.png" translatesAutoresizingMaskIntoConstraints="NO" id="K0E-VS-cqS">
                                                                 <rect key="frame" x="8" y="8" width="345" height="345"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </imageView>
@@ -3146,6 +3194,18 @@
                         <outlet property="dragonHead7" destination="5jb-oW-YSG" id="5LB-Nc-DMT"/>
                         <outlet property="dragonHead8" destination="0ld-qv-ro5" id="mFr-Tj-lR6"/>
                         <outlet property="dragonHead9" destination="D52-qB-OfY" id="e0z-yt-7Lf"/>
+                        <outlet property="dragonTail1" destination="7tb-pA-aDT" id="3Go-L1-qPg"/>
+                        <outlet property="dragonTail10" destination="nCb-EI-ghw" id="y3m-O4-Sr3"/>
+                        <outlet property="dragonTail11" destination="e9y-jv-gcN" id="ap7-W8-L5i"/>
+                        <outlet property="dragonTail12" destination="K0E-VS-cqS" id="IaZ-nq-rwk"/>
+                        <outlet property="dragonTail2" destination="3Pq-gY-n6g" id="a7Y-ad-Cgb"/>
+                        <outlet property="dragonTail3" destination="Z9a-tH-pPo" id="SZY-X7-G98"/>
+                        <outlet property="dragonTail4" destination="hWv-tW-NRO" id="De0-1I-opb"/>
+                        <outlet property="dragonTail5" destination="3aM-Fl-aAC" id="96m-K9-Coe"/>
+                        <outlet property="dragonTail6" destination="y2n-9S-Cea" id="dIq-rW-zHS"/>
+                        <outlet property="dragonTail7" destination="oFt-Mn-akD" id="z31-Ga-4QZ"/>
+                        <outlet property="dragonTail8" destination="tPM-tL-SYc" id="XqZ-hE-4IH"/>
+                        <outlet property="dragonTail9" destination="dcu-hA-HWd" id="aZk-k5-e9p"/>
                         <outlet property="dropboxSwitch" destination="cWp-iq-OvO" id="StG-rS-upo"/>
                         <outlet property="enterNewCategoryTextb" destination="DCS-ov-wIP" id="po6-QY-5TO"/>
                         <outlet property="enterNewMemberTextB" destination="z5G-9B-LQ9" id="52K-CA-bv4"/>
@@ -3208,6 +3268,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="187609.jpg" width="1920" height="1080"/>
         <image name="DignifiedGreen.png" width="194" height="200"/>
         <image name="Moon.png" width="194" height="202"/>
         <image name="ZMNumbers.png" width="763" height="764"/>
@@ -3216,7 +3277,6 @@
         <image name="arrowUp.png" width="576" height="650"/>
         <image name="circleBig.png" width="300" height="278"/>
         <image name="circleSmall1.png" width="1002" height="1034"/>
-        <image name="cosmos.jpeg" width="1920" height="1080"/>
         <image name="dragonHead1.png" width="1075" height="1075"/>
         <image name="dragonHead10.png" width="1075" height="1075"/>
         <image name="dragonHead11.png" width="1075" height="1075"/>
@@ -3227,8 +3287,20 @@
         <image name="dragonHead5.png" width="1075" height="1075"/>
         <image name="dragonHead6.png" width="1075" height="1075"/>
         <image name="dragonHead7.png" width="1075" height="1075"/>
-        <image name="dragonHead8.png" width="1002" height="1034"/>
+        <image name="dragonHead8.png" width="1075" height="1075"/>
         <image name="dragonHead9.png" width="1075" height="1075"/>
+        <image name="dragonsTail1.png" width="1075" height="1075"/>
+        <image name="dragonsTail10.png" width="1075" height="1075"/>
+        <image name="dragonsTail11.png" width="1075" height="1075"/>
+        <image name="dragonsTail12.png" width="1075" height="1075"/>
+        <image name="dragonsTail2.png" width="1075" height="1075"/>
+        <image name="dragonsTail3.png" width="1075" height="1075"/>
+        <image name="dragonsTail4.png" width="1075" height="1075"/>
+        <image name="dragonsTail5.png" width="1075" height="1075"/>
+        <image name="dragonsTail6.png" width="1075" height="1075"/>
+        <image name="dragonsTail7.png" width="1075" height="1075"/>
+        <image name="dragonsTail8.png" width="1075" height="1075"/>
+        <image name="dragonsTail9.png" width="1075" height="1075"/>
         <image name="exitIcon.png" width="512" height="512"/>
         <image name="gearIcon.png" width="128" height="128"/>
         <image name="gradient.png" width="800" height="800"/>

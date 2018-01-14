@@ -155,8 +155,31 @@ UITableViewDataSource{
     }
   
     @IBAction func clickSelectSpiritBand(_ sender: Any) {
+        let oldSBody = m_CurrentSBody
         bandCounter.text = String(bandPicker.selectedRow(inComponent: 0) + 1)
         m_CurrentSBody = bandPicker.selectedRow(inComponent: 0)
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] = m_CurrentSBody
+        
+        bandPicker.reloadAllComponents()
+        let newAdvancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]
+        
+        
+        var currentCycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(oldSBody)+"Cycle"] as! Int
+        let newCycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] = currentCycle
+        if (currentCycle > newCycle){
+            while (currentCycle != newCycle){
+                decreaseAdvancement()
+                currentCycle =  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+            }
+        } else if (currentCycle < newCycle){
+            while (currentCycle != newCycle){
+                increaseAdvancement()
+                currentCycle =  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+            }
+        }
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"] = newAdvancement
+        
         clearAllViewsFromScreen()
         loadAP()
         
@@ -199,6 +222,8 @@ UITableViewDataSource{
     func loadAP(){
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         NotesTitle.text = IndividualTitle.text
+        
+        
         
         var cycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
         cycleImage.image = UIImage(named: "ring12gauge"+String(cycle))
@@ -616,6 +641,32 @@ UITableViewDataSource{
         
         clearAllViewsFromScreen()
     }
+    
+    
+    func advanceToCycle( pastCycle:Int, newCycle:Int, newAdvancement:Int, newBody:Int){
+        
+      
+        var currentCycle = pastCycle
+        
+        
+        m_CurrentSBody = newBody
+    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] = pastCycle
+        
+        if (currentCycle > newCycle){
+            while (currentCycle != newCycle){
+                decreaseAdvancement()
+                currentCycle =  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+            }
+        } else if (currentCycle < newCycle){
+            while (currentCycle != newCycle){
+                increaseAdvancement()
+                currentCycle =  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+            }
+        }
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"] = newAdvancement
+    }
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -657,6 +708,17 @@ UITableViewDataSource{
                 }
             }
         }
+        
+        
+        m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
+        
+        
+        if ((m_CurrentDetailLevel != m_MasterDetail) && (m_CurrentSBody >= m_IntermediateDetail)){
+            
+            advanceToCycle(pastCycle:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!, newCycle:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"]!, newAdvancement:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]! , newBody:m_BeginnerDetail)
+            m_CurrentSBody = 0
+        }
+            
         
         
         
@@ -719,7 +781,7 @@ UITableViewDataSource{
         bodyLabel.isHidden = true
         bodyImage.isHidden = true
         bodyButton.isHidden = true
-        m_CurrentSBody = 0
+   
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0RingAdvancement"] = 1
         //m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"] = 0
         
@@ -749,8 +811,7 @@ UITableViewDataSource{
         bodyLabel.isHidden = true
         bodyImage.isHidden = true
         bodyButton.isHidden = true
-        m_CurrentSBody = 0
-        
+
         
         m_CBL = CelestialBodyListing()
         for CB in m_CBL.AllCelestialBodies{
@@ -776,7 +837,7 @@ UITableViewDataSource{
         bodyLabel.isHidden = true
         bodyImage.isHidden = true
         bodyButton.isHidden = true
-        m_CurrentSBody = 0
+   
         
         
         m_CBL = CelestialBodyListing()
@@ -828,12 +889,40 @@ UITableViewDataSource{
                 }
             }
             
-           
+        }
+        
+        if ((m_DetailLevelBeforeChange == m_MasterDetail) && (m_CurrentDetailLevel != m_MasterDetail)){
+            
+            
+            
+            advanceToCycle(pastCycle:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!, newCycle:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"]!, newAdvancement:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]! , newBody:m_BeginnerDetail)
+            m_CurrentSBody = 0
+            
+    
+            
+        }
+            
+            if (m_DetailLevelBeforeChange == 0){
+                let newAdvancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]
+                var currentCycle = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"] as! Int
+                //Set to 1
+                let newCycle = 1
+                if (currentCycle > newCycle){
+                    while (currentCycle != newCycle){
+                        decreaseAdvancement()
+                        currentCycle =  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+                    }
+                } else if (currentCycle < newCycle){
+                    while (currentCycle != newCycle){
+                        increaseAdvancement()
+                        currentCycle =  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
+                    }
+                }
+                m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"] = newAdvancement
+            
         }
 
-        if ((m_DetailLevelBeforeChange < m_CurrentDetailLevel) && (m_CurrentDetailLevel == m_IntermediateDetail)){
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"] = 1
-        }
+     
         displayCurrentDetailLevel()
         
         loadAP()
@@ -1177,6 +1266,20 @@ UITableViewDataSource{
                revealOrHideDragonHead(houseNumber:m_Ring.HouseName, hideOrReveal:"hide")
         }
         
+        
+        var hasSN = false
+        for ringTP in m_Ring.RingTransPersp{
+            if (ringTP.CurrentCelestialBody == "South Node"){
+                hasSN = true
+            }
+        }
+        if ((hasSN == true) && (m_CurrentDetailLevel >= m_IntermediateDetail)){
+            revealOrHideDragonTail(houseNumber:m_Ring.HouseName, hideOrReveal:"reveal")
+        }else{
+            revealOrHideDragonTail(houseNumber:m_Ring.HouseName, hideOrReveal:"hide")
+        }
+        
+        
         let labelColor = UIColor.init(red: 0.0/255.0, green: 157.0/255.0, blue: 209.0/255.0, alpha: 1)
         
         var strokeText: [NSAttributedStringKey: Any] = [
@@ -1218,8 +1321,7 @@ UITableViewDataSource{
     }
     
     
- 
-    @IBAction func AdvanceMinus(_ sender: Any) {
+    func decreaseAdvancement(){
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! < 1){
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1
@@ -1296,13 +1398,16 @@ UITableViewDataSource{
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! < 1){
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = 12
         }
-        
+    }
+    @IBAction func AdvanceMinus(_ sender: Any) {
+     
+        decreaseAdvancement()
         loadAP()
         
         
     }
-   
-    @IBAction func AdvancePlus(_ sender: Any) {
+    
+    func increaseAdvancement(){
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! + 1
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! > 12){
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! + 1
@@ -1377,8 +1482,12 @@ UITableViewDataSource{
         }
         
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! > 12){
-           m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = 1
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! = 1
         }
+    }
+   
+    @IBAction func AdvancePlus(_ sender: Any) {
+        increaseAdvancement()
         loadAP()
         
         
@@ -1419,7 +1528,84 @@ UITableViewDataSource{
         
         
     }
-    
+    func revealOrHideDragonTail(houseNumber:String, hideOrReveal:String){
+        switch(houseNumber){
+        case "1stHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail1.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail1.isHidden = true
+            }
+        case "2ndHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail2.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail2.isHidden = true
+            }
+        case "3rdHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail3.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail3.isHidden = true
+            }
+        case "4thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail4.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail4.isHidden = true
+            }
+        case "5thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail5.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail5.isHidden = true
+            }
+        case "6thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail6.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail6.isHidden = true
+            }
+        case "7thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail7.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail7.isHidden = true
+            }
+        case "8thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail8.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail8.isHidden = true
+            }
+        case "9thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail9.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail9.isHidden = true
+            }
+        case "10thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail10.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail10.isHidden = true
+            }
+        case "11thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail11.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail11.isHidden = true
+            }
+        case "12thHouse":
+            if (hideOrReveal == "reveal"){
+                dragonTail12.isHidden = false
+            } else if (hideOrReveal == "hide"){
+                dragonTail12.isHidden = true
+            }
+        default:
+            break
+        }
+    }
     func revealOrHideDragonHead(houseNumber:String, hideOrReveal:String){
         switch(houseNumber){
         case "1stHouse":
@@ -1499,6 +1685,18 @@ UITableViewDataSource{
         }
     }
   
+    @IBOutlet weak var dragonTail12: UIImageView!
+    @IBOutlet weak var dragonTail11: UIImageView!
+    @IBOutlet weak var dragonTail10: UIImageView!
+    @IBOutlet weak var dragonTail9: UIImageView!
+    @IBOutlet weak var dragonTail8: UIImageView!
+    @IBOutlet weak var dragonTail7: UIImageView!
+    @IBOutlet weak var dragonTail6: UIImageView!
+    @IBOutlet weak var dragonTail5: UIImageView!
+    @IBOutlet weak var dragonTail4: UIImageView!
+    @IBOutlet weak var dragonTail3: UIImageView!
+    @IBOutlet weak var dragonTail2: UIImageView!
+    @IBOutlet weak var dragonTail1: UIImageView!
     @IBOutlet weak var dragonHead12: UIImageView!
     @IBOutlet weak var dragonHead11: UIImageView!
     @IBOutlet weak var dragonHead10: UIImageView!
