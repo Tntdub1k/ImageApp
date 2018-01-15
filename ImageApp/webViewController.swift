@@ -10,15 +10,32 @@ import UIKit
 import WebKit
 
 class webViewController: UIViewController {
+    
+    var URL = ""
+    var extensionType = ""
+    var website = ""
+    var scrollBuffer = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL (string: "https://www.google.com")
-        let request = URLRequest (url:url!)
+        //let url = URL (string: "https://www.google.com")
+        //let url = Bundle.main.url(forResource: "Websites/The 2nd House in Astrology • The Astro Codex", withExtension: "htm")
+        sourceLabel.text = "Source: " + String(website)
+        let url = Bundle.main.url(forResource: URL , withExtension: "htm")
+        let request = URLRequest (url:(url)!)
         webView.load(request)
-        // Do any additional setup after loading the view.
+        
     }
-
+    
+    func webViewDidFinishLoad(_ webView: WKWebView) {
+        
+        let scrollPoint = CGPoint(x: 0, y: webView.scrollView.contentSize.height - webView.frame.size.height)
+        webView.scrollView.setContentOffset(scrollPoint, animated: true)//Set false if you doesn't want animation
+    }
+    
+    
+    @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

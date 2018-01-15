@@ -19,6 +19,80 @@ public class DignityInfo:Codable{
     var Fall = HouseAstroInfo()
 }
 
+public class  WebsiteEntry:Codable{
+    var URL = ""
+    var extensionType = ""
+    var website = ""
+    var author =  ""
+    var scrollBuffer = 0
+    var abbreviation = ""
+    var DisplayName = ""
+}
+
+public class TwelveHouseWE:Codable{
+    var data = [String: WebsiteEntry]()
+    init(){
+        data["1st House"] = WebsiteEntry()
+        data["2nd House"] = WebsiteEntry()
+        data["3rd House"] = WebsiteEntry()
+        data["4th House"] = WebsiteEntry()
+        data["5th House"] = WebsiteEntry()
+        data["6th House"] = WebsiteEntry()
+        data["7th House"] = WebsiteEntry()
+        data["8th House"] = WebsiteEntry()
+        data["9th House"] = WebsiteEntry()
+        data["10th House"] = WebsiteEntry()
+        data["11th House"] = WebsiteEntry()
+        data["12th House"] = WebsiteEntry()
+    }
+}
+
+public class WebsiteDataBase:Codable{
+    var database = [String:Array<TwelveHouseWE>]()
+    var houses = ["1st House","2nd House","3rd House","4th House","5th House","6th House","7th House","8th House","9th House","10th House","11th House","12th House"]
+    
+    init(){
+
+        
+        //Add Astro Codex
+        for CBname in ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto","North Node","South Node","Lilith"]{
+            var THWE = TwelveHouseWE()
+            var THWE2 = TwelveHouseWE()
+            
+            for house in houses{
+                if ((CBname == "North Node") || (CBname == "South Node") || (CBname == "Lilith")){
+                    THWE.data[house]?.URL = "Websites/"+CBname+" in the "+house+" • The Astro Codex"
+                    THWE.data[house]?.DisplayName = CBname+" in the "+house
+                } else {
+                THWE.data[house]?.URL = "Websites/Natal "+CBname+" in the "+house+" • The Astro Codex"
+                THWE.data[house]?.DisplayName = "Natal "+CBname+" in the "+house
+                }
+                
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "theastrocodex.com"
+                THWE.data[house]?.author = "Xaos"
+                THWE.data[house]?.abbreviation = "AC"
+                THWE.data[house]?.scrollBuffer = 40
+                
+                THWE2.data[house]?.URL = "Websites/The "+house+" in Astrology • The Astro Codex"
+                THWE2.data[house]?.DisplayName = "The "+house+" in Astrology"
+                THWE2.data[house]?.extensionType = "htm"
+                THWE2.data[house]?.website = "theastrocodex.com"
+                THWE2.data[house]?.author = "Xaos"
+                THWE2.data[house]?.abbreviation = "AC"
+                THWE2.data[house]?.scrollBuffer = 40
+            }
+            database[CBname] = Array<TwelveHouseWE>()
+            database[CBname]?.append(THWE)
+            database[CBname]?.append(THWE2)
+                
+                
+        }
+        
+        
+    }
+}
+
 public class CelestialBody:Codable{
     var DisplayName = ""
     var Dignities = DignityInfo()
@@ -35,6 +109,7 @@ public class CelestialBodyListing:Codable{
         Sun.Dignities.Exalted.HousesIncluded.append("1stHouse")
         Sun.Dignities.Fall.HousesIncluded.append("7thHouse")
         AllCelestialBodies["Sun"] = Sun
+        
         
         let Moon = CelestialBody()
         Moon.DisplayName = "Moon"

@@ -13,6 +13,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
     UIPageViewControllerDelegate,
     UIPageViewControllerDataSource,
 UITableViewDataSource{
+    
+    var aWebVC = webViewController()
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return self
     }
@@ -22,19 +25,49 @@ UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        var WDB = WebsiteDataBase()
+        
+        if (WDB.database[m_ReadingSourceCurrentCB] != nil){
+            return (WDB.database[m_ReadingSourceCurrentCB]?.count)!
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var TVC = UITableViewCell()
-        var label = UILabel(frame: CGRect(x:10, y:0, width:25, height:44))
-        label.textAlignment = NSTextAlignment.center
-        label.text = "FM"
-        TVC.contentView.addSubview(label)
-        var label2 = UILabel(frame: CGRect(x:45, y:0, width:240, height:44))
-        label2.textAlignment = NSTextAlignment.right
-        label2.text = "freespirited-mind.com"
+        var WDB = WebsiteDataBase()
+        
+        
+        
+            var TVC = UITableViewCell()
+        let label = UILabel(frame: CGRect(x:10, y:0, width:25, height:44))
+            label.textAlignment = NSTextAlignment.center
+        label.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.abbreviation
+        
+            TVC.contentView.addSubview(label)
+            
+        
+            var label2 = UILabel(frame: CGRect(x:45, y:20, width:240, height:21))
+            label2.textAlignment = NSTextAlignment.right
+            label2.font.withSize(5)
+            label2.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.DisplayName
+        
         TVC.contentView.addSubview(label2)
+        
+            var label3 = UILabel(frame: CGRect(x:45, y:0, width:240, height:21))
+            label3.textAlignment = NSTextAlignment.right
+        label3.font.withSize(20)
+            label3.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.website
+        
+            TVC.accessibilityLabel = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.URL
+            TVC.accessibilityHint = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.extensionType
+        TVC.accessibilityValue = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.website
+        TVC.accessibilityLanguage = "\(WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.scrollBuffer)"
+            TVC.contentView.addSubview(label3)
+      
+        
+        
+        
         
         return TVC
         
@@ -276,7 +309,22 @@ UITableViewDataSource{
         fillWithData()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SequeId_____1" {
+            if let destination = segue.destination as? webViewController {
+               
+                let url = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityLabel
+                let fileExtension = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityHint
+                let website = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityValue
+                let scrollBuffer = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityLanguage
+                destination.URL = url!
+                destination.extensionType = fileExtension!
+                destination.website = website!
+                destination.scrollBuffer = Int(scrollBuffer!)!
+            }
+        }
+    }
+
     @IBAction func clickCancelSelectView(_ sender: Any) {
         clearAllViewsFromScreen()
     }
@@ -378,14 +426,21 @@ UITableViewDataSource{
             default:
                 ordinalNum = ""
             }
-            chooseReadingLabel.text = sender.accessibilityIdentifier! + " in the " + ordinalNum + " House"
+            m_ReadingSourceCurrentCB = sender.accessibilityIdentifier!
+            m_ReadingSourceCurrentHouse = ordinalNum + " House"
+            
+            chooseReadingLabel.text = m_ReadingSourceCurrentCB + " in the " + m_ReadingSourceCurrentHouse
+            chooseReadingsTableV.reloadData()
+            
 
             mainView.bringSubview(toFront: chooseReadingView)
             
         }
     }
+    
+    
 
-
+    
     @IBOutlet weak var chooseReadingsTableV: UITableView!
     @IBAction func clickRemoveCB(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1].CurrentCelestialBody = "Empty"
@@ -622,6 +677,8 @@ UITableViewDataSource{
     let  m_MasterDetail = 3
     var m_CurrentDetailLevel = 0
     var m_DetailLevelBeforeChange = -1
+    var m_ReadingSourceCurrentHouse = "1st House"
+    var m_ReadingSourceCurrentCB = "Sun"
     let beginnerCBsList = ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto","Nibiru","Sedna"]
     let intermediateCBsList =
         ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto","Nibiru","Sedna", "North Node","South Node"]
