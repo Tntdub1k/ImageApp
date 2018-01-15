@@ -9,15 +9,17 @@
 import UIKit
 import WebKit
 
-class webViewController: UIViewController {
+class webViewController: UIViewController, WKNavigationDelegate {
     
     var URL = ""
     var extensionType = ""
     var website = ""
     var scrollBuffer = 0
+    var Title = ""
     
 
     override func viewDidLoad() {
+        loadingActivity.startAnimating()
         super.viewDidLoad()
         //let url = URL (string: "https://www.google.com")
         //let url = Bundle.main.url(forResource: "Websites/The 2nd House in Astrology • The Astro Codex", withExtension: "htm")
@@ -25,16 +27,29 @@ class webViewController: UIViewController {
         let url = Bundle.main.url(forResource: URL , withExtension: "htm")
         let request = URLRequest (url:(url)!)
         webView.load(request)
-        
+        webView.navigationDelegate = self
     }
     
-    func webViewDidFinishLoad(_ webView: WKWebView) {
-        
-        let scrollPoint = CGPoint(x: 0, y: webView.scrollView.contentSize.height - webView.frame.size.height)
-        webView.scrollView.setContentOffset(scrollPoint, animated: true)//Set false if you doesn't want animation
+   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    TitleLabel.text = Title
+    websiteContentV.isHidden = false
+    loadingActivity.stopAnimating()
+        let scrollPoint = CGPoint(x: 0, y: scrollBuffer)
+        webView.scrollView.setContentOffset(scrollPoint, animated: true)//Set false if you
+        }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
+    @IBAction func clickGoBack(_ sender: Any) {
+        loadingActivity.startAnimating()
+        websiteContentV.isHidden = true
+    }
+    @IBOutlet weak var websiteContentV: UIView!
     
-    
+
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var loadingActivity: UIActivityIndicatorView!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
     override func didReceiveMemoryWarning() {

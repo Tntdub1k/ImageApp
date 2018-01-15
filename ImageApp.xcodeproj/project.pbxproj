@@ -26,6 +26,17 @@
 		0114361F200ADDD800B75813 /* 16535326177271407165.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0114361E200ADDD700B75813 /* 16535326177271407165.svg */; };
 		01143621200ADE7E00B75813 /* 187609.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01143620200ADE7A00B75813 /* 187609.jpg */; };
 		01143623200BD2CB00B75813 /* Websites in Resources */ = {isa = PBXBuildFile; fileRef = 01143622200BD2CA00B75813 /* Websites */; };
+		01143625200D2BB300B75813 /* Eris.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143624200D2BAD00B75813 /* Eris.png */; };
+		01143628200D32EC00B75813 /* North Node.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143626200D32D800B75813 /* North Node.png */; };
+		01143629200D32ED00B75813 /* South Node.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143627200D32DD00B75813 /* South Node.png */; };
+		0114362C200D381700B75813 /* Amor.png in Resources */ = {isa = PBXBuildFile; fileRef = 0114362A200D380600B75813 /* Amor.png */; };
+		0114362D200D381700B75813 /* Fortunae.png in Resources */ = {isa = PBXBuildFile; fileRef = 0114362B200D380A00B75813 /* Fortunae.png */; };
+		01143630200D3C6600B75813 /* Cupido.png in Resources */ = {isa = PBXBuildFile; fileRef = 0114362E200D3C5200B75813 /* Cupido.png */; };
+		01143631200D3C6600B75813 /* Valentine.png in Resources */ = {isa = PBXBuildFile; fileRef = 0114362F200D3C5D00B75813 /* Valentine.png */; };
+		01143636200D60B800B75813 /* Juno.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143632200D608E00B75813 /* Juno.png */; };
+		01143637200D60B800B75813 /* Kaali.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143633200D609300B75813 /* Kaali.png */; };
+		01143638200D60B800B75813 /* Hekate.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143634200D609D00B75813 /* Hekate.png */; };
+		01143639200D60B800B75813 /* Heracles.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143635200D60A900B75813 /* Heracles.png */; };
 		011669341FFE930900AD8E42 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 011669331FFE930700AD8E42 /* keyboard.png */; };
 		011669361FFE9D4700AD8E42 /* exitIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 011669351FFE9D4600AD8E42 /* exitIcon.png */; };
 		0116F6C92008146700F76E0F /* dragonHead3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6BE2008140800F76E0F /* dragonHead3.png */; };
@@ -133,6 +144,17 @@
 		0114361E200ADDD700B75813 /* 16535326177271407165.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 16535326177271407165.svg; path = ../../Documents/16535326177271407165.svg; sourceTree = "<group>"; };
 		01143620200ADE7A00B75813 /* 187609.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 187609.jpg; path = ../../../Documents/187609.jpg; sourceTree = "<group>"; };
 		01143622200BD2CA00B75813 /* Websites */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Websites; sourceTree = "<group>"; };
+		01143624200D2BAD00B75813 /* Eris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Eris.png; path = ../../../Documents/Eris.png; sourceTree = "<group>"; };
+		01143626200D32D800B75813 /* North Node.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "North Node.png"; path = "../../../Documents/North Node.png"; sourceTree = "<group>"; };
+		01143627200D32DD00B75813 /* South Node.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "South Node.png"; path = "../../../Documents/South Node.png"; sourceTree = "<group>"; };
+		0114362A200D380600B75813 /* Amor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Amor.png; path = ../../../Documents/Amor.png; sourceTree = "<group>"; };
+		0114362B200D380A00B75813 /* Fortunae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fortunae.png; path = ../../../Documents/Fortunae.png; sourceTree = "<group>"; };
+		0114362E200D3C5200B75813 /* Cupido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cupido.png; path = ../../../Documents/Cupido.png; sourceTree = "<group>"; };
+		0114362F200D3C5D00B75813 /* Valentine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Valentine.png; path = ../../../Documents/Valentine.png; sourceTree = "<group>"; };
+		01143632200D608E00B75813 /* Juno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Juno.png; path = ../../../Documents/Juno.png; sourceTree = "<group>"; };
+		01143633200D609300B75813 /* Kaali.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kaali.png; path = ../../../Documents/Kaali.png; sourceTree = "<group>"; };
+		01143634200D609D00B75813 /* Hekate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hekate.png; path = ../../../Documents/Hekate.png; sourceTree = "<group>"; };
+		01143635200D60A900B75813 /* Heracles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Heracles.png; path = ../../../Documents/Heracles.png; sourceTree = "<group>"; };
 		011669331FFE930700AD8E42 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard.png; path = ../../../Documents/keyboard.png; sourceTree = "<group>"; };
 		011669351FFE9D4600AD8E42 /* exitIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exitIcon.png; path = ../../../Documents/exitIcon.png; sourceTree = "<group>"; };
 		0116F6BE2008140800F76E0F /* dragonHead3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonHead3.png; path = ../../../Documents/dragonHead3.png; sourceTree = "<group>"; };
@@ -255,6 +277,17 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				0114362E200D3C5200B75813 /* Cupido.png */,
+				0114362F200D3C5D00B75813 /* Valentine.png */,
+				01143634200D609D00B75813 /* Hekate.png */,
+				01143635200D60A900B75813 /* Heracles.png */,
+				01143632200D608E00B75813 /* Juno.png */,
+				01143633200D609300B75813 /* Kaali.png */,
+				0114362A200D380600B75813 /* Amor.png */,
+				0114362B200D380A00B75813 /* Fortunae.png */,
+				01143626200D32D800B75813 /* North Node.png */,
+				01143627200D32DD00B75813 /* South Node.png */,
+				01143624200D2BAD00B75813 /* Eris.png */,
 				01143622200BD2CA00B75813 /* Websites */,
 				01143620200ADE7A00B75813 /* 187609.jpg */,
 				0114360F200ACE4600B75813 /* dragonsTail1.png */,
@@ -431,6 +464,8 @@
 				018112551FEF76300071111D /* cosmos.jpeg in Resources */,
 				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
 				0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */,
+				01143639200D60B800B75813 /* Heracles.png in Resources */,
+				01143638200D60B800B75813 /* Hekate.png in Resources */,
 				01143617200ACE4D00B75813 /* dragonsTail12.png in Resources */,
 				01143618200ACE4D00B75813 /* dragonsTail3.png in Resources */,
 				0116F6D620092E2A00F76E0F /* ring12gauge2.png in Resources */,
@@ -440,6 +475,7 @@
 				018112611FF0186F0071111D /* Lilith.png in Resources */,
 				018112761FF01F980071111D /* Nibiru.png in Resources */,
 				010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */,
+				0114362C200D381700B75813 /* Amor.png in Resources */,
 				0116F6E520093A8F00F76E0F /* ring12gauge6.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
 				011669341FFE930900AD8E42 /* keyboard.png in Resources */,
@@ -448,6 +484,7 @@
 				019E7E252003E25300ED3F77 /* arrowUp.png in Resources */,
 				0116F6F62009440A00F76E0F /* ring6gauge1.png in Resources */,
 				011D7C081FEF058A001E3417 /* Empty.png in Resources */,
+				01143637200D60B800B75813 /* Kaali.png in Resources */,
 				0116F6F52009440A00F76E0F /* ring6gauge5.png in Resources */,
 				019E7E282003EBD700ED3F77 /* words.png in Resources */,
 				0116F6CC2008146700F76E0F /* dragonHead5.png in Resources */,
@@ -455,6 +492,7 @@
 				0116F6CA2008146700F76E0F /* dragonHead8.png in Resources */,
 				0116F6E220093A8F00F76E0F /* ring12gauge7.png in Resources */,
 				0116F6E720093A8F00F76E0F /* ring12gauge5.png in Resources */,
+				01143625200D2BB300B75813 /* Eris.png in Resources */,
 				018112831FF17A830071111D /* gradient.png in Resources */,
 				01143612200ACE4D00B75813 /* dragonsTail2.png in Resources */,
 				0116F6D32008146700F76E0F /* dragonHead1.png in Resources */,
@@ -490,20 +528,26 @@
 				0116F6E620093A8F00F76E0F /* ring12gauge10.png in Resources */,
 				0116F6F22009440A00F76E0F /* ring6gauge4.png in Resources */,
 				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
+				01143631200D3C6600B75813 /* Valentine.png in Resources */,
 				0116F6E820093A8F00F76E0F /* ring12gauge11.png in Resources */,
+				01143630200D3C6600B75813 /* Cupido.png in Resources */,
 				0116F6E920093A8F00F76E0F /* ring12gauge9.png in Resources */,
 				01B26F58200536A90076683F /* gearIcon.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				0116F6D22008146700F76E0F /* dragonHead7.png in Resources */,
 				01143616200ACE4D00B75813 /* dragonsTail8.png in Resources */,
 				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,
+				01143636200D60B800B75813 /* Juno.png in Resources */,
 				011669361FFE9D4700AD8E42 /* exitIcon.png in Resources */,
 				0181126F1FF01F980071111D /* NN.png in Resources */,
 				0181127E1FF033D00071111D /* Mercury.png in Resources */,
+				0114362D200D381700B75813 /* Fortunae.png in Resources */,
 				0116F6CB2008146700F76E0F /* dragonHead2.png in Resources */,
+				01143628200D32EC00B75813 /* North Node.png in Resources */,
 				011D7BEE1FEB494C001E3417 /* Moon.png in Resources */,
 				0114361B200ACE4D00B75813 /* dragonsTail1.png in Resources */,
 				011D7C051FEEFFA0001E3417 /* DignifiedDetriment.png in Resources */,
+				01143629200D32ED00B75813 /* South Node.png in Resources */,
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,

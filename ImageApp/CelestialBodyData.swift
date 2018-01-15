@@ -72,7 +72,7 @@ public class WebsiteDataBase:Codable{
                 THWE.data[house]?.website = "theastrocodex.com"
                 THWE.data[house]?.author = "Xaos"
                 THWE.data[house]?.abbreviation = "AC"
-                THWE.data[house]?.scrollBuffer = 40
+                THWE.data[house]?.scrollBuffer = 470
                 
                 THWE2.data[house]?.URL = "Websites/The "+house+" in Astrology • The Astro Codex"
                 THWE2.data[house]?.DisplayName = "The "+house+" in Astrology"
@@ -80,7 +80,7 @@ public class WebsiteDataBase:Codable{
                 THWE2.data[house]?.website = "theastrocodex.com"
                 THWE2.data[house]?.author = "Xaos"
                 THWE2.data[house]?.abbreviation = "AC"
-                THWE2.data[house]?.scrollBuffer = 40
+                THWE2.data[house]?.scrollBuffer = 470
             }
             database[CBname] = Array<TwelveHouseWE>()
             database[CBname]?.append(THWE)
@@ -89,8 +89,37 @@ public class WebsiteDataBase:Codable{
                 
         }
         
-        
+        //Add L...G...
+        for CBname in ["North Node","South Node"]{
+         var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Nodes in natal chart article - Lindaland"
+                THWE.data[house]?.DisplayName = "Lunar Nodes in the Natal Chart"
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "linda-goodman.com"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "LG"
+                THWE.data[house]?.scrollBuffer = 470
+            }
+        database[CBname]?.append(THWE)
     }
+        
+        
+        
+        //Add Astrology Arena
+        for CBname in ["South Node"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Astrology Arena_ Planets conjunct the South Node"
+                THWE.data[house]?.DisplayName = "Planets Conjunct the South Node"
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "astroarena12.blogspot.com"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "AA"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
 }
 
 public class CelestialBody:Codable{
@@ -275,7 +304,13 @@ public class CelestialBodyListing:Codable{
         Fortunae.DisplayName = "Fortunae"
         AllCelestialBodies["Fortunae"] = Fortunae
         
+        let Eris = CelestialBody()
+        Fortunae.DisplayName = "Eris"
+        AllCelestialBodies["Eris"] = Eris
         
+        let Juno = CelestialBody()
+        Juno.DisplayName = "Juno"
+        AllCelestialBodies["Juno"] = Juno
     }
 }
 

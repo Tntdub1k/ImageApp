@@ -40,21 +40,21 @@ UITableViewDataSource{
         
         
             var TVC = UITableViewCell()
-        let label = UILabel(frame: CGRect(x:10, y:0, width:25, height:44))
+        let label = UILabel(frame: CGRect(x:10, y:22, width:25, height:22))
             label.textAlignment = NSTextAlignment.center
         label.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.abbreviation
         
             TVC.contentView.addSubview(label)
             
         
-            var label2 = UILabel(frame: CGRect(x:45, y:20, width:240, height:21))
-            label2.textAlignment = NSTextAlignment.right
+            var label2 = UILabel(frame: CGRect(x:10, y:0, width:240, height:22))
+            label2.textAlignment = NSTextAlignment.left
             label2.font.withSize(5)
             label2.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.DisplayName
         
         TVC.contentView.addSubview(label2)
         
-            var label3 = UILabel(frame: CGRect(x:45, y:0, width:240, height:21))
+            var label3 = UILabel(frame: CGRect(x:45, y:0, width:240, height:44))
             label3.textAlignment = NSTextAlignment.right
         label3.font.withSize(20)
             label3.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.website
@@ -63,6 +63,7 @@ UITableViewDataSource{
             TVC.accessibilityHint = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.extensionType
         TVC.accessibilityValue = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.website
         TVC.accessibilityLanguage = "\(WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.scrollBuffer)"
+        TVC.accessibilityIdentifier = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.DisplayName
             TVC.contentView.addSubview(label3)
       
         
@@ -317,10 +318,12 @@ UITableViewDataSource{
                 let fileExtension = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityHint
                 let website = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityValue
                 let scrollBuffer = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityLanguage
+                
                 destination.URL = url!
                 destination.extensionType = fileExtension!
                 destination.website = website!
                 destination.scrollBuffer = Int(scrollBuffer!)!
+                destination.Title = (chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityIdentifier)!
             }
         }
     }
@@ -672,6 +675,8 @@ UITableViewDataSource{
     var m_SpiritBands = ["1st Body - Physical","2nd Body - Emotional", "3rd Body - Intellectual", "4th Body - Spiritual"]
     var m_CurrentSBody = 0
     let m_BeginnerDetail = 0
+    var m_CountNN = 0
+    var m_CountSN = 0
     let m_IntermediateDetail = 1
     let  m_AdvancedDetail = 2
     let  m_MasterDetail = 3
@@ -1223,6 +1228,12 @@ UITableViewDataSource{
             break
         }
         
+        
+        m_CountNN = 0
+        m_CountSN = 0
+        setAllDragonImgsEmpty()
+        
+        
         //1
        var aHouseView = HouseViews()
         aHouseView = getHouseViews(aHouseView:House1)
@@ -1318,9 +1329,9 @@ UITableViewDataSource{
             }
         }
         if ((hasNN == true) && (m_CurrentDetailLevel >= m_IntermediateDetail)){
-            revealOrHideDragonHead(houseNumber:m_Ring.HouseName, hideOrReveal:"reveal")
-        }else{
-               revealOrHideDragonHead(houseNumber:m_Ring.HouseName, hideOrReveal:"hide")
+            
+            RevealDragonHead(houseNumber:m_Ring.HouseName)
+            m_CountNN = m_CountNN + 1
         }
         
         
@@ -1331,9 +1342,8 @@ UITableViewDataSource{
             }
         }
         if ((hasSN == true) && (m_CurrentDetailLevel >= m_IntermediateDetail)){
-            revealOrHideDragonTail(houseNumber:m_Ring.HouseName, hideOrReveal:"reveal")
-        }else{
-            revealOrHideDragonTail(houseNumber:m_Ring.HouseName, hideOrReveal:"hide")
+            RevealDragonTail(houseNumber:m_Ring.HouseName)
+            m_CountSN = m_CountSN + 1
         }
         
         
@@ -1582,187 +1592,99 @@ UITableViewDataSource{
         
     
         
+   
         
+    }
+    
+    
+    
+    
+    func setAllDragonImgsEmpty(){
+        dragonTail1.image = UIImage(named:"Empty")
+        dragonTail2.image = UIImage(named:"Empty")
+        dragonTail3.image = UIImage(named:"Empty")
+        dragonHead1.image = UIImage(named:"Empty")
+        dragonHead2.image = UIImage(named:"Empty")
+        dragonHead3.image = UIImage(named:"Empty")
+    }
+    
+    func RevealDragonTail(houseNumber:String){
         
-    }
-    func revealOrHideDragonTail(houseNumber:String, hideOrReveal:String){
-        switch(houseNumber){
-        case "1stHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail1.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail1.isHidden = true
-            }
-        case "2ndHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail2.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail2.isHidden = true
-            }
-        case "3rdHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail3.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail3.isHidden = true
-            }
-        case "4thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail4.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail4.isHidden = true
-            }
-        case "5thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail5.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail5.isHidden = true
-            }
-        case "6thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail6.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail6.isHidden = true
-            }
-        case "7thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail7.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail7.isHidden = true
-            }
-        case "8thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail8.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail8.isHidden = true
-            }
-        case "9thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail9.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail9.isHidden = true
-            }
-        case "10thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail10.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail10.isHidden = true
-            }
-        case "11thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail11.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail11.isHidden = true
-            }
-        case "12thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonTail12.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonTail12.isHidden = true
-            }
-        default:
-            break
-        }
-    }
-    func revealOrHideDragonHead(houseNumber:String, hideOrReveal:String){
-        switch(houseNumber){
-        case "1stHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead1.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                 dragonHead1.isHidden = true
-            }
-        case "2ndHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead2.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead2.isHidden = true
-            }
-        case "3rdHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead3.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead3.isHidden = true
-            }
-        case "4thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead4.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead4.isHidden = true
-            }
-        case "5thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead5.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead5.isHidden = true
-            }
-        case "6thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead6.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead6.isHidden = true
-            }
-        case "7thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead7.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead7.isHidden = true
-            }
-        case "8thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead8.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead8.isHidden = true
-            }
-        case "9thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead9.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead9.isHidden = true
-            }
-        case "10thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead10.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead10.isHidden = true
-            }
-        case "11thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead11.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead11.isHidden = true
-            }
-        case "12thHouse":
-            if (hideOrReveal == "reveal"){
-                dragonHead12.isHidden = false
-            } else if (hideOrReveal == "hide"){
-                dragonHead12.isHidden = true
-            }
-        default:
-            break
-        }
-    }
+        var dragonTailImages = [dragonTail1, dragonTail2, dragonTail3]
   
-    @IBOutlet weak var dragonTail12: UIImageView!
-    @IBOutlet weak var dragonTail11: UIImageView!
-    @IBOutlet weak var dragonTail10: UIImageView!
-    @IBOutlet weak var dragonTail9: UIImageView!
-    @IBOutlet weak var dragonTail8: UIImageView!
-    @IBOutlet weak var dragonTail7: UIImageView!
-    @IBOutlet weak var dragonTail6: UIImageView!
-    @IBOutlet weak var dragonTail5: UIImageView!
-    @IBOutlet weak var dragonTail4: UIImageView!
+        if (m_CountSN <= 2){
+            switch(houseNumber){
+            case "1stHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail1")
+            case "2ndHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail2")
+            case "3rdHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail3")
+            case "4thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail4")
+            case "5thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail5")
+            case "6thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail6")
+            case "7thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail7")
+            case "8thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail8")
+            case "9thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail9")
+            case "10thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail10")
+            case "11thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail11")
+            case "12thHouse":
+                dragonTailImages[m_CountSN]?.image = UIImage(named:"dragonsTail12")
+            default:
+                break
+            }
+        }
+    }
+    
+    func RevealDragonHead(houseNumber:String){
+        
+        var dragonHeadImages = [dragonHead1, dragonHead2, dragonHead3]
+        
+        if (m_CountNN <= 2){
+            switch(houseNumber){
+            case "1stHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead1")
+            case "2ndHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead2")
+            case "3rdHouse":
+               dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead3")
+            case "4thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead4")
+            case "5thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead5")
+            case "6thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead6")
+            case "7thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead7")
+            case "8thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead8")
+            case "9thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead9")
+            case "10thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead10")
+            case "11thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead11")
+            case "12thHouse":
+                dragonHeadImages[m_CountNN]?.image = UIImage(named:"dragonHead12")
+            default:
+                break
+            }
+        }
+    }
+    
+    
     @IBOutlet weak var dragonTail3: UIImageView!
     @IBOutlet weak var dragonTail2: UIImageView!
     @IBOutlet weak var dragonTail1: UIImageView!
-    @IBOutlet weak var dragonHead12: UIImageView!
-    @IBOutlet weak var dragonHead11: UIImageView!
-    @IBOutlet weak var dragonHead10: UIImageView!
-    @IBOutlet weak var dragonHead9: UIImageView!
-    @IBOutlet weak var dragonHead8: UIImageView!
-    @IBOutlet weak var dragonHead6: UIImageView!
-    @IBOutlet weak var dragonHead7: UIImageView!
-    @IBOutlet weak var dragonHead5: UIImageView!
-    @IBOutlet weak var dragonHead4: UIImageView!
+   
     @IBOutlet weak var dragonHead2: UIImageView!
     @IBOutlet weak var dragonHead3: UIImageView!
     @IBOutlet weak var dragonHead1: UIImageView!
