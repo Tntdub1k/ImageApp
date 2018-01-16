@@ -40,30 +40,31 @@ UITableViewDataSource{
         
         
             var TVC = UITableViewCell()
-        let label = UILabel(frame: CGRect(x:10, y:22, width:25, height:22))
+        let label = UILabel(frame: CGRect(x:10, y:0, width:25, height:22))
             label.textAlignment = NSTextAlignment.center
-        label.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.abbreviation
+        label.font = UIFont(name:"System", size:30)
+        label.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.abbreviation
         
             TVC.contentView.addSubview(label)
             
         
-            var label2 = UILabel(frame: CGRect(x:10, y:0, width:240, height:22))
-            label2.textAlignment = NSTextAlignment.left
+            var label2 = UILabel(frame: CGRect(x:45, y:0, width:260, height:22))
+            label2.textAlignment = NSTextAlignment.right
             label2.font.withSize(5)
-            label2.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.DisplayName
+            label2.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.DisplayName
         
         TVC.contentView.addSubview(label2)
         
-            var label3 = UILabel(frame: CGRect(x:45, y:0, width:240, height:44))
-            label3.textAlignment = NSTextAlignment.right
-        label3.font.withSize(20)
-            label3.text = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.website
+            var label3 = UILabel(frame: CGRect(x:10, y:22, width:240, height:22))
+            label3.textAlignment = NSTextAlignment.left
+        label3.font = UIFont(name:"Caption 2", size:5)
+            label3.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.website
         
-            TVC.accessibilityLabel = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.URL
-            TVC.accessibilityHint = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.extensionType
-        TVC.accessibilityValue = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.website
-        TVC.accessibilityLanguage = "\(WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.scrollBuffer)"
-        TVC.accessibilityIdentifier = WDB.database[m_ReadingSourceCurrentCB]![chooseReadingsTableV.visibleCells.count].data[m_ReadingSourceCurrentHouse]!.DisplayName
+            TVC.accessibilityLabel = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.URL
+            TVC.accessibilityHint = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.extensionType
+        TVC.accessibilityValue = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.website
+        TVC.accessibilityLanguage = "\(WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.scrollBuffer)"
+        TVC.accessibilityIdentifier = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.DisplayName
             TVC.contentView.addSubview(label3)
       
         
@@ -319,11 +320,13 @@ UITableViewDataSource{
                 let website = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityValue
                 let scrollBuffer = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityLanguage
                 
-                destination.URL = url!
+                destination.aURL = url!
                 destination.extensionType = fileExtension!
                 destination.website = website!
                 destination.scrollBuffer = Int(scrollBuffer!)!
                 destination.Title = (chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityIdentifier)!
+                
+                
             }
         }
     }
@@ -434,7 +437,9 @@ UITableViewDataSource{
             
             chooseReadingLabel.text = m_ReadingSourceCurrentCB + " in the " + m_ReadingSourceCurrentHouse
             chooseReadingsTableV.reloadData()
-            
+            var IP = IndexPath(row:0, section:0)
+            chooseReadingsTableV.selectRow(at: IP, animated: true, scrollPosition: UITableViewScrollPosition(rawValue: 0)!)
+        
 
             mainView.bringSubview(toFront: chooseReadingView)
             
@@ -816,13 +821,13 @@ UITableViewDataSource{
     func updateDetailLevelDisplay(){
         switch(m_CurrentDetailLevel){
         case m_BeginnerDetail:
-            settingsDetailTextBox.text = "Beginner Level \n ----------------\nShows MindMap interface and 12 planets to place within the 12 Houses\n\nAllows saving notes for the profile in general and for each individual advancement"
+            settingsDetailTextBox.text = "Low Intricacy\n-------------\nShows 12 house placements and provides 12 energies of archetypes to be matched with those positions according to the nature of the individual being profiled. Notes can be written for each profile independently."
         case m_IntermediateDetail:
-            settingsDetailTextBox.text = "Intermediate Level \n ----------------\nIncludes Depth and Cycle gauges and adds North Node and South Node entities\n\nAllows saving notes for each individual cycle"
+            settingsDetailTextBox.text = "Moderate Intricacy\n--------------\nIncorporates the North and South Nodes of the Moon to be placed within the 12-base system. Adds manipulators to allow for several energies to be placed in the same house via the Depth button. Notes can be taken for each Cycle and Advancement additionally."
         case m_AdvancedDetail:
-            settingsDetailTextBox.text = "Advanced Level \n ----------------\nIntroduces additional entries to supplement the Map including asteroids\n\nAllows saving notes for each combination of advancement and cycle"
+            settingsDetailTextBox.text = "Advanced Intricacy\n-------------\nAdds the full portfolio of archetypes to the listing to choose from. Many archetypes do not have predefined articles so a web search is given instead. Allows for notes to be taken for each Cycle and Advancement combined."
         case m_MasterDetail:
-            settingsDetailTextBox.text = "Master Level \n ----------------\nFeatures all possible entries along with a selector to move between different Spiritual Bodies\n\nNotes are saved for each spiritual body seperately"
+            settingsDetailTextBox.text = "Highest Intricacy\n-------------\nAdds a selector for the metaphysical body spectrum.\n\nNotes are taken for each body seperately."
         default:
             break
         }

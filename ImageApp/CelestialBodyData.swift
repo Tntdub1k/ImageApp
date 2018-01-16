@@ -53,14 +53,18 @@ public class WebsiteDataBase:Codable{
     
     init(){
 
-        
+        var CBL = CelestialBodyListing()
+        //Add google search
+        for CB in CBL.AllCelestialBodies{
+            database[CB.value.DisplayName] = Array<TwelveHouseWE>()
+        }
         //Add Astro Codex
-        for CBname in ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto","North Node","South Node","Lilith"]{
+        for CBname in ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto","North Node","South Node","Lilith","Chiron"]{
             var THWE = TwelveHouseWE()
             var THWE2 = TwelveHouseWE()
             
             for house in houses{
-                if ((CBname == "North Node") || (CBname == "South Node") || (CBname == "Lilith")){
+                if ((CBname == "North Node") || (CBname == "South Node") || (CBname == "Lilith") || (CBname == "Chiron")){
                     THWE.data[house]?.URL = "Websites/"+CBname+" in the "+house+" • The Astro Codex"
                     THWE.data[house]?.DisplayName = CBname+" in the "+house
                 } else {
@@ -82,11 +86,35 @@ public class WebsiteDataBase:Codable{
                 THWE2.data[house]?.abbreviation = "AC"
                 THWE2.data[house]?.scrollBuffer = 470
             }
-            database[CBname] = Array<TwelveHouseWE>()
             database[CBname]?.append(THWE)
             database[CBname]?.append(THWE2)
+        }
+        
+        for CBname in ["Sun","Moon","Mercury","Venus","Saturn","Mars","Jupiter","Uranus","Neptune","Pluto"]{
+            var THWE = TwelveHouseWE()
+   
+            
+            for house in houses{
+                if  (["Mercury","Mars","Venus","Jupiter","Saturn"].contains(CBname)){
+                    THWE.data[house]?.URL = "Websites/"+CBname+"_ Rulership, Exaltation, Detriment and Fall • The Astro Codex"
+                    THWE.data[house]?.DisplayName = CBname+" in Astrology"
+                } else if (["Sun","Moon"].contains(CBname)){
+                    THWE.data[house]?.URL = "Websites/The "+CBname+"_ Rulership, Exaltation, Detriment and Fall • The Astro Codex"
+                    THWE.data[house]?.DisplayName = "The "+CBname+" in Astrology"
+                } else if (["Uranus","Neptune","Pluto"].contains(CBname)){
+                    THWE.data[house]?.URL = "Websites/"+CBname+" in Astrology • The Astro Codex"
+                    THWE.data[house]?.DisplayName = CBname+" in Astrology"
+                }
                 
-                
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "theastrocodex.com"
+                THWE.data[house]?.author = "Xaos"
+                THWE.data[house]?.abbreviation = "AC"
+                THWE.data[house]?.scrollBuffer = 470
+            }
+            database[CBname]?.append(THWE)
+            
+            
         }
         
         //Add L...G...
@@ -99,7 +127,7 @@ public class WebsiteDataBase:Codable{
                 THWE.data[house]?.website = "linda-goodman.com"
                 THWE.data[house]?.author = "Unknown"
                 THWE.data[house]?.abbreviation = "LG"
-                THWE.data[house]?.scrollBuffer = 470
+                THWE.data[house]?.scrollBuffer = 1230
             }
         database[CBname]?.append(THWE)
     }
@@ -120,6 +148,66 @@ public class WebsiteDataBase:Codable{
             }
             database[CBname]?.append(THWE)
         }
+        
+        //Add google search
+        for CB in CBL.AllCelestialBodies{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                
+                var searchName = ""
+                switch(CB.value.DisplayName){
+                case "North Node":
+                    searchName = "North+Node"
+                case "South Node":
+                    searchName = "South+Node"
+                case "Fortunae":
+                    searchName = "Part+of+Fortune"
+                    CB.value.DisplayName = "Part of Fortune"
+                default:
+                    searchName = CB.value.DisplayName
+                }
+                
+                var houseName = ""
+                switch(house){
+                case "1st House":
+                    houseName = "1st+house"
+                case "2nd House":
+                    houseName = "2nd+house"
+                case "3rd House":
+                    houseName = "3rd+house"
+                case "4th House":
+                    houseName = "4th+house"
+                case "5th House":
+                    houseName = "5th+house"
+                case "6th House":
+                    houseName = "6th+house"
+                case "7th House":
+                    houseName = "7th+house"
+                case "8th House":
+                    houseName = "8th+house"
+                case "9th House":
+                    houseName = "9th+house"
+                case "10th House":
+                    houseName = "10th+house"
+                case "11th House":
+                    houseName = "11th+house"
+                case "12th House":
+                    houseName = "12th+house"
+                default:
+                    break
+                }
+                
+                THWE.data[house]?.URL = "https://www.google.com/search?q="+searchName+"+in+the+"+houseName
+                THWE.data[house]?.DisplayName = CB.value.DisplayName+" in the "+house
+                THWE.data[house]?.extensionType = "WP!"
+                THWE.data[house]?.website = "google.com"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "GC"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CB.value.DisplayName]?.append(THWE)
+        }
+    }
 }
 
 public class CelestialBody:Codable{
@@ -305,7 +393,7 @@ public class CelestialBodyListing:Codable{
         AllCelestialBodies["Fortunae"] = Fortunae
         
         let Eris = CelestialBody()
-        Fortunae.DisplayName = "Eris"
+        Eris.DisplayName = "Eris"
         AllCelestialBodies["Eris"] = Eris
         
         let Juno = CelestialBody()

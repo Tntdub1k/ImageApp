@@ -11,7 +11,7 @@ import WebKit
 
 class webViewController: UIViewController, WKNavigationDelegate {
     
-    var URL = ""
+    var aURL = ""
     var extensionType = ""
     var website = ""
     var scrollBuffer = 0
@@ -21,17 +21,23 @@ class webViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         loadingActivity.startAnimating()
         super.viewDidLoad()
-        //let url = URL (string: "https://www.google.com")
+        //
         //let url = Bundle.main.url(forResource: "Websites/The 2nd House in Astrology • The Astro Codex", withExtension: "htm")
-        sourceLabel.text = "Source: " + String(website)
-        let url = Bundle.main.url(forResource: URL , withExtension: "htm")
+        sourceLabel.text = "Source Website: " + String(website)
+        var url = URL(string:"Blank")
+        if (extensionType == "WP!"){
+            url = URL(string:aURL)
+        } else {
+            url = Bundle.main.url(forResource: aURL , withExtension: extensionType)
+        }
+    
         let request = URLRequest (url:(url)!)
         webView.load(request)
         webView.navigationDelegate = self
     }
     
    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    TitleLabel.text = Title
+    TitleLabel.text = "Selected Article: "+Title
     websiteContentV.isHidden = false
     loadingActivity.stopAnimating()
         let scrollPoint = CGPoint(x: 0, y: scrollBuffer)
