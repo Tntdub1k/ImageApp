@@ -34,38 +34,43 @@ UITableViewDataSource{
         }
     }
     
+    @IBOutlet weak var mainBackground: UIImageView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var WDB = WebsiteDataBase()
         
         
         
-            var TVC = UITableViewCell()
-        let label = UILabel(frame: CGRect(x:10, y:0, width:25, height:22))
+        var TVC = UITableViewCell(style:UITableViewCellStyle.subtitle, reuseIdentifier:"aCell")
+        TVC.textLabel?.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.abbreviation
+        TVC.textLabel?.drawText(in: CGRect(x:10, y:0, width:25, height:22))
+        TVC.detailTextLabel?.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.website
+           /* label = UILabel(frame: CGRect(x:10, y:0, width:25, height:22))
             label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name:"System", size:30)
+        TVC.textLabel?.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.abbreviation
         label.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.abbreviation
         
-            TVC.contentView.addSubview(label)
+            TVC.contentView.addSubview(label)*/
             
         
-            var label2 = UILabel(frame: CGRect(x:45, y:0, width:260, height:22))
+            var label2 = UILabel(frame: CGRect(x:45, y:4.5, width:260, height:22))
             label2.textAlignment = NSTextAlignment.right
             label2.font.withSize(5)
             label2.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.DisplayName
         
         TVC.contentView.addSubview(label2)
-        
+        /*
             var label3 = UILabel(frame: CGRect(x:10, y:22, width:240, height:22))
             label3.textAlignment = NSTextAlignment.left
         label3.font = UIFont(name:"Caption 2", size:5)
-            label3.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.website
+            label3.text = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.website */
         
             TVC.accessibilityLabel = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.URL
             TVC.accessibilityHint = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.extensionType
         TVC.accessibilityValue = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.website
         TVC.accessibilityLanguage = "\(WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.scrollBuffer)"
         TVC.accessibilityIdentifier = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.DisplayName
-            TVC.contentView.addSubview(label3)
+          //  TVC.contentView.addSubview(label3)
       
         
         
@@ -313,13 +318,15 @@ UITableViewDataSource{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SequeId_____1" {
+            pressedSave(self)
             if let destination = segue.destination as? webViewController {
                
                 let url = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityLabel
                 let fileExtension = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityHint
                 let website = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityValue
                 let scrollBuffer = chooseReadingsTableV.cellForRow(at: chooseReadingsTableV.indexPathForSelectedRow!)?.accessibilityLanguage
-                
+    
+                destination.Img = m_bkgImgs[m_CurrentBKG]
                 destination.aURL = url!
                 destination.extensionType = fileExtension!
                 destination.website = website!
@@ -682,6 +689,8 @@ UITableViewDataSource{
     let m_BeginnerDetail = 0
     var m_CountNN = 0
     var m_CountSN = 0
+    var m_CurrentBKG = Int()
+    var m_bkgImgs = ["187609.jpg","bkg1","bkg2","bkg3","bkg4","bkg5"]
     let m_IntermediateDetail = 1
     let  m_AdvancedDetail = 2
     let  m_MasterDetail = 3
@@ -750,7 +759,7 @@ UITableViewDataSource{
        
             var Json = ""
        
-        if ((try? UserDefaults.standard.string(forKey: "MindmapDataBase")) == nil){
+        if (UserDefaults.standard.string(forKey: "MindmapDataBase") == nil){
             loadSampleDB()
         }else{
             var jsonString2 = UserDefaults.standard.string(forKey: "MindmapDataBase")
@@ -774,6 +783,37 @@ UITableViewDataSource{
                     
                 }
             }
+        }
+        
+        if (UserDefaults.standard.string(forKey: "MindMapCurrentBkg") == nil){
+            loadSampleBkg()
+        }else{
+            var currentBkg  = UserDefaults.standard.string(forKey: "MindMapCurrentBkg")
+            
+            
+            let date = Date() // now
+            let cal = Calendar.current
+            let day = cal.ordinality(of: .day, in: .year, for: date)
+            
+            
+            var lastDOY  = Int(UserDefaults.standard.string(forKey: "MindMapLastDOY")!)!
+  
+                 
+            if (lastDOY != day){
+                m_CurrentBKG = Int(currentBkg!)! + 1
+                if (m_CurrentBKG >= m_bkgImgs.count){
+                    m_CurrentBKG = 0
+                }
+            } else {
+                m_CurrentBKG = Int(currentBkg!)!
+            }
+            
+            
+            mainBackground.image = UIImage(named: m_bkgImgs[m_CurrentBKG])
+            
+            UserDefaults.standard.set(String(m_CurrentBKG), forKey: "MindMapCurrentBkg")
+            UserDefaults.standard.set(day, forKey: "MindMapLastDOY")
+            
         }
         
         
@@ -817,6 +857,21 @@ UITableViewDataSource{
         addCBPicker.delegate = self
     
        
+    }
+    
+    func loadSampleBkg(){
+        m_CurrentBKG = 0
+        UserDefaults.standard.set(String(m_CurrentBKG), forKey: "MindMapCurrentBkg")
+        
+        
+        let date = Date() // now
+        let cal = Calendar.current
+        let day = cal.ordinality(of: .day, in: .year, for: date)
+        
+        UserDefaults.standard.set(day, forKey: "MindMapLastDOY")
+        
+        mainBackground.image = UIImage(named: m_bkgImgs[m_CurrentBKG])
+        
     }
     func updateDetailLevelDisplay(){
         switch(m_CurrentDetailLevel){

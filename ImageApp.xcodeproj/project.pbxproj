@@ -82,6 +82,11 @@
 		011D7C061FEEFFA0001E3417 /* DignifiedFall.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7C011FEEFF9E001E3417 /* DignifiedFall.png */; };
 		011D7C081FEF058A001E3417 /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7C071FEF0588001E3417 /* Empty.png */; };
 		01274D83200E58AA007D2DD2 /* ringBackdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D82200E58A9007D2DD2 /* ringBackdrop.png */; };
+		01274D89200EACCD007D2DD2 /* bkg5.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D84200EACB4007D2DD2 /* bkg5.png */; };
+		01274D8A200EACCD007D2DD2 /* bkg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D85200EACB5007D2DD2 /* bkg1.png */; };
+		01274D8B200EACCD007D2DD2 /* bkg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D86200EACB7007D2DD2 /* bkg3.png */; };
+		01274D8C200EACCD007D2DD2 /* bkg4.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D87200EACB8007D2DD2 /* bkg4.png */; };
+		01274D8D200EACCD007D2DD2 /* bkg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D88200EACC6007D2DD2 /* bkg2.png */; };
 		01304E121FEAD70E000F24E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E111FEAD70E000F24E9 /* AppDelegate.swift */; };
 		01304E141FEAD70E000F24E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E131FEAD70E000F24E9 /* ViewController.swift */; };
 		01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01304E151FEAD70E000F24E9 /* Main.storyboard */; };
@@ -202,6 +207,11 @@
 		011D7C011FEEFF9E001E3417 /* DignifiedFall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedFall.png; path = ../../../Documents/DignifiedFall.png; sourceTree = "<group>"; };
 		011D7C071FEF0588001E3417 /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = ../../../Documents/Empty.png; sourceTree = "<group>"; };
 		01274D82200E58A9007D2DD2 /* ringBackdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ringBackdrop.png; path = ../../Documents/ringBackdrop.png; sourceTree = "<group>"; };
+		01274D84200EACB4007D2DD2 /* bkg5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg5.png; path = ../../../Documents/bkg5.png; sourceTree = "<group>"; };
+		01274D85200EACB5007D2DD2 /* bkg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg1.png; path = ../../../Documents/bkg1.png; sourceTree = "<group>"; };
+		01274D86200EACB7007D2DD2 /* bkg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg3.png; path = ../../../Documents/bkg3.png; sourceTree = "<group>"; };
+		01274D87200EACB8007D2DD2 /* bkg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg4.png; path = ../../../Documents/bkg4.png; sourceTree = "<group>"; };
+		01274D88200EACC6007D2DD2 /* bkg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg2.png; path = ../../../Documents/bkg2.png; sourceTree = "<group>"; };
 		01304E0E1FEAD70E000F24E9 /* ImageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01304E111FEAD70E000F24E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01304E131FEAD70E000F24E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +292,11 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				01274D85200EACB5007D2DD2 /* bkg1.png */,
+				01274D88200EACC6007D2DD2 /* bkg2.png */,
+				01274D86200EACB7007D2DD2 /* bkg3.png */,
+				01274D87200EACB8007D2DD2 /* bkg4.png */,
+				01274D84200EACB4007D2DD2 /* bkg5.png */,
 				016F38BA200D8B44003EC6B1 /* black_circle_u25CF_icon_256x256.png */,
 				0114362E200D3C5200B75813 /* Cupido.png */,
 				0114362F200D3C5D00B75813 /* Valentine.png */,
@@ -495,6 +510,7 @@
 				019E7E282003EBD700ED3F77 /* words.png in Resources */,
 				0116F6CC2008146700F76E0F /* dragonHead5.png in Resources */,
 				018112781FF01F980071111D /* SN.png in Resources */,
+				01274D8A200EACCD007D2DD2 /* bkg1.png in Resources */,
 				0116F6CA2008146700F76E0F /* dragonHead8.png in Resources */,
 				0116F6E220093A8F00F76E0F /* ring12gauge7.png in Resources */,
 				0116F6E720093A8F00F76E0F /* ring12gauge5.png in Resources */,
@@ -503,6 +519,7 @@
 				01143612200ACE4D00B75813 /* dragonsTail2.png in Resources */,
 				0116F6D32008146700F76E0F /* dragonHead1.png in Resources */,
 				0181127F1FF033D00071111D /* Eros.png in Resources */,
+				01274D8D200EACCD007D2DD2 /* bkg2.png in Resources */,
 				01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */,
 				011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */,
 				0116F6F32009440A00F76E0F /* ring6gauge2.png in Resources */,
@@ -516,6 +533,7 @@
 				0116F6EA20093A8F00F76E0F /* ring12gauge8.png in Resources */,
 				01143615200ACE4D00B75813 /* dragonsTail5.png in Resources */,
 				018112741FF01F980071111D /* Psyche.png in Resources */,
+				01274D8B200EACCD007D2DD2 /* bkg3.png in Resources */,
 				01274D83200E58AA007D2DD2 /* ringBackdrop.png in Resources */,
 				0116F6E420093A8F00F76E0F /* ring12gauge3.png in Resources */,
 				0181127A1FF01F980071111D /* Sedna.png in Resources */,
@@ -541,6 +559,7 @@
 				0116F6E920093A8F00F76E0F /* ring12gauge9.png in Resources */,
 				01B26F58200536A90076683F /* gearIcon.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
+				01274D8C200EACCD007D2DD2 /* bkg4.png in Resources */,
 				0116F6D22008146700F76E0F /* dragonHead7.png in Resources */,
 				01143616200ACE4D00B75813 /* dragonsTail8.png in Resources */,
 				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,
@@ -551,6 +570,7 @@
 				0181127E1FF033D00071111D /* Mercury.png in Resources */,
 				0114362D200D381700B75813 /* Fortunae.png in Resources */,
 				0116F6CB2008146700F76E0F /* dragonHead2.png in Resources */,
+				01274D89200EACCD007D2DD2 /* bkg5.png in Resources */,
 				01143628200D32EC00B75813 /* North Node.png in Resources */,
 				011D7BEE1FEB494C001E3417 /* Moon.png in Resources */,
 				0114361B200ACE4D00B75813 /* dragonsTail1.png in Resources */,

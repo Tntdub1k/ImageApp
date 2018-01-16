@@ -149,6 +149,28 @@ public class WebsiteDataBase:Codable{
             database[CBname]?.append(THWE)
         }
         
+        
+        for CBname in ["Sedna"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/The Arcane Archive - Sedna Delineation"
+                THWE.data[house]?.DisplayName = "Sedna Delineation"
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "arcane-archive.org"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "AR"
+                THWE.data[house]?.scrollBuffer = 2870
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        
+        
+        
+        
+        
+        
+        
         //Add google search
         for CB in CBL.AllCelestialBodies{
             var THWE = TwelveHouseWE()
@@ -160,9 +182,6 @@ public class WebsiteDataBase:Codable{
                     searchName = "North+Node"
                 case "South Node":
                     searchName = "South+Node"
-                case "Fortunae":
-                    searchName = "Part+of+Fortune"
-                    CB.value.DisplayName = "Part of Fortune"
                 default:
                     searchName = CB.value.DisplayName
                 }

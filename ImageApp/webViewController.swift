@@ -16,13 +16,18 @@ class webViewController: UIViewController, WKNavigationDelegate {
     var website = ""
     var scrollBuffer = 0
     var Title = ""
+    var Img = ""
     
-
+    
+    @IBOutlet weak var mainBackgroundImage: UIImageView!
+    
     override func viewDidLoad() {
         loadingActivity.startAnimating()
         super.viewDidLoad()
         //
         //let url = Bundle.main.url(forResource: "Websites/The 2nd House in Astrology • The Astro Codex", withExtension: "htm")
+        mainBackgroundImage.image = UIImage(named:Img)
+        
         sourceLabel.text = "Source Website: " + String(website)
         var url = URL(string:"Blank")
         if (extensionType == "WP!"){
@@ -36,6 +41,7 @@ class webViewController: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
     }
     
+ 
    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     TitleLabel.text = "Selected Article: "+Title
     websiteContentV.isHidden = false
