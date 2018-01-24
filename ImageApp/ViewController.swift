@@ -155,6 +155,8 @@ UITableViewDataSource{
         let jsonEncoder = JSONEncoder()
         
         do {
+            
+            
             let jsonData = try jsonEncoder.encode(m_ADB)
             let jsonString = jsonData.base64EncodedString()
             
@@ -194,12 +196,29 @@ UITableViewDataSource{
         
     }
   
+    func updateBodyLabelText(){
+        switch(m_CurrentSBody){
+        case 0:
+            bodyLabel.text = "Physical Body"
+        case 1:
+            bodyLabel.text = "Emotional Body"
+        case 2:
+            bodyLabel.text = "Intellectual Body"
+        case 3:
+            bodyLabel.text = "Spiritual Body"
+        default:
+            break;
+        }
+    }
     @IBAction func clickSelectSpiritBand(_ sender: Any) {
         let oldSBody = m_CurrentSBody
         bandCounter.text = String(bandPicker.selectedRow(inComponent: 0) + 1)
         m_CurrentSBody = bandPicker.selectedRow(inComponent: 0)
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] = m_CurrentSBody
         
+        updateBodyLabelText()
+        
+
         bandPicker.reloadAllComponents()
         let newAdvancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]
         
@@ -342,7 +361,18 @@ UITableViewDataSource{
         clearAllViewsFromScreen()
     }
     @IBAction func clickOKSelectItem(_ sender: Any) {
-        m_CurrentSBody = 0
+        if (m_CurrentDetailLevel == m_MasterDetail){
+           /* var curBd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]
+            var curBody = "\(curBd)"
+            var curCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+curBody+"Cycle"]
+            var newCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"]
+            var newAd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]
+            advanceToCycle(pastCycle: curCy!, newCycle: newCy!, newAdvancement: newAd!, newBody: 0)
+ */
+            m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
+            updateBodyLabelText()
+        }
+       
         loadAP()
     }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
@@ -763,7 +793,7 @@ UITableViewDataSource{
             loadSampleDB()
         }else{
             var jsonString2 = UserDefaults.standard.string(forKey: "MindmapDataBase")
-            if ((try? Data(base64Encoded: jsonString2!)) == nil){
+            if (Data(base64Encoded: jsonString2!) == nil){
                 loadSampleDB()
             } else {
                 let jsonData2 = Data(base64Encoded: jsonString2!)
@@ -777,7 +807,7 @@ UITableViewDataSource{
                     
                     if (UserDefaults.standard.string(forKey: "MindmapDetailLevel") == nil){
                         m_CurrentDetailLevel = m_BeginnerDetail
-                    } else{
+                    } else {
                         m_CurrentDetailLevel = Int(UserDefaults.standard.string(forKey: "MindmapDetailLevel")!)!
                     }
                     
@@ -993,6 +1023,8 @@ UITableViewDataSource{
         depthPlusB.isHidden = false
         depthMinusB.isHidden = false
         depthImage.isHidden = false
+        
+        updateBodyLabelText()
     default:
         break
         }

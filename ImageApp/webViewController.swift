@@ -20,7 +20,13 @@ class webViewController: UIViewController, WKNavigationDelegate {
     
     
     @IBOutlet weak var mainBackgroundImage: UIImageView!
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void){
+        decisionHandler(.allow)
+    }
     
+  
     override func viewDidLoad() {
         loadingActivity.startAnimating()
         super.viewDidLoad()
