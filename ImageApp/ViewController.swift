@@ -200,12 +200,16 @@ UITableViewDataSource{
         switch(m_CurrentSBody){
         case 0:
             bodyLabel.text = "Physical Body"
+            bandPicker.selectRow(0, inComponent: 0, animated: false)
         case 1:
             bodyLabel.text = "Emotional Body"
+            bandPicker.selectRow(1, inComponent: 0, animated: false)
         case 2:
             bodyLabel.text = "Intellectual Body"
+            bandPicker.selectRow(2, inComponent: 0, animated: false)
         case 3:
             bodyLabel.text = "Spiritual Body"
+            bandPicker.selectRow(3, inComponent: 0, animated: false)
         default:
             break;
         }
@@ -361,15 +365,19 @@ UITableViewDataSource{
         clearAllViewsFromScreen()
     }
     @IBAction func clickOKSelectItem(_ sender: Any) {
+
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] != nil){
+            m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
+        } else{
+            m_CurrentSBody = 0
+        }
+        
+        
         if (m_CurrentDetailLevel == m_MasterDetail){
-           /* var curBd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]
-            var curBody = "\(curBd)"
-            var curCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+curBody+"Cycle"]
+            var curCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]
             var newCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"]
             var newAd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]
             advanceToCycle(pastCycle: curCy!, newCycle: newCy!, newAdvancement: newAd!, newBody: 0)
- */
-            m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
             updateBodyLabelText()
         }
        
