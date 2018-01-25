@@ -840,12 +840,20 @@
                                                                 <rect key="frame" x="87" y="77" width="65" height="85"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
+                                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="set12.png" translatesAutoresizingMaskIntoConstraints="NO" id="fGx-ao-CRg">
+                                                                <rect key="frame" x="84" y="76" width="71" height="88"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
                                                             <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="off12.png" translatesAutoresizingMaskIntoConstraints="NO" id="NlR-cY-bzU">
                                                                 <rect key="frame" x="87" y="77" width="65" height="85"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="adjusterBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="CMH-Mn-GDR">
                                                                 <rect key="frame" x="40" y="48" width="44" height="58"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="set12.png" translatesAutoresizingMaskIntoConstraints="NO" id="KNO-Dq-Eig">
+                                                                <rect key="frame" x="37.5" y="46" width="49" height="62"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="off12.png" translatesAutoresizingMaskIntoConstraints="NO" id="KQc-mE-bVI">
@@ -2962,6 +2970,16 @@
                                                     </view>
                                                 </subviews>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIx-cg-Vjo">
+                                                <rect key="frame" x="16" y="55" width="68" height="23"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Set">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressSet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uyb-P1-I5H"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOw-q4-N9G">
                                                 <rect key="frame" x="38" y="368" width="274" height="123"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3144,6 +3162,7 @@
                         <outlet property="addView" destination="25e-pa-2WQ" id="j0a-ez-Quo"/>
                         <outlet property="advancementCounter" destination="WRw-Od-CMe" id="fhf-1i-gKN"/>
                         <outlet property="advancementImage" destination="diP-L6-dbI" id="Hdg-7M-dw0"/>
+                        <outlet property="balancePointButton" destination="qIx-cg-Vjo" id="aNH-ex-Vup"/>
                         <outlet property="bandCounter" destination="DpP-p7-MiS" id="UvJ-p3-ctE"/>
                         <outlet property="bandPicker" destination="dF7-rL-TFQ" id="PzG-F0-YPh"/>
                         <outlet property="bandView" destination="fIF-Uw-PaD" id="MtT-9T-Ix4"/>
@@ -3157,6 +3176,7 @@
                         <outlet property="cycleCounter" destination="1Qq-45-ehR" id="TtH-SQ-Obn"/>
                         <outlet property="cycleImage" destination="6Kw-8l-Kgj" id="50d-hx-Ptv"/>
                         <outlet property="cycleLabel" destination="05g-Sk-b0b" id="kbn-yf-ESP"/>
+                        <outlet property="cycleSetImage" destination="KNO-Dq-Eig" id="uqT-tD-QuX"/>
                         <outlet property="deleteView" destination="2r6-c2-XBy" id="xSo-G1-Egs"/>
                         <outlet property="depthImage" destination="0Jh-hF-Nzz" id="rKV-lS-lRD"/>
                         <outlet property="depthLabel" destination="0w6-2M-Ohu" id="LXA-NE-bWK"/>
@@ -3182,12 +3202,14 @@
                         <outlet property="scrollView" destination="CxE-TL-RAS" id="FgR-jR-n8W"/>
                         <outlet property="selectPicker" destination="rYe-xj-e4d" id="N8J-bH-mow"/>
                         <outlet property="selectView" destination="bt9-da-ujy" id="Pdk-XW-ra1"/>
+                        <outlet property="setImage" destination="fGx-ao-CRg" id="fn0-dg-maw"/>
                         <outlet property="settingDetailSlider" destination="yYw-hq-Htx" id="TIi-Ys-1O3"/>
                         <outlet property="settingsDetailTextBox" destination="xDj-jG-SqW" id="nv2-1u-18f"/>
                         <outlet property="settingsView" destination="sio-Oc-CaG" id="R1G-jA-PBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aVK-LK-Tmn"/>
             </objects>
             <point key="canvasLocation" x="138.75" y="133.09859154929578"/>
         </scene>
@@ -3299,6 +3321,7 @@
         <image name="ring12gauge1.png" width="1002" height="1034"/>
         <image name="ring12gauge2.png" width="1002" height="1034"/>
         <image name="ring6gauge1.png" width="1002" height="1034"/>
+        <image name="set12.png" width="500" height="516"/>
         <image name="words.png" width="489" height="361"/>
     </resources>
 </document>

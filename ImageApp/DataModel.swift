@@ -278,21 +278,29 @@ public class AstrologicalProfile: Codable{
         advancementInfo["SBody0Cycle"] = 1
         advancementInfo["SBody0RingAdvancement"] = 1
         advancementInfo["SBody0TotalAdvancementIndicator"] = 1
-       
+        advancementInfo["SBody0BalancePtAdv"] = 1
+        advancementInfo["SBody0BalancePtCy"] = 1
+        
         advancementInfo["SBody1Advancement"] = 1
         advancementInfo["SBody1Cycle"] = 1
         advancementInfo["SBody1RingAdvancement"] = 1
         advancementInfo["SBody1TotalAdvancementIndicator"] = 1
-       
+        advancementInfo["SBody1BalancePtAdv"] = 1
+        advancementInfo["SBody1BalancePtCy"] = 1
+        
         advancementInfo["SBody2Advancement"] = 1
         advancementInfo["SBody2Cycle"] = 1
         advancementInfo["SBody2RingAdvancement"] = 1
         advancementInfo["SBody2TotalAdvancementIndicator"] = 1
-       
+        advancementInfo["SBody2BalancePtAdv"] = 1
+        advancementInfo["SBody2BalancePtCy"] = 1
+        
         advancementInfo["SBody3Advancement"] = 1
         advancementInfo["SBody3Cycle"] = 1
         advancementInfo["SBody3RingAdvancement"] = 1
         advancementInfo["SBody3TotalAdvancementIndicator"] = 1
+        advancementInfo["SBody3BalancePtAdv"] = 1
+        advancementInfo["SBody3BalancePtCy"] = 1
         
         advancementInfo["currentSBody"] = 0
         

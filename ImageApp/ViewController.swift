@@ -12,10 +12,12 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate,
     UIPageViewControllerDelegate,
     UIPageViewControllerDataSource,
-UITableViewDataSource{
+UITableViewDataSource, UIGestureRecognizerDelegate{
     
     var aWebVC = webViewController()
     
+    @IBOutlet var tapRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var BalancePointLabel: UITextField!
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return self
     }
@@ -163,7 +165,10 @@ UITableViewDataSource{
             
             UserDefaults.standard.set(jsonString, forKey: "MindmapDataBase")
             UserDefaults.standard.synchronize()
-
+         /*   let alertController = UIAlertController(title: "Mind Plotter", message: "Saved Data", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+ */
             
         }
         catch {
@@ -199,16 +204,16 @@ UITableViewDataSource{
     func updateBodyLabelText(){
         switch(m_CurrentSBody){
         case 0:
-            bodyLabel.text = "Physical Body"
+            bodyLabel.text = "Physical Sphere"
             bandPicker.selectRow(0, inComponent: 0, animated: false)
         case 1:
-            bodyLabel.text = "Emotional Body"
+            bodyLabel.text = "Emotional Sphere"
             bandPicker.selectRow(1, inComponent: 0, animated: false)
         case 2:
-            bodyLabel.text = "Intellectual Body"
+            bodyLabel.text = "Intellectual Sphere"
             bandPicker.selectRow(2, inComponent: 0, animated: false)
         case 3:
-            bodyLabel.text = "Spiritual Body"
+            bodyLabel.text = "Spiritual Sphere"
             bandPicker.selectRow(3, inComponent: 0, animated: false)
         default:
             break;
@@ -265,7 +270,9 @@ UITableViewDataSource{
         mainView.sendSubview(toBack: settingsView)
     }
     @IBAction func pressBand(_ sender: Any) {
+
         mainView.bringSubview(toFront: bandView)
+        updateBodyLabelText()
     }
     @IBAction func clearKeyboard(_ sender: Any) {
         mainView.endEditing(true)
@@ -301,6 +308,9 @@ UITableViewDataSource{
         bandCounter.text = String(m_CurrentSBody + 1)
         depthImage.image = UIImage(named:"ring6gauge"+String(ring))
         clearAllViewsFromScreen()
+        updateBodyLabelText()
+         showSet()
+        
         
         m_remainingCBs = Array(repeating:"", count:0)
         var allCBs = Array(repeating:"", count:0)
@@ -379,6 +389,7 @@ UITableViewDataSource{
             var newAd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]
             advanceToCycle(pastCycle: curCy!, newCycle: newCy!, newAdvancement: newAd!, newBody: 0)
             updateBodyLabelText()
+           
         }
        
         loadAP()
@@ -777,7 +788,7 @@ UITableViewDataSource{
                 currentCycle =  m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] as! Int
             }
         }
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"] = newAdvancement
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"] = newAdvancement
     }
     
     
@@ -823,6 +834,10 @@ UITableViewDataSource{
             }
         }
         
+        
+       
+        
+        
         if (UserDefaults.standard.string(forKey: "MindMapCurrentBkg") == nil){
             loadSampleBkg()
         }else{
@@ -866,7 +881,7 @@ UITableViewDataSource{
             
         
         
-        
+        updateBodyLabelText()
         displayCurrentDetailLevel()
         loadAP()
         
@@ -893,10 +908,46 @@ UITableViewDataSource{
         addPicker.delegate = self
         addCBPicker.dataSource = self
         addCBPicker.delegate = self
+        
+   
+        
+    }
+    @IBOutlet weak var balancePointButton: UIButton!
+    @IBOutlet weak var setImage: UIImageView!
+    @IBOutlet weak var cycleSetImage: UIImageView!
     
-       
+
+    @IBAction func pressSet(_ sender: Any) {
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointAdv"] = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]
+        
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointCy"] = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]
+        showSet()
     }
     
+  
+    func showSet(){
+        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointCy"] != nil){
+            let cySet = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointCy"]
+            let cySetS = "\(cySet!)"
+            cycleSetImage.image = UIImage(named:"set"+cySetS)
+            
+            if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"] == cySet){
+                if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointAdv"] != nil){
+                    let advSet = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointAdv"]
+                    let advSetS = "\(advSet!)"
+                    setImage.image = UIImage(named:"set"+advSetS)
+                    
+                }
+            } else {
+                setImage.image = UIImage(named:"Empty")
+            }
+        } else {
+            cycleSetImage.image = UIImage(named:"Empty")
+            setImage.image = UIImage(named:"Empty")
+        }
+    }
+        
+        
     func loadSampleBkg(){
         m_CurrentBKG = 0
         UserDefaults.standard.set(String(m_CurrentBKG), forKey: "MindMapCurrentBkg")

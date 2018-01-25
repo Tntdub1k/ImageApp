@@ -131,6 +131,18 @@
 		019E7E262003E25300ED3F77 /* arrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E242003E25000ED3F77 /* arrowDown.png */; };
 		019E7E282003EBD700ED3F77 /* words.png in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E272003EBD300ED3F77 /* words.png */; };
 		01B26F58200536A90076683F /* gearIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B26F57200536A80076683F /* gearIcon.png */; };
+		01BCA6C2201A627E003E7EBA /* set7.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6B6201A6257003E7EBA /* set7.png */; };
+		01BCA6C3201A627E003E7EBA /* set4.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6B7201A6258003E7EBA /* set4.png */; };
+		01BCA6C4201A627E003E7EBA /* set2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6B8201A625D003E7EBA /* set2.png */; };
+		01BCA6C5201A627E003E7EBA /* set9.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6B9201A6261003E7EBA /* set9.png */; };
+		01BCA6C6201A627E003E7EBA /* set12.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6BA201A6264003E7EBA /* set12.png */; };
+		01BCA6C7201A627E003E7EBA /* set10.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6BB201A6269003E7EBA /* set10.png */; };
+		01BCA6C8201A627E003E7EBA /* set1.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6BC201A626D003E7EBA /* set1.png */; };
+		01BCA6C9201A627E003E7EBA /* set6.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6BD201A626F003E7EBA /* set6.png */; };
+		01BCA6CA201A627E003E7EBA /* set8.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6BE201A6273003E7EBA /* set8.png */; };
+		01BCA6CB201A627E003E7EBA /* set5.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6BF201A6278003E7EBA /* set5.png */; };
+		01BCA6CC201A627E003E7EBA /* set11.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6C0201A627C003E7EBA /* set11.png */; };
+		01BCA6CD201A627E003E7EBA /* set3.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6C1201A627D003E7EBA /* set3.png */; };
 		01F222151FF442B5006016ED /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F222141FF442B5006016ED /* webViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -261,6 +273,18 @@
 		019E7E242003E25000ED3F77 /* arrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowDown.png; path = ../../../Documents/arrowDown.png; sourceTree = "<group>"; };
 		019E7E272003EBD300ED3F77 /* words.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = words.png; path = ../../../Documents/words.png; sourceTree = "<group>"; };
 		01B26F57200536A80076683F /* gearIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gearIcon.png; path = ../../../Documents/gearIcon.png; sourceTree = "<group>"; };
+		01BCA6B6201A6257003E7EBA /* set7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set7.png; path = ../../../Documents/set7.png; sourceTree = "<group>"; };
+		01BCA6B7201A6258003E7EBA /* set4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set4.png; path = ../../../Documents/set4.png; sourceTree = "<group>"; };
+		01BCA6B8201A625D003E7EBA /* set2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set2.png; path = ../../../Documents/set2.png; sourceTree = "<group>"; };
+		01BCA6B9201A6261003E7EBA /* set9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set9.png; path = ../../../Documents/set9.png; sourceTree = "<group>"; };
+		01BCA6BA201A6264003E7EBA /* set12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set12.png; path = ../../../Documents/set12.png; sourceTree = "<group>"; };
+		01BCA6BB201A6269003E7EBA /* set10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set10.png; path = ../../../Documents/set10.png; sourceTree = "<group>"; };
+		01BCA6BC201A626D003E7EBA /* set1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set1.png; path = ../../../Documents/set1.png; sourceTree = "<group>"; };
+		01BCA6BD201A626F003E7EBA /* set6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set6.png; path = ../../../Documents/set6.png; sourceTree = "<group>"; };
+		01BCA6BE201A6273003E7EBA /* set8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set8.png; path = ../../../Documents/set8.png; sourceTree = "<group>"; };
+		01BCA6BF201A6278003E7EBA /* set5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set5.png; path = ../../../Documents/set5.png; sourceTree = "<group>"; };
+		01BCA6C0201A627C003E7EBA /* set11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set11.png; path = ../../../Documents/set11.png; sourceTree = "<group>"; };
+		01BCA6C1201A627D003E7EBA /* set3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set3.png; path = ../../../Documents/set3.png; sourceTree = "<group>"; };
 		01F222141FF442B5006016ED /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -299,6 +323,18 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				01BCA6BC201A626D003E7EBA /* set1.png */,
+				01BCA6B8201A625D003E7EBA /* set2.png */,
+				01BCA6C1201A627D003E7EBA /* set3.png */,
+				01BCA6B7201A6258003E7EBA /* set4.png */,
+				01BCA6BF201A6278003E7EBA /* set5.png */,
+				01BCA6BD201A626F003E7EBA /* set6.png */,
+				01BCA6B6201A6257003E7EBA /* set7.png */,
+				01BCA6BE201A6273003E7EBA /* set8.png */,
+				01BCA6B9201A6261003E7EBA /* set9.png */,
+				01BCA6BB201A6269003E7EBA /* set10.png */,
+				01BCA6C0201A627C003E7EBA /* set11.png */,
+				01BCA6BA201A6264003E7EBA /* set12.png */,
 				011BDBCE2018F36600D18898 /* off6.png */,
 				01274D85200EACB5007D2DD2 /* bkg1.png */,
 				011BDBCC2017DB7800D18898 /* off12.png */,
@@ -498,6 +534,7 @@
 				01143638200D60B800B75813 /* Hekate.png in Resources */,
 				01143617200ACE4D00B75813 /* dragonsTail12.png in Resources */,
 				01143618200ACE4D00B75813 /* dragonsTail3.png in Resources */,
+				01BCA6C6201A627E003E7EBA /* set12.png in Resources */,
 				0116F6D620092E2A00F76E0F /* ring12gauge2.png in Resources */,
 				018112701FF01F980071111D /* Venus.png in Resources */,
 				011D7BF91FEC644A001E3417 /* dragonHead10.png in Resources */,
@@ -521,6 +558,7 @@
 				018112781FF01F980071111D /* SN.png in Resources */,
 				01274D8A200EACCD007D2DD2 /* bkg1.png in Resources */,
 				0116F6CA2008146700F76E0F /* dragonHead8.png in Resources */,
+				01BCA6C9201A627E003E7EBA /* set6.png in Resources */,
 				0116F6E220093A8F00F76E0F /* ring12gauge7.png in Resources */,
 				0116F6E720093A8F00F76E0F /* ring12gauge5.png in Resources */,
 				01143625200D2BB300B75813 /* Eris.png in Resources */,
@@ -528,6 +566,7 @@
 				011BDBCF2018F36900D18898 /* off6.png in Resources */,
 				01143612200ACE4D00B75813 /* dragonsTail2.png in Resources */,
 				0116F6D32008146700F76E0F /* dragonHead1.png in Resources */,
+				01BCA6C8201A627E003E7EBA /* set1.png in Resources */,
 				0181127F1FF033D00071111D /* Eros.png in Resources */,
 				01274D8D200EACCD007D2DD2 /* bkg2.png in Resources */,
 				01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */,
@@ -538,6 +577,7 @@
 				0116F6D12008146700F76E0F /* dragonHead11.png in Resources */,
 				0114361D200ACE4D00B75813 /* dragonsTail10.png in Resources */,
 				0114361F200ADDD800B75813 /* 16535326177271407165.svg in Resources */,
+				01BCA6C7201A627E003E7EBA /* set10.png in Resources */,
 				011BDBCD2017DB7900D18898 /* off12.png in Resources */,
 				019E7E222003DCE100ED3F77 /* circleSmall1.png in Resources */,
 				019E7E1E2001347F00ED3F77 /* icon (1) in Resources */,
@@ -553,6 +593,8 @@
 				018112571FF010A40071111D /* Chiron.png in Resources */,
 				0116F6D720092E2A00F76E0F /* ring12gauge1.png in Resources */,
 				0116F6EB20093A8F00F76E0F /* ring12gauge4.png in Resources */,
+				01BCA6CC201A627E003E7EBA /* set11.png in Resources */,
+				01BCA6C5201A627E003E7EBA /* set9.png in Resources */,
 				0116F6CF2008146700F76E0F /* dragonHead9.png in Resources */,
 				0114361A200ACE4D00B75813 /* dragonsTail6.png in Resources */,
 				0181125D1FF0186F0071111D /* Mars.png in Resources */,
@@ -572,11 +614,13 @@
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				01274D8C200EACCD007D2DD2 /* bkg4.png in Resources */,
 				0116F6D22008146700F76E0F /* dragonHead7.png in Resources */,
+				01BCA6CB201A627E003E7EBA /* set5.png in Resources */,
 				01143616200ACE4D00B75813 /* dragonsTail8.png in Resources */,
 				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,
 				01143636200D60B800B75813 /* Juno.png in Resources */,
 				011669361FFE9D4700AD8E42 /* exitIcon.png in Resources */,
 				0181126F1FF01F980071111D /* NN.png in Resources */,
+				01BCA6C2201A627E003E7EBA /* set7.png in Resources */,
 				016F38BB200D8B45003EC6B1 /* black_circle_u25CF_icon_256x256.png in Resources */,
 				0181127E1FF033D00071111D /* Mercury.png in Resources */,
 				0114362D200D381700B75813 /* Fortunae.png in Resources */,
@@ -588,7 +632,9 @@
 				011D7C051FEEFFA0001E3417 /* DignifiedDetriment.png in Resources */,
 				01143629200D32ED00B75813 /* South Node.png in Resources */,
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
+				01BCA6CD201A627E003E7EBA /* set3.png in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
+				01BCA6C3201A627E003E7EBA /* set4.png in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,
 				010D224B1FF6C3FC00BA86BF /* draconic0.png in Resources */,
 				01143613200ACE4D00B75813 /* dragonsTail7.png in Resources */,
@@ -604,12 +650,14 @@
 				010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */,
 				01143614200ACE4D00B75813 /* dragonsTail11.png in Resources */,
 				011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */,
+				01BCA6C4201A627E003E7EBA /* set2.png in Resources */,
 				0116F6C92008146700F76E0F /* dragonHead3.png in Resources */,
 				011BDBCB2017CDEA00D18898 /* adjusterBack.png in Resources */,
 				019E7E202003D96400ED3F77 /* circleBig.png in Resources */,
 				011D7C041FEEFFA0001E3417 /* DignifiedExalted.png in Resources */,
 				019E7E262003E25300ED3F77 /* arrowDown.png in Resources */,
 				0114361C200ACE4D00B75813 /* dragonsTail4.png in Resources */,
+				01BCA6CA201A627E003E7EBA /* set8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
