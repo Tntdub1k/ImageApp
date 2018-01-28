@@ -11,6 +11,8 @@
 		010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22481FF6C3F500BA86BF /* draconic1.png */; };
 		010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22491FF6C3F800BA86BF /* draconic2.png */; };
 		010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D224A1FF6C3FB00BA86BF /* draconic3.png */; };
+		01128CBA201E364500A79AF7 /* ying.png in Resources */ = {isa = PBXBuildFile; fileRef = 01128CB8201E364000A79AF7 /* ying.png */; };
+		01128CBB201E364500A79AF7 /* yang.png in Resources */ = {isa = PBXBuildFile; fileRef = 01128CB9201E364100A79AF7 /* yang.png */; };
 		01143612200ACE4D00B75813 /* dragonsTail2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143606200ACDFF00B75813 /* dragonsTail2.png */; };
 		01143613200ACE4D00B75813 /* dragonsTail7.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143607200ACE0100B75813 /* dragonsTail7.png */; };
 		01143614200ACE4D00B75813 /* dragonsTail11.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143608200ACE0C00B75813 /* dragonsTail11.png */; };
@@ -151,6 +153,8 @@
 		010D22481FF6C3F500BA86BF /* draconic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic1.png; path = ../../../Documents/draconic1.png; sourceTree = "<group>"; };
 		010D22491FF6C3F800BA86BF /* draconic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic2.png; path = ../../../Documents/draconic2.png; sourceTree = "<group>"; };
 		010D224A1FF6C3FB00BA86BF /* draconic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic3.png; path = ../../../Documents/draconic3.png; sourceTree = "<group>"; };
+		01128CB8201E364000A79AF7 /* ying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ying.png; path = ../../../Documents/ying.png; sourceTree = "<group>"; };
+		01128CB9201E364100A79AF7 /* yang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yang.png; path = ../../../Documents/yang.png; sourceTree = "<group>"; };
 		01143606200ACDFF00B75813 /* dragonsTail2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonsTail2.png; path = ../../../Documents/dragonsTail2.png; sourceTree = "<group>"; };
 		01143607200ACE0100B75813 /* dragonsTail7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonsTail7.png; path = ../../../Documents/dragonsTail7.png; sourceTree = "<group>"; };
 		01143608200ACE0C00B75813 /* dragonsTail11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonsTail11.png; path = ../../../Documents/dragonsTail11.png; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				01128CB9201E364100A79AF7 /* yang.png */,
+				01128CB8201E364000A79AF7 /* ying.png */,
 				01BCA6BC201A626D003E7EBA /* set1.png */,
 				01BCA6B8201A625D003E7EBA /* set2.png */,
 				01BCA6C1201A627D003E7EBA /* set3.png */,
@@ -541,6 +547,7 @@
 				0181125E1FF0186F0071111D /* Dejanira.png in Resources */,
 				018112611FF0186F0071111D /* Lilith.png in Resources */,
 				018112761FF01F980071111D /* Nibiru.png in Resources */,
+				01128CBA201E364500A79AF7 /* ying.png in Resources */,
 				010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */,
 				0114362C200D381700B75813 /* Amor.png in Resources */,
 				0116F6E520093A8F00F76E0F /* ring12gauge6.png in Resources */,
@@ -614,6 +621,7 @@
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				01274D8C200EACCD007D2DD2 /* bkg4.png in Resources */,
 				0116F6D22008146700F76E0F /* dragonHead7.png in Resources */,
+				01128CBB201E364500A79AF7 /* yang.png in Resources */,
 				01BCA6CB201A627E003E7EBA /* set5.png in Resources */,
 				01143616200ACE4D00B75813 /* dragonsTail8.png in Resources */,
 				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,

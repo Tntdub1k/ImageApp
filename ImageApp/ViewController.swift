@@ -7,6 +7,113 @@
 //
 
 import UIKit
+class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDelegate, UIPageViewControllerDelegate {
+    
+    var pages = [UIViewController]()
+    var page1: UIViewController!
+    var page2: UIViewController!
+    var curIndex = 1
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.delegate = self
+        self.dataSource = self
+        
+        page1 = storyboard!.instantiateViewController(withIdentifier:"VCAstro")
+        page2 = storyboard!.instantiateViewController(withIdentifier:"IChingVC")
+    
+        
+        pages.append(page1)
+        pages.append(page2)
+        
+        setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        
+        
+        for view in self.view.subviews {
+            if let scrollView = view as? UIScrollView {
+                scrollView.delegate = self
+            }
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    func getFloatAstro(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
+        var aValu = (abs((aOffset/aWidth) - 1))*(abs((aOffset/aWidth)) + 2)
+        if (aValu > 1) {
+            aValu = 1
+        }
+        if (aValu < 0){
+            aValu = 0
+        }
+        
+        return 1 - aValu
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool)
+    {
+        if (!completed)
+        {
+            return
+        }
+        if (pageViewController.viewControllers!.first! == page1){
+            curIndex = 1
+        }else{
+            curIndex = 0
+        } //Page Index
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        
+        if (curIndex == 1)
+        {
+            if (scrollView.contentOffset.x >= scrollView.frame.width){
+                (page1 as! ViewController).setOpacity(aLevel:1.0 )
+            } else{
+                (page1 as! ViewController).setOpacity(aLevel:getFloatAstro(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
+            }
+        } else {
+      (page1 as! ViewController).setOpacity(aLevel:getFloatAstro(aWidth:scrollView.frame.width*2,aOffset:scrollView.contentOffset.x) )
+            
+        }
+        
+        
+
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let currentIndex = pages.index(of: viewController)!
+        if (currentIndex == 1){
+            return pages[0]
+        } else {
+            return nil
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let currentIndex = pages.index(of: viewController)!
+        if (currentIndex == 0){
+            return pages[1]
+        } else {
+            return nil
+        }
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return pages.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+}
+class IChingViewController: UIViewController{
+    override func viewDidLoad(){
+        super.viewDidLoad()
+    }
+}
+
 
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate,
@@ -15,6 +122,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelega
 UITableViewDataSource, UIGestureRecognizerDelegate{
     
     var aWebVC = webViewController()
+    
+
+    var animator: UIViewPropertyAnimator?
+    
+    
+    @IBOutlet weak var transitionBlur: UIVisualEffectView!
+    func setOpacity(aLevel:CGFloat){
+         animator?.fractionComplete = CGFloat(aLevel)
+    }
     
     @IBOutlet var tapRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var BalancePointLabel: UITextField!
@@ -867,6 +983,15 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             UserDefaults.standard.set(String(m_CurrentBKG), forKey: "MindMapCurrentBkg")
             UserDefaults.standard.set(day, forKey: "MindMapLastDOY")
             
+            
+            
+            // animator does all the hard work and just lets us tell it what fraction of its animation we want to see. note that duration is not important here as we will just drive the animation manually
+           
+            animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+                // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
+                self.transitionBlur.effect = nil
+            }
+            animator?.fractionComplete = 1.0
         }
         
         
