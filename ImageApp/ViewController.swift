@@ -916,7 +916,19 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         scrollView.delegate = self
         
         clearAllViewsFromScreen()
-
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillResignActive, object: nil)
+        animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            
+            // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
+            self.transitionBlur.effect = nil
+        }
+        
+        animator?.fractionComplete = 1.0
+        
+        
+        
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
         scrollView.bounces = false
@@ -985,15 +997,11 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             
             
             
-            // animator does all the hard work and just lets us tell it what fraction of its animation we want to see. note that duration is not important here as we will just drive the animation manually
            
-            animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-                // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
-                self.transitionBlur.effect = nil
-            }
-            animator?.fractionComplete = 1.0
+          
         }
         
+
         
         m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
         
@@ -1009,10 +1017,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         updateBodyLabelText()
         displayCurrentDetailLevel()
         loadAP()
-        
-    
-    
-        
+       
         
         //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         
@@ -1037,6 +1042,20 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
    
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.animator?.pauseAnimation()
+        super.viewWillDisappear(false)
+        
+    }
+// my selector that was defined above
+@objc func willEnterForeground() {
+    self.animator?.startAnimation()
+
+    
+    }
+    
     @IBOutlet weak var balancePointButton: UIButton!
     @IBOutlet weak var setImage: UIImageView!
     @IBOutlet weak var cycleSetImage: UIImageView!

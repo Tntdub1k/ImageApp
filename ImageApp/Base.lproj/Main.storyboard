@@ -3046,11 +3046,6 @@
                                                                     </button>
                                                                 </subviews>
                                                             </view>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZMNumbers.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ko-cJ-GRC">
-                                                                <rect key="frame" x="24" y="25" width="315" height="315"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </imageView>
                                                         </subviews>
                                                     </view>
                                                 </subviews>
@@ -3285,7 +3280,6 @@
                         <outlet property="enterNewCategoryTextb" destination="DCS-ov-wIP" id="po6-QY-5TO"/>
                         <outlet property="enterNewMemberTextB" destination="z5G-9B-LQ9" id="52K-CA-bv4"/>
                         <outlet property="fullAddView" destination="gI4-9r-Uuk" id="9tE-Tv-IwT"/>
-                        <outlet property="imgPhoto" destination="1Ko-cJ-GRC" id="Kn1-qj-7O1"/>
                         <outlet property="mainBackground" destination="zGH-d2-bx4" id="99U-ZI-fOh"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="DE2-XP-YLX"/>
                         <outlet property="notesButtonAdvancementAndCycle" destination="FWl-XM-ntl" id="AS7-ak-AnN"/>
@@ -3404,7 +3398,6 @@
         <image name="187609.jpg" width="1920" height="1080"/>
         <image name="DignifiedGreen.png" width="194" height="200"/>
         <image name="Moon.png" width="194" height="202"/>
-        <image name="ZMNumbers.png" width="763" height="764"/>
         <image name="ZodiacMandala.png" width="2150" height="2150"/>
         <image name="adjusterBack.png" width="1002" height="1034"/>
         <image name="arrowDown.png" width="576" height="650"/>
