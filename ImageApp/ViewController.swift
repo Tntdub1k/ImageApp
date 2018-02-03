@@ -1349,6 +1349,9 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         AC.CategoryName = "Individuals"
         AC.Contents.append(AS)
         m_ADB.Database.append(AC)
+
+
+    
         m_CurrentDetailLevel = m_BeginnerDetail
     }
     

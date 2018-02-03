@@ -165,6 +165,20 @@ public class WebsiteDataBase:Codable{
         }
         
         
+        for CBname in ["Nibiru"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Nibiru Delineation"
+                THWE.data[house]?.DisplayName = "Nibiru Delineation"
+                THWE.data[house]?.extensionType = "html"
+                THWE.data[house]?.website = "personal findings"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "--"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
+        
         
         
         
