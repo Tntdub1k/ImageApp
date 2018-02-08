@@ -108,9 +108,181 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
         return 0
     }
 }
+
+
+
 class IChingViewController: UIViewController{
+    let m_IChing = IChing()
+    var m_CurrentHexagram = 0
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var line6: UIImageView!
+    @IBOutlet weak var line5: UIImageView!
+    @IBOutlet weak var line4: UIImageView!
+    @IBOutlet weak var line3: UIImageView!
+    @IBOutlet weak var line2: UIImageView!
+    @IBOutlet weak var line1: UIImageView!
+    @IBOutlet weak var line1Title: UILabel!
+    @IBOutlet weak var line2Title: UILabel!
+    @IBOutlet weak var line3Title: UILabel!
+    @IBOutlet weak var line4Title: UILabel!
+    @IBOutlet weak var line5Title: UILabel!
+    @IBOutlet weak var line6Title: UILabel!
+    @IBOutlet weak var altTitlesLabel: UITextView!
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        m_CurrentHexagram = Int(arc4random_uniform(63) + 1)
+        loadHexagram()
+    }
+    @IBAction func pressLine1(_ sender: Any) {
+        let newHex = m_IChing.IChing_Book[m_CurrentHexagram].Place1ChangesToNumber
+        m_CurrentHexagram = newHex
+        loadHexagram()
+    }
+    
+    @IBAction func pressLine2(_ sender: Any) {
+        let newHex = m_IChing.IChing_Book[m_CurrentHexagram].Place2ChangesToNumber
+        m_CurrentHexagram = newHex
+        loadHexagram()
+    }
+    
+    @IBAction func pressLine3(_ sender: Any) {
+        let newHex = m_IChing.IChing_Book[m_CurrentHexagram].Place3ChangesToNumber
+        m_CurrentHexagram = newHex
+        loadHexagram()
+    }
+    
+    @IBAction func pressLine4(_ sender: Any) {
+        let newHex = m_IChing.IChing_Book[m_CurrentHexagram].Place4ChangesToNumber
+        m_CurrentHexagram = newHex
+        loadHexagram()
+    }
+    
+    @IBAction func pressLine5(_ sender: Any) {
+        let newHex = m_IChing.IChing_Book[m_CurrentHexagram].Place5ChangesToNumber
+        m_CurrentHexagram = newHex
+        loadHexagram()
+    }
+    @IBAction func pressLine6(_ sender: Any) {
+        let newHex = m_IChing.IChing_Book[m_CurrentHexagram].Place6ChangesToNumber
+        m_CurrentHexagram = newHex
+        loadHexagram()
+    }
+
+    func loadHexagram(){
+        let hexNum = m_CurrentHexagram
+        
+        let label = String(hexNum) +  " " + m_IChing.IChing_Book[hexNum].ChiSymbol + "  " + m_IChing.IChing_Book[hexNum].ChiTitle + "  " + m_IChing.IChing_Book[hexNum].EngTitle
+         titleLabel.text = label
+    
+        altTitlesLabel.text = "Alternate Titles: "+m_IChing.IChing_Book[hexNum].AltTitles
+        
+        let colorCircle  = UIColor(hue: 0.55, saturation: 1, brightness: 0.93, alpha: 1.0)
+        let colorSquare = UIColor(hue: 0.9889, saturation: 1, brightness: 0.75, alpha: 1.0)
+    
+        line1Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle1 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place1ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place1ChangesToNumber].EngTitle
+        if (m_IChing.IChing_Book[hexNum].SquareCircle1.contains("○")){
+            line1Title.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle1.contains("⬜")){
+            line1Title.textColor = colorSquare
+        } else {
+            line1Title.textColor = UIColor(named:"Black")
+        }
+        
+        let text =  //m_IChing.IChing_Book[hexNum].SquareCircle2 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place2ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place2ChangesToNumber].EngTitle
+        
+        line2Title.text = text
+        if (m_IChing.IChing_Book[hexNum].SquareCircle2.contains("○")){
+            line2Title.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle2.contains("⬜")){
+            line2Title.textColor = colorSquare
+        } else {
+            line2Title.textColor = UIColor(named:"Black")
+        }
+        
+        line3Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle3 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place3ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place3ChangesToNumber].EngTitle
+        if (m_IChing.IChing_Book[hexNum].SquareCircle3.contains("○")){
+            line3Title.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle3.contains("⬜")){
+            line3Title.textColor = colorSquare
+        } else {
+            line3Title.textColor = UIColor(named:"Black")
+        }
+        
+        line4Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle4 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place4ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place4ChangesToNumber].EngTitle
+        if (m_IChing.IChing_Book[hexNum].SquareCircle4.contains("○")){
+            line4Title.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle4.contains("⬜")){
+            line4Title.textColor = colorSquare
+        } else {
+            line4Title.textColor = UIColor(named:"Black")
+        }
+        
+        line5Title.text = // m_IChing.IChing_Book[hexNum].SquareCircle5 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place5ChangesToNumber) + " " +  m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place5ChangesToNumber].EngTitle
+        if (m_IChing.IChing_Book[hexNum].SquareCircle5.contains("○")){
+            line5Title.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle5.contains("⬜")){
+            line5Title.textColor = colorSquare
+        } else {
+            line5Title.textColor = UIColor(named:"Black")
+        }
+        
+        
+        line6Title.text = // m_IChing.IChing_Book[hexNum].SquareCircle6 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place6ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place6ChangesToNumber].EngTitle
+        if (m_IChing.IChing_Book[hexNum].SquareCircle6.contains("○")){
+            line6Title.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle6.contains("⬜")){
+            line6Title.textColor = colorSquare
+        } else {
+            line6Title.textColor = UIColor(named:"Black")
+        }
+        
+        
+        
+     
+        if (m_IChing.IChing_Book[hexNum].Code[0] == 1){
+            line1.image = UIImage(named:"yang")
+        } else {
+            line1.image = UIImage(named:"yin")
+        }
+        
+        if (m_IChing.IChing_Book[hexNum].Code[1] == 1){
+            line2.image = UIImage(named:"yang")
+        } else {
+            line2.image = UIImage(named:"yin")
+        }
+        
+        if (m_IChing.IChing_Book[hexNum].Code[2] == 1){
+            line3.image = UIImage(named:"yang")
+        } else {
+            line3.image = UIImage(named:"yin")
+        }
+        
+        if (m_IChing.IChing_Book[hexNum].Code[3] == 1){
+            line4.image = UIImage(named:"yang")
+        } else {
+            line4.image = UIImage(named:"yin")
+        }
+        
+        if (m_IChing.IChing_Book[hexNum].Code[4] == 1){
+            line5.image = UIImage(named:"yang")
+        } else {
+            line5.image = UIImage(named:"yin")
+        }
+        
+        if (m_IChing.IChing_Book[hexNum].Code[5] == 1){
+            line6.image = UIImage(named:"yang")
+        } else {
+            line6.image = UIImage(named:"yin")
+        }
+        
     }
 }
 
