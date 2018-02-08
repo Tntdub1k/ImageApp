@@ -440,7 +440,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     @IBAction func pressedSave(_ sender: Any) {
-        
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] = m_CurrentSBody
         
         let jsonEncoder = JSONEncoder()
         
@@ -1008,6 +1008,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var addPicker: UIPickerView!
     @IBOutlet weak var selectPicker: UIPickerView!
     @IBAction func SelectPressed(_ sender: Any) {
+        
+        pressedSave(self)
         selectPicker.reloadAllComponents()
         clearAllViewsFromScreen()
         mainView.bringSubview(toFront: selectView)
