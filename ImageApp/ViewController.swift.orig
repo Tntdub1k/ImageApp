@@ -396,7 +396,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
                 return m_ADB.Database.count
             }
             else {
-                return m_ADB.Database[m_ChosenCategory].Contents.count
+                return m_ADB.Database[m_CurrentCategory].Contents.count
             }
         }
         else if (pickerView == addPicker){
@@ -421,7 +421,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
                 return m_ADB.Database[row].CategoryName as String
             }
             else {
-                return m_ADB.Database[m_ChosenCategory].Contents[row].IndividualName
+                return m_ADB.Database[m_CurrentCategory].Contents[row].IndividualName
             }
         }
         else if (pickerView == addPicker){
@@ -449,10 +449,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             
             let jsonData = try jsonEncoder.encode(m_ADB)
             let jsonString = jsonData.base64EncodedString()
-            UserDefaults.standard.set(String(m_CurrentIndividual), forKey: "MindmapCurIndividual")
-            UserDefaults.standard.set(String(m_CurrentCategory), forKey: "MindmapCurCategory")
-            UserDefaults.standard.set(jsonString, forKey: "MindmapDataBase")
-            
             
             
             UserDefaults.standard.set(jsonString, forKey: "MindmapDataBase")
@@ -473,16 +469,12 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         if (pickerView == selectPicker){
             if (component == 0){
-                
-                m_ChosenCategory = row
-//                m_CurrentCategory = row
-                m_ChosenIndividual = 0
-//                m_CurrentIndividual = 0
+                m_CurrentCategory = row
+                m_CurrentIndividual = 0
                 selectPicker.reloadComponent(1)
             }
             else {
-                m_ChosenIndividual = row
-//                m_CurrentIndividual = row
+                m_CurrentIndividual = row
 
                 
             }
@@ -497,9 +489,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
     }
   
-    
-    var m_ChosenCategory = 0
-    var m_ChosenIndividual = 0
     func updateBodyLabelText(){
         switch(m_CurrentSBody){
         case 0:
@@ -674,9 +663,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         clearAllViewsFromScreen()
     }
     @IBAction func clickOKSelectItem(_ sender: Any) {
-        
-        m_CurrentCategory = m_ChosenCategory
-        m_CurrentIndividual = m_ChosenIndividual
 
         if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] != nil){
             m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
@@ -922,12 +908,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgPhoto: UIImageView!
 
-    @IBOutlet weak var depthBkg: UIImageView!
-    @IBOutlet weak var cycleBkg: UIImageView!
-    @IBOutlet weak var progBkg: UIImageView!
-    @IBOutlet weak var depthBack6: UIImageView!
-    @IBOutlet weak var cycleBack12: UIImageView!
-    @IBOutlet weak var progBack12: UIImageView!
     
     @IBOutlet weak var NotesTitle: UILabel!
     @IBOutlet weak var IndividualTitle: UILabel!
@@ -1126,17 +1106,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
         scrollView.bounces = false
-        
-        
-        
-        if (UserDefaults.standard.string(forKey: "MindmapCurIndividual") != nil){
-            m_CurrentIndividual = Int(UserDefaults.standard.string(forKey: "MindmapCurIndividual")!)!
-        }
-        if (UserDefaults.standard.string(forKey: "MindmapCurCategory") != nil){
-            m_CurrentCategory = Int(UserDefaults.standard.string(forKey: "MindmapCurCategory")!)!
-        }
 
-        
+       
+            var Json = ""
+       
         if (UserDefaults.standard.string(forKey: "MindmapDataBase") == nil){
             loadSampleDB()
         }else{
@@ -1327,154 +1300,112 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var depthImage: UIImageView!
     func displayCurrentDetailLevel(){
         
-        switch(m_CurrentDetailLevel){
-        case m_BeginnerDetail:
-            
-            notesButtonCycle.isHidden = true
-            notesButtonAdvancementAndCycle.isHidden = true
-            
-            bandCounter.isHidden = true
-            bodyLabel.isHidden = true
-            bodyImage.isHidden = true
-            bodyButton.isHidden = true
-            
-            
-            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0RingAdvancement"] = 1
-            //m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"] = 0
-            
-            m_CBL = CelestialBodyListing()
-            for CB in m_CBL.AllCelestialBodies{
-                if (beginnerCBsList.contains(CB.value.DisplayName) == false){
-                    m_CBL.AllCelestialBodies.removeValue(forKey: CB.key)
-                }
+    switch(m_CurrentDetailLevel){
+    case m_BeginnerDetail:
+        
+        notesButtonCycle.isHidden = true
+        notesButtonAdvancementAndCycle.isHidden = true
+        
+        bandCounter.isHidden = true
+        bodyLabel.isHidden = true
+        bodyImage.isHidden = true
+        bodyButton.isHidden = true
+   
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0RingAdvancement"] = 1
+        //m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"] = 0
+        
+        m_CBL = CelestialBodyListing()
+        for CB in m_CBL.AllCelestialBodies{
+            if (beginnerCBsList.contains(CB.value.DisplayName) == false){
+                m_CBL.AllCelestialBodies.removeValue(forKey: CB.key)
             }
-            
-            settingDetailSlider.setValue(0.0, animated: false)
-            cycleLabel.isHidden = true
-            cycleCounter.isHidden = true
-            cycleImage.isHidden = true
-            setImage.isHidden = true
-            cycleSetImage.isHidden = true
-            balancePointButton.isHidden = true
-            depthBack6.isHidden = true
-            cycleBack12.isHidden = true
-            progBack12.isHidden = false
-            cycleBkg.isHidden = true
-            progBkg.isHidden = false
-            depthBkg.isHidden = true
-            
-            depthLabel.isHidden = true
-            ringCounter.isHidden = true
-            depthPlusB.isHidden = true
-      
-            depthMinusB.isHidden = true
-            depthImage.isHidden = true
-            
-        case m_IntermediateDetail:
-            notesButtonCycle.isHidden = false
-            notesButtonAdvancementAndCycle.isHidden = true
-            setImage.isHidden = true
-            cycleSetImage.isHidden = true
-            balancePointButton.isHidden = true
-            depthBack6.isHidden = false
-            cycleBack12.isHidden = false
-            progBack12.isHidden = false
-            cycleBkg.isHidden = false
-            progBkg.isHidden = false
-            depthBkg.isHidden = false
-            
-            bandCounter.isHidden = true
-            bodyLabel.isHidden = true
-            bodyImage.isHidden = true
-            bodyButton.isHidden = true
-            
-            
-            m_CBL = CelestialBodyListing()
-            for CB in m_CBL.AllCelestialBodies{
-                if (intermediateCBsList.contains(CB.value.DisplayName) == false){
-                    m_CBL.AllCelestialBodies.removeValue(forKey: CB.key)
-                }
+        }
+        
+        settingDetailSlider.setValue(0.0, animated: false)
+        cycleLabel.isHidden = true
+        cycleCounter.isHidden = true
+        cycleImage.isHidden = true
+        
+        depthLabel.isHidden = true
+        ringCounter.isHidden = true
+        depthPlusB.isHidden = true
+        depthMinusB.isHidden = true
+        depthImage.isHidden = true
+        
+    case m_IntermediateDetail:
+        notesButtonCycle.isHidden = false
+        notesButtonAdvancementAndCycle.isHidden = true
+        
+        bandCounter.isHidden = true
+        bodyLabel.isHidden = true
+        bodyImage.isHidden = true
+        bodyButton.isHidden = true
+
+        
+        m_CBL = CelestialBodyListing()
+        for CB in m_CBL.AllCelestialBodies{
+            if (intermediateCBsList.contains(CB.value.DisplayName) == false){
+                m_CBL.AllCelestialBodies.removeValue(forKey: CB.key)
             }
-            settingDetailSlider.setValue(0.33, animated: false)
-            cycleLabel.isHidden = false
-            cycleCounter.isHidden = false
-            cycleImage.isHidden = false
-            
-            depthLabel.isHidden = false
-            ringCounter.isHidden = false
-            depthPlusB.isHidden = false
-            depthMinusB.isHidden = false
-      
-            depthImage.isHidden = false
-        case m_AdvancedDetail:
-            notesButtonCycle.isHidden = false
-            notesButtonAdvancementAndCycle.isHidden = false
-            setImage.isHidden = true
-            cycleSetImage.isHidden = true
-            balancePointButton.isHidden = true
-            depthBack6.isHidden = false
-            cycleBack12.isHidden = false
-            progBack12.isHidden = false
-            cycleBkg.isHidden = false
-            progBkg.isHidden = false
-            depthBkg.isHidden = false
-            
-            
-            bandCounter.isHidden = true
-            bodyLabel.isHidden = true
-            bodyImage.isHidden = true
-            bodyButton.isHidden = true
-            
-            
-            
-            m_CBL = CelestialBodyListing()
-            settingDetailSlider.setValue(0.66, animated: false)
-            cycleLabel.isHidden = false
-            cycleCounter.isHidden = false
-            cycleImage.isHidden = false
-            
-            depthLabel.isHidden = false
-            ringCounter.isHidden = false
-    
-            depthPlusB.isHidden = false
-            depthMinusB.isHidden = false
-            depthImage.isHidden = false
-        case m_MasterDetail:
-            notesButtonCycle.isHidden = false
-            notesButtonAdvancementAndCycle.isHidden = false
-            setImage.isHidden = false
-            cycleSetImage.isHidden = false
-            balancePointButton.isHidden = false
-            depthBack6.isHidden = false
-            cycleBack12.isHidden = false
-            progBack12.isHidden = false
-            cycleBkg.isHidden = false
-            progBkg.isHidden = false
-            depthBkg.isHidden = false
-            
-            bandCounter.isHidden = false
-            bodyLabel.isHidden = false
-            bodyImage.isHidden = false
-            bodyButton.isHidden = false
-            
-            settingDetailSlider.setValue(1.0, animated: false)
-            m_CBL = CelestialBodyListing()
-            cycleLabel.isHidden = false
-            cycleCounter.isHidden = false
-            cycleImage.isHidden = false
-            
-            depthLabel.isHidden = false
-            ringCounter.isHidden = false
-            depthPlusB.isHidden = false
-            depthMinusB.isHidden = false
-            depthImage.isHidden = false
-            
-            updateBodyLabelText()
-        default:
-            break
+        }
+        settingDetailSlider.setValue(0.33, animated: false)
+        cycleLabel.isHidden = false
+        cycleCounter.isHidden = false
+        cycleImage.isHidden = false
+        
+        depthLabel.isHidden = false
+        ringCounter.isHidden = false
+        depthPlusB.isHidden = false
+        depthMinusB.isHidden = false
+        depthImage.isHidden = false
+    case m_AdvancedDetail:
+        notesButtonCycle.isHidden = false
+        notesButtonAdvancementAndCycle.isHidden = false
+        
+        bandCounter.isHidden = true
+        bodyLabel.isHidden = true
+        bodyImage.isHidden = true
+        bodyButton.isHidden = true
+   
+        
+        
+        m_CBL = CelestialBodyListing()
+        settingDetailSlider.setValue(0.66, animated: false)
+        cycleLabel.isHidden = false
+        cycleCounter.isHidden = false
+        cycleImage.isHidden = false
+        
+        depthLabel.isHidden = false
+        ringCounter.isHidden = false
+        depthPlusB.isHidden = false
+        depthMinusB.isHidden = false
+        depthImage.isHidden = false
+    case m_MasterDetail:
+        notesButtonCycle.isHidden = false
+        notesButtonAdvancementAndCycle.isHidden = false
+        
+        bandCounter.isHidden = false
+        bodyLabel.isHidden = false
+        bodyImage.isHidden = false
+        bodyButton.isHidden = false
+        
+        settingDetailSlider.setValue(1.0, animated: false)
+        m_CBL = CelestialBodyListing()
+        cycleLabel.isHidden = false
+        cycleCounter.isHidden = false
+        cycleImage.isHidden = false
+        
+        depthLabel.isHidden = false
+        ringCounter.isHidden = false
+        depthPlusB.isHidden = false
+        depthMinusB.isHidden = false
+        depthImage.isHidden = false
+        
+        updateBodyLabelText()
+    default:
+        break
         }
     }
-    
     @IBAction func settingsFinished(_ sender: Any){
     
         if (m_DetailLevelBeforeChange > m_CurrentDetailLevel){
@@ -1593,9 +1524,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         AC.Contents.append(AS)
         m_ADB.Database.append(AC)
 
-        let AC2 = AstrologicalCategory()
-        AC2.CategoryName = "Locations"
-        m_ADB.Database.append(AC2)
 
     
         m_CurrentDetailLevel = m_BeginnerDetail

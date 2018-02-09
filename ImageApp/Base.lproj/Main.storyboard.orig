@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5C-KU-NLt">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -27,6 +28,8 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="VUm-gW-izU">
         <!--Ching View Controller-->
         <scene sceneID="s8o-TG-RdP">
             <objects>
@@ -209,15 +212,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-ze-PCB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="dTP-gZ-UgA">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gI4-9r-Uuk">
                                 <rect key="frame" x="0.0" y="94" width="320" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -737,7 +731,7 @@
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-jG-SqW">
                                                                     <rect key="frame" x="8" y="66" width="305" height="169"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1100,6 +1094,13 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-rE-PnF">
+                                                                <rect key="frame" x="186" y="123" width="88" height="67"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <connections>
+                                                                    <action selector="ringMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNT-uB-1y7"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intellectual Body" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-Fq-qOY">
@@ -3215,13 +3216,6 @@
                                                             <action selector="ringPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeD-vO-CCK"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-rE-PnF">
-                                                        <rect key="frame" x="119" y="63" width="88" height="67"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <connections>
-                                                            <action selector="ringMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNT-uB-1y7"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chicago, IL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69O-rS-syx">
@@ -3302,6 +3296,15 @@
                                     <action selector="pressBand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D7m-fn-HcN"/>
                                 </connections>
                             </button>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-ze-PCB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="dTP-gZ-UgA">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -3346,15 +3349,15 @@
                         <outlet property="chooseReadingLabel" destination="3yf-ST-Rkt" id="yCN-1Q-vnc"/>
                         <outlet property="chooseReadingView" destination="Imf-tT-Vra" id="egc-i2-R70"/>
                         <outlet property="chooseReadingsTableV" destination="zd8-dp-Q80" id="UYh-7w-3FL"/>
-                        <outlet property="cycleBack12" destination="KQc-mE-bVI" id="mQq-SJ-28a"/>
-                        <outlet property="cycleBkg" destination="CMH-Mn-GDR" id="vT2-mS-coA"/>
+                        <outlet property="cycleBack12" destination="KQc-mE-bVI" id="xwC-BU-Csc"/>
+                        <outlet property="cycleBkg" destination="CMH-Mn-GDR" id="YyU-ca-U9r"/>
                         <outlet property="cycleCounter" destination="1Qq-45-ehR" id="TtH-SQ-Obn"/>
                         <outlet property="cycleImage" destination="6Kw-8l-Kgj" id="50d-hx-Ptv"/>
                         <outlet property="cycleLabel" destination="05g-Sk-b0b" id="kbn-yf-ESP"/>
                         <outlet property="cycleSetImage" destination="KNO-Dq-Eig" id="uqT-tD-QuX"/>
                         <outlet property="deleteView" destination="2r6-c2-XBy" id="xSo-G1-Egs"/>
-                        <outlet property="depthBack6" destination="eia-Xn-8r5" id="X7Y-OL-pjt"/>
-                        <outlet property="depthBkg" destination="lA1-nU-CSd" id="3fY-TD-36K"/>
+                        <outlet property="depthBack6" destination="eia-Xn-8r5" id="u7I-6s-LgY"/>
+                        <outlet property="depthBkg" destination="lA1-nU-CSd" id="4nI-Uw-c5T"/>
                         <outlet property="depthImage" destination="0Jh-hF-Nzz" id="rKV-lS-lRD"/>
                         <outlet property="depthLabel" destination="0w6-2M-Ohu" id="LXA-NE-bWK"/>
                         <outlet property="depthMinusB" destination="Zhr-PV-VfP" id="0Rs-Os-DYd"/>
@@ -3372,11 +3375,12 @@
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="DE2-XP-YLX"/>
                         <outlet property="notesButtonAdvancementAndCycle" destination="FWl-XM-ntl" id="AS7-ak-AnN"/>
                         <outlet property="notesButtonCycle" destination="kHg-bC-sLP" id="Tso-zu-dGM"/>
-                        <outlet property="progBack12" destination="NlR-cY-bzU" id="YLW-uQ-IP8"/>
-                        <outlet property="progBkg" destination="Ifo-eZ-6af" id="58z-8t-9ol"/>
+                        <outlet property="progBack12" destination="NlR-cY-bzU" id="tYA-YW-9vv"/>
+                        <outlet property="progBkg" destination="Ifo-eZ-6af" id="Dfo-EL-Vvw"/>
                         <outlet property="renameTextB" destination="3YX-fb-Txf" id="FTw-ex-zeB"/>
                         <outlet property="renameView" destination="hi7-sf-890" id="mtG-ef-ULv"/>
                         <outlet property="ringCounter" destination="g0A-xz-tAO" id="CKn-X6-HBO"/>
+                        <outlet property="ringPlusBigB" destination="KEC-bu-q7p" id="KQ7-qv-IuG"/>
                         <outlet property="scrollView" destination="CxE-TL-RAS" id="FgR-jR-n8W"/>
                         <outlet property="selectPicker" destination="rYe-xj-e4d" id="N8J-bH-mow"/>
                         <outlet property="selectView" destination="bt9-da-ujy" id="Pdk-XW-ra1"/>
@@ -3512,6 +3516,6 @@
         <image name="yang.png" width="287" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tng-X3-pGz"/>
+        <segue reference="AZJ-cc-XWh"/>
     </inferredMetricsTieBreakers>
 </document>
