@@ -40,7 +40,7 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
         return .lightContent
     }
     
-    let transitionScalar :CGFloat  = 1.0
+    let transitionScalar :CGFloat  = 1.07
     func getFloatAstro2(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
         var ret :CGFloat = 0.0
         if (aOffset <= aWidth){
