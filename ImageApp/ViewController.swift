@@ -39,16 +39,103 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    func getFloatAstro(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
-        var aValu = (abs((aOffset/aWidth) - 1))*(abs((aOffset/aWidth)) + 2)
-        if (aValu > 1) {
-            aValu = 1
+    
+    let transitionScalar :CGFloat  = 1.0
+    func getFloatAstro2(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
+        var ret :CGFloat = 0.0
+        if (aOffset <= aWidth){
+            
+            var aValu = (aOffset)*transitionScalar/aWidth
+            if (aValu > 1) {
+                aValu = 1
+            }
+            if (aValu < 0){
+                aValu = 0
+            }
+            
+            ret =  1.0 - aValu
+            
         }
-        if (aValu < 0){
-            aValu = 0
+            
+        else if (aOffset > aWidth){
+            ret =  1.0
         }
         
-        return 1 - aValu
+        return ret
+    }
+        
+    func getFloatAstro2Up(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
+        var ret :CGFloat = 0.0
+        if (aOffset >= aWidth){
+            
+            var aValu = (aWidth*2-aOffset)*transitionScalar/aWidth
+            if (aValu > 1) {
+                aValu = 1
+            }
+            if (aValu < 0){
+                aValu = 0
+            }
+            
+            ret =  1.0 - aValu
+            
+        }
+            
+        else if (aOffset < aWidth){
+            ret =  1.0
+        }
+        
+        return ret
+    }
+    
+    
+    func getFloatAstro1(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
+        var ret :CGFloat = 0.0
+        if (aOffset <= aWidth){
+            
+            var aValu = (aWidth-aOffset)*transitionScalar/aWidth
+            if (aValu > 1) {
+                aValu = 1
+            }
+            if (aValu < 0){
+                aValu = 0
+            }
+            
+            ret =  1.0 - aValu
+            
+        }
+        
+        else if (aOffset > aWidth){
+            ret =  1.0
+        }
+        
+        return ret
+        
+        
+    }
+    
+    func getFloatAstro1Up(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
+        var ret :CGFloat = 0.0
+        if (aOffset >= aWidth){
+            
+            var aValu = (aOffset-aWidth)*transitionScalar/aWidth
+            if (aValu > 1) {
+                aValu = 1
+            }
+            if (aValu < 0){
+                aValu = 0
+            }
+            
+            ret =  1.0 - aValu
+            
+        }
+            
+        else if (aOffset < aWidth){
+            ret =  1.0
+        }
+        
+        return ret
+        
+        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool)
@@ -68,18 +155,16 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
         
         if (curIndex == 1)
         {
-            if (scrollView.contentOffset.x >= scrollView.frame.width){
-                (page1 as! ViewController).setOpacity(aLevel:1.0 )
-            } else{
-                (page1 as! ViewController).setOpacity(aLevel:getFloatAstro(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
-            }
+
+                (page1 as! ViewController).setOpacity(aLevel:getFloatAstro1(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
+                
+                (page2 as! IChingViewController).setOpacity(aLevel:getFloatAstro2(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
+
         } else {
-      (page1 as! ViewController).setOpacity(aLevel:getFloatAstro(aWidth:scrollView.frame.width*2,aOffset:scrollView.contentOffset.x) )
-            
+            (page2 as! IChingViewController).setOpacity(aLevel:getFloatAstro1Up(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
+            (page1 as! ViewController).setOpacity(aLevel:getFloatAstro2Up(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
         }
         
-        
-
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -115,6 +200,20 @@ class IChingViewController: UIViewController{
     let m_IChing = IChing()
     var m_CurrentHexagram = 0
     
+    
+    var animator: UIViewPropertyAnimator?
+    
+    @IBOutlet weak var transitionBlur: UIVisualEffectView!
+    @IBOutlet weak var SqrCir1: UILabel!
+    @IBOutlet weak var SqrCir2: UILabel!
+    @IBOutlet weak var SqrCir3: UILabel!
+    @IBOutlet weak var SqrCir4: UILabel!
+    @IBOutlet weak var SqrCir5: UILabel!
+    @IBOutlet weak var SqrCir6: UILabel!
+    @IBOutlet weak var ChiTitleLabel: UILabel!
+    @IBOutlet weak var ChiSymbolLabel: UILabel!
+    @IBOutlet weak var EngTitleLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var line6: UIImageView!
     @IBOutlet weak var line5: UIImageView!
@@ -132,7 +231,29 @@ class IChingViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            
+            // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
+            self.transitionBlur.effect = nil
+        }
+        
+        animator?.fractionComplete = 1.0
+        
         m_CurrentHexagram = Int(arc4random_uniform(63) + 1)
+        loadHexagram()
+    }
+    @IBAction func clickNext(_ sender: Any) {
+        m_CurrentHexagram = m_CurrentHexagram + 1
+        if (m_CurrentHexagram >= 65){
+            m_CurrentHexagram = 64
+        }
+        loadHexagram()
+    }
+    @IBAction func clickPrevious(_ sender: Any) {
+        m_CurrentHexagram = m_CurrentHexagram - 1
+        if (m_CurrentHexagram <= 0){
+            m_CurrentHexagram = 1
+        }
         loadHexagram()
     }
     @IBAction func pressLine1(_ sender: Any) {
@@ -169,84 +290,112 @@ class IChingViewController: UIViewController{
         m_CurrentHexagram = newHex
         loadHexagram()
     }
-
+    
+    func setOpacity(aLevel:CGFloat){
+        animator?.fractionComplete = CGFloat(aLevel)
+    }
+    
     func loadHexagram(){
         let hexNum = m_CurrentHexagram
         
-        let label = String(hexNum) +  " " + m_IChing.IChing_Book[hexNum].ChiSymbol + "  " + m_IChing.IChing_Book[hexNum].ChiTitle + "  " + m_IChing.IChing_Book[hexNum].EngTitle
-         titleLabel.text = label
+ 
+        numberLabel.text = String(hexNum)
+        EngTitleLabel.text = m_IChing.IChing_Book[hexNum].EngTitle
+        ChiTitleLabel.text = m_IChing.IChing_Book[hexNum].ChiTitle
+        ChiSymbolLabel.text = m_IChing.IChing_Book[hexNum].ChiSymbol
     
         altTitlesLabel.text = "Alternate Titles: "+m_IChing.IChing_Book[hexNum].AltTitles
         
-        let colorCircle  = UIColor(hue: 0.55, saturation: 1, brightness: 0.93, alpha: 1.0)
-        let colorSquare = UIColor(hue: 0.9889, saturation: 1, brightness: 0.75, alpha: 1.0)
+        let colorCircle  = UIColor(hue: 0.55, saturation: 1, brightness: 0.93, alpha: 0.75)
+        let colorSquare = UIColor(hue: 0.9889, saturation: 1, brightness: 0.75, alpha: 0.75)
+        let colorNormal = UIColor(hue:0, saturation: 0, brightness:0, alpha: 0.75)
+        
     
         line1Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle1 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place1ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place1ChangesToNumber].EngTitle
+            String(m_IChing.IChing_Book[hexNum].Place1ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place1ChangesToNumber].EngTitle
+        SqrCir1.text = m_IChing.IChing_Book[hexNum].SquareCircle1
         if (m_IChing.IChing_Book[hexNum].SquareCircle1.contains("○")){
             line1Title.textColor = colorCircle
-        } else if (m_IChing.IChing_Book[hexNum].SquareCircle1.contains("⬜")){
+            SqrCir1.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle1.contains("◻")){
             line1Title.textColor = colorSquare
+            SqrCir1.textColor = colorSquare
         } else {
-            line1Title.textColor = UIColor(named:"Black")
+            line1Title.textColor = colorNormal
+            SqrCir1.textColor = colorNormal
         }
         
-        let text =  //m_IChing.IChing_Book[hexNum].SquareCircle2 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place2ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place2ChangesToNumber].EngTitle
-        
-        line2Title.text = text
+        line2Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle2 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place2ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place2ChangesToNumber].EngTitle
+        SqrCir2.text = m_IChing.IChing_Book[hexNum].SquareCircle2
         if (m_IChing.IChing_Book[hexNum].SquareCircle2.contains("○")){
             line2Title.textColor = colorCircle
-        } else if (m_IChing.IChing_Book[hexNum].SquareCircle2.contains("⬜")){
+            SqrCir2.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle2.contains("◻")){
             line2Title.textColor = colorSquare
+            SqrCir2.textColor = colorSquare
         } else {
-            line2Title.textColor = UIColor(named:"Black")
+            line2Title.textColor = colorNormal
+            SqrCir2.textColor = colorNormal
         }
         
         line3Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle3 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place3ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place3ChangesToNumber].EngTitle
+            String(m_IChing.IChing_Book[hexNum].Place3ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place3ChangesToNumber].EngTitle
+        SqrCir3.text = m_IChing.IChing_Book[hexNum].SquareCircle3
         if (m_IChing.IChing_Book[hexNum].SquareCircle3.contains("○")){
             line3Title.textColor = colorCircle
-        } else if (m_IChing.IChing_Book[hexNum].SquareCircle3.contains("⬜")){
+            SqrCir3.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle3.contains("◻")){
             line3Title.textColor = colorSquare
+            SqrCir3.textColor = colorSquare
         } else {
-            line3Title.textColor = UIColor(named:"Black")
+            line3Title.textColor = colorNormal
+            SqrCir3.textColor = colorNormal
         }
+     
         
         line4Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle4 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place4ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place4ChangesToNumber].EngTitle
+            String(m_IChing.IChing_Book[hexNum].Place4ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place4ChangesToNumber].EngTitle
+        SqrCir4.text = m_IChing.IChing_Book[hexNum].SquareCircle4
         if (m_IChing.IChing_Book[hexNum].SquareCircle4.contains("○")){
             line4Title.textColor = colorCircle
-        } else if (m_IChing.IChing_Book[hexNum].SquareCircle4.contains("⬜")){
+            SqrCir4.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle4.contains("◻")){
             line4Title.textColor = colorSquare
+            SqrCir4.textColor = colorSquare
         } else {
-            line4Title.textColor = UIColor(named:"Black")
+            line4Title.textColor = colorNormal
+            SqrCir4.textColor = colorNormal
         }
         
-        line5Title.text = // m_IChing.IChing_Book[hexNum].SquareCircle5 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place5ChangesToNumber) + " " +  m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place5ChangesToNumber].EngTitle
+        line5Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle5 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place5ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place5ChangesToNumber].EngTitle
+        SqrCir5.text = m_IChing.IChing_Book[hexNum].SquareCircle5
         if (m_IChing.IChing_Book[hexNum].SquareCircle5.contains("○")){
             line5Title.textColor = colorCircle
-        } else if (m_IChing.IChing_Book[hexNum].SquareCircle5.contains("⬜")){
+            SqrCir5.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle5.contains("◻")){
             line5Title.textColor = colorSquare
+            SqrCir5.textColor = colorSquare
         } else {
-            line5Title.textColor = UIColor(named:"Black")
+            line5Title.textColor = colorNormal
+            SqrCir5.textColor = colorNormal
         }
         
-        
-        line6Title.text = // m_IChing.IChing_Book[hexNum].SquareCircle6 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place6ChangesToNumber) + " " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place6ChangesToNumber].EngTitle
+        line6Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle6 + " " +
+            String(m_IChing.IChing_Book[hexNum].Place6ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place6ChangesToNumber].EngTitle
+        SqrCir6.text = m_IChing.IChing_Book[hexNum].SquareCircle6
         if (m_IChing.IChing_Book[hexNum].SquareCircle6.contains("○")){
             line6Title.textColor = colorCircle
-        } else if (m_IChing.IChing_Book[hexNum].SquareCircle6.contains("⬜")){
+            SqrCir6.textColor = colorCircle
+        } else if (m_IChing.IChing_Book[hexNum].SquareCircle6.contains("◻")){
             line6Title.textColor = colorSquare
+            SqrCir6.textColor = colorSquare
         } else {
-            line6Title.textColor = UIColor(named:"Black")
+            line6Title.textColor = colorNormal
+            SqrCir6.textColor = colorNormal
         }
         
-        
-        
-     
         if (m_IChing.IChing_Book[hexNum].Code[0] == 1){
             line1.image = UIImage(named:"yang")
         } else {
@@ -1110,6 +1259,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         scrollView.delegate = self
         
         clearAllViewsFromScreen()
+        mainView.bringSubview(toFront: transitionBlur)
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillResignActive, object: nil)

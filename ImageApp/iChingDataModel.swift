@@ -253,7 +253,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -438,7 +438,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -619,7 +619,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -770,7 +770,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -961,7 +961,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -1241,7 +1241,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -1423,7 +1423,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -1604,7 +1604,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -1777,7 +1777,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle4 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle5 =
@@ -1785,7 +1785,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -1953,7 +1953,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle3 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle4 =
@@ -1967,7 +1967,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -2148,7 +2148,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -2309,7 +2309,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle3 =
@@ -2329,7 +2329,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -2475,7 +2475,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -2621,7 +2621,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -2766,7 +2766,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -2913,7 +2913,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -3058,7 +3058,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -3203,7 +3203,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -3349,7 +3349,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -3498,7 +3498,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -3643,7 +3643,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -3789,7 +3789,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -3935,7 +3935,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -4080,7 +4080,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -4225,7 +4225,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -4371,7 +4371,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -4517,7 +4517,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -4663,7 +4663,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -4809,7 +4809,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -4955,7 +4955,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -5101,7 +5101,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -5257,7 +5257,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -5382,13 +5382,13 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle1 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle3 =
@@ -5408,7 +5408,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -5563,7 +5563,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -5723,7 +5723,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -5883,11 +5883,11 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].Place1ChangesToNumber = 15;
@@ -6039,7 +6039,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -6204,7 +6204,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
@@ -6333,7 +6333,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -6491,7 +6491,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -6657,7 +6657,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -6667,7 +6667,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle3 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle4 =
@@ -6685,7 +6685,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].Place1ChangesToNumber = 4;
@@ -6820,9 +6820,9 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle1 =
                     
         """
-         ⬜ 
+         ◻ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -6838,7 +6838,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle4 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle5 =
@@ -7034,11 +7034,11 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜ ◻
+        // ○ ◻ ◻
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
                 
@@ -7164,9 +7164,9 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle1 =
                     
         """
-         ⬜ 
+         ◻ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -7331,7 +7331,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -7484,9 +7484,9 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle1 =
                     
         """
-         ⬜ 
+         ◻ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -7649,7 +7649,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -7813,7 +7813,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -7975,7 +7975,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -8144,7 +8144,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -8310,7 +8310,7 @@ public class IChing
         """
          ○ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -8472,7 +8472,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -8636,7 +8636,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -8798,7 +8798,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -8808,7 +8808,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle3 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle4 =
@@ -8826,7 +8826,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].Place1ChangesToNumber = 40;
@@ -8963,7 +8963,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -9126,7 +9126,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -9286,9 +9286,9 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle1 =
                     
         """
-         ⬜ 
+         ◻ 
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -9304,7 +9304,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle4 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle5 =
@@ -9436,7 +9436,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -9446,7 +9446,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle3 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle4 =
@@ -9464,7 +9464,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle6 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].Place1ChangesToNumber = 47;
@@ -9595,11 +9595,11 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle3 =
@@ -9611,7 +9611,7 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle4 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle5 =
@@ -9750,7 +9750,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -9911,7 +9911,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -9921,13 +9921,13 @@ public class IChing
         IChing_Book[Hexagram].SquareCircle3 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle4 =
                     
         """
-         ⬜ 
+         ◻ 
         """
 
         IChing_Book[Hexagram].SquareCircle5 =
@@ -10076,7 +10076,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
         IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -10236,7 +10236,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
             IChing_Book[Hexagram].SquareCircle2 =
                     
         """
@@ -10393,7 +10393,7 @@ public class IChing
         """
           
         """
-        // ○ ⬜
+        // ○ ◻
             IChing_Book[Hexagram].SquareCircle2 =
                     
         """
