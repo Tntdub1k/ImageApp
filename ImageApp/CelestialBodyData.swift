@@ -240,6 +240,24 @@ public class WebsiteDataBase:Codable{
             }
             database[CB.value.DisplayName]?.append(THWE)
         }
+        
+        //Medical Astrology
+        for CB in CBL.AllCelestialBodies{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                
+                THWE.data[house]?.URL = "Websites/Medical Astrology and Astrological Medicine"
+                THWE.data[house]?.DisplayName = "Medical Astrology"
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "homeoint.org"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "HO"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CB.value.DisplayName]?.append(THWE)
+        }
+        
+        
     }
 }
 
