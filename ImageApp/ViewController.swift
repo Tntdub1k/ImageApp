@@ -32,6 +32,7 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
         for view in self.view.subviews {
             if let scrollView = view as? UIScrollView {
                 scrollView.delegate = self
+                
             }
         }
     }
@@ -1266,6 +1267,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         aAnimator?.fractionComplete = 1.0
         
         scrollView.delegate = self
+        scrollView.bounces = false
+        scrollView.bouncesZoom = false
         
         clearAllViewsFromScreen()
         mainView.bringSubview(toFront: aTransitionBlur)
