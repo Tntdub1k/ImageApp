@@ -28,6 +28,7 @@ class webViewController: UIViewController, WKNavigationDelegate {
     
   
     override func viewDidLoad() {
+        loadingLabel.isHidden = false
         loadingActivity.startAnimating()
         super.viewDidLoad()
         //
@@ -48,7 +49,8 @@ class webViewController: UIViewController, WKNavigationDelegate {
     }
     
  
-   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    @IBOutlet weak var loadingLabel: UILabel!
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     TitleLabel.text = "Selected Article: "+Title
     websiteContentV.isHidden = false
     loadingActivity.stopAnimating()
@@ -62,6 +64,7 @@ class webViewController: UIViewController, WKNavigationDelegate {
     @IBAction func clickGoBack(_ sender: Any) {
         loadingActivity.startAnimating()
         websiteContentV.isHidden = true
+        loadingLabel.isHidden = true
     }
     @IBOutlet weak var websiteContentV: UIView!
     

@@ -236,7 +236,7 @@ class IChingViewController: UIViewController{
             // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
             self.transitionBlur.effect = nil
         }
-        
+        animator?.pausesOnCompletion = true
         animator?.fractionComplete = 1.0
         
         m_CurrentHexagram = Int(arc4random_uniform(63) + 1)
@@ -445,12 +445,13 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     var aWebVC = webViewController()
     
 
-    var animator: UIViewPropertyAnimator?
+    var aAnimator: UIViewPropertyAnimator?
     
     
-    @IBOutlet weak var transitionBlur: UIVisualEffectView!
+    @IBOutlet weak var aTransitionBlur: UIVisualEffectView!
+    
     func setOpacity(aLevel:CGFloat){
-         animator?.fractionComplete = CGFloat(aLevel)
+         aAnimator?.fractionComplete = CGFloat(aLevel)
     }
     
     @IBOutlet var tapRecognizer: UITapGestureRecognizer!
@@ -1255,23 +1256,21 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         super.viewDidLoad()
         
+        aAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            
+            // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
+            self.aTransitionBlur.effect = nil
+        }
+        aAnimator?.pausesOnCompletion = true
+        
+        aAnimator?.fractionComplete = 1.0
         
         scrollView.delegate = self
         
         clearAllViewsFromScreen()
-        mainView.bringSubview(toFront: transitionBlur)
+        mainView.bringSubview(toFront: aTransitionBlur)
         
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillResignActive, object: nil)
-        animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
-            
-            // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
-            self.transitionBlur.effect = nil
-        }
-        
-        animator?.fractionComplete = 1.0
-        
-        
+ 
         
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
@@ -1394,18 +1393,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        self.animator?.pauseAnimation()
-        super.viewWillDisappear(false)
-        
-    }
-// my selector that was defined above
-@objc func willEnterForeground() {
-    self.animator?.startAnimation()
 
-    
-    }
     
     @IBOutlet weak var balancePointButton: UIButton!
     @IBOutlet weak var setImage: UIImageView!
