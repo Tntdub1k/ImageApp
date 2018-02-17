@@ -40,6 +40,7 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+
     
     let transitionScalar :CGFloat  = 1.07
     func getFloatAstro2(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
@@ -475,6 +476,15 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         }
     }
     
+    func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "SequeId_____1",
+                     sender: self)
+    }
+
+    
+  
+    
     @IBOutlet weak var mainBackground: UIImageView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var WDB = WebsiteDataBase()
@@ -513,8 +523,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         TVC.accessibilityIdentifier = WDB.database[m_ReadingSourceCurrentCB]![indexPath.row].data[m_ReadingSourceCurrentHouse]!.DisplayName
           //  TVC.contentView.addSubview(label3)
       
-        
-        
         
         
         return TVC
@@ -718,6 +726,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         mainView.sendSubview(toBack: bandView)
         mainView.sendSubview(toBack: NotesView)
         mainView.sendSubview(toBack: settingsView)
+
     }
     @IBAction func pressBand(_ sender: Any) {
 
@@ -729,6 +738,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     @IBAction func pressLoadSettings(_ sender: Any) {
         mainView.bringSubview(toFront: settingsView)
+      
         m_DetailLevelBeforeChange = m_CurrentDetailLevel
         updateDetailLevelDisplay()
     }
