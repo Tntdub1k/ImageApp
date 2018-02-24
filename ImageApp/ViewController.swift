@@ -713,31 +713,31 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var bandView: UIView!
     func clearAllViewsFromScreen(){
-        mainView.sendSubview(toBack:selectPicker)
-        mainView.sendSubview(toBack:addView)
-        mainView.endEditing(true)
-        mainView.sendSubview(toBack: fullAddView)
-        mainView.sendSubview(toBack: categoryAddView)
-        mainView.sendSubview(toBack: selectView)
-        mainView.sendSubview(toBack: renameView)
-        mainView.sendSubview(toBack: deleteView)
-        mainView.sendSubview(toBack: CBview)
-        mainView.sendSubview(toBack: chooseReadingView)
-        mainView.sendSubview(toBack: bandView)
-        mainView.sendSubview(toBack: NotesView)
-        mainView.sendSubview(toBack: settingsView)
+        ContentView.sendSubview(toBack:selectPicker)
+        ContentView.sendSubview(toBack:addView)
+        ContentView.endEditing(true)
+        ContentView.sendSubview(toBack: fullAddView)
+        ContentView.sendSubview(toBack: categoryAddView)
+        ContentView.sendSubview(toBack: selectView)
+        ContentView.sendSubview(toBack: renameView)
+        ContentView.sendSubview(toBack: deleteView)
+        ContentView.sendSubview(toBack: CBview)
+        ContentView.sendSubview(toBack: chooseReadingView)
+        ContentView.sendSubview(toBack: bandView)
+        ContentView.sendSubview(toBack: NotesView)
+        ContentView.sendSubview(toBack: settingsView)
 
     }
     @IBAction func pressBand(_ sender: Any) {
 
-        mainView.bringSubview(toFront: bandView)
+        ContentView.bringSubview(toFront: bandView)
         updateBodyLabelText()
     }
     @IBAction func clearKeyboard(_ sender: Any) {
-        mainView.endEditing(true)
+        ContentView.endEditing(true)
     }
     @IBAction func pressLoadSettings(_ sender: Any) {
-        mainView.bringSubview(toFront: settingsView)
+        ContentView.bringSubview(toFront: settingsView)
       
         m_DetailLevelBeforeChange = m_CurrentDetailLevel
         updateDetailLevelDisplay()
@@ -867,15 +867,15 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBAction func addPressed(_ sender: Any) {
         addPicker.reloadAllComponents()
         clearAllViewsFromScreen()
-        mainView.bringSubview(toFront: addView)
+        ContentView.bringSubview(toFront: addView)
     }
     @IBAction func addNewMemberPushed(_ sender: Any) {
-        mainView.bringSubview(toFront: fullAddView)
+        ContentView.bringSubview(toFront: fullAddView)
         enterNewMemberTextB.text = ""
     }
   
     @IBAction func addNewCategoryPushed(_ sender: Any) {
-        mainView.bringSubview(toFront: categoryAddView)
+        ContentView.bringSubview(toFront: categoryAddView)
         enterNewCategoryTextb.text = ""
     }
    
@@ -886,7 +886,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         clearAllViewsFromScreen()
     }
     @IBAction func RenamePushed(_ sender: Any) {
-        mainView.bringSubview(toFront: renameView)
+        ContentView.bringSubview(toFront: renameView)
         renameTextB.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         
     }
@@ -901,7 +901,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     @IBAction func PressedDelete(_ sender: Any) {
-        mainView.bringSubview(toFront: deleteView)
+        ContentView.bringSubview(toFront: deleteView)
     }
     @IBAction func pressedYesDelete(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents.remove(at: m_CurrentIndividual)
@@ -919,7 +919,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         var aCB = sender.accessibilityIdentifier as! String
         if ((aCB == "Empty") || ((m_CurrentDetailLevel == m_BeginnerDetail) && (beginnerCBsList.contains(aCB) == false)) ||
             ((m_CurrentDetailLevel == m_IntermediateDetail) && (intermediateCBsList.contains(aCB) == false))){
-            mainView.bringSubview(toFront: CBview)
+            ContentView.bringSubview(toFront: CBview)
         }
         else {
             var ordinalNum = ""
@@ -960,7 +960,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             chooseReadingsTableV.selectRow(at: IP, animated: true, scrollPosition: UITableViewScrollPosition(rawValue: 0)!)
         
 
-            mainView.bringSubview(toFront: chooseReadingView)
+            ContentView.bringSubview(toFront: chooseReadingView)
             
         }
     }
@@ -1016,7 +1016,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     
     func OpenNotes(){
         m_notesAreOpen = true
-        mainView.endEditing(true)
+        ContentView.endEditing(true)
         //NotesButton.setImage(UIImage(named: "exitIcon"), for:UIControlState.normal)
         //AstroView.isHidden = true
         //ButtonView.isHidden = true
@@ -1024,7 +1024,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         //NotesLabel.isHidden = true
         //NotesTextBox.isHidden = true
         //NotesSaveButton.isHidden = true
-        mainView.bringSubview(toFront: NotesView)
+        ContentView.bringSubview(toFront: NotesView)
         m_currentNote = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote
         switch (m_currentNote){
         case "General":
@@ -1043,12 +1043,12 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     func CloseNotes(){
         m_notesAreOpen = false
-        mainView.endEditing(true)
+        ContentView.endEditing(true)
         //NotesButton.setImage(UIImage(named: "keyboard"), for:UIControlState.normal)
         //AstroView.isHidden = false
         //ButtonView.isHidden = false
         //NotesView.isHidden = true
-       mainView.sendSubview(toBack: NotesView)
+       ContentView.sendSubview(toBack: NotesView)
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
         
         
@@ -1078,7 +1078,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var categoryAddView: UIView!
     @IBOutlet weak var fullAddView: UIView!
     @IBOutlet weak var addView: UIView!
-    @IBOutlet var mainView: UIView!
     @IBOutlet weak var aUiView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgPhoto: UIImageView!
@@ -1193,7 +1192,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         pressedSave(self)
         selectPicker.reloadAllComponents()
         clearAllViewsFromScreen()
-        mainView.bringSubview(toFront: selectView)
+        ContentView.bringSubview(toFront: selectView)
     }
     var m_ADB = AstrologicalDatabase()
     var m_CurrentCategory = 0
@@ -1263,6 +1262,9 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     
+    @IBOutlet weak var ContentView: UIView!
+    @IBOutlet var mainView: UIScrollView!
+    @IBOutlet var topView: UIView!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -1276,18 +1278,25 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         aAnimator?.fractionComplete = 1.0
         
-        scrollView.delegate = self
-        scrollView.bounces = false
-        scrollView.bouncesZoom = false
+        mainView.delegate = self
+        mainView.bounces = false
+        mainView.bouncesZoom = false
         
         clearAllViewsFromScreen()
-        mainView.bringSubview(toFront: aTransitionBlur)
-        
+        ContentView.bringSubview(toFront: aTransitionBlur)
  
         
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 6.0
-        scrollView.bounces = false
+        topView.frame =  CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+
+        let topPadding = UIApplication.shared.statusBarFrame.maxY
+        
+        mainView.frame = CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y + topPadding, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - topPadding)
+        
+        ContentView.frame = CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - topPadding)
+        
+        mainView.minimumZoomScale = -6.0
+        mainView.maximumZoomScale = 6.0
+        mainView.bounces = false
         
         
         
@@ -1402,7 +1411,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         addCBPicker.dataSource = self
         addCBPicker.delegate = self
         
-   
+    
         
     }
     
@@ -1414,6 +1423,9 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     
 
     @IBAction func pressSet(_ sender: Any) {
+       
+        mainView.zoom(to:CGRect(x:0,y:0,width:320,height:200), animated:true)
+        
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointAdv"] = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]
         
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointCy"] = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]
@@ -2385,7 +2397,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var dragonHead1: UIImageView!
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
-        return aUiView
+        return ContentView
     }
     
     

@@ -100,6 +100,7 @@
 		01304E261FEAEC9D000F24E9 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E251FEAEC9D000F24E9 /* DataModel.swift */; };
 		01304E281FEAFAA3000F24E9 /* 7916342_orig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */; };
 		01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */ = {isa = PBXBuildFile; fileRef = 01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */; };
+		016A606720421D8300478BEB /* Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 016A606620421D8100478BEB /* Image.png */; };
 		016F38BB200D8B45003EC6B1 /* black_circle_u25CF_icon_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 016F38BA200D8B44003EC6B1 /* black_circle_u25CF_icon_256x256.png */; };
 		018112551FEF76300071111D /* cosmos.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 018112541FEF76300071111D /* cosmos.jpeg */; };
 		018112571FF010A40071111D /* Chiron.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112561FF010A40071111D /* Chiron.png */; };
@@ -245,6 +246,7 @@
 		01304E251FEAEC9D000F24E9 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		01304E271FEAFAA3000F24E9 /* 7916342_orig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7916342_orig.jpg; path = ../../../Documents/7916342_orig.jpg; sourceTree = "<group>"; };
 		01304E2B1FEB0C38000F24E9 /* ZodiacMandala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZodiacMandala.png; path = ../../../Documents/ZodiacMandala.png; sourceTree = "<group>"; };
+		016A606620421D8100478BEB /* Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Image.png; path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Image.png"; sourceTree = "<group>"; };
 		016F38BA200D8B44003EC6B1 /* black_circle_u25CF_icon_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black_circle_u25CF_icon_256x256.png; path = ../../../Documents/black_circle_u25CF_icon_256x256.png; sourceTree = "<group>"; };
 		018112541FEF76300071111D /* cosmos.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cosmos.jpeg; path = ../../../Documents/cosmos.jpeg; sourceTree = "<group>"; };
 		018112561FF010A40071111D /* Chiron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Chiron.png; path = ../../../Documents/Chiron.png; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				016A606620421D8100478BEB /* Image.png */,
 				01F1BAF820292F8600AB2B30 /* yin.png */,
 				01128CB9201E364100A79AF7 /* yang.png */,
 				01BCA6BC201A626D003E7EBA /* set1.png */,
@@ -553,6 +556,7 @@
 				010D224C1FF6C3FC00BA86BF /* draconic1.png in Resources */,
 				0114362C200D381700B75813 /* Amor.png in Resources */,
 				0116F6E520093A8F00F76E0F /* ring12gauge6.png in Resources */,
+				016A606720421D8300478BEB /* Image.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
 				011669341FFE930900AD8E42 /* keyboard.png in Resources */,
 				01143621200ADE7E00B75813 /* 187609.jpg in Resources */,
