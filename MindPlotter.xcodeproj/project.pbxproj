@@ -235,7 +235,7 @@
 		01274D86200EACB7007D2DD2 /* bkg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg3.png; path = ../../../Documents/bkg3.png; sourceTree = "<group>"; };
 		01274D87200EACB8007D2DD2 /* bkg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg4.png; path = ../../../Documents/bkg4.png; sourceTree = "<group>"; };
 		01274D88200EACC6007D2DD2 /* bkg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg2.png; path = ../../../Documents/bkg2.png; sourceTree = "<group>"; };
-		01304E0E1FEAD70E000F24E9 /* ImageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01304E0E1FEAD70E000F24E9 /* MindPlotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindPlotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01304E111FEAD70E000F24E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01304E131FEAD70E000F24E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01304E161FEAD70E000F24E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 		01304E0F1FEAD70E000F24E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				01304E0E1FEAD70E000F24E9 /* ImageApp.app */,
+				01304E0E1FEAD70E000F24E9 /* MindPlotter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -483,9 +483,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		01304E0D1FEAD70E000F24E9 /* ImageApp */ = {
+		01304E0D1FEAD70E000F24E9 /* MindPlotter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01304E201FEAD70E000F24E9 /* Build configuration list for PBXNativeTarget "ImageApp" */;
+			buildConfigurationList = 01304E201FEAD70E000F24E9 /* Build configuration list for PBXNativeTarget "MindPlotter" */;
 			buildPhases = (
 				01304E0A1FEAD70E000F24E9 /* Sources */,
 				01304E0B1FEAD70E000F24E9 /* Frameworks */,
@@ -495,9 +495,9 @@
 			);
 			dependencies = (
 			);
-			name = ImageApp;
+			name = MindPlotter;
 			productName = ImageApp;
-			productReference = 01304E0E1FEAD70E000F24E9 /* ImageApp.app */;
+			productReference = 01304E0E1FEAD70E000F24E9 /* MindPlotter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -516,7 +516,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 01304E091FEAD70E000F24E9 /* Build configuration list for PBXProject "ImageApp" */;
+			buildConfigurationList = 01304E091FEAD70E000F24E9 /* Build configuration list for PBXProject "MindPlotter" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -529,7 +529,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				01304E0D1FEAD70E000F24E9 /* ImageApp */,
+				01304E0D1FEAD70E000F24E9 /* MindPlotter */,
 			);
 		};
 /* End PBXProject section */
@@ -831,7 +831,7 @@
 				INFOPLIST_FILE = ImageApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
+				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.MindPlotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -847,7 +847,7 @@
 				INFOPLIST_FILE = ImageApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
+				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.MindPlotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -857,7 +857,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01304E091FEAD70E000F24E9 /* Build configuration list for PBXProject "ImageApp" */ = {
+		01304E091FEAD70E000F24E9 /* Build configuration list for PBXProject "MindPlotter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01304E1E1FEAD70E000F24E9 /* Debug */,
@@ -866,7 +866,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		01304E201FEAD70E000F24E9 /* Build configuration list for PBXNativeTarget "ImageApp" */ = {
+		01304E201FEAD70E000F24E9 /* Build configuration list for PBXNativeTarget "MindPlotter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01304E211FEAD70E000F24E9 /* Debug */,

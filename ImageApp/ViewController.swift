@@ -1262,6 +1262,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     
+    @IBOutlet weak var zodiacCV: UIView!
+    @IBOutlet weak var zodiacSV: UIScrollView!
     @IBOutlet weak var ContentView: UIView!
     @IBOutlet var mainView: UIScrollView!
     @IBOutlet var topView: UIView!
@@ -1278,9 +1280,6 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         aAnimator?.fractionComplete = 1.0
         
-        mainView.delegate = self
-        mainView.bounces = false
-        mainView.bouncesZoom = false
         
         clearAllViewsFromScreen()
         ContentView.bringSubview(toFront: aTransitionBlur)
@@ -1294,10 +1293,25 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         ContentView.frame = CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - topPadding)
         
+        ContentView.frame = CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - topPadding)
+        
+        //zodiacSV.frame = CGRect(x: 43 , y: 12, width: UIScreen.main.bounds.width, height: 200)
+        //zodiacSV.frame = CGRect(x: 0 , y: 0, width: UIScreen.main.bounds.width, height: 200)
+        
+        mainView.delegate = nil
+        mainView.bounces = false
+        mainView.bouncesZoom = false
         mainView.minimumZoomScale = -6.0
         mainView.maximumZoomScale = 6.0
         mainView.bounces = false
+        zodiacSV.delegate = self
+        zodiacSV.bounces = false
+        zodiacSV.bouncesZoom = false
+        zodiacSV.minimumZoomScale = -6.0
+        zodiacSV.maximumZoomScale = 6.0
+        zodiacSV.bounces = false
         
+        zodiacSV.zoom(to:CGRect(x:0,y:0,width:297,height:200), animated:false)
         
         
         if (UserDefaults.standard.string(forKey: "MindmapCurIndividual") != nil){
@@ -2397,7 +2411,11 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var dragonHead1: UIImageView!
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
-        return ContentView
+        if (scrollView == mainView){
+            return ContentView
+        } else { //if zodiacSV
+            return zodiacCV
+        }
     }
     
     
