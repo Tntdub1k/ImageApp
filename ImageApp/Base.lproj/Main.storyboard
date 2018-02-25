@@ -762,7 +762,7 @@
                                                     </barButtonItem>
                                                     <barButtonItem width="18" id="biC-qe-5rD">
                                                         <textField key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="10" textAlignment="center" minimumFontSize="17" id="0L9-dO-2Fs">
-                                                            <rect key="frame" x="112.5" y="6.5" width="40" height="31"/>
+                                                            <rect key="frame" x="96.5" y="6.5" width="40" height="31"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" weight="black" pointSize="21"/>
@@ -1252,7 +1252,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <subviews>
                                                                                     <view opaque="NO" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hA-qj-tt5">
-                                                                                        <rect key="frame" x="-18" y="16" width="336" height="319"/>
+                                                                                        <rect key="frame" x="-18" y="18" width="336" height="319"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                         <subviews>
                                                                                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="OGd-P2-xBf">
@@ -1264,7 +1264,7 @@
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                                                             </imageView>
                                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="words.png" translatesAutoresizingMaskIntoConstraints="NO" id="FEM-Gq-jBs">
-                                                                                                <rect key="frame" x="109" y="229" width="257" height="122"/>
+                                                                                                <rect key="frame" x="109" y="232" width="257" height="122"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                                             </imageView>
                                                                                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead2.png" translatesAutoresizingMaskIntoConstraints="NO" id="1wu-zz-ygw">
@@ -2286,8 +2286,8 @@
                                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                         <accessibility key="accessibilityConfiguration" label="mainImage"/>
                                                                                                     </imageView>
-                                                                                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedGreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="ltg-oH-IL3">
-                                                                                                        <rect key="frame" x="19" y="18" width="50" height="52"/>
+                                                                                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DignifiedDomicile.png" translatesAutoresizingMaskIntoConstraints="NO" id="ltg-oH-IL3">
+                                                                                                        <rect key="frame" x="19" y="18" width="51" height="51"/>
                                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                         <accessibility key="accessibilityConfiguration" label="mainDignified"/>
                                                                                                     </imageView>
@@ -2421,8 +2421,8 @@
                                                                                                         </subviews>
                                                                                                         <accessibility key="accessibilityConfiguration" label="Sa1"/>
                                                                                                     </view>
-                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="North Node" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="QvT-rg-B17">
-                                                                                                        <rect key="frame" x="9" y="24" width="68" height="42"/>
+                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="North Node" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QvT-rg-B17">
+                                                                                                        <rect key="frame" x="19" y="21" width="53" height="47"/>
                                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                         <accessibility key="accessibilityConfiguration" label="mainLabel"/>
                                                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="13"/>
@@ -3659,6 +3659,7 @@
     </scenes>
     <resources>
         <image name="187609.jpg" width="1920" height="1080"/>
+        <image name="DignifiedDomicile.png" width="194" height="200"/>
         <image name="DignifiedGreen.png" width="194" height="200"/>
         <image name="Image.png" width="750" height="1334"/>
         <image name="Moon.png" width="194" height="202"/>
