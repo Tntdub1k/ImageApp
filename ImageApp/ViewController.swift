@@ -861,8 +861,11 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         var AP = AstrologicalProfile()
         AP.IndividualName = enterNewMemberTextB.text!
         m_ADB.Database[m_AddToCategory].Contents.append(AP)
-        
+        m_CurrentCategory = m_AddToCategory
+        m_CurrentIndividual = m_ADB.Database[m_AddToCategory].Contents.endIndex - 1
         clearAllViewsFromScreen()
+        loadAP()
+        pressedSave(self)
     }
     @IBAction func addPressed(_ sender: Any) {
         addPicker.reloadAllComponents()
@@ -884,6 +887,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         AC.CategoryName = enterNewCategoryTextb.text!
         m_ADB.Database.append(AC)
         clearAllViewsFromScreen()
+        pressedSave(self)
     }
     @IBAction func RenamePushed(_ sender: Any) {
         ContentView.bringSubview(toFront: renameView)
@@ -898,6 +902,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
        NotesTitle.text = IndividualTitle.text
         clearAllViewsFromScreen()
+        pressedSave(self)
     }
     
     @IBAction func PressedDelete(_ sender: Any) {
@@ -910,6 +915,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         m_CurrentCategory = 0
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         NotesTitle.text = IndividualTitle.text
+        pressedSave(self)
     }
 
   
@@ -971,6 +977,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var chooseReadingsTableV: UITableView!
     @IBAction func clickRemoveCB(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1].CurrentCelestialBody = "Empty"
+        pressedSave(self)
         loadAP()
     }
     
@@ -995,6 +1002,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         loadAP()
         addCBPicker.reloadAllComponents()
+        pressedSave(self)
     }
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
@@ -1267,10 +1275,20 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var ContentView: UIView!
     @IBOutlet var mainView: UIScrollView!
     @IBOutlet var topView: UIView!
+    
+    @objc func applicationWillResignActive(notification: NSNotification) {
+    pressedSave(self)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        let app = UIApplication.shared
+        
+        //Register for the applicationWillResignActive anywhere in your app.
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.applicationWillResignActive(notification:)), name: NSNotification.Name.UIApplicationWillResignActive, object: app)
+
         aAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             
             // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
@@ -1313,7 +1331,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         zodiacSV.maximumZoomScale = 6.0
         zodiacSV.bounces = false
         
-        zodiacSV.zoom(to:CGRect(x:0,y:0,width:297,height:200), animated:false)
+        zodiacSV.zoom(to:CGRect(x:0,y:0,width:299,height:200), animated:false)
         
         
         if (UserDefaults.standard.string(forKey: "MindmapCurIndividual") != nil){
@@ -1440,12 +1458,13 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
 
     @IBAction func pressSet(_ sender: Any) {
        
-        mainView.zoom(to:CGRect(x:0,y:0,width:320,height:200), animated:true)
+      //  mainView.zoom(to:CGRect(x:0,y:0,width:320,height:200), animated:true)
         
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointAdv"] = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]
         
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointCy"] = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]
         showSet()
+        pressedSave(self)
     }
     
   
@@ -1875,6 +1894,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 6
         }
         loadAP()
+        pressedSave(self)
     }
     @IBAction func ringPlus(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! + 1
@@ -1882,6 +1902,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 1
         }
         loadAP()
+        pressedSave(self)
     }
     
     func setFontColor(){
@@ -2193,6 +2214,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
      
         decreaseAdvancement()
         loadAP()
+        pressedSave(self)
         
         
     }
@@ -2279,6 +2301,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBAction func AdvancePlus(_ sender: Any) {
         increaseAdvancement()
         loadAP()
+        pressedSave(self)
         
         
     }

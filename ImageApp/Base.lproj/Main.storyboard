@@ -762,7 +762,7 @@
                                                     </barButtonItem>
                                                     <barButtonItem width="18" id="biC-qe-5rD">
                                                         <textField key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="10" textAlignment="center" minimumFontSize="17" id="0L9-dO-2Fs">
-                                                            <rect key="frame" x="96.5" y="6.5" width="40" height="31"/>
+                                                            <rect key="frame" x="112.5" y="6.5" width="40" height="31"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" weight="black" pointSize="21"/>
