@@ -1295,8 +1295,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         ContentView.frame = CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - topPadding)
         
-        //zodiacSV.frame = CGRect(x: 43 , y: 12, width: UIScreen.main.bounds.width, height: 200)
-        //zodiacSV.frame = CGRect(x: 0 , y: 0, width: UIScreen.main.bounds.width, height: 200)
+        zodiacSV.frame.size.width  = UIScreen.main.bounds.width
+        
+        zodiacCV.frame.size.width  = UIScreen.main.bounds.width
+   
         
         mainView.delegate = nil
         mainView.bounces = false
