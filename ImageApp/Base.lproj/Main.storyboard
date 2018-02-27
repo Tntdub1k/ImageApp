@@ -19,7 +19,7 @@
             <string>DamascusBold</string>
         </array>
         <array key="Helvetica.ttc">
-            <string>Helvetica-Bold</string>
+            <string>Helvetica</string>
         </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
@@ -826,25 +826,18 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sio-Oc-CaG">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="376" height="652"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRd-3d-NLN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="376" height="652"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="LEa-F1-WWd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="376" height="652"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyI-rU-TbL">
-                                                                    <rect key="frame" x="8" y="8" width="79" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epv-t4-P5j">
-                                                                    <rect key="frame" x="238" y="510" width="74" height="30"/>
+                                                                    <rect key="frame" x="295" y="610" width="74" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <state key="normal" title="Finished"/>
                                                                     <connections>
@@ -852,22 +845,51 @@
                                                                         <action selector="settingsFinished:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tmi-hi-dms"/>
                                                                     </connections>
                                                                 </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyI-rU-TbL">
+                                                                    <rect key="frame" x="8" y="8" width="79" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hze-jN-rO5">
-                                                                    <rect key="frame" x="0.0" y="37" width="320" height="463"/>
+                                                                    <rect key="frame" x="0.0" y="37" width="376" height="571"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
+                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-jG-SqW">
+                                                                            <rect key="frame" x="8" y="291" width="360" height="177"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        </textView>
+                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dwa-q8-5wJ">
+                                                                            <rect key="frame" x="8" y="26" width="360" height="149"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <string key="text">Mind Plotter is a tool for plotting the energetic patterns of your mind. It takes the 12-base system of Astrology and allows you to position several different archetype energies in those placements. It might help you to discover dark and blind spots of your personality and allow you to take a metaphysical tour through layers of your higher self and etheric bodies.</string>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        </textView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-xM-DcZ">
+                                                                            <rect key="frame" x="8" y="5" width="214" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intricacy Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yW-uL-TzD">
+                                                                            <rect key="frame" x="8" y="189" width="214" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXN-q3-vga">
-                                                                            <rect key="frame" x="0.0" y="216" width="324" height="239"/>
+                                                                            <rect key="frame" x="26" y="226" width="333" height="66"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <subviews>
-                                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-jG-SqW">
-                                                                                    <rect key="frame" x="8" y="66" width="305" height="169"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                                </textView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlO-rq-PiT">
                                                                                     <rect key="frame" x="4" y="30" width="51" height="21"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -938,28 +960,6 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </view>
-                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dwa-q8-5wJ">
-                                                                            <rect key="frame" x="8" y="26" width="304" height="160"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <string key="text">Mind Plotter is a tool for plotting the energetic patterns of your mind. It takes the 12-base system of Astrology and allows you to position several different energies of archetypes in those placements. It might help you to discover dark and blind spots of your personality and allow you to take a metaphysical tour through layers of your higher self and etheric bodies.</string>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                        </textView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-xM-DcZ">
-                                                                            <rect key="frame" x="8" y="5" width="214" height="21"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intricacy Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yW-uL-TzD">
-                                                                            <rect key="frame" x="8" y="189" width="214" height="21"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
                                                                     </subviews>
                                                                 </scrollView>
                                                             </subviews>
@@ -1060,7 +1060,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC5-om-RgS">
@@ -1161,9 +1161,11 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cycle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05g-Sk-b0b">
                                                                         <rect key="frame" x="37" y="31" width="115" height="33"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <size key="shadowOffset" width="1" height="2"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qq-45-ehR">
                                                                         <rect key="frame" x="44" y="57" width="37" height="41"/>
@@ -1232,7 +1234,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrS-U4-cZq">
+                                                            <scrollView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrS-U4-cZq">
                                                                 <rect key="frame" x="44" y="12" width="372" height="376"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <subviews>
@@ -1369,7 +1371,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-Zl-SuP">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="022-Tp-E0d">
@@ -1395,7 +1397,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-Lc-QiQ">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-qi-RzO">
@@ -1534,7 +1536,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LpP-xb-SeX">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vYv-gp-6K7">
@@ -1560,7 +1562,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-xk-bHa">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="MjR-uY-B38">
@@ -1699,7 +1701,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZWq-NC-TFg">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="q7f-A4-bKN">
@@ -1725,7 +1727,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92Y-4S-atL">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HbU-iu-8BD">
@@ -1864,7 +1866,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nbs-Hu-deA">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="rxt-11-LBV">
@@ -1890,7 +1892,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YGc-xW-CML">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="wO7-6D-qKo">
@@ -2029,7 +2031,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e56-I5-Gro">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-tA-l8u">
@@ -2055,7 +2057,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eH6-jd-NSL">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="LU9-zC-C4b">
@@ -2194,7 +2196,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsl-Df-eno">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-fc-E86">
@@ -2220,7 +2222,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4su-Ow-XmR">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="RrX-zX-ofd">
@@ -2359,7 +2361,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoS-dd-p9S">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="NEO-rd-TKV">
@@ -2385,7 +2387,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-VL-HIG">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="sBm-Jn-dXX">
@@ -2524,7 +2526,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4I-AG-gpu">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gqo-3I-aj4">
@@ -2550,7 +2552,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7k-c6-0og">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-e3-Eal">
@@ -2689,7 +2691,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ICM-cU-YIX">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="bba-Lb-llp">
@@ -2715,7 +2717,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrj-6I-tf6">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="MCM-nN-5EK">
@@ -2854,7 +2856,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apl-Ye-eSe">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="jgD-lR-2Th">
@@ -2880,7 +2882,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXO-1F-fbX">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="1ZI-vT-bXi">
@@ -3019,7 +3021,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFb-UO-mIK">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuo-1Z-BCG">
@@ -3045,7 +3047,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-eB-CBd">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="q3W-dX-Q2e">
@@ -3184,7 +3186,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa3"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RH4-Yt-PVu">
-                                                                                                <rect key="frame" x="13" y="-29" width="83" height="80"/>
+                                                                                                <rect key="frame" x="13" y="-28" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gQn-n2-OUq">
@@ -3210,7 +3212,7 @@
                                                                                                 <accessibility key="accessibilityConfiguration" label="Sa2"/>
                                                                                             </view>
                                                                                             <view opaque="NO" alpha="0.60000002384185791" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERO-0z-T8f">
-                                                                                                <rect key="frame" x="-1" y="-33" width="83" height="80"/>
+                                                                                                <rect key="frame" x="-1" y="-32" width="83" height="80"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="uM7-cJ-qGo">
