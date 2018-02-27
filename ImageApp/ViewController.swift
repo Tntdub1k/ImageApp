@@ -441,7 +441,7 @@ class IChingViewController: UIViewController{
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate,
     UIPageViewControllerDelegate,
-    UIPageViewControllerDataSource,
+    UIPageViewControllerDataSource, UITextViewDelegate,
 UITableViewDataSource, UIGestureRecognizerDelegate{
     
     var aWebVC = webViewController()
@@ -449,7 +449,28 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
 
     var aAnimator: UIViewPropertyAnimator?
     
-    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        switch (m_currentNote){
+        case "General":
+            let Key = "SBody"+String(m_CurrentSBody)+"General"
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
+        case "CurStep":
+            let Key = "SBody"+String(m_CurrentSBody)+"Advancement"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
+        case "CurCycle":
+            let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
+        case "StepAndCycle":
+            let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
+            m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] = NotesTextBox.text
+        default:
+            break
+        }
+        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
+        pressedSave(self)
+        
+    }
     @IBOutlet weak var aTransitionBlur: UIVisualEffectView!
     
     func setOpacity(aLevel:CGFloat){
@@ -865,7 +886,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         m_CurrentIndividual = m_ADB.Database[m_AddToCategory].Contents.endIndex - 1
         clearAllViewsFromScreen()
         loadAP()
-        pressedSave(self)
+    //    pressedSave(self)
     }
     @IBAction func addPressed(_ sender: Any) {
         addPicker.reloadAllComponents()
@@ -887,7 +908,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         AC.CategoryName = enterNewCategoryTextb.text!
         m_ADB.Database.append(AC)
         clearAllViewsFromScreen()
-        pressedSave(self)
+      //  pressedSave(self)
     }
     @IBAction func RenamePushed(_ sender: Any) {
         ContentView.bringSubview(toFront: renameView)
@@ -902,7 +923,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
        NotesTitle.text = IndividualTitle.text
         clearAllViewsFromScreen()
-        pressedSave(self)
+  //      pressedSave(self)
     }
     
     @IBAction func PressedDelete(_ sender: Any) {
@@ -915,7 +936,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         m_CurrentCategory = 0
         IndividualTitle.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         NotesTitle.text = IndividualTitle.text
-        pressedSave(self)
+    //    pressedSave(self)
     }
 
   
@@ -977,7 +998,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var chooseReadingsTableV: UITableView!
     @IBAction func clickRemoveCB(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].HouseInfo.HousesTransPersp[m_LastHouseClicked - 1].Ring[m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! - 1].CurrentCelestialBody = "Empty"
-        pressedSave(self)
+      //  pressedSave(self)
         loadAP()
     }
     
@@ -1002,7 +1023,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         loadAP()
         addCBPicker.reloadAllComponents()
-        pressedSave(self)
+ //       pressedSave(self)
     }
     @IBAction func clickCancelAddCB(_ sender: Any) {
         clearAllViewsFromScreen()
@@ -1134,37 +1155,57 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         m_currentNote = "CurStep"
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
-        NotesSaveButton.isHidden = false
+      
         NotesLabel.text = "Advancement ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+")"
         let Key = "SBody"+String(m_CurrentSBody)+"Advancement"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        if ((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == "") ||
+            (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == nil)) {
+            NotesTextBox.text = "Enter notes here..."
+        } else {
+             NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        }
     }
     @IBAction func GenNotesClick(_ sender: Any) {
         m_currentNote = "General"
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
-        NotesSaveButton.isHidden = false
+   
         NotesLabel.text = "General"
         let Key = "SBody"+String(m_CurrentSBody)+"General"
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        if ((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == "") ||
+            (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == nil)) {
+            NotesTextBox.text = "Enter notes here..."
+        } else {
+            NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        }
     }
     @IBAction func StepAndCycleNotesClick(_ sender: Any) {
         m_currentNote = "StepAndCycle"
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
-        NotesSaveButton.isHidden = false
+  
         NotesLabel.text = "Advancement ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]!)+") Cycle ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
         let Key = "SBody"+String(m_CurrentSBody)+"StepAndCycle"+String((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)*12 + m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]! - 1)
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        if ((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == "") ||
+            (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == nil)) {
+            NotesTextBox.text = "Enter notes here..."
+        } else {
+            NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        }
     }
     @IBAction func CurCycleNotesClick(_ sender: Any) {
         m_currentNote = "CurCycle"
         NotesLabel.isHidden = false
         NotesTextBox.isHidden = false
-        NotesSaveButton.isHidden = false
+   
         NotesLabel.text = "Cycle  ("+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!)+")"
         let Key = "SBody"+String(m_CurrentSBody)+"Cycle"+String(m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]! - 1)
-        NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        if ((m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == "") ||
+            (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key] == nil)) {
+            NotesTextBox.text = "Enter notes here..."
+        } else {
+            NotesTextBox.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].notes[Key]
+        }
     }
     @IBAction func ClickSaveNotes(_ sender: Any) {
         switch (m_currentNote){
@@ -1187,7 +1228,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         pressedSave(self)
         
     }
-    @IBOutlet weak var NotesSaveButton: UIButton!
+
     @IBOutlet weak var NotesTextBox: UITextView!
     @IBOutlet weak var NotesLabel: UILabel!
     @IBOutlet weak var ringCounter: UILabel!
@@ -1197,7 +1238,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var selectPicker: UIPickerView!
     @IBAction func SelectPressed(_ sender: Any) {
         
-        pressedSave(self)
+     //   pressedSave(self)
         selectPicker.reloadAllComponents()
         clearAllViewsFromScreen()
         ContentView.bringSubview(toFront: selectView)
@@ -1289,6 +1330,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         //Register for the applicationWillResignActive anywhere in your app.
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.applicationWillResignActive(notification:)), name: NSNotification.Name.UIApplicationWillResignActive, object: app)
 
+        
+        NotesTextBox.delegate = self
+        
+        
         aAnimator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
             
             // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
@@ -1464,7 +1509,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"BalancePointCy"] = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]
         showSet()
-        pressedSave(self)
+     //   pressedSave(self)
     }
     
   
@@ -1894,7 +1939,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 6
         }
         loadAP()
-        pressedSave(self)
+  //      pressedSave(self)
     }
     @IBAction func ringPlus(_ sender: Any) {
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! + 1
@@ -1902,7 +1947,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"RingAdvancement"]! = 1
         }
         loadAP()
-        pressedSave(self)
+      //  pressedSave(self)
     }
     
     func setFontColor(){
@@ -2110,9 +2155,9 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         }
         
          strokeText = [
-            NSAttributedStringKey.strokeColor : labelColor,
+            NSAttributedStringKey.strokeColor : UIColor.white,
             NSAttributedStringKey.foregroundColor: labelColor,
-            NSAttributedStringKey.font : UIFont(name:"Seravek-Bold", size:7),
+            NSAttributedStringKey.font : UIFont(name:"Helvetica-Bold", size:5.6),
             NSAttributedStringKey.strokeWidth : -0.0]
         
         //Sat 1
@@ -2214,7 +2259,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
      
         decreaseAdvancement()
         loadAP()
-        pressedSave(self)
+     //   pressedSave(self)
         
         
     }
@@ -2301,7 +2346,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBAction func AdvancePlus(_ sender: Any) {
         increaseAdvancement()
         loadAP()
-        pressedSave(self)
+      //  pressedSave(self)
         
         
     }
