@@ -13,8 +13,24 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
     var page1: UIViewController!
     var page2: UIViewController!
     var curIndex = 1
+    
+    @objc func stopPageControl(notification: NSNotification) {
+        self.dataSource = nil
+    }
+    
+    @objc func startPageControl(notification: NSNotification) {
+        self.dataSource = self
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.stopPageControl(notification:)), name: Notification.Name("StopPageControl"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.startPageControl(notification:)), name: Notification.Name("StartPageControl"), object: nil)
+        
+        
         
         self.delegate = self
         self.dataSource = self
@@ -759,7 +775,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     @IBAction func pressLoadSettings(_ sender: Any) {
         ContentView.bringSubview(toFront: settingsView)
-      
+        NotificationCenter.default.post(name: Notification.Name("StopPageControl"), object: nil)
+
         m_DetailLevelBeforeChange = m_CurrentDetailLevel
         updateDetailLevelDisplay()
     }
@@ -1037,9 +1054,11 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBAction func ClickNotesButton(_ sender: Any) {
         if (m_notesAreOpen == false){
                 OpenNotes()
+            NotificationCenter.default.post(name: Notification.Name("StopPageControl"), object: nil)
         }
         else{
             CloseNotes()
+            NotificationCenter.default.post(name: Notification.Name("StartPageControl"), object: nil)
         }
     }
     
@@ -1282,7 +1301,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
  
     @IBOutlet weak var settingsView: UIView!
     @IBAction func clickSettingsFinished(_ sender: Any) {
-        
+        NotificationCenter.default.post(name: Notification.Name("StartPageControl"), object: nil)
         clearAllViewsFromScreen()
     }
     
@@ -1320,7 +1339,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @objc func applicationWillResignActive(notification: NSNotification) {
     pressedSave(self)
     }
-    
+   
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -1330,6 +1349,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         //Register for the applicationWillResignActive anywhere in your app.
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.applicationWillResignActive(notification:)), name: NSNotification.Name.UIApplicationWillResignActive, object: app)
 
+        
+       
         
         NotesTextBox.delegate = self
         
@@ -1377,6 +1398,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         zodiacSV.bounces = false
         
         zodiacSV.zoom(to:CGRect(x:0,y:0,width:299,height:200), animated:false)
+        
+        zodiacSV.delegate = nil
         
         
         if (UserDefaults.standard.string(forKey: "MindmapCurIndividual") != nil){
@@ -1716,7 +1739,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     @IBAction func settingsFinished(_ sender: Any){
-    
+    NotificationCenter.default.post(name: Notification.Name("StartPageControl"), object: nil)
         if (m_DetailLevelBeforeChange > m_CurrentDetailLevel){
             if (m_CurrentDetailLevel == m_BeginnerDetail){
                 if ((m_currentNote != "CurStep") && (m_currentNote != "General")){
@@ -1776,7 +1799,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var depthLabel: UILabel!
     @IBOutlet weak var settingsDetailTextBox: UITextView!
     @IBOutlet weak var bodyButton: UIButton!
-    @IBOutlet weak var bodyImage: UIImageView!
+    
+    @IBOutlet weak var bodyImage: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBAction func settingSliderValueChanged(_ sender: Any) {
         if (settingDetailSlider.value <= 0.165){
