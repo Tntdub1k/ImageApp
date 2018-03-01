@@ -504,7 +504,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="ccG-tk-ZMm"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25e-pa-2WQ">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25e-pa-2WQ">
                                                 <rect key="frame" x="26" y="113" width="320" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
@@ -573,11 +573,11 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bt9-da-ujy">
-                                                <rect key="frame" x="20" y="113" width="385" height="197"/>
+                                                <rect key="frame" x="0.0" y="113" width="376" height="197"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <pickerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYe-xj-e4d">
-                                                        <rect key="frame" x="29" y="20" width="327" height="162"/>
+                                                        <rect key="frame" x="29" y="20" width="318" height="162"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </pickerView>
@@ -622,11 +622,11 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIF-Uw-PaD">
-                                                <rect key="frame" x="20" y="334" width="385" height="256"/>
+                                                <rect key="frame" x="0.0" y="334" width="375" height="256"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <pickerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dF7-rL-TFQ">
-                                                        <rect key="frame" x="29" y="20" width="327" height="162"/>
+                                                        <rect key="frame" x="29" y="20" width="317" height="162"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </pickerView>
@@ -3362,14 +3362,14 @@
                                                         <rect key="frame" x="106" y="20" width="262" height="36"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.16925761421319796" green="0.16925761421319796" blue="0.16925761421319796" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="22"/>
+                                                        <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="23"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="highlightedColor" red="0.98304647842639592" green="0.69274759673474651" blue="0.76618775242182402" alpha="0.29254066780821919" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycz-q0-v1y">
-                                                        <rect key="frame" x="320" y="50" width="44" height="40"/>
+                                                        <rect key="frame" x="312" y="50" width="52" height="47"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button" image="keyboard.png"/>
                                                         <connections>
@@ -3432,7 +3432,7 @@
                                                 </variation>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-Vg-i9V">
-                                                <rect key="frame" x="71" y="71" width="80" height="43"/>
+                                                <rect key="frame" x="10" y="31" width="124" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <connections>
@@ -3499,10 +3499,12 @@
                         <outlet property="deleteView" destination="2r6-c2-XBy" id="xSo-G1-Egs"/>
                         <outlet property="depthBack6" destination="eia-Xn-8r5" id="X7Y-OL-pjt"/>
                         <outlet property="depthBkg" destination="lA1-nU-CSd" id="3fY-TD-36K"/>
+                        <outlet property="depthDownBtn" destination="CXL-rE-PnF" id="qfi-hI-53k"/>
                         <outlet property="depthImage" destination="0Jh-hF-Nzz" id="rKV-lS-lRD"/>
                         <outlet property="depthLabel" destination="0w6-2M-Ohu" id="LXA-NE-bWK"/>
                         <outlet property="depthMinusB" destination="Zhr-PV-VfP" id="0Rs-Os-DYd"/>
                         <outlet property="depthPlusB" destination="E0o-Y6-3IG" id="ix7-a1-QXg"/>
+                        <outlet property="depthUpBtn" destination="KEC-bu-q7p" id="ogi-08-gRY"/>
                         <outlet property="dragonHead1" destination="0VD-ft-iiD" id="OuB-h9-9Fi"/>
                         <outlet property="dragonHead2" destination="1wu-zz-ygw" id="Z4j-cb-Dxu"/>
                         <outlet property="dragonHead3" destination="ZD0-Re-M4m" id="KcU-iI-dop"/>
@@ -3518,6 +3520,8 @@
                         <outlet property="notesButtonCycle" destination="kHg-bC-sLP" id="Tso-zu-dGM"/>
                         <outlet property="progBack12" destination="NlR-cY-bzU" id="YLW-uQ-IP8"/>
                         <outlet property="progBkg" destination="Ifo-eZ-6af" id="58z-8t-9ol"/>
+                        <outlet property="progDownBtn" destination="c9k-CK-xjJ" id="B9S-jw-u2v"/>
+                        <outlet property="progUpBtn" destination="3v3-nK-cDt" id="b7E-Ss-92a"/>
                         <outlet property="renameTextB" destination="3YX-fb-Txf" id="FTw-ex-zeB"/>
                         <outlet property="renameView" destination="hi7-sf-890" id="mtG-ef-ULv"/>
                         <outlet property="ringCounter" destination="g0A-xz-tAO" id="CKn-X6-HBO"/>

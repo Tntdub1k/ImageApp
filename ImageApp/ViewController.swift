@@ -1585,6 +1585,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         }
     }
     
+    @IBOutlet weak var depthDownBtn: UIButton!
+    @IBOutlet weak var depthUpBtn: UIButton!
+    @IBOutlet weak var progDownBtn: UIButton!
+    @IBOutlet weak var progUpBtn: UIButton!
     @IBOutlet weak var notesButtonCycle: UIButton!
     @IBOutlet weak var notesButtonAdvancementAndCycle: UIButton!
     @IBOutlet weak var depthImage: UIImageView!
@@ -1633,6 +1637,12 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             depthMinusB.isHidden = true
             depthImage.isHidden = true
             
+            progUpBtn.isHidden = false
+            progDownBtn.isHidden = false
+            depthUpBtn.isHidden = true
+            depthDownBtn.isHidden = true
+            
+            
         case m_IntermediateDetail:
             notesButtonCycle.isHidden = false
             notesButtonAdvancementAndCycle.isHidden = true
@@ -1669,6 +1679,11 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             depthMinusB.isHidden = false
       
             depthImage.isHidden = false
+            
+            progUpBtn.isHidden = false
+            progDownBtn.isHidden = false
+            depthUpBtn.isHidden = false
+            depthDownBtn.isHidden = false
         case m_AdvancedDetail:
             notesButtonCycle.isHidden = false
             notesButtonAdvancementAndCycle.isHidden = false
@@ -1702,6 +1717,11 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             depthPlusB.isHidden = false
             depthMinusB.isHidden = false
             depthImage.isHidden = false
+            
+            progUpBtn.isHidden = false
+            progDownBtn.isHidden = false
+            depthUpBtn.isHidden = false
+            depthDownBtn.isHidden = false
         case m_MasterDetail:
             notesButtonCycle.isHidden = false
             notesButtonAdvancementAndCycle.isHidden = false
@@ -1731,6 +1751,11 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             depthPlusB.isHidden = false
             depthMinusB.isHidden = false
             depthImage.isHidden = false
+            
+            progUpBtn.isHidden = false
+            progDownBtn.isHidden = false
+            depthUpBtn.isHidden = false
+            depthDownBtn.isHidden = false
             
             updateBodyLabelText()
         default:
