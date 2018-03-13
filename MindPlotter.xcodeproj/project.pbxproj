@@ -148,7 +148,6 @@
 		01BCA6CD201A627E003E7EBA /* set3.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BCA6C1201A627D003E7EBA /* set3.png */; };
 		01F1BAF920292F8700AB2B30 /* yin.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F1BAF820292F8600AB2B30 /* yin.png */; };
 		01F222151FF442B5006016ED /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F222141FF442B5006016ED /* webViewController.swift */; };
-		01F9F06D2048B17D00C4E405 /* houseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F9F06C2048B17C00C4E405 /* houseView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -295,7 +294,6 @@
 		01BCA6C1201A627D003E7EBA /* set3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = set3.png; path = ../../../Documents/set3.png; sourceTree = "<group>"; };
 		01F1BAF820292F8600AB2B30 /* yin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yin.png; path = ../../../Documents/yin.png; sourceTree = "<group>"; };
 		01F222141FF442B5006016ED /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
-		01F9F06C2048B17C00C4E405 /* houseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = houseView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,7 +310,6 @@
 		01304E051FEAD70E000F24E9 = {
 			isa = PBXGroup;
 			children = (
-				01F9F06C2048B17C00C4E405 /* houseView.xib */,
 				011BDBCA2017CDE700D18898 /* adjusterBack.png */,
 				01274D82200E58A9007D2DD2 /* ringBackdrop.png */,
 				0114361E200ADDD700B75813 /* 16535326177271407165.svg */,
@@ -623,7 +620,6 @@
 				0116F6F22009440A00F76E0F /* ring6gauge4.png in Resources */,
 				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
 				01F1BAF920292F8700AB2B30 /* yin.png in Resources */,
-				01F9F06D2048B17D00C4E405 /* houseView.xib in Resources */,
 				01143631200D3C6600B75813 /* Valentine.png in Resources */,
 				0116F6E820093A8F00F76E0F /* ring12gauge11.png in Resources */,
 				01143630200D3C6600B75813 /* Cupido.png in Resources */,

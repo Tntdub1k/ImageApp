@@ -874,26 +874,31 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     @IBAction func clickOKSelectItem(_ sender: Any) {
         
-        m_CurrentCategory = m_ChosenCategory
-        m_CurrentIndividual = m_ChosenIndividual
+        if ((m_CurrentCategory == m_ChosenCategory) && (m_CurrentIndividual == m_ChosenIndividual)){
+            clearAllViewsFromScreen()
+        }
+        else {
+            m_CurrentCategory = m_ChosenCategory
+            m_CurrentIndividual = m_ChosenIndividual
 
-        if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] != nil){
-            m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
-        } else{
-            m_CurrentSBody = 0
-        }
-        
-        
-        if (m_CurrentDetailLevel == m_MasterDetail){
-            var curCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]
-            var newCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"]
-            var newAd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]
-            advanceToCycle(pastCycle: curCy!, newCycle: newCy!, newAdvancement: newAd!, newBody: 0)
-            updateBodyLabelText()
+            if (m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] != nil){
+                m_CurrentSBody = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"]!
+            } else{
+                m_CurrentSBody = 0
+            }
+            
+            
+            if (m_CurrentDetailLevel == m_MasterDetail){
+                var curCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]
+                var newCy = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"]
+                var newAd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]
+                advanceToCycle(pastCycle: curCy!, newCycle: newCy!, newAdvancement: newAd!, newBody: 0)
+                updateBodyLabelText()
+               
+            }
            
+            loadAP()
         }
-       
-        loadAP()
     }
     @IBAction func addNewMemberPressedOK(_ sender: Any) {
         var AP = AstrologicalProfile()
