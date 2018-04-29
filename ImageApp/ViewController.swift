@@ -313,6 +313,12 @@ class IChingViewController: UIViewController{
         animator?.fractionComplete = CGFloat(aLevel)
     }
     
+    @IBOutlet weak var numberLine1: UILabel!
+    @IBOutlet weak var numberLine2: UILabel!
+    @IBOutlet weak var numberLine4: UILabel!
+    @IBOutlet weak var numberLine6: UILabel!
+    @IBOutlet weak var numberLine5: UILabel!
+    @IBOutlet weak var numberLine3: UILabel!
     func loadHexagram(){
         let hexNum = m_CurrentHexagram
         
@@ -330,8 +336,9 @@ class IChingViewController: UIViewController{
         
     
         line1Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle1 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place1ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place1ChangesToNumber].EngTitle
+            m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place1ChangesToNumber].EngTitle
         SqrCir1.text = m_IChing.IChing_Book[hexNum].SquareCircle1
+        numberLine1.text = String(m_IChing.IChing_Book[hexNum].Place1ChangesToNumber)
         if (m_IChing.IChing_Book[hexNum].SquareCircle1.contains("○")){
             line1Title.textColor = colorCircle
             SqrCir1.textColor = colorCircle
@@ -344,8 +351,9 @@ class IChingViewController: UIViewController{
         }
         
         line2Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle2 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place2ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place2ChangesToNumber].EngTitle
+           m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place2ChangesToNumber].EngTitle
         SqrCir2.text = m_IChing.IChing_Book[hexNum].SquareCircle2
+        numberLine2.text = String(m_IChing.IChing_Book[hexNum].Place2ChangesToNumber)
         if (m_IChing.IChing_Book[hexNum].SquareCircle2.contains("○")){
             line2Title.textColor = colorCircle
             SqrCir2.textColor = colorCircle
@@ -358,8 +366,9 @@ class IChingViewController: UIViewController{
         }
         
         line3Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle3 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place3ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place3ChangesToNumber].EngTitle
+        m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place3ChangesToNumber].EngTitle
         SqrCir3.text = m_IChing.IChing_Book[hexNum].SquareCircle3
+        numberLine3.text = String(m_IChing.IChing_Book[hexNum].Place3ChangesToNumber)
         if (m_IChing.IChing_Book[hexNum].SquareCircle3.contains("○")){
             line3Title.textColor = colorCircle
             SqrCir3.textColor = colorCircle
@@ -373,8 +382,9 @@ class IChingViewController: UIViewController{
      
         
         line4Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle4 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place4ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place4ChangesToNumber].EngTitle
+        m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place4ChangesToNumber].EngTitle
         SqrCir4.text = m_IChing.IChing_Book[hexNum].SquareCircle4
+        numberLine4.text = String(m_IChing.IChing_Book[hexNum].Place4ChangesToNumber)
         if (m_IChing.IChing_Book[hexNum].SquareCircle4.contains("○")){
             line4Title.textColor = colorCircle
             SqrCir4.textColor = colorCircle
@@ -387,8 +397,9 @@ class IChingViewController: UIViewController{
         }
         
         line5Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle5 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place5ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place5ChangesToNumber].EngTitle
+        m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place5ChangesToNumber].EngTitle
         SqrCir5.text = m_IChing.IChing_Book[hexNum].SquareCircle5
+        numberLine5.text = String(m_IChing.IChing_Book[hexNum].Place5ChangesToNumber)
         if (m_IChing.IChing_Book[hexNum].SquareCircle5.contains("○")){
             line5Title.textColor = colorCircle
             SqrCir5.textColor = colorCircle
@@ -401,8 +412,9 @@ class IChingViewController: UIViewController{
         }
         
         line6Title.text = //m_IChing.IChing_Book[hexNum].SquareCircle6 + " " +
-            String(m_IChing.IChing_Book[hexNum].Place6ChangesToNumber) + " • " + m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place6ChangesToNumber].EngTitle
+        m_IChing.IChing_Book[m_IChing.IChing_Book[hexNum].Place6ChangesToNumber].EngTitle
         SqrCir6.text = m_IChing.IChing_Book[hexNum].SquareCircle6
+        numberLine6.text = String(m_IChing.IChing_Book[hexNum].Place6ChangesToNumber)
         if (m_IChing.IChing_Book[hexNum].SquareCircle6.contains("○")){
             line6Title.textColor = colorCircle
             SqrCir6.textColor = colorCircle

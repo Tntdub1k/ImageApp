@@ -12,6 +12,13 @@
 		010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D22491FF6C3F800BA86BF /* draconic2.png */; };
 		010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 010D224A1FF6C3FB00BA86BF /* draconic3.png */; };
 		01128CBB201E364500A79AF7 /* yang.png in Resources */ = {isa = PBXBuildFile; fileRef = 01128CB9201E364100A79AF7 /* yang.png */; };
+		0112FE89209632040069124D /* Pallas.png in Resources */ = {isa = PBXBuildFile; fileRef = 0112FE82209631EA0069124D /* Pallas.png */; };
+		0112FE8A209632040069124D /* GC.png in Resources */ = {isa = PBXBuildFile; fileRef = 0112FE83209631F00069124D /* GC.png */; };
+		0112FE8B209632040069124D /* GA.png in Resources */ = {isa = PBXBuildFile; fileRef = 0112FE84209631F70069124D /* GA.png */; };
+		0112FE8C209632040069124D /* Anubis.png in Resources */ = {isa = PBXBuildFile; fileRef = 0112FE85209631FC0069124D /* Anubis.png */; };
+		0112FE8D209632040069124D /* Hebe.png in Resources */ = {isa = PBXBuildFile; fileRef = 0112FE86209631FC0069124D /* Hebe.png */; };
+		0112FE8E209632040069124D /* Orcus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0112FE87209632000069124D /* Orcus.png */; };
+		0112FE8F209632040069124D /* SGC.png in Resources */ = {isa = PBXBuildFile; fileRef = 0112FE88209632030069124D /* SGC.png */; };
 		01143612200ACE4D00B75813 /* dragonsTail2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143606200ACDFF00B75813 /* dragonsTail2.png */; };
 		01143613200ACE4D00B75813 /* dragonsTail7.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143607200ACE0100B75813 /* dragonsTail7.png */; };
 		01143614200ACE4D00B75813 /* dragonsTail11.png in Resources */ = {isa = PBXBuildFile; fileRef = 01143608200ACE0C00B75813 /* dragonsTail11.png */; };
@@ -156,6 +163,13 @@
 		010D22491FF6C3F800BA86BF /* draconic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic2.png; path = ../../../Documents/draconic2.png; sourceTree = "<group>"; };
 		010D224A1FF6C3FB00BA86BF /* draconic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = draconic3.png; path = ../../../Documents/draconic3.png; sourceTree = "<group>"; };
 		01128CB9201E364100A79AF7 /* yang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yang.png; path = ../../../Documents/yang.png; sourceTree = "<group>"; };
+		0112FE82209631EA0069124D /* Pallas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pallas.png; path = ../../../Documents/Pallas.png; sourceTree = "<group>"; };
+		0112FE83209631F00069124D /* GC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GC.png; path = ../../../Documents/GC.png; sourceTree = "<group>"; };
+		0112FE84209631F70069124D /* GA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GA.png; path = ../../../Documents/GA.png; sourceTree = "<group>"; };
+		0112FE85209631FC0069124D /* Anubis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Anubis.png; path = ../../../Documents/Anubis.png; sourceTree = "<group>"; };
+		0112FE86209631FC0069124D /* Hebe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hebe.png; path = ../../../Documents/Hebe.png; sourceTree = "<group>"; };
+		0112FE87209632000069124D /* Orcus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Orcus.png; path = ../../../Documents/Orcus.png; sourceTree = "<group>"; };
+		0112FE88209632030069124D /* SGC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SGC.png; path = ../../../Documents/SGC.png; sourceTree = "<group>"; };
 		01143606200ACDFF00B75813 /* dragonsTail2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonsTail2.png; path = ../../../Documents/dragonsTail2.png; sourceTree = "<group>"; };
 		01143607200ACE0100B75813 /* dragonsTail7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonsTail7.png; path = ../../../Documents/dragonsTail7.png; sourceTree = "<group>"; };
 		01143608200ACE0C00B75813 /* dragonsTail11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragonsTail11.png; path = ../../../Documents/dragonsTail11.png; sourceTree = "<group>"; };
@@ -331,6 +345,13 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				0112FE85209631FC0069124D /* Anubis.png */,
+				0112FE84209631F70069124D /* GA.png */,
+				0112FE83209631F00069124D /* GC.png */,
+				0112FE86209631FC0069124D /* Hebe.png */,
+				0112FE87209632000069124D /* Orcus.png */,
+				0112FE82209631EA0069124D /* Pallas.png */,
+				0112FE88209632030069124D /* SGC.png */,
 				016A606620421D8100478BEB /* Image.png */,
 				01F1BAF820292F8600AB2B30 /* yin.png */,
 				01128CB9201E364100A79AF7 /* yang.png */,
@@ -507,7 +528,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Nick;
 				TargetAttributes = {
 					01304E0D1FEAD70E000F24E9 = {
@@ -563,6 +584,7 @@
 				0116F6F72009440A00F76E0F /* ring6gauge6.png in Resources */,
 				019E7E252003E25300ED3F77 /* arrowUp.png in Resources */,
 				0116F6F62009440A00F76E0F /* ring6gauge1.png in Resources */,
+				0112FE8E209632040069124D /* Orcus.png in Resources */,
 				011D7C081FEF058A001E3417 /* Empty.png in Resources */,
 				01143637200D60B800B75813 /* Kaali.png in Resources */,
 				0116F6F52009440A00F76E0F /* ring6gauge5.png in Resources */,
@@ -598,6 +620,7 @@
 				01143615200ACE4D00B75813 /* dragonsTail5.png in Resources */,
 				018112741FF01F980071111D /* Psyche.png in Resources */,
 				01274D8B200EACCD007D2DD2 /* bkg3.png in Resources */,
+				0112FE8F209632040069124D /* SGC.png in Resources */,
 				01274D83200E58AA007D2DD2 /* ringBackdrop.png in Resources */,
 				0116F6E420093A8F00F76E0F /* ring12gauge3.png in Resources */,
 				0181127A1FF01F980071111D /* Sedna.png in Resources */,
@@ -608,6 +631,7 @@
 				0116F6EB20093A8F00F76E0F /* ring12gauge4.png in Resources */,
 				01BCA6CC201A627E003E7EBA /* set11.png in Resources */,
 				01BCA6C5201A627E003E7EBA /* set9.png in Resources */,
+				0112FE89209632040069124D /* Pallas.png in Resources */,
 				0116F6CF2008146700F76E0F /* dragonHead9.png in Resources */,
 				0114361A200ACE4D00B75813 /* dragonsTail6.png in Resources */,
 				0181125D1FF0186F0071111D /* Mars.png in Resources */,
@@ -627,8 +651,10 @@
 				01B26F58200536A90076683F /* gearIcon.png in Resources */,
 				018112751FF01F980071111D /* Sun.png in Resources */,
 				01274D8C200EACCD007D2DD2 /* bkg4.png in Resources */,
+				0112FE8B209632040069124D /* GA.png in Resources */,
 				0116F6D22008146700F76E0F /* dragonHead7.png in Resources */,
 				01128CBB201E364500A79AF7 /* yang.png in Resources */,
+				0112FE8A209632040069124D /* GC.png in Resources */,
 				01BCA6CB201A627E003E7EBA /* set5.png in Resources */,
 				01143616200ACE4D00B75813 /* dragonsTail8.png in Resources */,
 				010D224E1FF6C3FC00BA86BF /* draconic3.png in Resources */,
@@ -661,9 +687,11 @@
 				0181125F1FF0186F0071111D /* Neptune.png in Resources */,
 				011D7BFA1FEC644A001E3417 /* dragonUpperBody10.png in Resources */,
 				0116F6CE2008146700F76E0F /* dragonHead6.png in Resources */,
+				0112FE8C209632040069124D /* Anubis.png in Resources */,
 				0116F6E320093A8F00F76E0F /* ring12gauge12.png in Resources */,
 				010D224D1FF6C3FC00BA86BF /* draconic2.png in Resources */,
 				01143614200ACE4D00B75813 /* dragonsTail11.png in Resources */,
+				0112FE8D209632040069124D /* Hebe.png in Resources */,
 				011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */,
 				01BCA6C4201A627E003E7EBA /* set2.png in Resources */,
 				0116F6C92008146700F76E0F /* dragonHead3.png in Resources */,
@@ -729,6 +757,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -736,6 +765,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -786,6 +816,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -793,6 +824,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -829,7 +861,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F9Y4G5D76;
 				INFOPLIST_FILE = ImageApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -845,7 +877,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F9Y4G5D76;
 				INFOPLIST_FILE = ImageApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NicVaic.ImageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

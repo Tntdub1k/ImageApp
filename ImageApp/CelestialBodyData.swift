@@ -113,9 +113,25 @@ public class WebsiteDataBase:Codable{
                 THWE.data[house]?.scrollBuffer = 470
             }
             database[CBname]?.append(THWE)
-            
-            
         }
+        
+        /*
+        
+        for CBname in [""]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/The Arcane Archive - Sedna Delineation"
+                THWE.data[house]?.DisplayName = "Sedna Delineation"
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "arcane-archive.org"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "AR"
+                THWE.data[house]?.scrollBuffer = 2870
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        */
         
         //Add L...G...
         for CBname in ["North Node","South Node"]{
@@ -242,6 +258,22 @@ public class WebsiteDataBase:Codable{
         }
         
         //Medical Astrology
+        for CB in CBL.AllCelestialBodies{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                
+                THWE.data[house]?.URL = "Websites/Medical Astrology and Astrological Medicine"
+                THWE.data[house]?.DisplayName = "Medical Astrology"
+                THWE.data[house]?.extensionType = "htm"
+                THWE.data[house]?.website = "homeoint.org"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "HO"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CB.value.DisplayName]?.append(THWE)
+        }
+        
+        //Medical Astrology2
         for CB in CBL.AllCelestialBodies{
             var THWE = TwelveHouseWE()
             for house in houses{
@@ -450,7 +482,36 @@ public class CelestialBodyListing:Codable{
         let Juno = CelestialBody()
         Juno.DisplayName = "Juno"
         AllCelestialBodies["Juno"] = Juno
+        
+        let Anubis = CelestialBody()
+        Anubis.DisplayName = "Anubis"
+        AllCelestialBodies["Anubis"] = Anubis
+        
+        let GA = CelestialBody()
+        GA.DisplayName = "GA"
+        AllCelestialBodies["GA"] = GA
+        
+        let GC = CelestialBody()
+        GC.DisplayName = "GC"
+        AllCelestialBodies["GC"] = GC
+        
+        let SGC = CelestialBody()
+        SGC.DisplayName = "SGC"
+        AllCelestialBodies["SGC"] = SGC
+        
+        let Hebe = CelestialBody()
+        Hebe.DisplayName = "Hebe"
+        AllCelestialBodies["Hebe"] = Hebe
+        
+        let Pallas = CelestialBody()
+        Pallas.DisplayName = "Pallas"
+        AllCelestialBodies["Pallas"] = Pallas
+        
+        let Orcus = CelestialBody()
+        Orcus.DisplayName = "Orcus"
+        AllCelestialBodies["Orcus"] = Orcus
     }
+    
 }
 
 
