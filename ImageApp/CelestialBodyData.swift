@@ -115,23 +115,108 @@ public class WebsiteDataBase:Codable{
             database[CBname]?.append(THWE)
         }
         
-        /*
         
-        for CBname in [""]{
+        for CBname in ["GC"]{
             var THWE = TwelveHouseWE()
             for house in houses{
-                THWE.data[house]?.URL = "Websites/The Arcane Archive - Sedna Delineation"
-                THWE.data[house]?.DisplayName = "Sedna Delineation"
-                THWE.data[house]?.extensionType = "htm"
-                THWE.data[house]?.website = "arcane-archive.org"
-                THWE.data[house]?.author = "Unknown"
-                THWE.data[house]?.abbreviation = "AR"
-                THWE.data[house]?.scrollBuffer = 2870
+                THWE.data[house]?.URL = "Websites/The Galactic Center"
+                THWE.data[house]?.DisplayName = "The Galactic Center"
+                THWE.data[house]?.extensionType = "html"
+                THWE.data[house]?.website = "philipsedgwick.com"
+                THWE.data[house]?.author = "Philip Sedgwick"
+                THWE.data[house]?.abbreviation = "PS"
+                THWE.data[house]?.scrollBuffer = 0
             }
             database[CBname]?.append(THWE)
         }
         
-        */
+        for CBname in ["SGC"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/The Super Galactic Center"
+                THWE.data[house]?.DisplayName = "The Super Galactic Center"
+                THWE.data[house]?.extensionType = "html"
+                THWE.data[house]?.website = "philipsedgwick.com"
+                THWE.data[house]?.author = "Philip Sedgwick"
+                THWE.data[house]?.abbreviation = "PS"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        for CBname in ["GA"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/The Great Attractor"
+                THWE.data[house]?.DisplayName = "The Great Attractor"
+                THWE.data[house]?.extensionType = "html"
+                THWE.data[house]?.website = "philipsedgwick.com"
+                THWE.data[house]?.author = "Philip Sedgwick"
+                THWE.data[house]?.abbreviation = "PS"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        for CBname in ["Pallas"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Pallas"
+                THWE.data[house]?.DisplayName = "Pallas in the Houses"
+                THWE.data[house]?.extensionType = "html"
+                THWE.data[house]?.website = "bobmarksastrologer.com"
+                THWE.data[house]?.author = "Bob Marks"
+                THWE.data[house]?.abbreviation = "BM"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        for CBname in ["Psyche"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Asteroid Psyche in signs | Aestrotex Signing"
+                THWE.data[house]?.DisplayName = "Pyche in the Signs"
+                THWE.data[house]?.extensionType = "html"
+                THWE.data[house]?.website = "aestrotext.wordpress.com"
+                THWE.data[house]?.author = "Unknown"
+                THWE.data[house]?.abbreviation = "AT"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        for CBname in ["Orcus"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/OrcusInHouses"
+                THWE.data[house]?.DisplayName = "Orcus In Houses"
+                THWE.data[house]?.extensionType = "txt"
+                THWE.data[house]?.website = "reprogramatrix.tripod.com"
+                THWE.data[house]?.author = "Klaudio Zic"
+                THWE.data[house]?.abbreviation = "KZ"
+                THWE.data[house]?.scrollBuffer = 3000
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        
+        for CBname in ["Anubis"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Anubis1912"
+                THWE.data[house]?.DisplayName = "Anubis In Houses"
+                THWE.data[house]?.extensionType = "txt"
+                THWE.data[house]?.website = "personal findings"
+                THWE.data[house]?.author = ""
+                THWE.data[house]?.abbreviation = "--"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
+        
+        
+        
         
         //Add L...G...
         for CBname in ["North Node","South Node"]{
@@ -278,12 +363,12 @@ public class WebsiteDataBase:Codable{
             var THWE = TwelveHouseWE()
             for house in houses{
                 
-                THWE.data[house]?.URL = "Websites/Medical Astrology and Astrological Medicine"
-                THWE.data[house]?.DisplayName = "Medical Astrology"
+                THWE.data[house]?.URL = "Websites/Medical Astrology2"
+                THWE.data[house]?.DisplayName = "Medical Astrology 2"
                 THWE.data[house]?.extensionType = "htm"
-                THWE.data[house]?.website = "homeoint.org"
+                THWE.data[house]?.website = "aifas.com"
                 THWE.data[house]?.author = "Unknown"
-                THWE.data[house]?.abbreviation = "HO"
+                THWE.data[house]?.abbreviation = "AS"
                 THWE.data[house]?.scrollBuffer = 0
             }
             database[CB.value.DisplayName]?.append(THWE)
