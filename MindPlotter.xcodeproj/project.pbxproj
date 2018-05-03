@@ -133,6 +133,10 @@
 		018112831FF17A830071111D /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112821FF17A820071111D /* gradient.png */; };
 		0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112881FF3F8BA0071111D /* plusRotate2.png */; };
 		0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */ = {isa = PBXBuildFile; fileRef = 018112891FF3F8BB0071111D /* minusRotate2.png */; };
+		018F4ABE209BCD2900995E37 /* connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 018F4ABD209BCD2100995E37 /* connection.png */; };
+		01972FD32097974B00AF2899 /* Starry-Sky-Stars-Space-Wallpaper-1440x2560-768x1365.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01972FD22097974A00AF2899 /* Starry-Sky-Stars-Space-Wallpaper-1440x2560-768x1365.jpg */; };
+		01972FD62099F4B500AF2899 /* Ixion.png in Resources */ = {isa = PBXBuildFile; fileRef = 01972FD42099F4B400AF2899 /* Ixion.png */; };
+		01972FD72099F4B500AF2899 /* Pylenor.png in Resources */ = {isa = PBXBuildFile; fileRef = 01972FD52099F4B400AF2899 /* Pylenor.png */; };
 		019E7E1E2001347F00ED3F77 /* icon (1) in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E1D2001347D00ED3F77 /* icon (1) */; };
 		019E7E202003D96400ED3F77 /* circleBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E1F2003D96100ED3F77 /* circleBig.png */; };
 		019E7E222003DCE100ED3F77 /* circleSmall1.png in Resources */ = {isa = PBXBuildFile; fileRef = 019E7E212003DCDF00ED3F77 /* circleSmall1.png */; };
@@ -286,6 +290,10 @@
 		018112821FF17A820071111D /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../../Documents/gradient.png; sourceTree = "<group>"; };
 		018112881FF3F8BA0071111D /* plusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plusRotate2.png; path = ../../../Documents/plusRotate2.png; sourceTree = "<group>"; };
 		018112891FF3F8BB0071111D /* minusRotate2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minusRotate2.png; path = ../../../Documents/minusRotate2.png; sourceTree = "<group>"; };
+		018F4ABD209BCD2100995E37 /* connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = connection.png; path = ../../../Documents/connection.png; sourceTree = "<group>"; };
+		01972FD22097974A00AF2899 /* Starry-Sky-Stars-Space-Wallpaper-1440x2560-768x1365.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Starry-Sky-Stars-Space-Wallpaper-1440x2560-768x1365.jpg"; path = "../../../Downloads/Starry-Sky-Stars-Space-Wallpaper-1440x2560-768x1365.jpg"; sourceTree = "<group>"; };
+		01972FD42099F4B400AF2899 /* Ixion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ixion.png; path = ../../../Documents/Ixion.png; sourceTree = "<group>"; };
+		01972FD52099F4B400AF2899 /* Pylenor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pylenor.png; path = ../../../Documents/Pylenor.png; sourceTree = "<group>"; };
 		019E7E1D2001347D00ED3F77 /* icon (1) */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icon (1)"; path = "../../../Downloads/icon (1)"; sourceTree = "<group>"; };
 		019E7E1F2003D96100ED3F77 /* circleBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circleBig.png; path = ../../../Documents/circleBig.png; sourceTree = "<group>"; };
 		019E7E212003DCDF00ED3F77 /* circleSmall1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circleSmall1.png; path = ../../../Documents/circleSmall1.png; sourceTree = "<group>"; };
@@ -345,6 +353,10 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				018F4ABD209BCD2100995E37 /* connection.png */,
+				01972FD42099F4B400AF2899 /* Ixion.png */,
+				01972FD52099F4B400AF2899 /* Pylenor.png */,
+				01972FD22097974A00AF2899 /* Starry-Sky-Stars-Space-Wallpaper-1440x2560-768x1365.jpg */,
 				0112FE85209631FC0069124D /* Anubis.png */,
 				0112FE84209631F70069124D /* GA.png */,
 				0112FE83209631F00069124D /* GC.png */,
@@ -599,6 +611,7 @@
 				01143625200D2BB300B75813 /* Eris.png in Resources */,
 				018112831FF17A830071111D /* gradient.png in Resources */,
 				011BDBCF2018F36900D18898 /* off6.png in Resources */,
+				01972FD72099F4B500AF2899 /* Pylenor.png in Resources */,
 				01143612200ACE4D00B75813 /* dragonsTail2.png in Resources */,
 				0116F6D32008146700F76E0F /* dragonHead1.png in Resources */,
 				01BCA6C8201A627E003E7EBA /* set1.png in Resources */,
@@ -640,6 +653,7 @@
 				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
 				0116F6CD2008146700F76E0F /* dragonHead4.png in Resources */,
 				01143619200ACE4D00B75813 /* dragonsTail9.png in Resources */,
+				018F4ABE209BCD2900995E37 /* connection.png in Resources */,
 				0116F6E620093A8F00F76E0F /* ring12gauge10.png in Resources */,
 				0116F6F22009440A00F76E0F /* ring6gauge4.png in Resources */,
 				0181128A1FF3F8D10071111D /* plusRotate2.png in Resources */,
@@ -677,6 +691,7 @@
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
 				01BCA6C3201A627E003E7EBA /* set4.png in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,
+				01972FD32097974B00AF2899 /* Starry-Sky-Stars-Space-Wallpaper-1440x2560-768x1365.jpg in Resources */,
 				010D224B1FF6C3FC00BA86BF /* draconic0.png in Resources */,
 				01143613200ACE4D00B75813 /* dragonsTail7.png in Resources */,
 				018112601FF0186F0071111D /* Jupiter.png in Resources */,
@@ -698,6 +713,7 @@
 				011BDBCB2017CDEA00D18898 /* adjusterBack.png in Resources */,
 				019E7E202003D96400ED3F77 /* circleBig.png in Resources */,
 				011D7C041FEEFFA0001E3417 /* DignifiedExalted.png in Resources */,
+				01972FD62099F4B500AF2899 /* Ixion.png in Resources */,
 				019E7E262003E25300ED3F77 /* arrowDown.png in Resources */,
 				0114361C200ACE4D00B75813 /* dragonsTail4.png in Resources */,
 				01BCA6CA201A627E003E7EBA /* set8.png in Resources */,

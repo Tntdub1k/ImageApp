@@ -760,6 +760,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
     }
     
+    @IBOutlet weak var connectionImage: UIImageView!
     @IBOutlet weak var bandView: UIView!
     func clearAllViewsFromScreen(){
         ContentView.sendSubview(toBack:selectPicker)
@@ -777,10 +778,120 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         ContentView.sendSubview(toBack: settingsView)
 
     }
+    @IBAction func PhysicalBodyPress(_ sender: Any) {
+        BodiesLabelView.isHidden = true
+        IntellectualZodiac.isHidden = true
+        EmotionalZodiac.isHidden = true
+        SpiritualZodiac.isHidden = true
+        zodiacSV.delegate = self
+        zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
+        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 1250), animated: true)
+        zodiacSV.delegate = nil
+        ButtonView.isHidden = false
+        ButtonImagesView.isHidden = false
+        bodyLabel.isHidden = false
+        bodyImage.isHidden = false
+        bandCounter.isHidden = false
+        balancePointButton.isHidden = false
+        NotesButton.isHidden = false
+        bodyButton.isHidden = false
+        menuView.isHidden = false
+        connectionImage.isHidden = true
+    }
+    @IBAction func EmotionalBodyPress(_ sender: Any) {
+        BodiesLabelView.isHidden = true
+        IntellectualZodiac.isHidden = true
+        SpiritualZodiac.isHidden = true
+        PhysicalZodiac.isHidden = true
+        zodiacSV.delegate = self
+        zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
+        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 843), animated: true)
+        zodiacSV.delegate = nil
+        ButtonView.isHidden = false
+        ButtonImagesView.isHidden = false
+        bodyLabel.isHidden = false
+        bodyImage.isHidden = false
+        bandCounter.isHidden = false
+        balancePointButton.isHidden = false
+        NotesButton.isHidden = false
+        bodyButton.isHidden = false
+        menuView.isHidden = false
+        connectionImage.isHidden = true
+    }
+    @IBAction func IntellectBodyPress(_ sender: Any) {
+        BodiesLabelView.isHidden = true
+        SpiritualZodiac.isHidden = true
+        EmotionalZodiac.isHidden = true
+        PhysicalZodiac.isHidden = true
+        zodiacSV.delegate = self
+        zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
+        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 416.5), animated: true)
+        zodiacSV.delegate = nil
+        ButtonView.isHidden = false
+        ButtonImagesView.isHidden = false
+        bodyLabel.isHidden = false
+        bodyImage.isHidden = false
+        bandCounter.isHidden = false
+        balancePointButton.isHidden = false
+        NotesButton.isHidden = false
+        bodyButton.isHidden = false
+        menuView.isHidden = false
+        connectionImage.isHidden = true
+    }
+    @IBAction func SpiritBodyPress(_ sender: Any) {
+        BodiesLabelView.isHidden = true
+        IntellectualZodiac.isHidden = true
+        EmotionalZodiac.isHidden = true
+        PhysicalZodiac.isHidden = true
+         zodiacSV.delegate = self
+        zodiacSV.zoom(to:CGRect(x:0,y:0,width:299,height:200), animated:true)
+        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 0), animated: false)
+        zodiacSV.delegate = nil
+        ButtonView.isHidden = false
+        ButtonImagesView.isHidden = false
+        bodyLabel.isHidden = false
+        bodyImage.isHidden = false
+        bandCounter.isHidden = false
+        balancePointButton.isHidden = false
+        NotesButton.isHidden = false
+        bodyButton.isHidden = false
+        menuView.isHidden = false
+        connectionImage.isHidden = true
+    }
+    @IBOutlet weak var ButtonImagesView: UIView!
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var SpiritButton: UIButton!
+    @IBOutlet weak var SpiritualZodiac: UIView!
+    @IBOutlet weak var IntellectualZodiac: UIView!
+    @IBOutlet weak var EmotionalZodiac: UIView!
+    @IBOutlet weak var PhysicalZodiac: UIView!
+    @IBOutlet weak var BodiesLabelView: UIView!
     @IBAction func pressBand(_ sender: Any) {
-
+        connectionImage.isHidden = false
+        ButtonView.isHidden = true
+        ButtonImagesView.isHidden = true
+        bodyLabel.isHidden = true
+        bodyImage.isHidden = true
+        bandCounter.isHidden = true
+        balancePointButton.isHidden = true
+        NotesButton.isHidden = true
+        bodyButton.isHidden = true
+        menuView.isHidden = true
+        zodiacSV.delegate = self
+        SpiritualZodiac.isHidden = false
+        IntellectualZodiac.isHidden = false
+        EmotionalZodiac.isHidden = false
+        PhysicalZodiac.isHidden = false
+        
+        zodiacSV.zoom(to:CGRect(x:0,y:0,width:299,height:1400), animated:true)
+        zodiacSV.setContentOffset(CGPoint(x: -8 , y: 40), animated: true)
+        
+        BodiesLabelView.isHidden = false
         ContentView.bringSubview(toFront: bandView)
         updateBodyLabelText()
+        ContentView.bringSubview(toFront:SpiritButton)
+        
+        zodiacSV.delegate = nil
     }
     @IBAction func clearKeyboard(_ sender: Any) {
         ContentView.endEditing(true)
@@ -1408,13 +1519,13 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         mainView.maximumZoomScale = 6.0
         mainView.bounces = false
         zodiacSV.delegate = self
-        zodiacSV.bounces = false
-        zodiacSV.bouncesZoom = false
+
         zodiacSV.minimumZoomScale = -6.0
         zodiacSV.maximumZoomScale = 6.0
-        zodiacSV.bounces = false
+
         
-        zodiacSV.zoom(to:CGRect(x:0,y:0,width:299,height:200), animated:false)
+        zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:false)
+        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 0), animated: true)
         
         zodiacSV.delegate = nil
         
@@ -2016,6 +2127,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     func setFontColor(){
         var labelColor = UIColor()
         labelColor = UIColor.init(red: 0.0/255.0, green: 157.0/255.0, blue: 209.0/255.0, alpha: 1)
+        
         
         var views = Array<UIView>()
         views.append(House1)

@@ -195,7 +195,7 @@ public class WebsiteDataBase:Codable{
                 THWE.data[house]?.website = "reprogramatrix.tripod.com"
                 THWE.data[house]?.author = "Klaudio Zic"
                 THWE.data[house]?.abbreviation = "KZ"
-                THWE.data[house]?.scrollBuffer = 3000
+                THWE.data[house]?.scrollBuffer = 174000
             }
             database[CBname]?.append(THWE)
         }
@@ -595,6 +595,15 @@ public class CelestialBodyListing:Codable{
         let Orcus = CelestialBody()
         Orcus.DisplayName = "Orcus"
         AllCelestialBodies["Orcus"] = Orcus
+        
+        let Ixion = CelestialBody()
+        Ixion.DisplayName = "Ixion"
+        AllCelestialBodies["Ixion"] = Ixion
+        
+        let Pylenor = CelestialBody()
+        Pylenor.DisplayName = "Pylenor"
+        AllCelestialBodies["Pylenor"] = Pylenor
+        
     }
     
 }
