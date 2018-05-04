@@ -726,15 +726,17 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             break;
         }
     }
-    @IBAction func clickSelectSpiritBand(_ sender: Any) {
+    func selSpiritBand(SBody:Int){
         let oldSBody = m_CurrentSBody
-        bandCounter.text = String(bandPicker.selectedRow(inComponent: 0) + 1)
-        m_CurrentSBody = bandPicker.selectedRow(inComponent: 0)
-        m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] = m_CurrentSBody
         
-        updateBodyLabelText()
+        m_CurrentSBody = SBody
+        bandCounter.text = String(bandPicker.selectedRow(inComponent: 0) + 1)
+    m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["currentSBody"] = m_CurrentSBody
         
 
+        updateBodyLabelText()
+        
+        
         bandPicker.reloadAllComponents()
         let newAdvancement = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Advancement"]
         
@@ -757,9 +759,16 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         clearAllViewsFromScreen()
         loadAP()
+    }
+    @IBAction func clickSelectSpiritBand(_ sender: Any) {
         
+        selSpiritBand(SBody:bandPicker.selectedRow(inComponent: 0))
     }
     
+    @IBOutlet weak var PhysWords: UIImageView!
+    @IBOutlet weak var EmoWords: UIImageView!
+    @IBOutlet weak var SpirWords: UIImageView!
+    @IBOutlet weak var IntWords: UIImageView!
     @IBOutlet weak var connectionImage: UIImageView!
     @IBOutlet weak var bandView: UIView!
     func clearAllViewsFromScreen(){
@@ -779,6 +788,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
 
     }
     @IBAction func PhysicalBodyPress(_ sender: Any) {
+        bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         IntellectualZodiac.isHidden = true
         EmotionalZodiac.isHidden = true
@@ -797,8 +807,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         bodyButton.isHidden = false
         menuView.isHidden = false
         connectionImage.isHidden = true
+        PhysWords.isHidden = false
     }
     @IBAction func EmotionalBodyPress(_ sender: Any) {
+        bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         IntellectualZodiac.isHidden = true
         SpiritualZodiac.isHidden = true
@@ -817,8 +829,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         bodyButton.isHidden = false
         menuView.isHidden = false
         connectionImage.isHidden = true
+        EmoWords.isHidden = false
     }
     @IBAction func IntellectBodyPress(_ sender: Any) {
+        bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         SpiritualZodiac.isHidden = true
         EmotionalZodiac.isHidden = true
@@ -837,8 +851,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         bodyButton.isHidden = false
         menuView.isHidden = false
         connectionImage.isHidden = true
+        IntWords.isHidden = false
     }
     @IBAction func SpiritBodyPress(_ sender: Any) {
+        bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         IntellectualZodiac.isHidden = true
         EmotionalZodiac.isHidden = true
@@ -857,7 +873,9 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         bodyButton.isHidden = false
         menuView.isHidden = false
         connectionImage.isHidden = true
+        SpirWords.isHidden = false
     }
+    @IBOutlet weak var bottomGradient: UIImageView!
     @IBOutlet weak var ButtonImagesView: UIView!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var SpiritButton: UIButton!
@@ -867,6 +885,13 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var PhysicalZodiac: UIView!
     @IBOutlet weak var BodiesLabelView: UIView!
     @IBAction func pressBand(_ sender: Any) {
+        
+        selSpiritBand(SBody: 0)
+        selSpiritBand(SBody: 1)
+        selSpiritBand(SBody: 2)
+        selSpiritBand(SBody: 3)
+        
+        bottomGradient.isHidden = true
         connectionImage.isHidden = false
         ButtonView.isHidden = true
         ButtonImagesView.isHidden = true
@@ -882,9 +907,13 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         IntellectualZodiac.isHidden = false
         EmotionalZodiac.isHidden = false
         PhysicalZodiac.isHidden = false
+        PhysWords.isHidden = true
+        IntWords.isHidden = true
+        EmoWords.isHidden = true
+        SpirWords.isHidden = true
         
         zodiacSV.zoom(to:CGRect(x:0,y:0,width:299,height:1400), animated:true)
-        zodiacSV.setContentOffset(CGPoint(x: -8 , y: 40), animated: true)
+        zodiacSV.setContentOffset(CGPoint(x: -8 , y: 50), animated: true)
         
         BodiesLabelView.isHidden = false
         ContentView.bringSubview(toFront: bandView)
@@ -2162,6 +2191,43 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             aHouseView.sat5Label.textColor = labelColor
         }
     }
+    @IBOutlet weak var IntH1: UIView!
+    @IBOutlet weak var IntH2: UIView!
+    @IBOutlet weak var IntH3: UIView!
+    @IBOutlet weak var IntH4: UIView!
+    @IBOutlet weak var IntH5: UIView!
+    @IBOutlet weak var IntH6: UIView!
+    @IBOutlet weak var IntH7: UIView!
+    @IBOutlet weak var IntH8: UIView!
+    @IBOutlet weak var IntH9: UIView!
+    @IBOutlet weak var IntH10: UIView!
+    @IBOutlet weak var IntH11: UIView!
+    @IBOutlet weak var IntH12: UIView!
+    @IBOutlet weak var PhysH10: UIView!
+    
+    @IBOutlet weak var PhysH12: UIView!
+    @IBOutlet weak var PhysH11: UIView!
+    @IBOutlet weak var PhysH9: UIView!
+    @IBOutlet weak var PhysH8: UIView!
+    @IBOutlet weak var PhysH7: UIView!
+    @IBOutlet weak var PhysH6: UIView!
+    @IBOutlet weak var PhysH5: UIView!
+    @IBOutlet weak var PhysH4: UIView!
+    @IBOutlet weak var PhysH3: UIView!
+    @IBOutlet weak var PhysH2: UIView!
+    @IBOutlet weak var PhysH1: UIView!
+    @IBOutlet weak var EmoH1: UIView!
+    @IBOutlet weak var EmoH2: UIView!
+    @IBOutlet weak var EmoH3: UIView!
+    @IBOutlet weak var EmoH4: UIView!
+    @IBOutlet weak var EmoH5: UIView!
+    @IBOutlet weak var EmoH6: UIView!
+    @IBOutlet weak var EmoH7: UIView!
+    @IBOutlet weak var EmoH8: UIView!
+    @IBOutlet weak var EmoH9: UIView!
+    @IBOutlet weak var EmoH10: UIView!
+    @IBOutlet weak var EmoH11: UIView!
+    @IBOutlet weak var EmoH12: UIView!
     func fillWithData(){
 
         var AP = AstrologicalProfile()
@@ -2195,78 +2261,91 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         
         m_CountNN = 0
         m_CountSN = 0
-        setAllDragonImgsEmpty()
+        setAllDragonImgsEmpty(currentSBody: m_CurrentSBody)
+        
+        
+        var Houses = Array<UIView>()
+        switch (m_CurrentSBody){
+        case 0:
+            Houses = [PhysH1, PhysH2, PhysH3, PhysH4, PhysH5, PhysH6, PhysH7, PhysH8, PhysH9, PhysH10, PhysH11, PhysH12]
+        case 1:
+            Houses = [EmoH1, EmoH2, EmoH3, EmoH4, EmoH5, EmoH6, EmoH7, EmoH8, EmoH9, EmoH10, EmoH11, EmoH12]
+        case 2:
+            Houses = [IntH1, IntH2, IntH3, IntH4, IntH5, IntH6, IntH7, IntH8, IntH9, IntH10, IntH11, IntH12]
+        default:
+            Houses = [House1, House2, House3, House4, House5, House6, House7, House8, House9, House10, House11, House12]
+        }
         
         
         //1
        var aHouseView = HouseViews()
-        aHouseView = getHouseViews(aHouseView:House1)
+        aHouseView = getHouseViews(aHouseView:Houses[0])
         AP.HouseInfo.HousesTransPersp[0].RingTransPersp = AP.HouseInfo.Houses[0].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[0].Ring)
         AP.HouseInfo.HousesTransPersp[0].HouseName = "1stHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[0], houseViews:aHouseView)
         
         //2
-        aHouseView = getHouseViews(aHouseView:House2)
+        aHouseView = getHouseViews(aHouseView:Houses[1])
         AP.HouseInfo.HousesTransPersp[1].RingTransPersp = AP.HouseInfo.Houses[1].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[1].Ring)
         AP.HouseInfo.HousesTransPersp[1].HouseName = "2ndHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[1], houseViews:aHouseView)
         
         //3
-        aHouseView = getHouseViews(aHouseView:House3)
+        aHouseView = getHouseViews(aHouseView:Houses[2])
         AP.HouseInfo.HousesTransPersp[2].RingTransPersp = AP.HouseInfo.Houses[2].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[2].Ring)
         AP.HouseInfo.HousesTransPersp[2].HouseName = "3rdHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[2], houseViews:aHouseView)
         
         //4
-        aHouseView = getHouseViews(aHouseView:House4)
+        aHouseView = getHouseViews(aHouseView:Houses[3])
         AP.HouseInfo.HousesTransPersp[3].RingTransPersp = AP.HouseInfo.Houses[3].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[3].Ring)
         AP.HouseInfo.HousesTransPersp[3].HouseName = "4thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[3], houseViews:aHouseView)
         
         //5
-        aHouseView = getHouseViews(aHouseView:House5)
+        aHouseView = getHouseViews(aHouseView:Houses[4])
         AP.HouseInfo.HousesTransPersp[4].RingTransPersp = AP.HouseInfo.Houses[4].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[4].Ring)
         AP.HouseInfo.HousesTransPersp[4].HouseName = "5thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[4], houseViews:aHouseView)
         
         //6
-        aHouseView = getHouseViews(aHouseView:House6)
+        aHouseView = getHouseViews(aHouseView:Houses[5])
         AP.HouseInfo.HousesTransPersp[5].RingTransPersp = AP.HouseInfo.Houses[5].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[5].Ring)
         AP.HouseInfo.HousesTransPersp[5].HouseName = "6thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[5], houseViews:aHouseView)
         
         //7
-        aHouseView = getHouseViews(aHouseView:House7)
+        aHouseView = getHouseViews(aHouseView:Houses[6])
         AP.HouseInfo.HousesTransPersp[6].RingTransPersp = AP.HouseInfo.Houses[6].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[6].Ring)
         AP.HouseInfo.HousesTransPersp[6].HouseName = "7thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[6], houseViews:aHouseView)
         
         //8
-        aHouseView = getHouseViews(aHouseView:House8)
+        aHouseView = getHouseViews(aHouseView:Houses[7])
         AP.HouseInfo.HousesTransPersp[7].RingTransPersp = AP.HouseInfo.Houses[7].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[7].Ring)
         AP.HouseInfo.HousesTransPersp[7].HouseName = "8thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[7], houseViews:aHouseView)
         
         //9
-        aHouseView = getHouseViews(aHouseView:House9)
+        aHouseView = getHouseViews(aHouseView:Houses[8])
         AP.HouseInfo.HousesTransPersp[8].RingTransPersp = AP.HouseInfo.Houses[8].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[8].Ring)
         AP.HouseInfo.HousesTransPersp[8].HouseName = "9thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[8], houseViews:aHouseView)
     
        //10
-        aHouseView = getHouseViews(aHouseView:House10)
+        aHouseView = getHouseViews(aHouseView:Houses[9])
         AP.HouseInfo.HousesTransPersp[9].RingTransPersp = AP.HouseInfo.Houses[9].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[9].Ring)
         AP.HouseInfo.HousesTransPersp[9].HouseName = "10thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[9], houseViews:aHouseView)
         
         //11
-        aHouseView = getHouseViews(aHouseView:House11)
+        aHouseView = getHouseViews(aHouseView:Houses[10])
         AP.HouseInfo.HousesTransPersp[10].RingTransPersp = AP.HouseInfo.Houses[10].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[10].Ring)
         AP.HouseInfo.HousesTransPersp[10].HouseName = "11thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[10], houseViews:aHouseView)
         
         //12
-        aHouseView = getHouseViews(aHouseView:House12)
+        aHouseView = getHouseViews(aHouseView:Houses[11])
         AP.HouseInfo.HousesTransPersp[11].RingTransPersp = AP.HouseInfo.Houses[11].AdvanceTo(advancement: RA, inputRing: AP.HouseInfo.HousesTransPersp[11].Ring)
         AP.HouseInfo.HousesTransPersp[11].HouseName = "12thHouse"
         fillRingViewWithData(aRing:AP.HouseInfo.HousesTransPersp[11], houseViews:aHouseView)
@@ -2565,19 +2644,55 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     
     
     
-    func setAllDragonImgsEmpty(){
-        dragonTail1.image = UIImage(named:"Empty")
-        dragonTail2.image = UIImage(named:"Empty")
-        dragonTail3.image = UIImage(named:"Empty")
-        dragonHead1.image = UIImage(named:"Empty")
-        dragonHead2.image = UIImage(named:"Empty")
-        dragonHead3.image = UIImage(named:"Empty")
+    func setAllDragonImgsEmpty(currentSBody:Int){
+        switch (currentSBody){
+        case 0:
+            dtPhys1.image = UIImage(named:"Empty")
+            dtPhys2.image = UIImage(named:"Empty")
+            dtPhys3.image = UIImage(named:"Empty")
+            dhPhys1.image = UIImage(named:"Empty")
+            dhPhys2.image = UIImage(named:"Empty")
+            dhPhys3.image = UIImage(named:"Empty")
+        case 1:
+            dtEmo1.image = UIImage(named:"Empty")
+            dtEmo2.image = UIImage(named:"Empty")
+            dtEmo3.image = UIImage(named:"Empty")
+            dhEmo1.image = UIImage(named:"Empty")
+            dhEmo2.image = UIImage(named:"Empty")
+            dhEmo3.image = UIImage(named:"Empty")
+        case 2:
+            dtInt1.image = UIImage(named:"Empty")
+            dtInt2.image = UIImage(named:"Empty")
+            dtInt3.image = UIImage(named:"Empty")
+            dhInt1.image = UIImage(named:"Empty")
+            dhInt2.image = UIImage(named:"Empty")
+            dhInt3.image = UIImage(named:"Empty")
+    default:
+            dragonTail1.image = UIImage(named:"Empty")
+            dragonTail2.image = UIImage(named:"Empty")
+            dragonTail3.image = UIImage(named:"Empty")
+            dragonHead1.image = UIImage(named:"Empty")
+            dragonHead2.image = UIImage(named:"Empty")
+            dragonHead3.image = UIImage(named:"Empty")
+        }
+        
+    
+        
     }
     
     func RevealDragonTail(houseNumber:String){
-        
-        var dragonTailImages = [dragonTail1, dragonTail2, dragonTail3]
-  
+        var dragonTailImages = Array<UIImageView!>()
+        switch(m_CurrentSBody){
+        case 0:
+            dragonTailImages = [dtPhys1, dtPhys2, dtPhys3]
+        case 1:
+            dragonTailImages = [dtEmo1, dtEmo2, dtEmo3]
+        case 2:
+            dragonTailImages = [dtInt1, dtInt2, dtInt3]
+        default:
+            dragonTailImages = [dragonTail1, dragonTail2, dragonTail3]
+        }
+      
         if (m_CountSN <= 2){
             switch(houseNumber){
             case "1stHouse":
@@ -2611,8 +2726,17 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     func RevealDragonHead(houseNumber:String){
-        
-        var dragonHeadImages = [dragonHead1, dragonHead2, dragonHead3]
+        var dragonHeadImages = Array<UIImageView!>()
+        switch(m_CurrentSBody){
+            case 0:
+                 dragonHeadImages = [dhPhys1, dhPhys2, dhPhys3]
+        case 1:
+            dragonHeadImages = [dhEmo1, dhEmo2, dhEmo3]
+        case 2:
+            dragonHeadImages = [dhInt1, dhInt2, dhInt3]
+        default:
+             dragonHeadImages = [dragonHead1, dragonHead2, dragonHead3]
+        }
         
         if (m_CountNN <= 2){
             switch(houseNumber){
@@ -2647,6 +2771,24 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     
+    @IBOutlet weak var dhInt3: UIImageView!
+    @IBOutlet weak var dhInt2: UIImageView!
+    @IBOutlet weak var dhInt1: UIImageView!
+    @IBOutlet weak var dtInt3: UIImageView!
+    @IBOutlet weak var dtInt2: UIImageView!
+    @IBOutlet weak var dtInt1: UIImageView!
+    @IBOutlet weak var dtEmo3: UIImageView!
+    @IBOutlet weak var dtEmo2: UIImageView!
+    @IBOutlet weak var dtEmo1: UIImageView!
+    @IBOutlet weak var dhEmo3: UIImageView!
+    @IBOutlet weak var dhEmo2: UIImageView!
+    @IBOutlet weak var dhEmo1: UIImageView!
+    @IBOutlet weak var dhPhys3: UIImageView!
+    @IBOutlet weak var dhPhys2: UIImageView!
+    @IBOutlet weak var dhPhys1: UIImageView!
+    @IBOutlet weak var dtPhys3: UIImageView!
+    @IBOutlet weak var dtPhys2: UIImageView!
+    @IBOutlet weak var dtPhys1: UIImageView!
     @IBOutlet weak var dragonTail3: UIImageView!
     @IBOutlet weak var dragonTail2: UIImageView!
     @IBOutlet weak var dragonTail1: UIImageView!

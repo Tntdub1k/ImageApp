@@ -9607,6 +9607,19 @@
                         <outlet property="ButtonView" destination="FOw-q4-N9G" id="h5s-YW-EaC"/>
                         <outlet property="CBview" destination="VNY-JN-x6m" id="GJt-QC-JAr"/>
                         <outlet property="ContentView" destination="Z4x-We-Z7y" id="a1J-gt-QEL"/>
+                        <outlet property="EmoH1" destination="pVj-pg-l5b" id="CJr-fp-M7B"/>
+                        <outlet property="EmoH10" destination="iwZ-a6-bHf" id="xO4-CQ-Amy"/>
+                        <outlet property="EmoH11" destination="Ch2-1r-J6u" id="rxr-g0-yTX"/>
+                        <outlet property="EmoH12" destination="u8A-a3-iXg" id="yQr-GE-atP"/>
+                        <outlet property="EmoH2" destination="FWf-MK-ATQ" id="7jg-ty-nqx"/>
+                        <outlet property="EmoH3" destination="e2w-we-ko2" id="bPX-KL-dMK"/>
+                        <outlet property="EmoH4" destination="ZRo-Po-JEO" id="NOX-VC-d2N"/>
+                        <outlet property="EmoH5" destination="tiw-m8-lhs" id="xr0-dh-PXl"/>
+                        <outlet property="EmoH6" destination="cAD-EB-G06" id="jsn-aP-2AJ"/>
+                        <outlet property="EmoH7" destination="4Ow-9Y-dEy" id="GFC-ze-h7z"/>
+                        <outlet property="EmoH8" destination="Fen-MG-m0u" id="Do7-BK-yC0"/>
+                        <outlet property="EmoH9" destination="V8R-nv-5Ra" id="2QO-0Y-qc3"/>
+                        <outlet property="EmoWords" destination="gy2-X7-u3Y" id="DDh-JO-BUF"/>
                         <outlet property="EmotionalZodiac" destination="RfT-6y-47R" id="7kC-P0-MyX"/>
                         <outlet property="House1" destination="aPV-YK-zaD" id="nI1-Zw-uG5"/>
                         <outlet property="House10" destination="JJE-i8-Bu7" id="Ah1-JC-WqO"/>
@@ -9621,13 +9634,40 @@
                         <outlet property="House8" destination="caw-jy-qgI" id="lKQ-Hb-qZA"/>
                         <outlet property="House9" destination="OEZ-rH-Mff" id="WfX-UM-Rew"/>
                         <outlet property="IndividualTitle" destination="69O-rS-syx" id="9lj-aD-iCF"/>
+                        <outlet property="IntH1" destination="qdD-3j-6XL" id="8zp-Yz-JK5"/>
+                        <outlet property="IntH10" destination="rXo-Yk-TtX" id="TOm-DI-KAh"/>
+                        <outlet property="IntH11" destination="NZN-Ib-teF" id="cbF-Qi-H55"/>
+                        <outlet property="IntH12" destination="axe-qh-oXo" id="2pk-ZO-ikS"/>
+                        <outlet property="IntH2" destination="asF-oR-X1A" id="Rme-R8-isn"/>
+                        <outlet property="IntH3" destination="jNg-6b-tQB" id="yHG-W6-rqh"/>
+                        <outlet property="IntH4" destination="NVe-u1-xZJ" id="rau-Em-KnO"/>
+                        <outlet property="IntH5" destination="onN-0E-Bw3" id="hIl-f1-x9J"/>
+                        <outlet property="IntH6" destination="qxy-Kh-1OE" id="XsA-29-llX"/>
+                        <outlet property="IntH7" destination="O3u-kv-mGN" id="W3F-f2-hXG"/>
+                        <outlet property="IntH8" destination="ufg-Kb-TAa" id="qbk-bq-ngE"/>
+                        <outlet property="IntH9" destination="6rb-89-aBc" id="J6c-bO-br5"/>
+                        <outlet property="IntWords" destination="AvX-hr-Ddh" id="Lao-Z1-52A"/>
                         <outlet property="IntellectualZodiac" destination="Nag-fx-0Gk" id="NC3-WN-SZ0"/>
                         <outlet property="NotesButton" destination="Ycz-q0-v1y" id="mIl-wp-jGj"/>
                         <outlet property="NotesLabel" destination="XC5-om-RgS" id="7K7-OI-UI9"/>
                         <outlet property="NotesTextBox" destination="YHS-3f-k16" id="6w0-73-r8i"/>
                         <outlet property="NotesTitle" destination="X6n-u8-RXa" id="9xo-3f-emO"/>
                         <outlet property="NotesView" destination="MBJ-0K-atd" id="6uT-IP-QMP"/>
+                        <outlet property="PhysH1" destination="lbf-sy-80g" id="uKc-KH-L5D"/>
+                        <outlet property="PhysH10" destination="nF3-o7-muy" id="YGr-ng-07p"/>
+                        <outlet property="PhysH11" destination="sGE-rc-NvL" id="Uvg-E3-DvE"/>
+                        <outlet property="PhysH12" destination="45t-Pz-AB3" id="KTt-aV-1FM"/>
+                        <outlet property="PhysH2" destination="top-iE-FMk" id="Lvg-J8-vZc"/>
+                        <outlet property="PhysH3" destination="yfK-JC-vIN" id="wrN-tB-tWH"/>
+                        <outlet property="PhysH4" destination="3bZ-Bw-zCL" id="pUk-aZ-eeq"/>
+                        <outlet property="PhysH5" destination="1H1-WO-DBv" id="lft-qr-75k"/>
+                        <outlet property="PhysH6" destination="oSY-CW-KDB" id="ymc-jr-WcD"/>
+                        <outlet property="PhysH7" destination="NBT-oS-U8U" id="tWr-Lb-3As"/>
+                        <outlet property="PhysH8" destination="lxK-v8-iLh" id="czs-si-7M7"/>
+                        <outlet property="PhysH9" destination="Pjw-YP-JGb" id="PKs-jh-UYr"/>
+                        <outlet property="PhysWords" destination="vvc-jb-6pf" id="Gi7-od-AxT"/>
                         <outlet property="PhysicalZodiac" destination="DY0-W8-zlY" id="65Y-KY-R8c"/>
+                        <outlet property="SpirWords" destination="FEM-Gq-jBs" id="zkj-hJ-dYl"/>
                         <outlet property="SpiritButton" destination="Ghv-47-8xU" id="aNC-Nt-WsT"/>
                         <outlet property="SpiritualZodiac" destination="2hA-qj-tt5" id="ZCe-bc-RiW"/>
                         <outlet property="aTransitionBlur" destination="mcQ-ze-PCB" id="aUB-zc-hHX"/>
@@ -9644,6 +9684,7 @@
                         <outlet property="bodyButton" destination="wHn-Vg-i9V" id="KeZ-A5-i4A"/>
                         <outlet property="bodyImage" destination="6Au-p2-lVO" id="vX7-Ac-qNc"/>
                         <outlet property="bodyLabel" destination="ko1-Fq-qOY" id="gEa-QM-gCQ"/>
+                        <outlet property="bottomGradient" destination="9BJ-vU-k0C" id="Noh-rT-Bok"/>
                         <outlet property="categoryAddView" destination="3o9-2j-MlY" id="zZk-8d-Hhb"/>
                         <outlet property="chooseReadingLabel" destination="3yf-ST-Rkt" id="yCN-1Q-vnc"/>
                         <outlet property="chooseReadingView" destination="Imf-tT-Vra" id="egc-i2-R70"/>
@@ -9664,12 +9705,30 @@
                         <outlet property="depthMinusB" destination="Zhr-PV-VfP" id="0Rs-Os-DYd"/>
                         <outlet property="depthPlusB" destination="E0o-Y6-3IG" id="ix7-a1-QXg"/>
                         <outlet property="depthUpBtn" destination="KEC-bu-q7p" id="ogi-08-gRY"/>
+                        <outlet property="dhEmo1" destination="T3N-4U-UoW" id="GWH-R5-tYs"/>
+                        <outlet property="dhEmo2" destination="9L7-e1-0Cu" id="c5Q-wz-2kt"/>
+                        <outlet property="dhEmo3" destination="iW5-4i-Hvb" id="FQE-3c-395"/>
+                        <outlet property="dhInt1" destination="oY6-wI-zP5" id="WMv-as-PU6"/>
+                        <outlet property="dhInt2" destination="AV7-n2-RyQ" id="eY9-65-wC1"/>
+                        <outlet property="dhInt3" destination="Mhr-Zk-zew" id="Xem-rc-q9i"/>
+                        <outlet property="dhPhys1" destination="jGs-eX-sAZ" id="2CS-2E-e7F"/>
+                        <outlet property="dhPhys2" destination="DIQ-rO-THB" id="heS-3F-Via"/>
+                        <outlet property="dhPhys3" destination="TLX-S8-vv4" id="WQl-MG-cua"/>
                         <outlet property="dragonHead1" destination="0VD-ft-iiD" id="OuB-h9-9Fi"/>
                         <outlet property="dragonHead2" destination="1wu-zz-ygw" id="Z4j-cb-Dxu"/>
                         <outlet property="dragonHead3" destination="ZD0-Re-M4m" id="KcU-iI-dop"/>
                         <outlet property="dragonTail1" destination="7tb-pA-aDT" id="3Go-L1-qPg"/>
                         <outlet property="dragonTail2" destination="3Pq-gY-n6g" id="a7Y-ad-Cgb"/>
                         <outlet property="dragonTail3" destination="Z9a-tH-pPo" id="SZY-X7-G98"/>
+                        <outlet property="dtEmo1" destination="maa-Ch-tfY" id="Del-KZ-dcX"/>
+                        <outlet property="dtEmo2" destination="juu-UG-tNS" id="oWX-L7-cib"/>
+                        <outlet property="dtEmo3" destination="f6P-E6-VHH" id="8AV-Pg-8xd"/>
+                        <outlet property="dtInt1" destination="LKX-eM-Jam" id="XpG-vt-7cb"/>
+                        <outlet property="dtInt2" destination="lQx-Mb-pew" id="WMb-zY-6TF"/>
+                        <outlet property="dtInt3" destination="FXo-EV-NPQ" id="igo-xx-aZi"/>
+                        <outlet property="dtPhys1" destination="fae-gu-Tot" id="41d-KN-Jxr"/>
+                        <outlet property="dtPhys2" destination="Vln-9h-4pP" id="eY3-in-JQw"/>
+                        <outlet property="dtPhys3" destination="tgA-2e-1b2" id="28i-f7-6D8"/>
                         <outlet property="enterNewCategoryTextb" destination="DCS-ov-wIP" id="po6-QY-5TO"/>
                         <outlet property="enterNewMemberTextB" destination="z5G-9B-LQ9" id="52K-CA-bv4"/>
                         <outlet property="fullAddView" destination="gI4-9r-Uuk" id="9tE-Tv-IwT"/>
