@@ -788,33 +788,42 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
 
     }
     @IBAction func PhysicalBodyPress(_ sender: Any) {
+        if (m_CurrentDetailLevel == m_MasterDetail){
+            ButtonView.isHidden = false
+            ButtonImagesView.isHidden = false
+            bodyLabel.isHidden = false
+            bodyImage.isHidden = false
+            bandCounter.isHidden = false
+            balancePointButton.isHidden = false
+            bodyButton.isHidden = false
+            bodyButton.isHidden = false
+        }
+        selSpiritBand(SBody: 0)
         bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         IntellectualZodiac.isHidden = true
         EmotionalZodiac.isHidden = true
         SpiritualZodiac.isHidden = true
+        PhysicalZodiac.isHidden = false
         zodiacSV.delegate = self
         zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
         zodiacSV.setContentOffset(CGPoint(x: 0 , y: 1250), animated: true)
         zodiacSV.delegate = nil
-        ButtonView.isHidden = false
-        ButtonImagesView.isHidden = false
-        bodyLabel.isHidden = false
-        bodyImage.isHidden = false
-        bandCounter.isHidden = false
-        balancePointButton.isHidden = false
         NotesButton.isHidden = false
-        bodyButton.isHidden = false
         menuView.isHidden = false
+        NotesButton.isHidden = false
         connectionImage.isHidden = true
         PhysWords.isHidden = false
+        
     }
     @IBAction func EmotionalBodyPress(_ sender: Any) {
+        selSpiritBand(SBody: 1)
         bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         IntellectualZodiac.isHidden = true
         SpiritualZodiac.isHidden = true
         PhysicalZodiac.isHidden = true
+        EmotionalZodiac.isHidden = false
         zodiacSV.delegate = self
         zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
         zodiacSV.setContentOffset(CGPoint(x: 0 , y: 843), animated: true)
@@ -830,13 +839,16 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         menuView.isHidden = false
         connectionImage.isHidden = true
         EmoWords.isHidden = false
+       
     }
     @IBAction func IntellectBodyPress(_ sender: Any) {
+        selSpiritBand(SBody: 2)
         bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         SpiritualZodiac.isHidden = true
         EmotionalZodiac.isHidden = true
         PhysicalZodiac.isHidden = true
+        IntellectualZodiac.isHidden = false
         zodiacSV.delegate = self
         zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
         zodiacSV.setContentOffset(CGPoint(x: 0 , y: 416.5), animated: true)
@@ -854,12 +866,14 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         IntWords.isHidden = false
     }
     @IBAction func SpiritBodyPress(_ sender: Any) {
+        selSpiritBand(SBody: 3)
         bottomGradient.isHidden = false
         BodiesLabelView.isHidden = true
         IntellectualZodiac.isHidden = true
         EmotionalZodiac.isHidden = true
         PhysicalZodiac.isHidden = true
-         zodiacSV.delegate = self
+        SpiritualZodiac.isHidden = false
+        zodiacSV.delegate = self
         zodiacSV.zoom(to:CGRect(x:0,y:0,width:299,height:200), animated:true)
         zodiacSV.setContentOffset(CGPoint(x: 0 , y: 0), animated: false)
         zodiacSV.delegate = nil
@@ -886,10 +900,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var BodiesLabelView: UIView!
     @IBAction func pressBand(_ sender: Any) {
         
-        selSpiritBand(SBody: 0)
-        selSpiritBand(SBody: 1)
-        selSpiritBand(SBody: 2)
-        selSpiritBand(SBody: 3)
+        
         
         bottomGradient.isHidden = true
         connectionImage.isHidden = false
@@ -916,9 +927,9 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         zodiacSV.setContentOffset(CGPoint(x: -8 , y: 50), animated: true)
         
         BodiesLabelView.isHidden = false
-        ContentView.bringSubview(toFront: bandView)
+        //ContentView.bringSubview(toFront: bandView)
         updateBodyLabelText()
-        ContentView.bringSubview(toFront:SpiritButton)
+       // ContentView.bringSubview(toFront:SpiritButton)
         
         zodiacSV.delegate = nil
     }
@@ -1046,9 +1057,28 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
                 var newAd = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]
                 advanceToCycle(pastCycle: curCy!, newCycle: newCy!, newAdvancement: newAd!, newBody: 0)
                 updateBodyLabelText()
-               
+                selSpiritBand(SBody: 0)
+                selSpiritBand(SBody: 1)
+                selSpiritBand(SBody: 2)
+                selSpiritBand(SBody: 3)
+                
+                switch(m_CurrentSBody){
+                case 0:
+                    PhysicalBodyPress(self)
+                case 1:
+                    EmotionalBodyPress(self)
+                case 2:
+                    IntellectBodyPress(self)
+                default:
+                    SpiritBodyPress(self)
+                }
+                
             }
-           
+            else {
+                PhysicalBodyPress(self)
+                
+            }
+            
             loadAP()
         }
     }
@@ -1642,12 +1672,32 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             advanceToCycle(pastCycle:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody"+String(m_CurrentSBody)+"Cycle"]!, newCycle:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Cycle"]!, newAdvancement:m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].advancementInfo["SBody0Advancement"]! , newBody:m_BeginnerDetail)
             m_CurrentSBody = 0
         }
+        
+        
             
         
         
         updateBodyLabelText()
         displayCurrentDetailLevel()
         loadAP()
+        
+        if (m_CurrentDetailLevel == m_MasterDetail){
+            selSpiritBand(SBody: 0)
+            selSpiritBand(SBody: 1)
+            selSpiritBand(SBody: 2)
+            selSpiritBand(SBody: 3)
+            
+            switch(m_CurrentSBody){
+            case 0:
+                PhysicalBodyPress(self)
+            case 1:
+                EmotionalBodyPress(self)
+            case 2:
+                IntellectBodyPress(self)
+            default:
+                SpiritBodyPress(self)
+            }
+        }
        
         
         //var Json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
