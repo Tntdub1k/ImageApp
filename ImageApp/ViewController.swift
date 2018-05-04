@@ -806,8 +806,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         SpiritualZodiac.isHidden = true
         PhysicalZodiac.isHidden = false
         zodiacSV.delegate = self
-        zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
-        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 1250), animated: true)
+        //zodiacSV.setContentOffset(CGPoint(x: 0 , y: 250), animated:true)
+        //zodiacSV.setContentOffset(CGPoint(x: 0 , y: 1250), animated: false)
+        //zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
+        zodiacSV.zoom(to:CGRect(x:0,y:1114,width:299,height:200), animated:true)
         zodiacSV.delegate = nil
         NotesButton.isHidden = false
         menuView.isHidden = false
@@ -825,8 +827,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         PhysicalZodiac.isHidden = true
         EmotionalZodiac.isHidden = false
         zodiacSV.delegate = self
-        zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
-        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 843), animated: true)
+        zodiacSV.zoom(to:CGRect(x:0,y:780,width:299,height:200), animated:true)
+       // zodiacSV.setContentOffset(CGPoint(x: 0 , y: 850), animated: true)
         zodiacSV.delegate = nil
         ButtonView.isHidden = false
         ButtonImagesView.isHidden = false
@@ -850,8 +852,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         PhysicalZodiac.isHidden = true
         IntellectualZodiac.isHidden = false
         zodiacSV.delegate = self
-        zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
-        zodiacSV.setContentOffset(CGPoint(x: 0 , y: 416.5), animated: true)
+        zodiacSV.zoom(to:CGRect(x:0,y:447,width:299,height:200), animated:true)
+        //zodiacSV.setContentOffset(CGPoint(x: 0 , y: 416.5), animated: true)
         zodiacSV.delegate = nil
         ButtonView.isHidden = false
         ButtonImagesView.isHidden = false
