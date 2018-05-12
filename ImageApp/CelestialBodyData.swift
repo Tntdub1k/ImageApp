@@ -604,6 +604,10 @@ public class CelestialBodyListing:Codable{
         Pylenor.DisplayName = "Pylenor"
         AllCelestialBodies["Pylenor"] = Pylenor
         
+        let Nefertiti = CelestialBody()
+        Nefertiti.DisplayName = "Nefertiti"
+        AllCelestialBodies["Nefertiti"] = Nefertiti
+        
     }
     
 }

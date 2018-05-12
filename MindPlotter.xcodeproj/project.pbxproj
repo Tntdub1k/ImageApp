@@ -98,6 +98,8 @@
 		01274D8B200EACCD007D2DD2 /* bkg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D86200EACB7007D2DD2 /* bkg3.png */; };
 		01274D8C200EACCD007D2DD2 /* bkg4.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D87200EACB8007D2DD2 /* bkg4.png */; };
 		01274D8D200EACCD007D2DD2 /* bkg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D88200EACC6007D2DD2 /* bkg2.png */; };
+		0129EC5920A4AF6B001B655A /* Nemesis.png in Resources */ = {isa = PBXBuildFile; fileRef = 0129EC5720A4AF62001B655A /* Nemesis.png */; };
+		0129EC5A20A4AF6B001B655A /* Nefertiti.png in Resources */ = {isa = PBXBuildFile; fileRef = 0129EC5820A4AF67001B655A /* Nefertiti.png */; };
 		01304E121FEAD70E000F24E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E111FEAD70E000F24E9 /* AppDelegate.swift */; };
 		01304E141FEAD70E000F24E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E131FEAD70E000F24E9 /* ViewController.swift */; };
 		01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01304E151FEAD70E000F24E9 /* Main.storyboard */; };
@@ -253,6 +255,8 @@
 		01274D86200EACB7007D2DD2 /* bkg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg3.png; path = ../../../Documents/bkg3.png; sourceTree = "<group>"; };
 		01274D87200EACB8007D2DD2 /* bkg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg4.png; path = ../../../Documents/bkg4.png; sourceTree = "<group>"; };
 		01274D88200EACC6007D2DD2 /* bkg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg2.png; path = ../../../Documents/bkg2.png; sourceTree = "<group>"; };
+		0129EC5720A4AF62001B655A /* Nemesis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nemesis.png; path = ../../../Documents/Nemesis.png; sourceTree = "<group>"; };
+		0129EC5820A4AF67001B655A /* Nefertiti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nefertiti.png; path = ../../../Documents/Nefertiti.png; sourceTree = "<group>"; };
 		01304E0E1FEAD70E000F24E9 /* MindPlotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindPlotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01304E111FEAD70E000F24E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01304E131FEAD70E000F24E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +357,8 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				0129EC5820A4AF67001B655A /* Nefertiti.png */,
+				0129EC5720A4AF62001B655A /* Nemesis.png */,
 				018F4ABD209BCD2100995E37 /* connection.png */,
 				01972FD42099F4B400AF2899 /* Ixion.png */,
 				01972FD52099F4B400AF2899 /* Pylenor.png */,
@@ -575,6 +581,7 @@
 				018112551FEF76300071111D /* cosmos.jpeg in Resources */,
 				01304E2C1FEB0C38000F24E9 /* ZodiacMandala.png in Resources */,
 				0181128B1FF3F8D10071111D /* minusRotate2.png in Resources */,
+				0129EC5A20A4AF6B001B655A /* Nefertiti.png in Resources */,
 				01143639200D60B800B75813 /* Heracles.png in Resources */,
 				01143638200D60B800B75813 /* Hekate.png in Resources */,
 				01143617200ACE4D00B75813 /* dragonsTail12.png in Resources */,
@@ -610,6 +617,7 @@
 				0116F6E720093A8F00F76E0F /* ring12gauge5.png in Resources */,
 				01143625200D2BB300B75813 /* Eris.png in Resources */,
 				018112831FF17A830071111D /* gradient.png in Resources */,
+				0129EC5920A4AF6B001B655A /* Nemesis.png in Resources */,
 				011BDBCF2018F36900D18898 /* off6.png in Resources */,
 				01972FD72099F4B500AF2899 /* Pylenor.png in Resources */,
 				01143612200ACE4D00B75813 /* dragonsTail2.png in Resources */,
