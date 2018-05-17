@@ -24,13 +24,14 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.stopPageControl(notification:)), name: Notification.Name("StopPageControl"), object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.startPageControl(notification:)), name: Notification.Name("StartPageControl"), object: nil)
         
-        
+        self.view.backgroundColor = UIColor.clear
         
         self.delegate = self
         self.dataSource = self
@@ -212,7 +213,71 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
     }
 }
 
+class MainViewBkg: UIViewController{
+    
+    @IBOutlet weak var mainBackground: UIImageView!
+    var m_CurrentBKG = 0
+    var m_bkgImgs = ["187609.jpg","bkg1","bkg2","bkg3","bkg4","bkg5"]
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        
+        
+        if (UserDefaults.standard.string(forKey: "MindMapCurrentBkg") == nil){
+            loadSampleBkg()
+        }else{
+            var currentBkg  = UserDefaults.standard.string(forKey: "MindMapCurrentBkg")
+            
+            
+            let date = Date() // now
+            let cal = Calendar.current
+            let day = cal.ordinality(of: .day, in: .year, for: date)
+            
+            
+            var lastDOY  = Int(UserDefaults.standard.string(forKey: "MindMapLastDOY")!)!
+            
+            
+            if (lastDOY != day){
+                m_CurrentBKG = Int(currentBkg!)! + 1
+                if (m_CurrentBKG >= m_bkgImgs.count){
+                    m_CurrentBKG = 0
+                }
+            } else {
+                m_CurrentBKG = Int(currentBkg!)!
+            }
+            
+            
+            mainBackground.image = UIImage(named: m_bkgImgs[m_CurrentBKG])
+            
+            UserDefaults.standard.set(String(m_CurrentBKG), forKey: "MindMapCurrentBkg")
+            UserDefaults.standard.set(day, forKey: "MindMapLastDOY")
+            
+        }
+        
+    }
+    
+    
+    
+    func loadSampleBkg(){
+        m_CurrentBKG = 0
+        UserDefaults.standard.set(String(m_CurrentBKG), forKey: "MindMapCurrentBkg")
+        
+        
+        let date = Date() // now
+        let cal = Calendar.current
+        let day = cal.ordinality(of: .day, in: .year, for: date)
+        
+        UserDefaults.standard.set(day, forKey: "MindMapLastDOY")
+        
+        mainBackground.image = UIImage(named: m_bkgImgs[m_CurrentBKG])
+        
+    }
+    
+}
 
 class IChingViewController: UIViewController{
     let m_IChing = IChing()
@@ -772,6 +837,18 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBOutlet weak var connectionImage: UIImageView!
     @IBOutlet weak var bandView: UIView!
     func clearAllViewsFromScreen(){
+   
+        addView.isHidden = true
+        fullAddView.isHidden = true
+        categoryAddView.isHidden = true
+        selectView.isHidden = true
+        renameView.isHidden = true
+        deleteView.isHidden = true
+        CBview.isHidden = true
+        chooseReadingView.isHidden = true
+        bandView.isHidden = true
+        NotesView.isHidden = true
+        settingsView.isHidden = true
         ContentView.sendSubview(toBack:selectPicker)
         ContentView.sendSubview(toBack:addView)
         ContentView.endEditing(true)
@@ -939,6 +1016,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         ContentView.endEditing(true)
     }
     @IBAction func pressLoadSettings(_ sender: Any) {
+        settingsView.isHidden = false
         ContentView.bringSubview(toFront: settingsView)
         NotificationCenter.default.post(name: Notification.Name("StopPageControl"), object: nil)
 
@@ -1097,14 +1175,17 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBAction func addPressed(_ sender: Any) {
         addPicker.reloadAllComponents()
         clearAllViewsFromScreen()
+        addView.isHidden = false
         ContentView.bringSubview(toFront: addView)
     }
     @IBAction func addNewMemberPushed(_ sender: Any) {
+        fullAddView.isHidden = false
         ContentView.bringSubview(toFront: fullAddView)
         enterNewMemberTextB.text = ""
     }
   
     @IBAction func addNewCategoryPushed(_ sender: Any) {
+        categoryAddView.isHidden = false
         ContentView.bringSubview(toFront: categoryAddView)
         enterNewCategoryTextb.text = ""
     }
@@ -1117,6 +1198,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
       //  pressedSave(self)
     }
     @IBAction func RenamePushed(_ sender: Any) {
+        renameView.isHidden = false
         ContentView.bringSubview(toFront: renameView)
         renameTextB.text = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].IndividualName
         
@@ -1133,6 +1215,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     }
     
     @IBAction func PressedDelete(_ sender: Any) {
+        deleteView.isHidden = false
         ContentView.bringSubview(toFront: deleteView)
     }
     @IBAction func pressedYesDelete(_ sender: Any) {
@@ -1152,6 +1235,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         var aCB = sender.accessibilityIdentifier as! String
         if ((aCB == "Empty") || ((m_CurrentDetailLevel == m_BeginnerDetail) && (beginnerCBsList.contains(aCB) == false)) ||
             ((m_CurrentDetailLevel == m_IntermediateDetail) && (intermediateCBsList.contains(aCB) == false))){
+            CBview.isHidden = false
             ContentView.bringSubview(toFront: CBview)
         }
         else {
@@ -1192,7 +1276,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
             var IP = IndexPath(row:0, section:0)
             chooseReadingsTableV.selectRow(at: IP, animated: true, scrollPosition: UITableViewScrollPosition(rawValue: 0)!)
         
-
+            chooseReadingView.isHidden = false
             ContentView.bringSubview(toFront: chooseReadingView)
             
         }
@@ -1261,6 +1345,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         //NotesLabel.isHidden = true
         //NotesTextBox.isHidden = true
         //NotesSaveButton.isHidden = true
+        NotesView.isHidden = false
         ContentView.bringSubview(toFront: NotesView)
         m_currentNote = m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote
         switch (m_currentNote){
@@ -1286,6 +1371,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         //ButtonView.isHidden = false
         //NotesView.isHidden = true
        ContentView.sendSubview(toBack: NotesView)
+        NotesView.isHidden = true
         m_ADB.Database[m_CurrentCategory].Contents[m_CurrentIndividual].currentNote = m_currentNote
         
         
@@ -1447,8 +1533,10 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     @IBAction func SelectPressed(_ sender: Any) {
         
      //   pressedSave(self)
+        //clearAllViewsFromScreen()
+        selectView.isHidden = false
+        
         selectPicker.reloadAllComponents()
-        clearAllViewsFromScreen()
         ContentView.bringSubview(toFront: selectView)
     }
     var m_ADB = AstrologicalDatabase()
@@ -1629,40 +1717,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
        
         
         
-        if (UserDefaults.standard.string(forKey: "MindMapCurrentBkg") == nil){
-            loadSampleBkg()
-        }else{
-            var currentBkg  = UserDefaults.standard.string(forKey: "MindMapCurrentBkg")
-            
-            
-            let date = Date() // now
-            let cal = Calendar.current
-            let day = cal.ordinality(of: .day, in: .year, for: date)
-            
-            
-            var lastDOY  = Int(UserDefaults.standard.string(forKey: "MindMapLastDOY")!)!
-  
-                 
-            if (lastDOY != day){
-                m_CurrentBKG = Int(currentBkg!)! + 1
-                if (m_CurrentBKG >= m_bkgImgs.count){
-                    m_CurrentBKG = 0
-                }
-            } else {
-                m_CurrentBKG = Int(currentBkg!)!
-            }
-            
-            
-            mainBackground.image = UIImage(named: m_bkgImgs[m_CurrentBKG])
-            
-            UserDefaults.standard.set(String(m_CurrentBKG), forKey: "MindMapCurrentBkg")
-            UserDefaults.standard.set(day, forKey: "MindMapLastDOY")
-            
-            
-            
-           
-          
-        }
+ 
         
 
         
