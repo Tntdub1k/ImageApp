@@ -14,7 +14,7 @@
         <scene sceneID="s8o-TG-RdP">
             <objects>
                 <viewController storyboardIdentifier="IChingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MVi-sV-Buo" customClass="IChingViewController" customModule="MindPlotter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="D14-qS-o4G" customClass="IChingVIewController" customModule="MindPlotter" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="D14-qS-o4G" customClass="IChingVIewController" customModule="MindPlotter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -297,10 +297,10 @@
                                         <state key="normal" title="Lines"/>
                                     </button>
                                     <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-ud-tQG">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="764" height="647"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="zbK-sP-a8v">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="764" height="647"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="light"/>
@@ -323,6 +323,7 @@
                         <outlet property="SqrCir5" destination="cIK-U3-B2K" id="cQ0-lD-wSG"/>
                         <outlet property="SqrCir6" destination="1Gq-YO-for" id="t9t-Ib-w3r"/>
                         <outlet property="altTitlesLabel" destination="gzv-Z6-wYe" id="Wn2-vY-vqe"/>
+                        <outlet property="iChingMainView" destination="jmQ-5z-tXY" id="V8w-W1-Xtt"/>
                         <outlet property="line1" destination="N3E-2v-iiE" id="jl9-ey-qRY"/>
                         <outlet property="line1Title" destination="d9h-8c-FQZ" id="ZGK-kU-8B7"/>
                         <outlet property="line2" destination="j2m-2V-MND" id="xLF-Mq-7ju"/>
@@ -353,7 +354,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="VCAstro" id="BYZ-38-t0r" customClass="ViewController" customModule="MindPlotter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -366,10 +367,10 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-ze-PCB">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                                <rect key="frame" x="-385" y="0.0" width="760" height="647"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="dTP-gZ-UgA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="760" height="647"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </view>
                                                 <blurEffect style="light"/>
@@ -1141,7 +1142,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="9BJ-vU-k0C">
-                                                        <rect key="frame" x="0.0" y="546" width="376" height="103"/>
+                                                        <rect key="frame" x="-385" y="546" width="1158" height="103"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     </imageView>
                                                     <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOU-Hd-M1B">
@@ -9759,7 +9760,7 @@
         <!--Main View Bkg-->
         <scene sceneID="6HF-Aw-p6j">
             <objects>
-                <viewController id="i7v-SF-Pxj" customClass="MainViewBkg" customModule="MindPlotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewBkg" id="i7v-SF-Pxj" customClass="MainViewBkg" customModule="MindPlotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwn-dY-eJV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9776,11 +9777,21 @@
                                     <segue destination="q5C-KU-NLt" kind="embed" id="DXO-ij-dDK"/>
                                 </connections>
                             </containerView>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-qa-vsZ">
+                                <rect key="frame" x="0.0" y="18" width="375" height="649"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="fOh-Eq-R28">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="649"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="jkH-Fu-sce"/>
                     </view>
                     <connections>
+                        <outlet property="blurEffect" destination="ycb-qa-vsZ" id="LwO-Cb-ZRi"/>
                         <outlet property="mainBackground" destination="uIo-Uf-V95" id="mMZ-Zs-3kG"/>
                     </connections>
                 </viewController>
@@ -9791,7 +9802,7 @@
         <!--PVC-->
         <scene sceneID="MhV-2o-tsv">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="q5C-KU-NLt" customClass="PVC" customModule="MindPlotter" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q5C-KU-NLt" customClass="PVC" customModule="MindPlotter" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9p-qK-Jux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="279" y="1019"/>
@@ -9919,6 +9930,6 @@
         <image name="yang.png" width="287" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NCm-ZS-QhN"/>
+        <segue reference="DXO-ij-dDK"/>
     </inferredMetricsTieBreakers>
 </document>

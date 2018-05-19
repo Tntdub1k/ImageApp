@@ -76,6 +76,7 @@
 		0116F6F52009440A00F76E0F /* ring6gauge5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6EF2009440300F76E0F /* ring6gauge5.png */; };
 		0116F6F62009440A00F76E0F /* ring6gauge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6F02009440600F76E0F /* ring6gauge1.png */; };
 		0116F6F72009440A00F76E0F /* ring6gauge6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6F12009440700F76E0F /* ring6gauge6.png */; };
+		011753D620B06C3A00CAA2C2 /* Haumea.png in Resources */ = {isa = PBXBuildFile; fileRef = 011753D520B06C3800CAA2C2 /* Haumea.png */; };
 		011BDBCB2017CDEA00D18898 /* adjusterBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCA2017CDE700D18898 /* adjusterBack.png */; };
 		011BDBCD2017DB7900D18898 /* off12.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCC2017DB7800D18898 /* off12.png */; };
 		011BDBCF2018F36900D18898 /* off6.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCE2018F36600D18898 /* off6.png */; };
@@ -233,6 +234,7 @@
 		0116F6EF2009440300F76E0F /* ring6gauge5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge5.png; path = ../../../Documents/ring6gauge5.png; sourceTree = "<group>"; };
 		0116F6F02009440600F76E0F /* ring6gauge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge1.png; path = ../../../Documents/ring6gauge1.png; sourceTree = "<group>"; };
 		0116F6F12009440700F76E0F /* ring6gauge6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge6.png; path = ../../../Documents/ring6gauge6.png; sourceTree = "<group>"; };
+		011753D520B06C3800CAA2C2 /* Haumea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Haumea.png; path = ../../../Documents/Haumea.png; sourceTree = "<group>"; };
 		011BDBCA2017CDE700D18898 /* adjusterBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adjusterBack.png; path = ../../Documents/adjusterBack.png; sourceTree = "<group>"; };
 		011BDBCC2017DB7800D18898 /* off12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = off12.png; path = ../../../Documents/off12.png; sourceTree = "<group>"; };
 		011BDBCE2018F36600D18898 /* off6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = off6.png; path = ../../../Documents/off6.png; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				011753D520B06C3800CAA2C2 /* Haumea.png */,
 				0129EC5820A4AF67001B655A /* Nefertiti.png */,
 				0129EC5720A4AF62001B655A /* Nemesis.png */,
 				018F4ABD209BCD2100995E37 /* connection.png */,
@@ -696,6 +699,7 @@
 				01143629200D32ED00B75813 /* South Node.png in Resources */,
 				01304E191FEAD70E000F24E9 /* Assets.xcassets in Resources */,
 				01BCA6CD201A627E003E7EBA /* set3.png in Resources */,
+				011753D620B06C3A00CAA2C2 /* Haumea.png in Resources */,
 				01304E171FEAD70E000F24E9 /* Main.storyboard in Resources */,
 				01BCA6C3201A627E003E7EBA /* set4.png in Resources */,
 				011D7BF61FEB59C9001E3417 /* cp1.png in Resources */,

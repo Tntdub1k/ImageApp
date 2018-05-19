@@ -12,6 +12,7 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
     var pages = [UIViewController]()
     var page1: UIViewController!
     var page2: UIViewController!
+    var page3: UIViewController!
     var curIndex = 1
     
     @objc func stopPageControl(notification: NSNotification) {
@@ -38,7 +39,9 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
         
         page1 = storyboard!.instantiateViewController(withIdentifier:"VCAstro")
         page2 = storyboard!.instantiateViewController(withIdentifier:"IChingVC")
-    
+        page3 = storyboard!.instantiateViewController(withIdentifier:"MainViewBkg")
+        
+        
         
         pages.append(page1)
         pages.append(page2)
@@ -57,9 +60,15 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    func getFloatMain(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
+        var ret: CGFloat = 0.0
+        ret = 1 - abs(aOffset - (aWidth/2))/(aWidth/2)
+        return ret
+    }
 
     
-    let transitionScalar :CGFloat  = 1.07
+    let transitionScalar :CGFloat  = 1.7
     func getFloatAstro2(aWidth:CGFloat, aOffset:CGFloat)->CGFloat{
         var ret :CGFloat = 0.0
         if (aOffset <= aWidth){
@@ -178,10 +187,13 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
                 (page1 as! ViewController).setOpacity(aLevel:getFloatAstro1(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
                 
                 (page2 as! IChingViewController).setOpacity(aLevel:getFloatAstro2(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
+            
+            (page3 as! MainViewBkg).setOpacity(aLevel: getFloatMain(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
 
         } else {
             (page2 as! IChingViewController).setOpacity(aLevel:getFloatAstro1Up(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
             (page1 as! ViewController).setOpacity(aLevel:getFloatAstro2Up(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
+            (page3 as! MainViewBkg).setOpacity(aLevel: getFloatMain(aWidth:scrollView.frame.width,aOffset:scrollView.contentOffset.x) )
         }
         
     }
@@ -215,14 +227,25 @@ class PVC:UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDele
 
 class MainViewBkg: UIViewController{
     
+    var animator: UIViewPropertyAnimator?
     @IBOutlet weak var mainBackground: UIImageView!
     var m_CurrentBKG = 0
     var m_bkgImgs = ["187609.jpg","bkg1","bkg2","bkg3","bkg4","bkg5"]
+    var mainViewLoaded = false
     
+    @IBOutlet weak var blurEffect: UIVisualEffectView!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
+    func setOpacity(aLevel:CGFloat){
+        //viewDidLoad()
+        if (mainViewLoaded == true){
+            //blurEffect.alpha = aLevel
+        }
+       
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -258,6 +281,16 @@ class MainViewBkg: UIViewController{
             
         }
         
+        animator = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            
+            // this is the main trick, animating between a blur effect and nil is how you can manipulate blur radius
+            self.blurEffect.effect = nil
+       }
+        //animator?.pausesOnCompletion = true
+        animator?.fractionComplete = 1.0
+        
+        
+        mainViewLoaded = true
     }
     
     
@@ -285,7 +318,7 @@ class IChingViewController: UIViewController{
     
     
     var animator: UIViewPropertyAnimator?
-    
+    var iChingMainViewLoaded = false
     @IBOutlet weak var transitionBlur: UIVisualEffectView!
     @IBOutlet weak var SqrCir1: UILabel!
     @IBOutlet weak var SqrCir2: UILabel!
@@ -324,6 +357,7 @@ class IChingViewController: UIViewController{
         
         m_CurrentHexagram = Int(arc4random_uniform(63) + 1)
         loadHexagram()
+        iChingMainViewLoaded = true
     }
     @IBAction func clickNext(_ sender: Any) {
         m_CurrentHexagram = m_CurrentHexagram + 1
@@ -376,8 +410,13 @@ class IChingViewController: UIViewController{
     
     func setOpacity(aLevel:CGFloat){
         animator?.fractionComplete = CGFloat(aLevel)
+        if (iChingMainViewLoaded == true){
+                iChingMainView.alpha = aLevel
+        }
+        
     }
     
+    @IBOutlet weak var iChingMainView: UIView!
     @IBOutlet weak var numberLine1: UILabel!
     @IBOutlet weak var numberLine2: UILabel!
     @IBOutlet weak var numberLine4: UILabel!
@@ -568,6 +607,7 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
     
     func setOpacity(aLevel:CGFloat){
          aAnimator?.fractionComplete = CGFloat(aLevel)
+        topView.alpha = CGFloat(aLevel)
     }
     
     @IBOutlet var tapRecognizer: UITapGestureRecognizer!

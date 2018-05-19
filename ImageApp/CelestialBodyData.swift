@@ -608,6 +608,14 @@ public class CelestialBodyListing:Codable{
         Nefertiti.DisplayName = "Nefertiti"
         AllCelestialBodies["Nefertiti"] = Nefertiti
         
+        let Nemesis = CelestialBody()
+        Nemesis.DisplayName = "Nemesis"
+        AllCelestialBodies["Nemesis"] = Nemesis
+        
+        let Haumea = CelestialBody()
+        Haumea.DisplayName = "Haumea"
+        AllCelestialBodies["Haumea"] = Haumea
+        
     }
     
 }
