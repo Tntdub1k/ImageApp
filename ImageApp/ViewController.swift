@@ -926,7 +926,8 @@ UITableViewDataSource, UIGestureRecognizerDelegate{
         //zodiacSV.setContentOffset(CGPoint(x: 0 , y: 250), animated:true)
         //zodiacSV.setContentOffset(CGPoint(x: 0 , y: 1250), animated: false)
         //zodiacSV.zoom(to:CGRect(x:0,y:242,width:299,height:200), animated:true)
-        zodiacSV.zoom(to:CGRect(x:0,y:1114,width:299,height:200), animated:true)
+        zodiacSV.zoom(to:CGRect(x:0,y:1114,width:319,height:200), animated:true)
+        zodiacSV.setContentOffset(CGPoint(x: -13 , y: 1174), animated: false)
         zodiacSV.delegate = nil
         NotesButton.isHidden = false
         menuView.isHidden = false

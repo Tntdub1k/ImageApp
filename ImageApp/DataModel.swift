@@ -95,17 +95,19 @@ public class RotateableRing: Codable{
         var success = false
         while success == false {
             for  i in (0...newR.count) {
-                if ((newR[i].CurrentCelestialBody == "Empty") || (newR[i].CurrentCelestialBody == "empty") || (newR[i].CurrentCelestialBody == "")){
-                    newR[i].CurrentCelestialBody = CelestialBody
-                    success = true
-                    break
-                }
-                if (success == true){
-                    break
-                }
-                if (i == newR.count - 1){
-                    //Error, maxed out rings at newR[i].CurrentCelestialBody
-                    success = true
+                if i <= 5{
+                    if ((newR[i].CurrentCelestialBody == "Empty") || (newR[i].CurrentCelestialBody == "empty") || (newR[i].CurrentCelestialBody == "")){
+                        newR[i].CurrentCelestialBody = CelestialBody
+                        success = true
+                        break
+                    }
+                    if (success == true){
+                        break
+                    }
+                    if (i == newR.count - 1){
+                        //Error, maxed out rings at newR[i].CurrentCelestialBody
+                        success = true
+                    }
                 }
             }
         }

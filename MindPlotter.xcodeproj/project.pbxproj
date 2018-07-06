@@ -99,6 +99,7 @@
 		01274D8B200EACCD007D2DD2 /* bkg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D86200EACB7007D2DD2 /* bkg3.png */; };
 		01274D8C200EACCD007D2DD2 /* bkg4.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D87200EACB8007D2DD2 /* bkg4.png */; };
 		01274D8D200EACCD007D2DD2 /* bkg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01274D88200EACC6007D2DD2 /* bkg2.png */; };
+		012773A220B473D600AF3BCE /* Quaoar.png in Resources */ = {isa = PBXBuildFile; fileRef = 012773A120B473D500AF3BCE /* Quaoar.png */; };
 		0129EC5920A4AF6B001B655A /* Nemesis.png in Resources */ = {isa = PBXBuildFile; fileRef = 0129EC5720A4AF62001B655A /* Nemesis.png */; };
 		0129EC5A20A4AF6B001B655A /* Nefertiti.png in Resources */ = {isa = PBXBuildFile; fileRef = 0129EC5820A4AF67001B655A /* Nefertiti.png */; };
 		01304E121FEAD70E000F24E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304E111FEAD70E000F24E9 /* AppDelegate.swift */; };
@@ -257,6 +258,7 @@
 		01274D86200EACB7007D2DD2 /* bkg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg3.png; path = ../../../Documents/bkg3.png; sourceTree = "<group>"; };
 		01274D87200EACB8007D2DD2 /* bkg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg4.png; path = ../../../Documents/bkg4.png; sourceTree = "<group>"; };
 		01274D88200EACC6007D2DD2 /* bkg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkg2.png; path = ../../../Documents/bkg2.png; sourceTree = "<group>"; };
+		012773A120B473D500AF3BCE /* Quaoar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Quaoar.png; path = ../../../Documents/Quaoar.png; sourceTree = "<group>"; };
 		0129EC5720A4AF62001B655A /* Nemesis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nemesis.png; path = ../../../Documents/Nemesis.png; sourceTree = "<group>"; };
 		0129EC5820A4AF67001B655A /* Nefertiti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nefertiti.png; path = ../../../Documents/Nefertiti.png; sourceTree = "<group>"; };
 		01304E0E1FEAD70E000F24E9 /* MindPlotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindPlotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +361,7 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				012773A120B473D500AF3BCE /* Quaoar.png */,
 				011753D520B06C3800CAA2C2 /* Haumea.png */,
 				0129EC5820A4AF67001B655A /* Nefertiti.png */,
 				0129EC5720A4AF62001B655A /* Nemesis.png */,
@@ -589,6 +592,7 @@
 				01143638200D60B800B75813 /* Hekate.png in Resources */,
 				01143617200ACE4D00B75813 /* dragonsTail12.png in Resources */,
 				01143618200ACE4D00B75813 /* dragonsTail3.png in Resources */,
+				012773A220B473D600AF3BCE /* Quaoar.png in Resources */,
 				01BCA6C6201A627E003E7EBA /* set12.png in Resources */,
 				0116F6D620092E2A00F76E0F /* ring12gauge2.png in Resources */,
 				018112701FF01F980071111D /* Venus.png in Resources */,

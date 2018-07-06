@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i7v-SF-Pxj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i7v-SF-Pxj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1309,7 +1309,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <subviews>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="OGd-P2-xBf">
-                                                                                        <rect key="frame" x="7" y="7" width="322" height="322"/>
+                                                                                        <rect key="frame" x="-36" y="-37" width="409" height="410"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                                                     </imageView>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead3.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZD0-Re-M4m">
@@ -3327,7 +3327,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <subviews>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="LcS-jt-YZW">
-                                                                                        <rect key="frame" x="7" y="7" width="322" height="322"/>
+                                                                                        <rect key="frame" x="-36" y="-37" width="409" height="409"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                                                     </imageView>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mhr-Zk-zew">
@@ -5345,7 +5345,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <subviews>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fz1-ZR-NfW">
-                                                                                        <rect key="frame" x="7" y="7" width="322" height="322"/>
+                                                                                        <rect key="frame" x="-36" y="-37" width="409" height="409"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                                                     </imageView>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead3.png" translatesAutoresizingMaskIntoConstraints="NO" id="iW5-4i-Hvb">
@@ -7363,7 +7363,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <subviews>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ZodiacMandala.png" translatesAutoresizingMaskIntoConstraints="NO" id="5ek-N4-6Lt">
-                                                                                        <rect key="frame" x="7" y="7" width="322" height="322"/>
+                                                                                        <rect key="frame" x="-36" y="-37" width="409" height="409"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                                                     </imageView>
                                                                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dragonHead3.png" translatesAutoresizingMaskIntoConstraints="NO" id="TLX-S8-vv4">
@@ -9805,7 +9805,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q5C-KU-NLt" customClass="PVC" customModule="MindPlotter" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9p-qK-Jux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="1019"/>
+            <point key="canvasLocation" x="322" y="1281"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="D4k-uW-Xeq">
@@ -9874,7 +9874,7 @@
                                         <state key="normal" title="&lt;&lt;" image="exitIcon.png"/>
                                         <connections>
                                             <action selector="clickGoBack:" destination="61v-Jc-cqi" eventType="touchUpInside" id="NUJ-pc-h5z"/>
-                                            <segue destination="q5C-KU-NLt" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="NCm-ZS-QhN"/>
+                                            <segue destination="i7v-SF-Pxj" kind="presentation" modalTransitionStyle="crossDissolve" id="KSe-jq-1Mr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -9905,7 +9905,7 @@
         <image name="DignifiedFall.png" width="194" height="200"/>
         <image name="Image.png" width="750" height="1334"/>
         <image name="Moon.png" width="194" height="202"/>
-        <image name="ZodiacMandala.png" width="2150" height="2150"/>
+        <image name="ZodiacMandala.png" width="2731" height="2731"/>
         <image name="adjusterBack.png" width="1002" height="1034"/>
         <image name="arrowDown.png" width="576" height="650"/>
         <image name="arrowUp.png" width="576" height="650"/>
@@ -9929,7 +9929,4 @@
         <image name="words.png" width="489" height="361"/>
         <image name="yang.png" width="287" height="34"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="DXO-ij-dDK"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -190,7 +190,7 @@ public class WebsiteDataBase:Codable{
             var THWE = TwelveHouseWE()
             for house in houses{
                 THWE.data[house]?.URL = "Websites/OrcusInHouses"
-                THWE.data[house]?.DisplayName = "Orcus In Houses"
+                THWE.data[house]?.DisplayName = "Orcus In the Houses"
                 THWE.data[house]?.extensionType = "txt"
                 THWE.data[house]?.website = "reprogramatrix.tripod.com"
                 THWE.data[house]?.author = "Klaudio Zic"
@@ -200,12 +200,25 @@ public class WebsiteDataBase:Codable{
             database[CBname]?.append(THWE)
         }
         
+        for CBname in ["Haumea"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Haumea"
+                THWE.data[house]?.DisplayName = "Haumea in the Houses"
+                THWE.data[house]?.extensionType = "txt"
+                THWE.data[house]?.website = "reprogramatrix.tripod.com"
+                THWE.data[house]?.author = ""
+                THWE.data[house]?.abbreviation = "KZ"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
         
         for CBname in ["Anubis"]{
             var THWE = TwelveHouseWE()
             for house in houses{
                 THWE.data[house]?.URL = "Websites/Anubis1912"
-                THWE.data[house]?.DisplayName = "Anubis In Houses"
+                THWE.data[house]?.DisplayName = "Anubis In the Houses"
                 THWE.data[house]?.extensionType = "txt"
                 THWE.data[house]?.website = "personal findings"
                 THWE.data[house]?.author = ""
@@ -215,6 +228,19 @@ public class WebsiteDataBase:Codable{
             database[CBname]?.append(THWE)
         }
         
+        for CBname in ["Quaoar"]{
+            var THWE = TwelveHouseWE()
+            for house in houses{
+                THWE.data[house]?.URL = "Websites/Quaoar"
+                THWE.data[house]?.DisplayName = "Quaoar In the Houses"
+                THWE.data[house]?.extensionType = "html"
+                THWE.data[house]?.website = "reprogramatrix.tripod.com"
+                THWE.data[house]?.author = ""
+                THWE.data[house]?.abbreviation = "KZ"
+                THWE.data[house]?.scrollBuffer = 0
+            }
+            database[CBname]?.append(THWE)
+        }
         
         
         
@@ -615,6 +641,10 @@ public class CelestialBodyListing:Codable{
         let Haumea = CelestialBody()
         Haumea.DisplayName = "Haumea"
         AllCelestialBodies["Haumea"] = Haumea
+        
+        let Quaoar = CelestialBody()
+        Quaoar.DisplayName = "Quaoar"
+        AllCelestialBodies["Quaoar"] = Quaoar
         
     }
     
