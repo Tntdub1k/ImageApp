@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.514726"
+            timestampString = "555345770.906942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "825"
             endingLineNumber = "825"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "updateBodyLabelText()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.612133"
+            timestampString = "555345771.003167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "775"
             endingLineNumber = "775"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pressedSave(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6137789"
+            timestampString = "555345771.004779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "785"
             endingLineNumber = "785"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.628818"
+            timestampString = "555345771.006983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2829"
             endingLineNumber = "2829"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setAllDragonImgsEmpty(currentSBody:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6308"
+            timestampString = "555345771.008342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2827"
             endingLineNumber = "2827"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setAllDragonImgsEmpty(currentSBody:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,13 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6343"
+            timestampString = "555345771.009707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2242"
             endingLineNumber = "2242"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getHouseViews(aHouseView:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,13 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.636147"
+            timestampString = "555345771.0109971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2786"
             endingLineNumber = "2786"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "fillImage(imageView:dignified:label:celestialBody:houseNumber:attributedText:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,13 +122,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6379369"
+            timestampString = "555345771.012376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1105"
             endingLineNumber = "1105"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadAP()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6391309"
+            timestampString = "555345771.013651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1365"
             endingLineNumber = "1365"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,13 +170,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.641996"
+            timestampString = "555345771.015082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2467"
             endingLineNumber = "2467"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "fillWithData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,13 +186,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6437171"
+            timestampString = "555345771.016431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1295"
             endingLineNumber = "1295"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CBHouseClick(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -202,13 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.645005"
+            timestampString = "555345771.017681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2521"
             endingLineNumber = "2521"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "fillRingViewWithData(aRing:houseViews:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,13 +218,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.646367"
+            timestampString = "555345771.019012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2585"
             endingLineNumber = "2585"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "decreaseAdvancement()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,13 +234,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.647907"
+            timestampString = "555345771.020347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1299"
             endingLineNumber = "1299"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CBHouseClick(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,13 +250,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6491539"
+            timestampString = "555345771.021583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1152"
             endingLineNumber = "1152"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -266,13 +266,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.650353"
+            timestampString = "555345771.022923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1234"
             endingLineNumber = "1234"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "addNewCategoryPushedOK(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -282,13 +282,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.651626"
+            timestampString = "555345771.0243109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1297"
             endingLineNumber = "1297"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CBHouseClick(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -298,13 +298,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.652886"
+            timestampString = "555345771.0256259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1125"
             endingLineNumber = "1125"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadAP()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -314,13 +314,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.65413"
+            timestampString = "555345771.026909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1134"
             endingLineNumber = "1134"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -330,13 +330,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6554919"
+            timestampString = "555345771.028247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1147"
             endingLineNumber = "1147"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -346,13 +346,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.656993"
+            timestampString = "555345771.0295219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1133"
             endingLineNumber = "1133"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -362,13 +362,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.671108"
+            timestampString = "555345771.030913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2435"
             endingLineNumber = "2435"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "fillWithData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -378,13 +378,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6726151"
+            timestampString = "555345771.032307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2324"
             endingLineNumber = "2324"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setFontColor()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -394,13 +394,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.674095"
+            timestampString = "555345771.033797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2331"
             endingLineNumber = "2331"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setFontColor()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -410,13 +410,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.675613"
+            timestampString = "555345771.03526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1096"
             endingLineNumber = "1096"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadAP()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -426,13 +426,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.676955"
+            timestampString = "555345771.03666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1814"
             endingLineNumber = "1814"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -442,13 +442,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.678305"
+            timestampString = "555345771.038046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1101"
             endingLineNumber = "1101"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadAP()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -458,13 +458,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.67951"
+            timestampString = "555345771.039391"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2143"
             endingLineNumber = "2143"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "settingSliderValueChanged(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,13 +474,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.680747"
+            timestampString = "555345771.040818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2767"
             endingLineNumber = "2767"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "fillImage(imageView:dignified:label:celestialBody:houseNumber:attributedText:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -490,13 +490,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.6820101"
+            timestampString = "555345771.0425251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "895"
             endingLineNumber = "895"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "clearAllViewsFromScreen()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -506,13 +506,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.683206"
+            timestampString = "555345771.043956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "877"
             endingLineNumber = "877"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -522,13 +522,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.68449"
+            timestampString = "555345771.04572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2090"
             endingLineNumber = "2090"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "settingsFinished(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -538,13 +538,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.686118"
+            timestampString = "555345771.047448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2116"
             endingLineNumber = "2116"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "settingsFinished(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -554,13 +554,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.687367"
+            timestampString = "555345771.049039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2130"
             endingLineNumber = "2130"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -570,13 +570,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.688669"
+            timestampString = "555345771.050781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "879"
             endingLineNumber = "879"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "clearAllViewsFromScreen()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -586,13 +586,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.694623"
+            timestampString = "555345771.052267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2104"
             endingLineNumber = "2104"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "settingsFinished(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -602,13 +602,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.697446"
+            timestampString = "555345771.053637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1805"
             endingLineNumber = "1805"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -618,13 +618,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.700592"
+            timestampString = "555345771.0553139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1168"
             endingLineNumber = "1168"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "clickOKSelectItem(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -634,13 +634,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.702279"
+            timestampString = "555345771.056604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1160"
             endingLineNumber = "1160"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "clickOKSelectItem(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -650,13 +650,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.703559"
+            timestampString = "555345771.057849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1331"
             endingLineNumber = "1331"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "clickRemoveCB(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -666,13 +666,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.70523"
+            timestampString = "555345771.0591691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "666"
             endingLineNumber = "666"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -682,13 +682,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.707243"
+            timestampString = "555345771.060638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "662"
             endingLineNumber = "662"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -698,13 +698,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.708434"
+            timestampString = "555345771.062305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "653"
             endingLineNumber = "653"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -746,13 +746,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.709617"
+            timestampString = "555345771.06388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "676"
             endingLineNumber = "676"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -762,13 +762,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.7115411"
+            timestampString = "555345771.065451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "654"
             endingLineNumber = "654"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -810,13 +810,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.712797"
+            timestampString = "555345771.067035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2777"
             endingLineNumber = "2777"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "fillImage(imageView:dignified:label:celestialBody:houseNumber:attributedText:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -826,13 +826,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.714061"
+            timestampString = "555345771.068898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1369"
             endingLineNumber = "1369"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ClickNotesButton(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -842,13 +842,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.7152309"
+            timestampString = "555345771.070281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1889"
             endingLineNumber = "1889"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "updateDetailLevelDisplay()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -858,13 +858,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.7164921"
+            timestampString = "555345771.071632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1772"
             endingLineNumber = "1772"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -874,13 +874,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.717942"
+            timestampString = "555345771.072956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1762"
             endingLineNumber = "1762"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -890,13 +890,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.7191581"
+            timestampString = "555345771.074278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1102"
             endingLineNumber = "1102"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadAP()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -906,13 +906,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.720314"
+            timestampString = "555345771.0755759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1845"
             endingLineNumber = "1845"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "showSet()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -922,13 +922,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.721527"
+            timestampString = "555345771.076896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1862"
             endingLineNumber = "1862"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -938,13 +938,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.722872"
+            timestampString = "555345771.07828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1857"
             endingLineNumber = "1857"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "showSet()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -954,13 +954,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.724144"
+            timestampString = "555345771.079614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1870"
             endingLineNumber = "1870"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadSampleBkg()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -970,13 +970,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.727952"
+            timestampString = "555345771.0809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1816"
             endingLineNumber = "1816"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -986,13 +986,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.729733"
+            timestampString = "555345771.082245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
             endingLineNumber = "216"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pageViewController(_:viewControllerBefore:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1002,13 +1002,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.731559"
+            timestampString = "555345771.083503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
             endingLineNumber = "193"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1018,13 +1018,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.734184"
+            timestampString = "555345771.084685"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1034,13 +1034,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.735749"
+            timestampString = "555345771.085851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
             endingLineNumber = "184"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1050,13 +1050,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.737456"
+            timestampString = "555345771.087137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
             endingLineNumber = "186"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1066,13 +1066,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.738631"
+            timestampString = "555345771.088323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
             endingLineNumber = "183"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1082,13 +1082,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.7397881"
+            timestampString = "555345771.0895571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "444"
             endingLineNumber = "444"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadHexagram()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1098,13 +1098,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.74133"
+            timestampString = "555345771.090976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1206"
             endingLineNumber = "1206"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "addNewMemberPressedOK(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1114,13 +1114,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.742631"
+            timestampString = "555345771.092327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1205"
             endingLineNumber = "1205"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "clickOKSelectItem(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1130,13 +1130,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.743953"
+            timestampString = "555345771.0936151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getFloatAstro2(aWidth:aOffset:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1146,13 +1146,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.745167"
+            timestampString = "555345771.094903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
             endingLineNumber = "200"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "PVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1162,13 +1162,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.74635"
+            timestampString = "555345771.096137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getFloatAstro1(aWidth:aOffset:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1178,13 +1178,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.747521"
+            timestampString = "555345771.106745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "438"
             endingLineNumber = "438"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadHexagram()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1194,13 +1194,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.749627"
+            timestampString = "555345771.1081769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "625"
             endingLineNumber = "625"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1210,13 +1210,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.750873"
+            timestampString = "555345771.109732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getFloatAstro1(aWidth:aOffset:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1226,13 +1226,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.752087"
+            timestampString = "555345771.111105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pageViewController(_:didFinishAnimating:previousViewControllers:transitionCompleted:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1242,13 +1242,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.753275"
+            timestampString = "555345771.112765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
             endingLineNumber = "201"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pageViewController(_:viewControllerAfter:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1258,13 +1258,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.754477"
+            timestampString = "555345771.114043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
             endingLineNumber = "203"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pageViewController(_:viewControllerAfter:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1274,13 +1274,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.75564"
+            timestampString = "555345771.116469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1697"
             endingLineNumber = "1697"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -1322,13 +1322,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.756991"
+            timestampString = "555345771.118094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1835"
             endingLineNumber = "1835"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pressSet(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1338,13 +1338,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.758353"
+            timestampString = "555345771.119449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1709"
             endingLineNumber = "1709"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1354,13 +1354,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.762228"
+            timestampString = "555345771.120904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1661"
             endingLineNumber = "1661"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1370,13 +1370,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.764099"
+            timestampString = "555345771.122225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "586"
             endingLineNumber = "586"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "textViewDidEndEditing(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1386,13 +1386,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.7660609"
+            timestampString = "555345771.123408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2434"
             endingLineNumber = "2434"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "fillWithData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1402,13 +1402,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.767385"
+            timestampString = "555345771.124975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "416"
             endingLineNumber = "416"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setOpacity(aLevel:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1418,13 +1418,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.768767"
+            timestampString = "555345771.126237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "413"
             endingLineNumber = "413"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setOpacity(aLevel:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1434,13 +1434,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.770569"
+            timestampString = "555345771.127599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "418"
             endingLineNumber = "418"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "IChingViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1450,13 +1450,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.772048"
+            timestampString = "555345771.12936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
             endingLineNumber = "191"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1466,13 +1466,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.773334"
+            timestampString = "555345771.13098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "246"
             endingLineNumber = "246"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setOpacity(aLevel:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1482,13 +1482,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.775069"
+            timestampString = "555345771.132266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "244"
             endingLineNumber = "244"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setOpacity(aLevel:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1498,13 +1498,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.776299"
+            timestampString = "555345771.13355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "243"
             endingLineNumber = "243"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "setOpacity(aLevel:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1514,13 +1514,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageApp/ViewController.swift"
-            timestampString = "553296004.777776"
+            timestampString = "555345771.137187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "293"
             endingLineNumber = "293"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

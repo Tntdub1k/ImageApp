@@ -646,6 +646,10 @@ public class CelestialBodyListing:Codable{
         Quaoar.DisplayName = "Quaoar"
         AllCelestialBodies["Quaoar"] = Quaoar
         
+        let Tekton = CelestialBody()
+        Tekton.DisplayName = "Tekton"
+        AllCelestialBodies["Tekton"] = Tekton
+        
     }
     
 }

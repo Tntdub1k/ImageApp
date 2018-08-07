@@ -77,6 +77,7 @@
 		0116F6F62009440A00F76E0F /* ring6gauge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6F02009440600F76E0F /* ring6gauge1.png */; };
 		0116F6F72009440A00F76E0F /* ring6gauge6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6F12009440700F76E0F /* ring6gauge6.png */; };
 		011753D620B06C3A00CAA2C2 /* Haumea.png in Resources */ = {isa = PBXBuildFile; fileRef = 011753D520B06C3800CAA2C2 /* Haumea.png */; };
+		011A277B2119E50A00387E04 /* Tekton.png in Resources */ = {isa = PBXBuildFile; fileRef = 011A277A2119E50900387E04 /* Tekton.png */; };
 		011BDBCB2017CDEA00D18898 /* adjusterBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCA2017CDE700D18898 /* adjusterBack.png */; };
 		011BDBCD2017DB7900D18898 /* off12.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCC2017DB7800D18898 /* off12.png */; };
 		011BDBCF2018F36900D18898 /* off6.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCE2018F36600D18898 /* off6.png */; };
@@ -236,6 +237,7 @@
 		0116F6F02009440600F76E0F /* ring6gauge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge1.png; path = ../../../Documents/ring6gauge1.png; sourceTree = "<group>"; };
 		0116F6F12009440700F76E0F /* ring6gauge6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge6.png; path = ../../../Documents/ring6gauge6.png; sourceTree = "<group>"; };
 		011753D520B06C3800CAA2C2 /* Haumea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Haumea.png; path = ../../../Documents/Haumea.png; sourceTree = "<group>"; };
+		011A277A2119E50900387E04 /* Tekton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tekton.png; path = ../../../Documents/Tekton.png; sourceTree = "<group>"; };
 		011BDBCA2017CDE700D18898 /* adjusterBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adjusterBack.png; path = ../../Documents/adjusterBack.png; sourceTree = "<group>"; };
 		011BDBCC2017DB7800D18898 /* off12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = off12.png; path = ../../../Documents/off12.png; sourceTree = "<group>"; };
 		011BDBCE2018F36600D18898 /* off6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = off6.png; path = ../../../Documents/off6.png; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				011A277A2119E50900387E04 /* Tekton.png */,
 				012773A120B473D500AF3BCE /* Quaoar.png */,
 				011753D520B06C3800CAA2C2 /* Haumea.png */,
 				0129EC5820A4AF67001B655A /* Nefertiti.png */,
@@ -606,6 +609,7 @@
 				016A606720421D8300478BEB /* Image.png in Resources */,
 				01304E241FEAD76B000F24E9 /* Untitled.png in Resources */,
 				011669341FFE930900AD8E42 /* keyboard.png in Resources */,
+				011A277B2119E50A00387E04 /* Tekton.png in Resources */,
 				01143621200ADE7E00B75813 /* 187609.jpg in Resources */,
 				0116F6F72009440A00F76E0F /* ring6gauge6.png in Resources */,
 				019E7E252003E25300ED3F77 /* arrowUp.png in Resources */,
