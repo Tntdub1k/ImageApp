@@ -650,6 +650,14 @@ public class CelestialBodyListing:Codable{
         Tekton.DisplayName = "Tekton"
         AllCelestialBodies["Tekton"] = Tekton
         
+        let Chariklo = CelestialBody()
+        Chariklo.DisplayName = "Chariklo"
+        AllCelestialBodies["Chariklo"] = Chariklo
+        
+        let Mnemosyne = CelestialBody()
+        Mnemosyne.DisplayName = "Mnemosyne"
+        AllCelestialBodies["Mnemosyne"] = Mnemosyne
+        
     }
     
 }

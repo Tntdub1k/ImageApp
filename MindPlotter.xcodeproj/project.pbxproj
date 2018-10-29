@@ -78,9 +78,11 @@
 		0116F6F72009440A00F76E0F /* ring6gauge6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0116F6F12009440700F76E0F /* ring6gauge6.png */; };
 		011753D620B06C3A00CAA2C2 /* Haumea.png in Resources */ = {isa = PBXBuildFile; fileRef = 011753D520B06C3800CAA2C2 /* Haumea.png */; };
 		011A277B2119E50A00387E04 /* Tekton.png in Resources */ = {isa = PBXBuildFile; fileRef = 011A277A2119E50900387E04 /* Tekton.png */; };
+		011B03FB21700C3300551342 /* Chariklo.png in Resources */ = {isa = PBXBuildFile; fileRef = 011B03FA21700C3200551342 /* Chariklo.png */; };
 		011BDBCB2017CDEA00D18898 /* adjusterBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCA2017CDE700D18898 /* adjusterBack.png */; };
 		011BDBCD2017DB7900D18898 /* off12.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCC2017DB7800D18898 /* off12.png */; };
 		011BDBCF2018F36900D18898 /* off6.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BDBCE2018F36600D18898 /* off6.png */; };
+		011D2F3A21822B7200C29DCA /* Mnemosyne.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D2F3921822B7200C29DCA /* Mnemosyne.png */; };
 		011D7BED1FEB494C001E3417 /* DignifiedGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */; };
 		011D7BEE1FEB494C001E3417 /* Moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BEC1FEB494B001E3417 /* Moon.png */; };
 		011D7BF21FEB56BD001E3417 /* ZMNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 011D7BF11FEB56BC001E3417 /* ZMNumbers.png */; };
@@ -238,9 +240,11 @@
 		0116F6F12009440700F76E0F /* ring6gauge6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring6gauge6.png; path = ../../../Documents/ring6gauge6.png; sourceTree = "<group>"; };
 		011753D520B06C3800CAA2C2 /* Haumea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Haumea.png; path = ../../../Documents/Haumea.png; sourceTree = "<group>"; };
 		011A277A2119E50900387E04 /* Tekton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tekton.png; path = ../../../Documents/Tekton.png; sourceTree = "<group>"; };
+		011B03FA21700C3200551342 /* Chariklo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Chariklo.png; path = ../../../Documents/Chariklo.png; sourceTree = "<group>"; };
 		011BDBCA2017CDE700D18898 /* adjusterBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adjusterBack.png; path = ../../Documents/adjusterBack.png; sourceTree = "<group>"; };
 		011BDBCC2017DB7800D18898 /* off12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = off12.png; path = ../../../Documents/off12.png; sourceTree = "<group>"; };
 		011BDBCE2018F36600D18898 /* off6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = off6.png; path = ../../../Documents/off6.png; sourceTree = "<group>"; };
+		011D2F3921822B7200C29DCA /* Mnemosyne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mnemosyne.png; path = ../../../Documents/Mnemosyne.png; sourceTree = "<group>"; };
 		011D7BEB1FEB494B001E3417 /* DignifiedGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DignifiedGreen.png; path = ../../../Documents/DignifiedGreen.png; sourceTree = "<group>"; };
 		011D7BEC1FEB494B001E3417 /* Moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Moon.png; path = ../../../Documents/Moon.png; sourceTree = "<group>"; };
 		011D7BF11FEB56BC001E3417 /* ZMNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZMNumbers.png; path = ../../../Documents/ZMNumbers.png; sourceTree = "<group>"; };
@@ -363,6 +367,8 @@
 		01304E101FEAD70E000F24E9 /* ImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				011D2F3921822B7200C29DCA /* Mnemosyne.png */,
+				011B03FA21700C3200551342 /* Chariklo.png */,
 				011A277A2119E50900387E04 /* Tekton.png */,
 				012773A120B473D500AF3BCE /* Quaoar.png */,
 				011753D520B06C3800CAA2C2 /* Haumea.png */,
@@ -644,6 +650,7 @@
 				0116F6D12008146700F76E0F /* dragonHead11.png in Resources */,
 				0114361D200ACE4D00B75813 /* dragonsTail10.png in Resources */,
 				0114361F200ADDD800B75813 /* 16535326177271407165.svg in Resources */,
+				011B03FB21700C3300551342 /* Chariklo.png in Resources */,
 				01BCA6C7201A627E003E7EBA /* set10.png in Resources */,
 				011BDBCD2017DB7900D18898 /* off12.png in Resources */,
 				019E7E222003DCE100ED3F77 /* circleSmall1.png in Resources */,
@@ -669,6 +676,7 @@
 				0181125D1FF0186F0071111D /* Mars.png in Resources */,
 				01143623200BD2CB00B75813 /* Websites in Resources */,
 				018112791FF01F980071111D /* Nessus.png in Resources */,
+				011D2F3A21822B7200C29DCA /* Mnemosyne.png in Resources */,
 				011D7C021FEEFFA0001E3417 /* DignifiedDomicile.png in Resources */,
 				0116F6CD2008146700F76E0F /* dragonHead4.png in Resources */,
 				01143619200ACE4D00B75813 /* dragonsTail9.png in Resources */,
